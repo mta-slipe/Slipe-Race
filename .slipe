@@ -1,0 +1,116 @@
+{
+  "compileTargets": {
+    "client": [
+      "ClientSide"
+    ],
+    "server": [
+      "ServerSide"
+    ]
+  },
+  "dlls": [],
+  "systemComponents": [],
+  "assetDirectories": [
+    {
+      "path": "Assets",
+      "downloads": false,
+      "extension": null
+    }
+  ],
+  "modules": [
+    {
+      "type": null,
+      "name": "SlipeCore",
+      "path": "Slipe/Core",
+      "compileTargets": {
+        "client": [],
+        "server": []
+      },
+      "dlls": [
+        "SlipeMTADefinitions.dll",
+        "Slipe.Sql.dll"
+      ],
+      "attributes": [
+        "Slipe.Shared.Elements.DefaultElementClassAttribute"
+      ],
+      "systemComponents": [
+        "Core.lua",
+        "Interfaces.lua",
+        "Exception.lua",
+        "Number.lua",
+        "Char.lua",
+        "String.lua",
+        "Boolean.lua",
+        "Delegate.lua",
+        "Enum.lua",
+        "TimeSpan.lua",
+        "DateTime.lua",
+        "Collections/EqualityComparer.lua",
+        "Array.lua",
+        "Type.lua",
+        "ArraySegment.lua",
+        "Collections/List.lua",
+        "Collections/Dictionary.lua",
+        "Collections/Queue.lua",
+        "Collections/Stack.lua",
+        "Collections/HashSet.lua",
+        "Collections/LinkedList.lua",
+        "Collections/Linq.lua",
+        "Convert.lua",
+        "Math.lua",
+        "Random.lua",
+        "Text/StringBuilder.lua",
+        "Console.lua",
+        "Debug.lua",
+        "IO/File.lua",
+        "Reflection/Assembly.lua",
+        "Threads/Timer.lua",
+        "Threads/Thread.lua",
+        "Threads/Task.lua",
+        "Utilities.lua",
+        "SystemExtensions.lua",
+        "Numerics/HashCodeHelper.lua",
+        "Numerics/Complex.lua",
+        "Numerics/Matrix3x2.lua",
+        "Numerics/Matrix4x4.lua",
+        "Numerics/Plane.lua",
+        "Numerics/Quaternion.lua",
+        "Numerics/Vector2.lua",
+        "Numerics/Vector3.lua",
+        "Numerics/Vector4.lua",
+        "Component.lua",
+        "Timers/ElapsedEventArgs.lua",
+        "Timers/Timer.lua",
+        "Net/Http/HttpContent.lua",
+        "Net/Http/StringContent.lua",
+        "Net/Http/FormUrlEncodedContent.lua",
+        "Net/Http/HttpResponseMessage.lua",
+        "Net/Http/HttpClient.lua",
+        "Xml/XmlNodeList.lua",
+        "Xml/XmlNode.lua",
+        "Xml/XmlAttribute.lua",
+        "Xml/XmlAttributeCollection.lua",
+        "Xml/XmlElement.lua",
+        "Xml/XmlDocument.lua",
+        "Text/Encoding.lua",
+        "Net/IPAddress.lua",
+        "Net/EndPoint.lua",
+        "Net/Sockets/Socket.lua"
+      ],
+      "backingLua": [
+        "SlipeMTADfinitions/shared.lua",
+        "SlipeMTADfinitions/server.lua",
+        "SlipeMTADfinitions/client.lua",
+        "SlipeMTADfinitions/events.lua",
+        "SlipeMTADfinitions/json.lua",
+        "SlipeMTADfinitions/exports.lua",
+        "SlipeSql/SqlValue.lua",
+        "SlipeSql/SqlOptions.lua",
+        "SlipeSql/MySqlConnectionString.lua",
+        "SlipeSql/Database.lua"
+      ],
+      "assetDirectories": []
+    }
+  ],
+  "clientMinVersion": null,
+  "serverMinVersion": null
+}

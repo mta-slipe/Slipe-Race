@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="cd ..\..\ &amp;&amp; slipe compile -client-only" />
+  </Target>
+
+  <ItemGroup>
+    <Reference Include="SlipeClient">
+      <HintPath>..\..\Slipe\Core\DLL\SlipeClient.dll</HintPath>
+    </Reference>
+    <Reference Include="SlipeMTADefinitions">
+      <HintPath>..\..\Slipe\Core\DLL\SlipeMTADefinitions.dll</HintPath>
+    </Reference>
+    <Reference Include="SlipeShared">
+      <HintPath>..\..\Slipe\Core\DLL\SlipeShared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
