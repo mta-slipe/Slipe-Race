@@ -80,7 +80,32 @@ System.namespace("Slipe.Client.Resources", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "resources", 0x9, System.Dictionary(System.Object, out.Slipe.Client.Resources.Resource) },
+            { "thisResource", 0x9, class }
+          },
+          properties = {
+            { "GuiRoot", 0x206, out.Slipe.Shared.Elements.Element, getGuiRoot },
+            { "This", 0x20E, class, getThis }
+          },
+          methods = {
+            { ".ctor", 0x104, __ctor1__, out.Slipe.MtaDefinitions.MtaResource },
+            { ".ctor", 0x103, __ctor2__, System.String },
+            { "Get", 0x18C, Get, out.Slipe.MtaDefinitions.MtaResource, class },
+            { "Get", 0x18E, Get1, System.String, class },
+            { "HandleStart", 0x4, HandleStart },
+            { "HandleStop", 0x4, HandleStop }
+          },
+          events = {
+            { "OnStart", 0x6, System.Delegate },
+            { "OnStop", 0x6, System.Delegate }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

@@ -320,7 +320,60 @@ System.namespace("Slipe.Shared.Vehicles", function (namespace)
       SetLightState = SetLightState,
       GetPanelDamage = GetPanelDamage,
       SetPanelDamage = SetPanelDamage,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "handling", 0x1, out.Slipe.Shared.Vehicles.Handling },
+            { "sirens", 0x1, out.Slipe.Shared.Vehicles.SharedSirens }
+          },
+          properties = {
+            { "Colors", 0x106, System.Array(out.Slipe.Shared.Utilities.Color), getColors, setColors },
+            { "DamageProof", 0x106, System.Boolean, getDamageProof, setDamageProof },
+            { "DoorsUndamagable", 0x306, System.Boolean, setDoorsUndamagable },
+            { "EngineRunning", 0x106, System.Boolean, getEngineRunning, setEngineRunning },
+            { "FuelTankExplodable", 0x106, System.Boolean, getFuelTankExplodable, setFuelTankExplodable },
+            { "Handling", 0x206, out.Slipe.Shared.Vehicles.Handling, getHandling },
+            { "HeadLightColor", 0x106, out.Slipe.Shared.Utilities.Color, getHeadLightColor, setHeadLightColor },
+            { "IsBlown", 0x206, System.Boolean, getIsBlown },
+            { "IsOnGround", 0x206, System.Boolean, getIsOnGround },
+            { "Locked", 0x106, System.Boolean, getLocked, setLocked },
+            { "MaxPassengers", 0x206, System.Int32, getMaxPassengers },
+            { "Name", 0x206, System.String, getName },
+            { "OverrideLights", 0x106, System.Int32, getOverrideLights, setOverrideLights },
+            { "Paintjob", 0x106, System.Int32, getPaintjob, setPaintjob },
+            { "PlateText", 0x106, System.String, getPlateText, setPlateText },
+            { "PrimaryColor", 0x106, out.Slipe.Shared.Utilities.Color, getPrimaryColor, setPrimaryColor },
+            { "SecondaryColor", 0x106, out.Slipe.Shared.Utilities.Color, getSecondaryColor, setSecondaryColor },
+            { "Sirens", 0x206, out.Slipe.Shared.Vehicles.SharedSirens, getSirens },
+            { "Upgrades", 0x206, System.Dictionary(System.Int32, System.Int32), getUpgrades },
+            { "Variant", 0x206, System.Tuple, getVariant },
+            { "VehicleTowedByThis", 0x206, class, getVehicleTowedByThis },
+            { "VehicleType", 0x206, System.String, getVehicleType },
+            { "WheelState", 0x106, System.Tuple, getWheelState, setWheelState }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.MtaDefinitions.MtaElement },
+            { "AddUpgrade", 0x186, AddUpgrade, System.Int32, System.Boolean },
+            { "DetachAnyTowedVehicle", 0x86, DetachAnyTowedVehicle, System.Boolean },
+            { "DetachTowedVehicle", 0x186, DetachTowedVehicle, class, System.Boolean },
+            { "Fix", 0x86, Fix, System.Boolean },
+            { "GetCompatibleUpgrades", 0x186, GetCompatibleUpgrades, System.Int32, System.Array(System.Int32) },
+            { "GetCompatibleUpgrades", 0x86, GetCompatibleUpgrades1, System.Array(System.Int32) },
+            { "GetDoorOpenRatio", 0x186, GetDoorOpenRatio, System.Int32, System.Single },
+            { "GetDoorState", 0x186, GetDoorState, System.Int32, System.Int32 },
+            { "GetLightState", 0x186, GetLightState, System.Int32, System.Int32 },
+            { "GetPanelDamage", 0x186, GetPanelDamage, System.Int32, System.Int32 },
+            { "GetUpgradeOnSlot", 0x186, GetUpgradeOnSlot, System.Int32, System.Int32 },
+            { "RemoveUpgrade", 0x186, RemoveUpgrade, System.Int32, System.Boolean },
+            { "SetDoorOpenRatio", 0x386, SetDoorOpenRatio, System.Int32, System.Single, System.Int32, System.Boolean },
+            { "SetDoorState", 0x286, SetDoorState, System.Int32, System.Int32, System.Boolean },
+            { "SetLightState", 0x286, SetLightState, System.Int32, System.Int32, System.Boolean },
+            { "SetPanelDamage", 0x286, SetPanelDamage, System.Int32, System.Int32, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

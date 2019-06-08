@@ -22,7 +22,7 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
     local accounts, getIsGuestAccount, getName, getID, getIP, getSerial, getPlayer, getACLIdentifier, 
     getData, getAll, GetAccountsBySerial, GetAccountsByIP, GetAccountsByData, CopyFrom, GetData, SetData, 
     Remove, SetName, SetPassword, HasPermissionTo, IsInACLGroup, Get, Get1, Get2, 
-    CastMultiple, HandleDataChange, class, static, __ctor1__, __ctor2__
+    CastMultiple, class, static, __ctor1__, __ctor2__
     static = function (this)
       accounts = DictObjectAccount()
     end
@@ -194,12 +194,6 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
       end
       return result
     end
-    HandleDataChange = function (this, key, value)
-      local default = this.OnDataChange
-      if default ~= nil then
-        default(key, value)
-      end
-    end
     class = {
       __inherits__ = function (out)
         return {
@@ -230,12 +224,53 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
       Get1 = Get1,
       Get2 = Get2,
       CastMultiple = CastMultiple,
-      HandleDataChange = HandleDataChange,
       static = static,
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "accounts", 0x9, System.Dictionary(System.Object, out.Slipe.Server.Accounts.Account) }
+          },
+          properties = {
+            { "ACLIdentifier", 0x206, System.String, getACLIdentifier },
+            { "All", 0x20E, System.Array(out.Slipe.Server.Accounts.Account), getAll },
+            { "Data", 0x206, System.Dictionary(System.String, System.String), getData },
+            { "ID", 0x206, System.Int32, getID },
+            { "IP", 0x206, System.String, getIP },
+            { "IsGuestAccount", 0x206, System.Boolean, getIsGuestAccount },
+            { "MTAAccount", 0x4, out.Slipe.MtaDefinitions.MtaAccount },
+            { "Name", 0x206, System.String, getName },
+            { "Player", 0x206, out.Slipe.Server.Peds.Player, getPlayer },
+            { "Serial", 0x206, System.String, getSerial }
+          },
+          methods = {
+            { ".ctor", 0x104, __ctor1__, out.Slipe.MtaDefinitions.MtaAccount },
+            { ".ctor", 0x306, __ctor2__, System.String, System.String, System.Boolean },
+            { "CastMultiple", 0x18C, CastMultiple, System.Array(out.Slipe.MtaDefinitions.MtaAccount), System.Array(out.Slipe.Server.Accounts.Account) },
+            { "CopyFrom", 0x186, CopyFrom, class, System.Boolean },
+            { "Get", 0x38E, Get1, System.String, System.String, System.Boolean, class },
+            { "Get", 0x18C, Get, out.Slipe.MtaDefinitions.MtaAccount, class },
+            { "Get", 0x18E, Get2, System.Int32, class },
+            { "GetAccountsByData", 0x28E, GetAccountsByData, System.String, System.String, System.Array(out.Slipe.Server.Accounts.Account) },
+            { "GetAccountsByIP", 0x18E, GetAccountsByIP, System.String, System.Array(out.Slipe.Server.Accounts.Account) },
+            { "GetAccountsBySerial", 0x18E, GetAccountsBySerial, System.String, System.Array(out.Slipe.Server.Accounts.Account) },
+            { "GetData", 0x186, GetData, System.String, System.String },
+            { "HasPermissionTo", 0x286, HasPermissionTo, System.String, System.Boolean, System.Boolean },
+            { "IsInACLGroup", 0x186, IsInACLGroup, out.Slipe.Server.Acl.AclGroup, System.Boolean },
+            { "Remove", 0x86, Remove, System.Boolean },
+            { "SetData", 0x286, SetData, System.String, System.String, System.Boolean },
+            { "SetName", 0x286, SetName, System.String, System.Boolean, System.Boolean },
+            { "SetPassword", 0x186, SetPassword, System.String, System.Boolean }
+          },
+          events = {
+            { "OnDataChange", 0xE, System.Delegate(out.Slipe.Server.Elements.RootElement, out.Slipe.Server.Accounts.Events.OnDataChangeEventArgs, System.Void) }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

@@ -6,21 +6,28 @@ System.import(function (out)
 end)
 System.namespace("Slipe.Server.IO", function (namespace)
   namespace.class("MtaDebug", function (namespace)
-    local HandleMessage, class
-    HandleMessage = function (this, message, level, file, line, color)
-      local default = class.OnMessage
-      if default ~= nil then
-        default(message, level, file, line, color)
-      end
+    local __ctor__
+    __ctor__ = function (this)
+      SlipeSharedIO.SharedMtaDebug.__ctor__(this)
     end
-    class = {
+    return {
       __inherits__ = function (out)
         return {
           out.Slipe.Shared.IO.SharedMtaDebug
         }
       end,
-      HandleMessage = HandleMessage
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x4, nil }
+          },
+          events = {
+            { "OnMessage", 0xE, System.Delegate(out.Slipe.Shared.Elements.Element, out.Slipe.Server.IO.Events.OnDebugMessageEventArgs, System.Void) }
+          },
+          class = { 0x6 }
+        }
+      end
     }
-    return class
   end)
 end)

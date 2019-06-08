@@ -43,7 +43,22 @@ System.namespace("Slipe.Client.IO", function (namespace)
     return {
       Execute = Execute,
       Execute1 = Execute1,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "callback", 0x1, System.Delegate(System.String, System.Array(System.String), System.Void) },
+            { "command", 0x1, System.String }
+          },
+          methods = {
+            { ".ctor", 0x406, nil, System.String, System.Delegate(System.String, System.Array(System.String), System.Void), System.Boolean, System.Boolean },
+            { "CommandHandlerCallback", 0x201, CommandHandlerCallback, System.String, System.Array(System.String) },
+            { "Execute", 0x106, Execute, System.Array(System.String) },
+            { "Execute", 0x20E, Execute1, System.String, System.Array(System.String) }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

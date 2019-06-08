@@ -105,7 +105,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
       this.standardFont = value
       this.useCustomFont = false
     end
-    Draw = function (this)
+    Draw = function (this, source, eventArgs)
       if this.useCustomFont then
         return SlipeMtaDefinitions.MtaClient.DxDrawText(this.Content, this:getPosition().X, this:getPosition().Y, this.BottomRight.X, this.BottomRight.Y, this.Color:getHex(), this.Scale.X, this.Scale.Y, getCustomFont(this):getMTAFont(), this.HorizontalAlignment:ToEnumString(SlipeClientDx.HorizontalAlign):ToLower(), this.VerticalAlignment:ToEnumString(SlipeClientDx.VerticalAlign):ToLower(), this.Clip, this.WordBreak, this.PostGUI, this.ColorCoded, this.SubPixelPositioning, this.Rotation, this.RotationOrigin.X, this.RotationOrigin.Y)
       else
@@ -144,7 +144,42 @@ System.namespace("Slipe.Client.Dx", function (namespace)
         __ctor4__,
         __ctor5__,
         __ctor6__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "customFont", 0x3, out.Slipe.Client.Dx.Font },
+            { "standardFont", 0x3, System.Int32 },
+            { "useCustomFont", 0x3, System.Boolean }
+          },
+          properties = {
+            { "BottomRight", 0x6, System.Numerics.Vector2 },
+            { "Clip", 0x6, System.Boolean },
+            { "ColorCoded", 0x6, System.Boolean },
+            { "Content", 0x6, System.String },
+            { "CustomFont", 0x106, out.Slipe.Client.Dx.Font, getCustomFont, setCustomFont },
+            { "HorizontalAlignment", 0x6, System.Int32 },
+            { "Rotation", 0x6, System.Single },
+            { "RotationOrigin", 0x6, System.Numerics.Vector2 },
+            { "Scale", 0x6, System.Numerics.Vector2 },
+            { "StandardFont", 0x106, System.Int32, getStandardFont, setStandardFont },
+            { "SubPixelPositioning", 0x6, System.Boolean },
+            { "VerticalAlignment", 0x6, System.Int32 },
+            { "WordBreak", 0x6, System.Boolean }
+          },
+          methods = {
+            { ".ctor", 0xF06, __ctor1__, System.String, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color, System.Numerics.Vector2, out.Slipe.Client.Dx.Font, System.Int32, System.Int32, System.Single, System.Numerics.Vector2, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean },
+            { ".ctor", 0x906, __ctor2__, System.String, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color, System.Numerics.Vector2, out.Slipe.Client.Dx.Font, System.Int32, System.Int32, System.Single },
+            { ".ctor", 0xF06, __ctor3__, System.String, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color, System.Numerics.Vector2, System.Int32, System.Int32, System.Int32, System.Single, System.Numerics.Vector2, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean },
+            { ".ctor", 0x906, __ctor4__, System.String, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color, System.Numerics.Vector2, System.Int32, System.Int32, System.Int32, System.Single },
+            { ".ctor", 0x406, __ctor5__, System.String, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color },
+            { ".ctor", 0x206, __ctor6__, System.String, System.Numerics.Vector2 },
+            { "Draw", 0x286, Draw, out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Rendering.Events.OnRenderEventArgs, System.Boolean },
+            { "GetTextWidth", 0x48E, GetTextWidth, System.String, System.Single, System.Int32, System.Boolean, System.Single }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

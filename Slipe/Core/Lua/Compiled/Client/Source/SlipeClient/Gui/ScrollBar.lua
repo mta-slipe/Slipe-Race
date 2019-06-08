@@ -11,7 +11,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
   -- Represents a Cegui scroll bar
   -- </summary>
   namespace.class("ScrollBar", function (namespace)
-    local getScrollPosition, setScrollPosition, __ctor1__, __ctor2__
+    local getScrollPosition, setScrollPosition, class, __ctor1__, __ctor2__
     __ctor1__ = function (this, element)
       SlipeClientGui.GuiElement.__ctor__(this, element)
     end
@@ -31,7 +31,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     setScrollPosition = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiScrollBarSetScrollPosition(this.element, value)
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Client.Gui.GuiElement
@@ -45,9 +45,20 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "ScrollPosition", 0x106, System.Single, getScrollPosition, setScrollPosition }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x506, __ctor2__, System.Numerics.Vector2, System.Numerics.Vector2, System.Boolean, System.Boolean, out.Slipe.Client.Gui.GuiElement }
+          },
+          events = {
+            { "OnScroll", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnScrollEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 21 --[[ElementType.GuiScrollBar]]) }
         }
       end
     }
+    return class
   end)
 end)

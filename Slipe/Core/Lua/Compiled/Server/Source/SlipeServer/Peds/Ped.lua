@@ -13,7 +13,7 @@ System.namespace("Slipe.Server.Peds", function (namespace)
   namespace.class("Ped", function (namespace)
     local getArmor1, setArmor1, getFightingStyle1, setFightingStyle1, getGravity, setGravity, getChocking1, setChocking1, 
     getHasJetpack1, setHasJetpack1, ReloadWeapon, GiveWeapon, SetAmmo, TakeAllWeapons, TakeWeapon, TakeAmmo, 
-    __ctor1__, __ctor2__
+    class, __ctor1__, __ctor2__
     __ctor1__ = function (this, element)
       SlipeSharedPeds.SharedPed.__ctor__(this, element)
     end
@@ -89,7 +89,7 @@ System.namespace("Slipe.Server.Peds", function (namespace)
     TakeAmmo = function (this, model, amount)
       return SlipeMtaDefinitions.MtaServer.TakeWeapon(this.element, model.ID, amount)
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Shared.Peds.SharedPed
@@ -117,9 +117,31 @@ System.namespace("Slipe.Server.Peds", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Armor", 0x106, System.Single, getArmor1, setArmor1 },
+            { "Chocking", 0x106, System.Boolean, getChocking1, setChocking1 },
+            { "FightingStyle", 0x106, System.Int32, getFightingStyle1, setFightingStyle1 },
+            { "Gravity", 0x106, System.Single, getGravity, setGravity },
+            { "HasJetpack", 0x106, System.Boolean, getHasJetpack1, setHasJetpack1 }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x406, __ctor2__, System.Int32, System.Numerics.Vector3, System.Single, System.Boolean },
+            { "GiveWeapon", 0x386, GiveWeapon, out.Slipe.Shared.Weapons.SharedWeaponModel, System.Int32, System.Boolean, System.Boolean },
+            { "ReloadWeapon", 0x86, ReloadWeapon, System.Boolean },
+            { "SetAmmo", 0x386, SetAmmo, out.Slipe.Shared.Weapons.SharedWeaponModel, System.Int32, System.Int32, System.Boolean },
+            { "TakeAllWeapons", 0x86, TakeAllWeapons, System.Boolean },
+            { "TakeAmmo", 0x286, TakeAmmo, out.Slipe.Shared.Weapons.SharedWeaponModel, System.Int32, System.Boolean },
+            { "TakeWeapon", 0x186, TakeWeapon, out.Slipe.Shared.Weapons.SharedWeaponModel, System.Boolean }
+          },
+          events = {
+            { "OnWasted", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnWastedEventArgs, System.Void) },
+            { "OnWeaponSwitch", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnWeaponSwitchEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 2 --[[ElementType.Ped]]) }
         }
       end
     }
+    return class
   end)
 end)

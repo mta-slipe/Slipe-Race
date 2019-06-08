@@ -51,6 +51,14 @@ System.namespace("Slipe.Client.Effects", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Density", 0x106, System.Single, getDensity, setDensity },
+            { "Speed", 0x106, System.Single, getSpeed, setSpeed }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x506, __ctor2__, System.Int32, System.Numerics.Vector3, System.Numerics.Vector3, System.Single, System.Boolean }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 30 --[[ElementType.Effect]]) }
         }
       end

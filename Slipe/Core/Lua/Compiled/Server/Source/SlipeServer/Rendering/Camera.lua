@@ -100,7 +100,28 @@ System.namespace("Slipe.Server.Rendering", function (namespace)
       GetCameraMatrix = GetCameraMatrix,
       Fade = Fade,
       Fade1 = Fade1,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "player", 0x1, out.Slipe.Server.Peds.Player }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.Server.Peds.Player },
+            { "Fade", 0x386, Fade, System.Int32, out.Slipe.Shared.Utilities.Color, System.Int32, System.Boolean },
+            { "Fade", 0x186, Fade1, System.Int32, System.Boolean },
+            { "GetCameraMatrix", 0x86, GetCameraMatrix, System.Numerics.Matrix4x4 },
+            { "GetFullCameraMatrix", 0x86, GetFullCameraMatrix, System.Tuple },
+            { "SetMatrix", 0x386, SetMatrix, System.Numerics.Matrix4x4, System.Single, System.Single, System.Boolean },
+            { "SetMatrix", 0x486, SetMatrix1, System.Numerics.Vector3, System.Numerics.Vector3, System.Single, System.Single, System.Boolean }
+          },
+          properties = {
+            { "Interior", 0x106, System.Int32, getInterior, setInterior },
+            { "Target", 0x106, out.Slipe.Shared.Elements.PhysicalElement, getTarget, setTarget }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

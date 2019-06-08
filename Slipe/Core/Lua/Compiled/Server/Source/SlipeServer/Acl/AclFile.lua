@@ -24,7 +24,16 @@ System.namespace("Slipe.Server.Acl", function (namespace)
     end
     return {
       Reload = Reload,
-      Save = Save
+      Save = Save,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "Reload", 0x8E, Reload, System.Boolean },
+            { "Save", 0x8E, Save, System.Boolean }
+          },
+          class = { 0xE }
+        }
+      end
     }
   end)
 end)

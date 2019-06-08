@@ -75,7 +75,24 @@ System.namespace("Slipe.Server.IO", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "callback", 0x1, System.Delegate(out.Slipe.Server.Peds.Player, System.String, System.Array(System.String), System.Void) },
+            { "command", 0x1, System.String },
+            { "consoleCallback", 0x1, System.Delegate(System.String, System.Array(System.String), System.Void) }
+          },
+          methods = {
+            { ".ctor", 0x406, __ctor1__, System.String, System.Delegate(out.Slipe.Server.Peds.Player, System.String, System.Array(System.String), System.Void), System.Boolean, System.Boolean },
+            { ".ctor", 0x406, __ctor2__, System.String, System.Delegate(System.String, System.Array(System.String), System.Void), System.Boolean, System.Boolean },
+            { "CommandHandlerCallback", 0x301, CommandHandlerCallback, out.Slipe.MtaDefinitions.MtaElement, System.String, System.Array(System.String) },
+            { "Execute", 0x206, Execute, out.Slipe.Server.Peds.Player, System.Array(System.String) },
+            { "Execute", 0x30E, Execute1, out.Slipe.Server.Peds.Player, System.String, System.Array(System.String) }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

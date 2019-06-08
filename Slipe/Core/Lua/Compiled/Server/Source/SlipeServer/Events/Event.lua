@@ -21,7 +21,18 @@ System.namespace("Slipe.Server.Events", function (namespace)
     end
     return {
       Cancel = Cancel,
-      getWasCancelled = getWasCancelled
+      getWasCancelled = getWasCancelled,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "Cancel", 0x20E, Cancel, System.String, System.Boolean }
+          },
+          properties = {
+            { "WasCancelled", 0x20E, System.Boolean, getWasCancelled }
+          },
+          class = { 0xE }
+        }
+      end
     }
   end)
 end)

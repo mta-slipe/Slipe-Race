@@ -13,7 +13,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
   -- Class representing custom font elements
   -- </summary>
   namespace.class("Font", function (namespace)
-    local getMTAFont, GetHeight, GetHeight1, GetHeight2, __ctor__
+    local getMTAFont, GetHeight, GetHeight1, GetHeight2, class, __ctor__
     -- <summary>
     -- Create a new font from a path
     -- </summary>
@@ -41,12 +41,30 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     GetHeight2 = function (font, scale)
       return SlipeMtaDefinitions.MtaClient.DxGetFontHeight(scale, getMTAFont(font))
     end
-    return {
+    class = {
       getMTAFont = getMTAFont,
       GetHeight = GetHeight,
       GetHeight1 = GetHeight1,
       GetHeight2 = GetHeight2,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "_font", 0x1, out.Slipe.MtaDefinitions.MtaElement }
+          },
+          properties = {
+            { "MTAFont", 0x206, out.Slipe.MtaDefinitions.MtaElement, getMTAFont }
+          },
+          methods = {
+            { ".ctor", 0x406, nil, System.String, System.Int32, System.Boolean, System.Int32 },
+            { "GetHeight", 0x186, GetHeight, System.Single, System.Int32 },
+            { "GetHeight", 0x28E, GetHeight1, System.Int32, System.Single, System.Int32 },
+            { "GetHeight", 0x28E, GetHeight2, class, System.Single, System.Int32 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
+    return class
   end)
 end)

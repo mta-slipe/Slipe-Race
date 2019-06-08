@@ -100,7 +100,26 @@ System.namespace("Slipe.Client.Elements", function (namespace)
       IsStreamable = IsStreamable,
       IsStreamedIn = IsStreamedIn,
       IsSyncer = IsSyncer,
-      IsWaitingForGroundToLoad = IsWaitingForGroundToLoad
+      IsWaitingForGroundToLoad = IsWaitingForGroundToLoad,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "GetBoundingBox", 0x18E, GetBoundingBox, out.Slipe.Shared.Elements.PhysicalElement, System.Tuple },
+            { "GetDistanceFromCentreOfMassToBaseOfModel", 0x18E, GetDistanceFromCentreOfMassToBaseOfModel, out.Slipe.Shared.Elements.PhysicalElement, System.Single },
+            { "GetRadius", 0x18E, GetRadius, out.Slipe.Shared.Elements.PhysicalElement, System.Single },
+            { "IsCollidableWith", 0x28E, IsCollidableWith, out.Slipe.Shared.Elements.PhysicalElement, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean },
+            { "IsLocal", 0x18E, IsLocal, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean },
+            { "IsOnScreen", 0x18E, IsOnScreen, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean },
+            { "IsStreamable", 0x18E, IsStreamable, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean },
+            { "IsStreamedIn", 0x18E, IsStreamedIn, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean },
+            { "IsSyncer", 0x18E, IsSyncer, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean },
+            { "IsWaitingForGroundToLoad", 0x18E, IsWaitingForGroundToLoad, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean },
+            { "SetCollidableWith", 0x38E, SetCollidableWith, out.Slipe.Shared.Elements.PhysicalElement, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean, System.Boolean },
+            { "SetStreamable", 0x28E, SetStreamable, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean, System.Boolean }
+          },
+          class = { 0xE }
+        }
+      end
     }
   end)
 end)

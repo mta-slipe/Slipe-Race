@@ -12,7 +12,18 @@ System.namespace("Slipe.Shared.Rpc", function (namespace)
           out.Slipe.Shared.Rpc.IRpc
         }
       end,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "element", 0x6, out.Slipe.Shared.Elements.Element }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.Shared.Elements.Element }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

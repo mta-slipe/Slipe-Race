@@ -109,7 +109,7 @@ System.namespace("Slipe.Client.Lights", function (namespace)
     -- <summary>
     -- Updates this element to the correct position and rotation
     -- </summary>
-    Update = function (this, timeSlice)
+    Update = function (this, source, eventArgs)
       setStartPosition(this, SystemNumerics.Vector3.op_Addition(getToAttached(this):getPosition(), this.Offset:getTranslation()))
       setEndPosition(this, SystemNumerics.Vector3.Transform(this.relativeEndPosition, SystemNumerics.Matrix4x4.op_Multiply(getToAttached(this):getMatrix(), this.Offset)))
     end
@@ -142,6 +142,30 @@ System.namespace("Slipe.Client.Lights", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          fields = {
+            { "relativeEndPosition", 0x3, System.Numerics.Vector3 },
+            { "toAttached", 0x3, out.Slipe.Shared.Elements.PhysicalElement }
+          },
+          properties = {
+            { "EndPosition", 0x106, System.Numerics.Vector3, getEndPosition, setEndPosition },
+            { "EndRadius", 0x106, System.Single, getEndRadius, setEndRadius },
+            { "IsAttached", 0x206, System.Boolean, getIsAttached },
+            { "Offset", 0x6, System.Numerics.Matrix4x4 },
+            { "StartPosition", 0x106, System.Numerics.Vector3, getStartPosition, setStartPosition },
+            { "StartRadius", 0x106, System.Single, getStartRadius, setStartRadius },
+            { "ToAttached", 0x206, out.Slipe.Shared.Elements.PhysicalElement, getToAttached }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x506, __ctor2__, System.Numerics.Vector3, System.Numerics.Vector3, System.Single, System.Single, System.Boolean },
+            { ".ctor", 0x606, __ctor3__, out.Slipe.Shared.Elements.PhysicalElement, System.Numerics.Vector3, System.Numerics.Matrix4x4, System.Single, System.Single, System.Boolean },
+            { "AttachTo", 0x206, AttachTo, out.Slipe.Shared.Elements.PhysicalElement, System.Numerics.Matrix4x4 },
+            { "AttachTo", 0x306, AttachTo1, out.Slipe.Shared.Elements.PhysicalElement, System.Numerics.Vector3, System.Numerics.Vector3 },
+            { "AttachTo", 0x306, AttachTo2, out.Slipe.Shared.Elements.PhysicalElement, System.Numerics.Vector3, System.Numerics.Quaternion },
+            { "AttachTo", 0x106, AttachTo3, out.Slipe.Shared.Elements.PhysicalElement },
+            { "Detach", 0x6, Detach },
+            { "Update", 0x203, Update, out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Game.Events.OnUpdateEventArgs }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 33 --[[ElementType.SearchLight]]) }
         }
       end

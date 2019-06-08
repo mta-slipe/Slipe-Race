@@ -38,6 +38,11 @@ System.namespace("Slipe.Server.GameWorld", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x206, __ctor2__, System.Int32, System.Numerics.Vector3 },
+            { ".ctor", 0x406, __ctor3__, System.Int32, System.Numerics.Vector3, System.Numerics.Vector3, System.Boolean }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 4 --[[ElementType.Object]]) }
         }
       end

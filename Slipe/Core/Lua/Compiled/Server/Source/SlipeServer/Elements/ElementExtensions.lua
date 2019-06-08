@@ -64,7 +64,21 @@ System.namespace("Slipe.Server.Elements", function (namespace)
       Clone = Clone,
       GetZoneName = GetZoneName,
       GetSyncer = GetSyncer,
-      SetSyncer = SetSyncer
+      SetSyncer = SetSyncer,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "ClearVisibleTo", 0x18E, ClearVisibleTo, out.Slipe.Shared.Elements.Element, System.Boolean },
+            { "Clone", 0x28E, Clone, out.Slipe.Shared.Elements.Element, System.Numerics.Vector3, out.Slipe.Shared.Elements.Element },
+            { "GetSyncer", 0x18E, GetSyncer, out.Slipe.Shared.Elements.PhysicalElement, out.Slipe.Server.Peds.Player },
+            { "GetZoneName", 0x28E, GetZoneName, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean, System.String },
+            { "IsVisibleTo", 0x28E, IsVisibleTo, out.Slipe.Shared.Elements.Element, out.Slipe.Shared.Elements.Element, System.Boolean },
+            { "SetSyncer", 0x28E, SetSyncer, out.Slipe.Shared.Elements.PhysicalElement, out.Slipe.Server.Peds.Player, System.Boolean },
+            { "SetVisibleTo", 0x38E, SetVisibleTo, out.Slipe.Shared.Elements.Element, out.Slipe.Shared.Elements.Element, System.Boolean, System.Boolean }
+          },
+          class = { 0xE }
+        }
+      end
     }
   end)
 end)

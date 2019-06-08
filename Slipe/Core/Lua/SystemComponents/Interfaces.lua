@@ -17,20 +17,21 @@ limitations under the License.
 local System = System
 local defInf = System.defInf
 local emptyFn = System.emptyFn
-local IEnumerable = System.IEnumerable
-local IEnumerator = System.IEnumerator
 
-defInf("System.IFormattable")
-defInf("System.IComparable")
+local IComparable = defInf("System.IComparable")
+local IFormattable = defInf("System.IFormattable")
+local IConvertible = defInf("System.IConvertible")
 defInf("System.IFormatProvider")
 defInf("System.ICloneable")
-defInf("System.IConvertible")
 
 defInf("System.IComparable_1", emptyFn)
 defInf("System.IEquatable_1", emptyFn)
 
 defInf("System.IPromise")
 defInf("System.IDisposable")
+
+local IEnumerable = defInf("System.IEnumerable")
+local IEnumerator = defInf("System.IEnumerator")
 
 local ICollection = defInf("System.ICollection", {
   __inherits__ = { IEnumerable }
@@ -62,9 +63,27 @@ local ICollection_1 = defInf("System.ICollection_1", function(T)
   }
 end)
 
+local IReadOnlyCollection_1 = defInf("System.IReadOnlyCollection_1", function (T)
+  return { 
+    __inherits__ = { IEnumerable_1(T) } 
+  }
+end)
+
+defInf("System.IReadOnlyList_1", function (T)
+  return { 
+    __inherits__ = { IReadOnlyCollection_1(T) } 
+  }
+end)
+
 defInf('System.IDictionary_2', function(TKey, TValue) 
   return {
-    __inherits__ = IEnumerable
+    __inherits__ = { ICollection_1(System.KeyValuePair(TKey, TValue)) }
+  }
+end)
+
+defInf("System.IReadOnlyDictionary_2", function(TKey, TValue) 
+  return {
+    __inherits__ = { IReadOnlyCollection_1(System.KeyValuePair(TKey, TValue)) }
   }
 end)
 
@@ -83,3 +102,5 @@ end)
 defInf("System.IComparer_1", emptyFn)
 defInf("System.IEqualityComparer")
 defInf("System.IEqualityComparer_1", emptyFn)
+
+System.enumMetatable.interface = { IComparable, IFormattable, IConvertible }

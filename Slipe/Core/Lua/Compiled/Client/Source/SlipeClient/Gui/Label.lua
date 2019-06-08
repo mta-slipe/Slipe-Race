@@ -70,6 +70,17 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Color", 0x106, out.Slipe.Shared.Utilities.Color, getColor, setColor },
+            { "Extent", 0x206, System.Single, getExtent },
+            { "FontHeight", 0x206, System.Single, getFontHeight }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x506, __ctor2__, System.Numerics.Vector2, System.Numerics.Vector2, System.String, System.Boolean, out.Slipe.Client.Gui.GuiElement },
+            { "SetHorizontalAlign", 0x286, SetHorizontalAlign, System.Int32, System.Boolean, System.Boolean },
+            { "SetVerticalAlign", 0x186, SetVerticalAlign, System.Int32, System.Boolean }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 26 --[[ElementType.GuiLabel]]) }
         }
       end

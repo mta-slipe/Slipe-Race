@@ -210,7 +210,33 @@ System.namespace("Slipe.Client.Sounds", function (namespace)
       getAlbumArtist = getAlbumArtist,
       getStreamName = getStreamName,
       getStreamTitle = getStreamTitle,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "sound", 0x1, out.Slipe.Client.Sounds.Sound }
+          },
+          properties = {
+            { "Album", 0x206, System.String, getAlbum },
+            { "AlbumArtist", 0x206, System.String, getAlbumArtist },
+            { "Artist", 0x206, System.String, getArtist },
+            { "Comment", 0x206, System.String, getComment },
+            { "Composer", 0x206, System.String, getComposer },
+            { "Copyright", 0x206, System.String, getCopyright },
+            { "Genre", 0x206, System.String, getGenre },
+            { "StreamName", 0x206, System.String, getStreamName },
+            { "StreamTitle", 0x206, System.String, getStreamTitle },
+            { "Subtitle", 0x206, System.String, getSubtitle },
+            { "Title", 0x206, System.String, getTitle },
+            { "Track", 0x206, System.String, getTrack },
+            { "Year", 0x206, System.String, getYear }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.Client.Sounds.Sound }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

@@ -76,7 +76,28 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "component", 0x1, System.String },
+            { "vehicle", 0x1, out.Slipe.Client.Vehicles.BaseVehicle }
+          },
+          properties = {
+            { "Base", 0x6, System.Int32 },
+            { "Position", 0x106, System.Numerics.Vector3, getPosition, setPosition },
+            { "Rotation", 0x106, System.Numerics.Vector3, getRotation, setRotation },
+            { "Visible", 0x106, System.Boolean, getVisible, setVisible }
+          },
+          methods = {
+            { ".ctor", 0x306, __ctor1__, out.Slipe.Client.Vehicles.BaseVehicle, System.Int32, System.Int32 },
+            { ".ctor", 0x306, __ctor2__, out.Slipe.Client.Vehicles.BaseVehicle, System.String, System.Int32 },
+            { "ResetPosition", 0x86, ResetPosition, System.Boolean },
+            { "ResetRotation", 0x86, ResetRotation, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

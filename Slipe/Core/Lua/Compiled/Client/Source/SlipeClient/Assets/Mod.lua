@@ -103,7 +103,26 @@ System.namespace("Slipe.Client.Assets", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "col", 0x1, out.Slipe.Client.Assets.Col },
+            { "dff", 0x1, out.Slipe.Client.Assets.Dff },
+            { "modelsToApply", 0x1, System.List(System.Int32) },
+            { "state", 0x1, System.Int32 },
+            { "txd", 0x1, out.Slipe.Client.Assets.Txd }
+          },
+          methods = {
+            { ".ctor", 0x306, __ctor1__, out.Slipe.Client.Assets.Txd, out.Slipe.Client.Assets.Dff, out.Slipe.Client.Assets.Col },
+            { ".ctor", 0x306, __ctor2__, System.String, System.String, System.String },
+            { "ApplyFiles", 0x101, ApplyFiles, System.Int32 },
+            { "ApplyTo", 0x106, ApplyTo, System.Int32 },
+            { "OnFileDownload", 0x1, OnFileDownload }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

@@ -38,7 +38,19 @@ System.namespace("Slipe.Server.Weapons", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "JetPackEnabled", 0x106, System.Boolean, getJetPackEnabled, setJetPackEnabled }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, System.String },
+            { ".ctor", 0x106, __ctor2__, System.Int32 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

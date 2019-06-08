@@ -11,8 +11,8 @@ System.namespace("Slipe.Server.Pickups", function (namespace)
   -- Class for a GTA pickup
   -- </summary>
   namespace.class("Pickup", function (namespace)
-    local getRespawnInterval, setRespawnInterval, getIsSpawned, Use, __ctor1__, __ctor2__, __ctor3__, __ctor4__, 
-    __ctor5__
+    local getRespawnInterval, setRespawnInterval, getIsSpawned, Use, class, __ctor1__, __ctor2__, __ctor3__, 
+    __ctor4__, __ctor5__
     __ctor1__ = function (this, element)
       SlipeSharedPickups.SharedPickup.__ctor__(this, element)
     end
@@ -55,7 +55,7 @@ System.namespace("Slipe.Server.Pickups", function (namespace)
     Use = function (this, player)
       return SlipeMtaDefinitions.MtaShared.UsePickup(this.element, player:getMTAElement())
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Shared.Pickups.SharedPickup
@@ -74,9 +74,26 @@ System.namespace("Slipe.Server.Pickups", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "IsSpawned", 0x206, System.Boolean, getIsSpawned },
+            { "RespawnInterval", 0x106, System.Int32, getRespawnInterval, setRespawnInterval }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x506, __ctor2__, System.Numerics.Vector3, System.Int32, System.Int32, System.Int32, System.Int32 },
+            { ".ctor", 0x406, __ctor3__, System.Numerics.Vector3, out.Slipe.Shared.Weapons.SharedWeaponModel, System.Int32, System.Int32 },
+            { ".ctor", 0x306, __ctor4__, System.Numerics.Vector3, System.Int32, System.Int32 },
+            { ".ctor", 0x206, __ctor5__, System.Numerics.Vector3, System.Int32 },
+            { "Use", 0x186, Use, out.Slipe.Server.Peds.Player, System.Boolean }
+          },
+          events = {
+            { "OnSpawn", 0x6, System.Delegate(class, out.Slipe.Server.Pickups.Events.OnSpawnEventArgs, System.Void) },
+            { "OnUse", 0x6, System.Delegate(class, out.Slipe.Server.Pickups.Events.OnUseEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 5 --[[ElementType.Pickup]]) }
         }
       end
     }
+    return class
   end)
 end)

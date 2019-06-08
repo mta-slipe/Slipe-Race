@@ -93,7 +93,30 @@ System.namespace("Slipe.Server.Acl", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "entry", 0x5, out.Slipe.MtaDefinitions.MtaAcl }
+          },
+          properties = {
+            { "ACL", 0x206, out.Slipe.MtaDefinitions.MtaAcl, getACL },
+            { "All", 0x20E, System.Array(out.Slipe.Server.Acl.AclEntry), getAll },
+            { "Name", 0x206, System.String, getName }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaAcl },
+            { ".ctor", 0x106, __ctor2__, System.String },
+            { "Destroy", 0x86, Destroy, System.Boolean },
+            { "Get", 0x18E, Get, System.String, class },
+            { "GetRight", 0x186, GetRight, System.String, System.Boolean },
+            { "GetRights", 0x186, GetRights, System.Int32, System.Array(System.String) },
+            { "RemoveRight", 0x186, RemoveRight, System.String, System.Boolean },
+            { "SetRight", 0x286, SetRight, System.String, System.Boolean, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

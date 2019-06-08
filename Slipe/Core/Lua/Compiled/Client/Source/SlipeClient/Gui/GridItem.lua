@@ -61,7 +61,27 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       getData = getData,
       setData = setData,
       SetSection = SetSection,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "glist", 0x1, out.Slipe.Client.Gui.GridList },
+            { "textSet", 0x1, System.Boolean }
+          },
+          properties = {
+            { "Color", 0x106, out.Slipe.Shared.Utilities.Color, getColor, setColor },
+            { "Column", 0x6, out.Slipe.Client.Gui.GridColumn },
+            { "Content", 0x106, System.String, getContent, setContent },
+            { "Data", 0x106, System.Object, getData, setData },
+            { "Row", 0x6, out.Slipe.Client.Gui.GridRow }
+          },
+          methods = {
+            { ".ctor", 0x306, nil, out.Slipe.Client.Gui.GridColumn, out.Slipe.Client.Gui.GridRow, out.Slipe.Client.Gui.GridList },
+            { "SetSection", 0x186, SetSection, System.String, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

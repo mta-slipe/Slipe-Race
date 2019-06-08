@@ -7,7 +7,6 @@ local SlipeServerPeds
 local SlipeServerRendering
 local SlipeSharedElements
 local SlipeSharedExceptions
-local SlipeSharedIO
 local SlipeSharedPeds
 local SlipeSharedUtilities
 System.import(function (out)
@@ -18,7 +17,6 @@ System.import(function (out)
   SlipeServerRendering = Slipe.Server.Rendering
   SlipeSharedElements = Slipe.Shared.Elements
   SlipeSharedExceptions = Slipe.Shared.Exceptions
-  SlipeSharedIO = Slipe.Shared.IO
   SlipeSharedPeds = Slipe.Shared.Peds
   SlipeSharedUtilities = Slipe.Shared.Utilities
 end)
@@ -33,7 +31,7 @@ System.namespace("Slipe.Server.Peds", function (namespace)
     getMuted, setMuted, getAll, getAlive, getDead, getRandom, getCount, IsDisplayObserver, 
     Login, LogOut, Spawn, SetAnnounceValue, GetAnnounceValue, GiveMoney, Redirect, ResendACInfo, 
     ResendModInfo, SetHudComponentVisible, SetVoiceBroadCastTo, SetVoiceIgnoreFrom, TakeMoney, TakeScreenShot, PlaySoundFrontEnd, DetonateSatchels, 
-    GetFromName, initEnums, class, __ctor__
+    GetFromName, class, __ctor__
     __ctor__ = function (this, mtaElement)
       SlipeServerPeds.Ped.__ctor__[1](this, mtaElement)
       this.Camera = SlipeServerRendering.Camera(this)
@@ -178,7 +176,7 @@ System.namespace("Slipe.Server.Peds", function (namespace)
     -- <summary>
     -- Spawn the player at a certain position
     -- </summary>
-    Spawn = function (this, position, rotation, skin, interior, dimension, team)
+    Spawn = function (this, position, skin, rotation, interior, dimension, team)
       local default
       if team == nil then
         default = nil
@@ -282,11 +280,6 @@ System.namespace("Slipe.Server.Peds", function (namespace)
         return extern
       end
     end
-    initEnums = function (this)
-      local m = System.cast(System.Int32, System.Enum.Parse(System.typeof(SlipeSharedIO.MouseButton), "Left", true))
-      local s = System.cast(System.Int32, System.Enum.Parse(System.typeof(SlipeSharedIO.MouseButtonState), "Down", true))
-      local q = System.cast(System.Int32, System.Enum.Parse(System.typeof(SlipeSharedPeds.QuitType), "Disconnected", true))
-    end
     class = {
       __inherits__ = function (out)
         return {
@@ -345,6 +338,88 @@ System.namespace("Slipe.Server.Peds", function (namespace)
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Account", 0x206, out.Slipe.Server.Accounts.Account, getAccount },
+            { "Alive", 0x20E, System.Array(out.Slipe.Server.Peds.Player), getAlive },
+            { "All", 0x20E, System.Array(out.Slipe.Server.Peds.Player), getAll },
+            { "BlurLevel", 0x106, System.Int32, getBlurLevel, setBlurLevel },
+            { "Camera", 0x6, out.Slipe.Server.Rendering.Camera },
+            { "Count", 0x20E, System.Int32, getCount },
+            { "Dead", 0x20E, System.Array(out.Slipe.Server.Peds.Player), getDead },
+            { "ForceMap", 0x106, System.Boolean, getForceMap, setForceMap },
+            { "IdleTime", 0x206, System.Int32, getIdleTime },
+            { "IP", 0x206, System.String, getIP },
+            { "Money", 0x106, System.Int32, getMoney, setMoney },
+            { "Muted", 0x106, System.Boolean, getMuted, setMuted },
+            { "Name", 0x106, System.String, getName, setName },
+            { "NametagColor", 0x106, out.Slipe.Shared.Utilities.Color, getNametagColor, setNametagColor },
+            { "NametagShowing", 0x106, System.Boolean, getNametagShowing, setNametagShowing },
+            { "NametagText", 0x106, System.String, getNametagText, setNametagText },
+            { "Ping", 0x206, System.Int32, getPing },
+            { "Random", 0x20E, class, getRandom },
+            { "Serial", 0x206, System.String, getSerial },
+            { "Team", 0x106, out.Slipe.Server.Game.Team, getTeam, setTeam },
+            { "Version", 0x206, System.String, getVersion },
+            { "WantedLevel", 0x106, System.Int32, getWantedLevel, setWantedLevel }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.MtaDefinitions.MtaElement },
+            { "DetonateSatchels", 0x86, DetonateSatchels, System.Boolean },
+            { "GetAnnounceValue", 0x186, GetAnnounceValue, System.String, System.String },
+            { "GetFromName", 0x18E, GetFromName, System.String, class },
+            { "GiveMoney", 0x186, GiveMoney, System.Int32, System.Boolean },
+            { "IsDisplayObserver", 0x186, IsDisplayObserver, out.Slipe.Server.Displays.Display, System.Boolean },
+            { "Login", 0x286, Login, out.Slipe.Server.Accounts.Account, System.String, System.Boolean },
+            { "LogOut", 0x86, LogOut, System.Boolean },
+            { "PlaySoundFrontEnd", 0x186, PlaySoundFrontEnd, System.Int32, System.Boolean },
+            { "Redirect", 0x386, Redirect, System.String, System.Int32, System.String, System.Boolean },
+            { "ResendACInfo", 0x86, ResendACInfo, System.Boolean },
+            { "ResendModInfo", 0x86, ResendModInfo, System.Boolean },
+            { "SetAnnounceValue", 0x286, SetAnnounceValue, System.String, System.String, System.Boolean },
+            { "SetHudComponentVisible", 0x286, SetHudComponentVisible, System.Int32, System.Boolean, System.Boolean },
+            { "SetVoiceBroadCastTo", 0x186, SetVoiceBroadCastTo, System.Array(out.Slipe.Shared.Elements.Element), System.Boolean },
+            { "SetVoiceIgnoreFrom", 0x186, SetVoiceIgnoreFrom, System.Array(out.Slipe.Shared.Elements.Element), System.Boolean },
+            { "Spawn", 0x606, Spawn, System.Numerics.Vector3, System.Int32, System.Int32, System.Int32, System.Int32, out.Slipe.Server.Game.Team },
+            { "TakeMoney", 0x186, TakeMoney, System.Int32, System.Boolean },
+            { "TakeScreenShot", 0x586, TakeScreenShot, System.Numerics.Vector2, System.String, System.Int32, System.Int32, System.Int32, System.Boolean }
+          },
+          events = {
+            { "OnConsole", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnConsoleEventArgs, System.Void) },
+            { "OnCollisionShapeHit", 0x6, System.Delegate(class, out.Slipe.Shared.Elements.Events.OnCollisionShapeHitEventArgs, System.Void) },
+            { "OnCollisionShapeLeave", 0x6, System.Delegate(class, out.Slipe.Shared.Elements.Events.OnCollisionShapeLeaveEventArgs, System.Void) },
+            { "OnJoin", 0xE, System.Delegate(class, out.Slipe.Server.Peds.Events.OnJoinEventArgs, System.Void) },
+            { "OnAcInfo", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnAcInfoEventArgs, System.Void) },
+            { "OnBanAdded", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnBanAddedEventArgs, System.Void) },
+            { "OnBanned", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnBannedEventArgs, System.Void) },
+            { "OnNicknameChanged", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnNicknameChangedEventArgs, System.Void) },
+            { "OnChat", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnChatEventArgs, System.Void) },
+            { "OnClick", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnClickEventArgs, System.Void) },
+            { "OnCommand", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnCommandEventArgs, System.Void) },
+            { "OnContact", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnContactEventArgs, System.Void) },
+            { "OnDamage", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnDamageEventArgs, System.Void) },
+            { "OnLogin", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnLoginEventArgs, System.Void) },
+            { "OnLogout", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnLogoutEventArgs, System.Void) },
+            { "OnMarkerHit", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnMarkerHitEventArgs, System.Void) },
+            { "OnMarkerLeave", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnMarkerLeaveEventArgs, System.Void) },
+            { "OnPickupHit", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnPickupHitEventArgs, System.Void) },
+            { "OnPickupLeave", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnPickupLeaveEventArgs, System.Void) },
+            { "OnPickupUse", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnPickupUseEventArgs, System.Void) },
+            { "OnModInfo", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnModInfoEventArgs, System.Void) },
+            { "OnMuted", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnMutedEventArgs, System.Void) },
+            { "OnUnmuted", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnUnmutedEventArgs, System.Void) },
+            { "OnNetworkInteruption", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnNetworkInteruptionEventArgs, System.Void) },
+            { "OnPrivateMessage", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnPrivateMessageEventArgs, System.Void) },
+            { "OnQuit", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnQuitEventArgs, System.Void) },
+            { "OnScreenShot", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnScreenShotEventArgs, System.Void) },
+            { "OnSpawn", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnSpawnEventArgs, System.Void) },
+            { "OnStealthKill", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnStealthKillEventArgs, System.Void) },
+            { "OnTarget", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnTargetEventArgs, System.Void) },
+            { "OnVehicleEnter", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnVehicleEnterEventArgs, System.Void) },
+            { "OnVehicleExit", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnVehicleExitEventArgs, System.Void) },
+            { "OnVoiceStart", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnVoiceStartEventArgs, System.Void) },
+            { "OnVoiceStop", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnVoiceStopEventArgs, System.Void) },
+            { "OnWeaponFire", 0x6, System.Delegate(class, out.Slipe.Server.Peds.Events.OnWeaponFireEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 1 --[[ElementType.Player]]) }
         }
       end

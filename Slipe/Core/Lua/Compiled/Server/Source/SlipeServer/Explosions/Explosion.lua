@@ -21,7 +21,16 @@ System.namespace("Slipe.Server.Explosions", function (namespace)
       return SlipeMtaDefinitions.MtaServer.CreateExplosion(position.X, position.Y, position.Z, type, default)
     end
     return {
-      Create = Create
+      Create = Create,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x1, nil },
+            { "Create", 0x38E, Create, System.Numerics.Vector3, System.Int32, out.Slipe.Shared.Elements.Element, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

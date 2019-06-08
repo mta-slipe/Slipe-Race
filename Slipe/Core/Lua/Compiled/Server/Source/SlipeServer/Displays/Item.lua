@@ -111,7 +111,32 @@ System.namespace("Slipe.Server.Displays", function (namespace)
         __ctor2__,
         __ctor3__,
         __ctor4__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Color", 0x106, out.Slipe.Shared.Utilities.Color, getColor, setColor },
+            { "Content", 0x106, System.String, getContent, setContent },
+            { "Display", 0x6, out.Slipe.Server.Displays.Display },
+            { "ItemElement", 0x6, out.Slipe.MtaDefinitions.MtaElement },
+            { "Position", 0x106, System.Numerics.Vector2, getPosition, setPosition },
+            { "Priority", 0x106, System.Int32, getPriority, setPriority },
+            { "Scale", 0x106, System.Single, getScale, setScale },
+            { "Visible", 0x106, System.Boolean, getVisible, setVisible }
+          },
+          fields = {
+            { "visible", 0x1, System.Boolean }
+          },
+          methods = {
+            { ".ctor", 0x906, __ctor1__, out.Slipe.Server.Displays.Display, System.String, System.Numerics.Vector2, System.Int32, out.Slipe.Shared.Utilities.Color, System.Single, System.Int32, System.Int32, System.Int32 },
+            { ".ctor", 0x606, __ctor2__, out.Slipe.Server.Displays.Display, System.String, System.Numerics.Vector2, System.Int32, out.Slipe.Shared.Utilities.Color, System.Single },
+            { ".ctor", 0x406, __ctor3__, out.Slipe.Server.Displays.Display, System.String, System.Numerics.Vector2, System.Int32 },
+            { ".ctor", 0x306, __ctor4__, out.Slipe.Server.Displays.Display, System.String, System.Numerics.Vector2 },
+            { "Destroy", 0x86, Destroy, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

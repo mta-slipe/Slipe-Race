@@ -44,7 +44,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     -- <summary>
     -- Draw this line
     -- </summary>
-    Draw = function (this)
+    Draw = function (this, source, eventArgs)
       if SystemNumerics.Vector3.op_Equality(this.FaceToward, SystemNumerics.Vector3.getZero()) then
         local default = this.Material
         if default ~= nil then
@@ -71,7 +71,22 @@ System.namespace("Slipe.Client.Dx", function (namespace)
         __ctor1__,
         __ctor2__,
         __ctor3__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "UV", 0x1, System.Numerics.Vector2 },
+            { "UVDimensions", 0x1, System.Numerics.Vector2 }
+          },
+          methods = {
+            { ".ctor", 0x906, __ctor1__, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Client.Dx.Material, System.Single, out.Slipe.Shared.Utilities.Color, System.Numerics.Vector3, System.Boolean },
+            { ".ctor", 0x706, __ctor2__, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Client.Dx.Material, System.Single, out.Slipe.Shared.Utilities.Color },
+            { ".ctor", 0x606, __ctor3__, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Client.Dx.Material, System.Single },
+            { "Draw", 0x286, Draw, out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Rendering.Events.OnRenderEventArgs, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

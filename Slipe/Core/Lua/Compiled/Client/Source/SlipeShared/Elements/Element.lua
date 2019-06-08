@@ -116,6 +116,32 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          fields = {
+            { "element", 0x5, out.Slipe.MtaDefinitions.MtaElement }
+          },
+          properties = {
+            { "CallPropagationEnabled", 0x106, System.Boolean, getCallPropagationEnabled, setCallPropagationEnabled },
+            { "ChildCount", 0x206, System.Int32, getChildCount },
+            { "ID", 0x106, System.String, getID, setID },
+            { "MTAElement", 0x206, out.Slipe.MtaDefinitions.MtaElement, getMTAElement },
+            { "Parent", 0x106, class, getParent, setParent },
+            { "Root", 0x20E, class, getRoot },
+            { "Type", 0x206, System.String, getType }
+          },
+          methods = {
+            { ".ctor", 0x6, __ctor1__ },
+            { ".ctor", 0x106, __ctor2__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x206, __ctor3__, System.String, System.String },
+            { "Destroy", 0x86, Destroy, System.Boolean },
+            { "GetByID", 0x28E, GetByID, System.String, System.Int32, class },
+            { "GetChild", 0x186, GetChild, System.Int32, class },
+            { "GetChildren", 0x186, GetChildren, System.String, System.Array(out.Slipe.Shared.Elements.Element) },
+            { "HandleEvent", 0xA06, HandleEvent, System.String, out.Slipe.MtaDefinitions.MtaElement, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object },
+            { "ListenForEvent", 0x306, ListenForEvent, System.String, System.Boolean, System.String }
+          },
+          events = {
+            { "OnDestroy", 0x6, System.Delegate(class, out.Slipe.Shared.Elements.Events.OnDestroyEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 0 --[[ElementType.Element]]) }
         }
       end

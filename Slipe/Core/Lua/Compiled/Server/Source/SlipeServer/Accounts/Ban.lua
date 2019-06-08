@@ -14,8 +14,8 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
   -- </summary>
   namespace.class("Ban", function (namespace)
     local getAdmin, setAdmin, getIp, getSerial, getReason, setReason, getNickname, setNickname, 
-    getTimeStamp, getUnbanTimeStamp, setUnbanTimeStamp, getAll, Remove, Remove1, HandleAdded, HandleRemoved, 
-    class, __ctor1__, __ctor2__
+    getTimeStamp, getUnbanTimeStamp, setUnbanTimeStamp, getAll, Remove, Remove1, class, __ctor1__, 
+    __ctor2__
     -- <summary>
     -- Add a ban of a specific IP and/or serial
     -- </summary>
@@ -112,18 +112,6 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
     Remove1 = function (this)
       Remove(this)
     end
-    HandleAdded = function (this)
-      local default = this.OnAdded
-      if default ~= nil then
-        default()
-      end
-    end
-    HandleRemoved = function (this, responsiblePlayer)
-      local default = this.OnRemoved
-      if default ~= nil then
-        default(responsiblePlayer)
-      end
-    end
     class = {
       getAdmin = getAdmin,
       setAdmin = setAdmin,
@@ -139,12 +127,38 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
       getAll = getAll,
       Remove = Remove,
       Remove1 = Remove1,
-      HandleAdded = HandleAdded,
-      HandleRemoved = HandleRemoved,
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "ban", 0x1, out.Slipe.MtaDefinitions.MtaBan }
+          },
+          properties = {
+            { "Admin", 0x106, System.String, getAdmin, setAdmin },
+            { "All", 0x20E, System.Array(out.Slipe.Server.Accounts.Ban), getAll },
+            { "Ip", 0x206, System.String, getIp },
+            { "Nickname", 0x106, System.String, getNickname, setNickname },
+            { "Reason", 0x106, System.String, getReason, setReason },
+            { "Serial", 0x206, System.String, getSerial },
+            { "TimeStamp", 0x206, System.Int32, getTimeStamp },
+            { "UnbanTimeStamp", 0x106, System.Int32, getUnbanTimeStamp, setUnbanTimeStamp }
+          },
+          methods = {
+            { ".ctor", 0x506, __ctor1__, System.String, System.String, out.Slipe.Server.Peds.Player, System.String, System.Int32 },
+            { ".ctor", 0x106, __ctor2__, out.Slipe.MtaDefinitions.MtaBan },
+            { "Remove", 0x106, Remove, out.Slipe.Server.Peds.Player },
+            { "Remove", 0x6, Remove1 }
+          },
+          events = {
+            { "OnRemoved", 0xE, System.Delegate(out.Slipe.Server.Elements.RootElement, out.Slipe.Server.Accounts.Events.OnRemovedEventArgs, System.Void) },
+            { "OnAdded", 0xE, System.Delegate(out.Slipe.Server.Elements.RootElement, out.Slipe.Server.Accounts.Events.OnAddedEventArgs, System.Void) }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

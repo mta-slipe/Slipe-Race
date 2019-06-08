@@ -44,7 +44,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     -- <summary>
     -- Draw this circle
     -- </summary>
-    Draw = function (this)
+    Draw = function (this, source, eventArgs)
       return SlipeMtaDefinitions.MtaClient.DxDrawCircle(this:getPosition().X, this:getPosition().Y, this.Radius, this.StartAngle, this.StopAngle, this.Color:getHex(), this.CenterColor:getHex(), this.Segments, this.Ratio, this.PostGUI)
     end
     return {
@@ -64,7 +64,26 @@ System.namespace("Slipe.Client.Dx", function (namespace)
         __ctor1__,
         __ctor2__,
         __ctor3__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "CenterColor", 0x6, out.Slipe.Shared.Utilities.Color },
+            { "Radius", 0x6, System.Single },
+            { "Ratio", 0x1, System.Int32 },
+            { "Segments", 0x1, System.Int32 },
+            { "StartAngle", 0x1, System.Single },
+            { "StopAngle", 0x1, System.Single }
+          },
+          methods = {
+            { ".ctor", 0x906, __ctor1__, System.Numerics.Vector2, System.Single, out.Slipe.Shared.Utilities.Color, out.Slipe.Shared.Utilities.Color, System.Single, System.Single, System.Int32, System.Int32, System.Boolean },
+            { ".ctor", 0x306, __ctor2__, System.Numerics.Vector2, System.Single, out.Slipe.Shared.Utilities.Color },
+            { ".ctor", 0x206, __ctor3__, System.Numerics.Vector2, System.Single },
+            { "Draw", 0x286, Draw, out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Rendering.Events.OnRenderEventArgs, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

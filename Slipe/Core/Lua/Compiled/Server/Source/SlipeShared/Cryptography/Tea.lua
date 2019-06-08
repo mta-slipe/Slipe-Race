@@ -30,7 +30,16 @@ System.namespace("Slipe.Shared.Cryptography", function (namespace)
     end
     return {
       Encrypt = Encrypt,
-      Decrypt = Decrypt
+      Decrypt = Decrypt,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "Decrypt", 0x28E, Decrypt, System.String, System.String, System.String },
+            { "Encrypt", 0x28E, Encrypt, System.String, System.String, System.String }
+          },
+          class = { 0xE }
+        }
+      end
     }
   end)
 end)

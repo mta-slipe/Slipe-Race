@@ -26,7 +26,25 @@ System.namespace("Slipe.Shared.Helpers", function (namespace)
     end
     return {
       Number = 0,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Mta", 0x6, System.String },
+            { "Name", 0x6, System.String },
+            { "Netcode", 0x6, System.String },
+            { "Number", 0x6, System.Int32 },
+            { "Os", 0x6, System.String },
+            { "Sortable", 0x6, System.String },
+            { "Tag", 0x6, System.String },
+            { "Type", 0x6, System.String }
+          },
+          methods = {
+            { ".ctor", 0x6, nil }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

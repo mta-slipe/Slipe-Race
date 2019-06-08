@@ -3,16 +3,16 @@ local System = System
 local SlipeMtaDefinitions
 local SlipeSharedElements
 local SystemReflection
-local DictObjectElement
 local DictStringType
 local DictTypeString
+local DictObjectElement
 System.import(function (out)
   SlipeMtaDefinitions = Slipe.MtaDefinitions
   SlipeSharedElements = Slipe.Shared.Elements
   SystemReflection = System.Reflection
-  DictObjectElement = System.Dictionary(System.Object, SlipeSharedElements.Element)
   DictStringType = System.Dictionary(System.String, System.Type)
   DictTypeString = System.Dictionary(System.Type, System.String)
+  DictObjectElement = System.Dictionary(System.Object, SlipeSharedElements.Element)
 end)
 System.namespace("Slipe.Shared.Elements", function (namespace)
   -- <summary>
@@ -53,7 +53,7 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
     -- Registers an element class
     -- </summary>
     RegisterElement = function (this, element)
-      this.elements:Add(element:getMTAElement(), element)
+      this.elements:set(element:getMTAElement(), element)
     end
     -- <summary>
     -- Gets a generic type class instance given a certain MTA element
@@ -78,7 +78,8 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
           end
         end)
         local default, extern = System.try(function ()
-          return true, System.cast(T, System.CreateInstance(elementType, element))
+          local instance = System.CreateInstance(elementType, element)
+          return true, System.cast(T, instance)
         end, function (default)
           return true, nil
         end)
@@ -123,7 +124,7 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
 
       local mtaElements = SlipeMtaDefinitions.MtaShared.GetListFromTable(SlipeMtaDefinitions.MtaClient.GetElementsByType(this.defaultElementTypeNames:get(System.typeof(T)), startAt:getMTAElement(), streamedIn), "element")
       for _, mtaElement in System.each(mtaElements) do
-        local element = GetElement(this, System.cast(SlipeMtaDefinitions.MtaElement, mtaElement), T)
+        local element = GetElement(this, mtaElement, T)
         if element ~= nil then
           elements:Add(element)
         end
@@ -135,7 +136,7 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
     -- Get a list of all classes of a specific element
     -- </summary>
     GetByType1 = function (this, T)
-      return GetByType(this, this.root, false, T)
+      return GetByType(this, getRoot(this), false, T)
     end
     AddEventHandler = function (this, element, eventName, propagated, priorty)
       SlipeMtaDefinitions.MtaShared.AddEventHandler(eventName, element:getMTAElement(), "Slipe.Shared.Elements.ElementManager.HandleEvent", propagated, priorty)
@@ -158,7 +159,35 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
       GetByType1 = GetByType1,
       AddEventHandler = AddEventHandler,
       HandleEvent = HandleEvent,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "defaultElementTypeNames", 0x1, System.Dictionary(System.Type, System.String) },
+            { "defaultElementTypes", 0x1, System.Dictionary(System.String, System.Type) },
+            { "elements", 0x1, System.Dictionary(System.Object, out.Slipe.Shared.Elements.Element) },
+            { "instance", 0x9, class },
+            { "root", 0x1, out.Slipe.Shared.Elements.Element }
+          },
+          properties = {
+            { "Instance", 0x20E, class, getInstance },
+            { "Root", 0x206, out.Slipe.Shared.Elements.Element, getRoot }
+          },
+          methods = {
+            { ".ctor", 0x6, nil },
+            { "AddEventHandler", 0x405, AddEventHandler, out.Slipe.Shared.Elements.Element, System.String, System.Boolean, System.String },
+            { "CastArray", 0x10186, CastArray, function (T) return System.Array(out.Slipe.MtaDefinitions.MtaElement), System.Array(T) end },
+            { "GetByType", 0x10286, GetByType, function (T) return out.Slipe.Shared.Elements.Element, System.Boolean, System.List(T) end },
+            { "GetByType", 0x10086, GetByType1, function (T) return System.List(T) end },
+            { "GetElement", 0x10186, GetElement, function (T) return out.Slipe.MtaDefinitions.MtaElement, T end },
+            { "GetElement", 0x186, GetElement1, out.Slipe.MtaDefinitions.MtaElement, out.Slipe.Shared.Elements.Element },
+            { "GetTypeName", 0x186, GetTypeName, System.Type, System.String },
+            { "HandleEvent", 0xA0E, HandleEvent, System.String, out.Slipe.MtaDefinitions.MtaElement, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object },
+            { "RegisterElement", 0x106, RegisterElement, out.Slipe.Shared.Elements.Element }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

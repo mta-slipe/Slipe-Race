@@ -14,13 +14,13 @@ System.namespace("Slipe.Shared.Helpers", function (namespace)
     -- Convert degrees to radians
     -- </summary>
     ToRadians = function (x)
-      return x * 0.0174532923847437 --[[(float)(Math.PI / 180.0)]]
+      return x * 0.01745329238474369 --[[(float)(Math.PI / 180.0)]]
     end
     -- <summary>
     -- Convert radians to degrees
     -- </summary>
     ToDegrees = function (x)
-      return System.ToSingle(x * (57.2957795130823 --[[180.0 / Math.PI]]))
+      return System.ToSingle(x * (57.295779513082323 --[[180.0 / Math.PI]]))
     end
     -- <summary>
     -- Translate an MTA Euler Rotation to a Quaternion
@@ -48,7 +48,7 @@ System.namespace("Slipe.Shared.Helpers", function (namespace)
       local sinp = 2.0 * (v4 * v2 - v3 * v1)
       local pitch
       if math.Abs(sinp) >= 1 then
-        pitch = math.Sign(sinp) > 0 and 3.14159265358979 --[[Math.PI]] or - 3.14159265358979 --[[Math.PI]]
+        pitch = math.Sign(sinp) > 0 and 3.1415926535897931 --[[Math.PI]] or - 3.1415926535897931 --[[Math.PI]]
       else
         pitch = math.Asin(sinp)
       end
@@ -59,15 +59,15 @@ System.namespace("Slipe.Shared.Helpers", function (namespace)
       local yaw = math.Atan2(siny_cosp, cosy_cosp)
 
       if yaw < 0 then
-        yaw = yaw + (6.28318530717959 --[[2 * Math.PI]])
+        yaw = yaw + (6.2831853071795862 --[[2 * Math.PI]])
       end
 
       if pitch < 0 then
-        pitch = pitch + (6.28318530717959 --[[2 * Math.PI]])
+        pitch = pitch + (6.2831853071795862 --[[2 * Math.PI]])
       end
 
       if roll < 0 then
-        roll = roll + (6.28318530717959 --[[2 * Math.PI]])
+        roll = roll + (6.2831853071795862 --[[2 * Math.PI]])
       end
 
       return SystemNumerics.Vector3(ToDegrees(System.ToSingle(yaw)), ToDegrees(System.ToSingle(pitch)), ToDegrees(System.ToSingle(roll)))
@@ -87,7 +87,19 @@ System.namespace("Slipe.Shared.Helpers", function (namespace)
       ToDegrees = ToDegrees,
       EulerToQuaternion = EulerToQuaternion,
       QuaternionToEuler = QuaternionToEuler,
-      RotationBetweenPositions = RotationBetweenPositions
+      RotationBetweenPositions = RotationBetweenPositions,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "EulerToQuaternion", 0x18E, EulerToQuaternion, System.Numerics.Vector3, System.Numerics.Quaternion },
+            { "QuaternionToEuler", 0x18E, QuaternionToEuler, System.Numerics.Quaternion, System.Numerics.Vector3 },
+            { "RotationBetweenPositions", 0x28E, RotationBetweenPositions, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3 },
+            { "ToDegrees", 0x18E, ToDegrees, System.Single, System.Single },
+            { "ToRadians", 0x18E, ToRadians, System.Single, System.Single }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

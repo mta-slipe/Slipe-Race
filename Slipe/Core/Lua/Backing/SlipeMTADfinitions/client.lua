@@ -44,6 +44,7 @@ System.define("Slipe.MtaDefinitions.MtaClient", {
 	DetonateSatchels = detonateSatchels,
 	TakePlayerMoney = takePlayerMoney,
 	GetNetworkStats = function(...) local results = {getNetworkStats(...)} if results[1] == false then System.throw(Slipe.MtaDefinitions.MtaException()) return end return unpack(results) end,
+	CreateVehicle = function(...) local results = {createVehicle(...)} if results[1] == false then System.throw(Slipe.MtaDefinitions.MtaException()) return end return unpack(results) end,
 	BlowVehicle = blowVehicle,
 	GetRadioChannel = function(...) local results = {getRadioChannel(...)} if results[1] == false then System.throw(Slipe.MtaDefinitions.MtaException()) return end return unpack(results) end,
 	GetRadioChannelName = function(...) local results = {getRadioChannelName(...)} if results[1] == false then System.throw(Slipe.MtaDefinitions.MtaException()) return end return unpack(results) end,
@@ -517,12 +518,13 @@ System.define("Slipe.MtaDefinitions.MtaClient", {
  for i = 15, #args do
  tertiaryArguments[i - 14] = args[i]
  end
- local tertiaryTuple = System.Tuple(unpack(tertiaryArguments))
+ local tertiaryTuple = System.tuple(unpack(tertiaryArguments))
  secondaryArguments[8] = tertiaryTuple
- local secondaryTuple = System.Tuple(unpack(secondaryArguments))
+ local secondaryTuple = System.tuple(unpack(secondaryArguments))
  primaryArguments[8] = secondaryTuple
 
- return System.Tuple(unpack(primaryArguments))
+ local r = System.tuple(unpack(primaryArguments))
+ return r
 end,
 	SetInteriorFurnitureEnabled = setInteriorFurnitureEnabled,
 	SetBirdsEnabled = setBirdsEnabled,

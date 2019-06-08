@@ -49,7 +49,24 @@ System.namespace("Slipe.Client.Rpc", function (namespace)
       getInstance = getInstance,
       RegisterRPC = RegisterRPC,
       TriggerRPC = TriggerRPC,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "instance", 0x9, class },
+            { "RegisteredRPCs", 0x1, System.Dictionary(System.String, System.Delegate(System.Object, System.Void)) }
+          },
+          properties = {
+            { "Instance", 0x20E, class, getInstance }
+          },
+          methods = {
+            { ".ctor", 0x1, nil },
+            { "RegisterRPC", 0x10206, RegisterRPC, function (CallbackType) return System.String, System.Delegate(CallbackType, System.Void) end },
+            { "TriggerRPC", 0x206, TriggerRPC, System.String, System.Object }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

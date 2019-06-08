@@ -18,7 +18,7 @@ System.namespace("Slipe.Shared.Markers", function (namespace)
   -- </summary>
   namespace.class("SharedMarker", function (namespace)
     local getCount, getColor, setColor, getIcon, setIcon, getSize, setSize, getTarget, 
-    setTarget, getMarkerType, setMarkerType, __ctor__
+    setTarget, getMarkerType, setMarkerType, class, __ctor__
     __ctor__ = function (this, element)
       SlipeSharedElements.PhysicalElement.__ctor__(this, element)
     end
@@ -59,7 +59,7 @@ System.namespace("Slipe.Shared.Markers", function (namespace)
     setMarkerType = function (this, value)
       SlipeMtaDefinitions.MtaShared.SetMarkerType(this.element, value:ToEnumString(SlipeSharedMarkers.MarkerType):ToLower())
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Shared.Elements.PhysicalElement
@@ -76,7 +76,28 @@ System.namespace("Slipe.Shared.Markers", function (namespace)
       setTarget = setTarget,
       getMarkerType = getMarkerType,
       setMarkerType = setMarkerType,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Color", 0x106, out.Slipe.Shared.Utilities.Color, getColor, setColor },
+            { "Count", 0x20E, System.Int32, getCount },
+            { "Icon", 0x106, System.Int32, getIcon, setIcon },
+            { "MarkerType", 0x106, System.Int32, getMarkerType, setMarkerType },
+            { "Size", 0x106, System.Single, getSize, setSize },
+            { "Target", 0x106, System.Numerics.Vector3, getTarget, setTarget }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.MtaDefinitions.MtaElement }
+          },
+          events = {
+            { "OnHit", 0x6, System.Delegate(class, out.Slipe.Shared.Markers.Events.OnHitEventArgs, System.Void) },
+            { "OnLeave", 0x6, System.Delegate(class, out.Slipe.Shared.Markers.Events.OnLeaveEventArgs, System.Void) }
+          },
+          class = { 0x6 }
+        }
+      end
     }
+    return class
   end)
 end)

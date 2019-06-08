@@ -116,7 +116,29 @@ System.namespace("Slipe.Client.Effects", function (namespace)
       TyreBurst = TyreBurst,
       WaterHydrant = WaterHydrant,
       WaterSplash = WaterSplash,
-      Wood = Wood
+      Wood = Wood,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "Blood", 0x48E, Blood, System.Numerics.Vector3, System.Numerics.Vector3, System.Int32, System.Single, System.Boolean },
+            { "BulletImpact", 0x58E, BulletImpact, System.Numerics.Vector3, System.Numerics.Vector3, System.Int32, System.Int32, System.Single, System.Boolean },
+            { "BulletSplash", 0x18E, BulletSplash, System.Numerics.Vector3, System.Boolean },
+            { "Debris", 0x48E, Debris, System.Numerics.Vector3, out.Slipe.Shared.Utilities.Color, System.Single, System.Int32, System.Boolean },
+            { "FootSplash", 0x18E, FootSplash, System.Numerics.Vector3, System.Boolean },
+            { "Glass", 0x48E, Glass, System.Numerics.Vector3, out.Slipe.Shared.Utilities.Color, System.Single, System.Int32, System.Boolean },
+            { "Gunshot", 0x38E, Gunshot, System.Numerics.Vector3, System.Numerics.Vector3, System.Boolean, System.Boolean },
+            { "PunchImpact", 0x28E, PunchImpact, System.Numerics.Vector3, System.Numerics.Vector3, System.Boolean },
+            { "Sparks", 0x78E, Sparks, System.Numerics.Vector3, System.Numerics.Vector3, System.Single, System.Int32, System.Boolean, System.Single, System.Single, System.Boolean },
+            { "Sparks", 0x88E, Sparks1, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3, System.Single, System.Int32, System.Boolean, System.Single, System.Single, System.Boolean },
+            { "TankFire", 0x28E, TankFire, System.Numerics.Vector3, System.Numerics.Vector3, System.Boolean },
+            { "TyreBurst", 0x28E, TyreBurst, System.Numerics.Vector3, System.Numerics.Vector3, System.Boolean },
+            { "WaterHydrant", 0x18E, WaterHydrant, System.Numerics.Vector3, System.Boolean },
+            { "WaterSplash", 0x18E, WaterSplash, System.Numerics.Vector3, System.Boolean },
+            { "Wood", 0x48E, Wood, System.Numerics.Vector3, System.Numerics.Vector3, System.Int32, System.Single, System.Boolean }
+          },
+          class = { 0xE }
+        }
+      end
     }
   end)
 end)

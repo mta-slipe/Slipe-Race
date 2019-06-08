@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
+using System.Timers;
 
 namespace ServerSide.GameMode
 {
@@ -19,33 +20,36 @@ namespace ServerSide.GameMode
             players = new List<RacePlayer>();
 
             Player.OnJoin += HandlePlayerJoin;
-            foreach (Player player in ElementManager.Instance.GetByType<Player>(Element.Root))
+            foreach (RacePlayer player in ElementManager.Instance.GetByType<RacePlayer>(Element.Root))
             {
                 HandlePlayerJoin(player);
             }
 
-            StartDemoRace();
+            Timer timer = new Timer()
+            {
+                Interval = 5000,
+                AutoReset = false
+            };
+            timer.Elapsed += (object sender, ElapsedEventArgs e) => StartDemoRace();
+            timer.Start();            
         }
 
-        private void HandlePlayerJoin(Player player)
+        private void HandlePlayerJoin(Player source, Slipe.Server.Peds.Events.OnJoinEventArgs eventArgs)
         {
-            ChatBox.WriteLine(string.Format("Welcome to Slipe racing {0}!", player.Name), 0x00AA00);
-            HandlePlayerJoin((RacePlayer)player);
+            ChatBox.WriteLine(string.Format("Welcome to Slipe racing {0}!", source.Name), 0x00AA00);
+            HandlePlayerJoin((RacePlayer)source);
         }
 
         private void HandlePlayerJoin(RacePlayer player)
         {
             players.Add(player);
 
-            player.OnQuit += (Slipe.Shared.Peds.QuitType quitType, string reason, Player responsiblePlayer) =>
-            {
-                HandlePlayerQuit(player);
-            };
+            player.OnQuit += HandlePlayerQuit;
         }
 
-        private void HandlePlayerQuit(RacePlayer player)
+        private void HandlePlayerQuit(Player source, Slipe.Server.Peds.Events.OnQuitEventArgs eventArgs)
         {
-            players.Remove(player);
+            players.Remove((RacePlayer)source);
         }
 
         private void StartDemoRace()
@@ -60,21 +64,28 @@ namespace ServerSide.GameMode
             race.AddCheckpoint(new Checkpoint(new Vector3(0, 25, 3)));
             race.AddCheckpoint(new Checkpoint(new Vector3(0, 0, 3)));
 
-            foreach (RacePlayer player in players)
+            for (int i = players.Count - 1; i >= 0; i--)
             {
-                race.AddRacer(player);
+                AddPlayerToRace(players[i], race);
             }
             StartRace(race);
         }
 
+        private void AddPlayerToRace(RacePlayer player, Race race)
+        {
+            this.race.AddRacer(player);
+            this.players.Remove(player);
+        }
+
         private void StartRace(Race race)
         {
-            race.Start();
             race.OnEnd += () =>
             {
                 this.race = null;
                 StartNewRace();
             };
+
+            race.Start();
         }
 
         private void StartNewRace()

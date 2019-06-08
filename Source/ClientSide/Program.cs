@@ -1,5 +1,7 @@
-﻿using Slipe.Client.Elements;
+﻿using ClientSide.HUD;
+using Slipe.Client.Elements;
 using Slipe.Client.IO;
+using Slipe.Client.Peds;
 using Slipe.Shared.Elements;
 
 namespace ClientSide
@@ -13,7 +15,8 @@ namespace ClientSide
 
         public Program()
         {
-
+            LocalPlayer localPlayer = LocalPlayer.Instance;
+            new RaceLeaderboard();
         }
     }
 }

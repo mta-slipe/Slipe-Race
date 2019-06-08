@@ -29,10 +29,12 @@ local List = {
   get = Array.get,
   set = Array.set,
   Add = Array.add,
+  AddObj = Array.addObj,
   AddRange = Array.addRange,
+  AsReadOnly = Array.AsReadOnly,
   BinarySearch = Array.BinarySearch,
   Clear = Array.clear,
-  Contains = Array.contains,
+  Contains = Array.Contains,
   CopyTo = Array.CopyTo,
   Exists = Array.Exists,
   Find = Array.Find,
@@ -64,7 +66,7 @@ end
 
 System.define("System.List", function(T) 
   return { 
-    __inherits__ = { System.IList_1(T), System.IList }, 
+    __inherits__ = { System.IList_1(T), System.IReadOnlyList_1(T), System.IList }, 
     __genericT__ = T,
   }
 end, List)

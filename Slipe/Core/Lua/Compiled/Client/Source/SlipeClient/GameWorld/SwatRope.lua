@@ -14,7 +14,15 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
       SlipeMtaDefinitions.MtaClient.CreateSWATRope(position.X, position.Y, position.Z, duration)
     end
     return {
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x206, nil, System.Numerics.Vector3, System.Int32 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

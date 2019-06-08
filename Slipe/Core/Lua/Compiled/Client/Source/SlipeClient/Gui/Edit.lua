@@ -12,7 +12,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
   -- </summary>
   namespace.class("Edit", function (namespace)
     local getCaretIndex, setCaretIndex, getMaxLength, setMaxLength, getMasked, setMasked, getReadOnly, setReadOnly, 
-    __ctor1__, __ctor2__
+    class, __ctor1__, __ctor2__
     __ctor1__ = function (this, element)
       SlipeClientGui.EditableGuiElement.__ctor__(this, element)
     end
@@ -52,7 +52,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     setReadOnly = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiEditSetReadOnly(this.element, value)
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Client.Gui.EditableGuiElement
@@ -72,9 +72,23 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "CaretIndex", 0x106, System.Int32, getCaretIndex, setCaretIndex },
+            { "Masked", 0x106, System.Boolean, getMasked, setMasked },
+            { "MaxLength", 0x106, System.Int32, getMaxLength, setMaxLength },
+            { "ReadOnly", 0x106, System.Boolean, getReadOnly, setReadOnly }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x706, __ctor2__, System.Numerics.Vector2, System.Numerics.Vector2, System.String, System.Boolean, out.Slipe.Client.Gui.GuiElement, System.Boolean, System.Int32 }
+          },
+          events = {
+            { "OnAccepted", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnAcceptedEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 16 --[[ElementType.GuiEdit]]) }
         }
       end
     }
+    return class
   end)
 end)

@@ -2,30 +2,33 @@
 local System = System
 local SlipeClientVehicles
 local SlipeMtaDefinitions
+local SystemNumerics
 System.import(function (out)
   SlipeClientVehicles = Slipe.Client.Vehicles
   SlipeMtaDefinitions = Slipe.MtaDefinitions
+  SystemNumerics = System.Numerics
 end)
 System.namespace("Slipe.Client.Vehicles", function (namespace)
   -- <summary>
   -- Represents helicopter vehicles
   -- </summary>
   namespace.class("Helicopter", function (namespace)
-    local getRotorSpeed, setRotorSpeed, getBladeCollisionsEnabeled, setBladeCollisionsEnabeled, __ctor1__, __ctor2__, __ctor3__
+    local getRotorSpeed, setRotorSpeed, getBladeCollisionsEnabeled, setBladeCollisionsEnabeled, op_Explicit, class, __ctor1__, __ctor2__, 
+    __ctor3__
+    __ctor1__ = function (this, element)
+      SlipeClientVehicles.BaseVehicle.__ctor__[1](this, element)
+    end
     -- <summary>
     -- Create a plane from a model at a position
     -- </summary>
-    __ctor1__ = function (this, model, position)
-      SlipeClientVehicles.Vehicle.__ctor__[2](this, model, position:__clone__())
+    __ctor2__ = function (this, model, position)
+      __ctor3__(this, model, position:__clone__(), SystemNumerics.Vector3.getZero(), "", 1, 1)
     end
     -- <summary>
     -- Create a plane using all createVehicle arguments
     -- </summary>
-    __ctor2__ = function (this, model, position, rotation, numberplate, variant1, variant2)
-      SlipeClientVehicles.Vehicle.__ctor__[3](this, model, position:__clone__(), rotation:__clone__(), numberplate, variant1, variant2)
-    end
-    __ctor3__ = function (this, element)
-      SlipeClientVehicles.Vehicle.__ctor__[1](this, element)
+    __ctor3__ = function (this, model, position, rotation, numberplate, variant1, variant2)
+      SlipeClientVehicles.BaseVehicle.__ctor__[2](this, model, position:__clone__(), rotation:__clone__(), numberplate, variant1, variant2)
     end
     getRotorSpeed = function (this)
       return SlipeMtaDefinitions.MtaClient.GetHelicopterRotorSpeed(this.element)
@@ -39,85 +42,70 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
     setBladeCollisionsEnabeled = function (this, value)
       SlipeMtaDefinitions.MtaClient.SetHeliBladeCollisionsEnabled(this.element, value)
     end
-    return {
+    op_Explicit = function (vehicle)
+      if System.is(SlipeClientVehicles.VehicleModel.FromId(vehicle:getModel()), SlipeClientVehicles.HelicopterModel) then
+        return class(vehicle:getMTAElement())
+      end
+
+      System.throw((System.InvalidCastException("The vehicle is not a helicopter")))
+    end
+    class = {
       __inherits__ = function (out)
         return {
-          out.Slipe.Client.Vehicles.Vehicle
+          out.Slipe.Client.Vehicles.BaseVehicle
         }
       end,
       getRotorSpeed = getRotorSpeed,
       setRotorSpeed = setRotorSpeed,
       getBladeCollisionsEnabeled = getBladeCollisionsEnabeled,
       setBladeCollisionsEnabeled = setBladeCollisionsEnabeled,
+      op_Explicit = op_Explicit,
       __ctor__ = {
         __ctor1__,
         __ctor2__,
         __ctor3__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "BladeCollisionsEnabeled", 0x106, System.Boolean, getBladeCollisionsEnabeled, setBladeCollisionsEnabeled },
+            { "RotorSpeed", 0x106, System.Single, getRotorSpeed, setRotorSpeed }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x206, __ctor2__, out.Slipe.Client.Vehicles.HelicopterModel, System.Numerics.Vector3 },
+            { ".ctor", 0x606, __ctor3__, out.Slipe.Client.Vehicles.HelicopterModel, System.Numerics.Vector3, System.Numerics.Vector3, System.String, System.Int32, System.Int32 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
+    return class
   end)
 
   -- <summary>
   -- Models that represent helicopters
   -- </summary>
   namespace.class("HelicopterModel", function (namespace)
-    local getCargobob, getHunter, getLeviathan, getMaverick, getNewschopper, getPoliceMaverick, getRaindance, getSeasparrow, 
-    getSparrow, getRcGoblin, getRcRaider, class, __ctor__
+    local __ctor__
     __ctor__ = function (this, id)
-      SlipeClientVehicles.BaseVehicleModel.__ctor__(this, id)
+      SlipeClientVehicles.VehicleModel.__ctor__(this, id)
     end
-    getCargobob = function ()
-      return class(548)
-    end
-    getHunter = function ()
-      return class(425)
-    end
-    getLeviathan = function ()
-      return class(417)
-    end
-    getMaverick = function ()
-      return class(487)
-    end
-    getNewschopper = function ()
-      return class(488)
-    end
-    getPoliceMaverick = function ()
-      return class(497)
-    end
-    getRaindance = function ()
-      return class(563)
-    end
-    getSeasparrow = function ()
-      return class(447)
-    end
-    getSparrow = function ()
-      return class(469)
-    end
-    getRcGoblin = function ()
-      return class(501)
-    end
-    getRcRaider = function ()
-      return class(465)
-    end
-    class = {
+    return {
       __inherits__ = function (out)
         return {
-          out.Slipe.Client.Vehicles.BaseVehicleModel
+          out.Slipe.Client.Vehicles.VehicleModel
         }
       end,
-      getCargobob = getCargobob,
-      getHunter = getHunter,
-      getLeviathan = getLeviathan,
-      getMaverick = getMaverick,
-      getNewschopper = getNewschopper,
-      getPoliceMaverick = getPoliceMaverick,
-      getRaindance = getRaindance,
-      getSeasparrow = getSeasparrow,
-      getSparrow = getSparrow,
-      getRcGoblin = getRcGoblin,
-      getRcRaider = getRcRaider,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x104, nil, System.Int32 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
-    return class
   end)
 end)

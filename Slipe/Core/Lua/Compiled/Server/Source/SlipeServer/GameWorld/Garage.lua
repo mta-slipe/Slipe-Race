@@ -19,7 +19,15 @@ System.namespace("Slipe.Server.GameWorld", function (namespace)
           out.Slipe.Shared.GameWorld.SharedGarage
         }
       end,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x106, nil, System.Int32 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

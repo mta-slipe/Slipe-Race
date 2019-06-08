@@ -46,6 +46,11 @@ System.namespace("Slipe.Server.Markers", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x506, __ctor2__, System.Numerics.Vector3, System.Int32, out.Slipe.Shared.Utilities.Color, System.Single, out.Slipe.Shared.Elements.Element },
+            { ".ctor", 0x206, __ctor3__, System.Numerics.Vector3, System.Int32 }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 6 --[[ElementType.Marker]]) }
         }
       end

@@ -1079,6 +1079,296 @@ System.namespace("Slipe.Client.Peds", function (namespace)
     const.getGFD_WMYPIZZ = function ()
       return System.new(class, 2, "PED_TYPE_GFD", "VOICE_GFD_WMYPIZZ")
     end
+    const.getGEN_BFYST = getGEN_BFYST
+    const.getGEN_BIKDRUG = getGEN_BIKDRUG
+    const.getGEN_BIKERA = getGEN_BIKERA
+    const.getGEN_BIKERB = getGEN_BIKERB
+    const.getGEN_BMOCD = getGEN_BMOCD
+    const.getGEN_BMORI = getGEN_BMORI
+    const.getGEN_BMOSEC = getGEN_BMOSEC
+    const.getGEN_BMOST = getGEN_BMOST
+    const.getGEN_BMOTR1 = getGEN_BMOTR1
+    const.getGEN_BMYAP = getGEN_BMYAP
+    const.getGEN_BMYBE = getGEN_BMYBE
+    const.getGEN_BMYBOUN = getGEN_BMYBOUN
+    const.getGEN_BMYBOX = getGEN_BMYBOX
+    const.getGEN_BMYBU = getGEN_BMYBU
+    const.getGEN_BMYCG = getGEN_BMYCG
+    const.getGEN_BMYCON = getGEN_BMYCON
+    const.getGEN_BMYCR = getGEN_BMYCR
+    const.getGEN_BMYDJ = getGEN_BMYDJ
+    const.getGEN_BMYDRUG = getGEN_BMYDRUG
+    const.getGEN_BMYMOUN = getGEN_BMYMOUN
+    const.getGEN_BMYPOL1 = getGEN_BMYPOL1
+    const.getGEN_BMYPOL2 = getGEN_BMYPOL2
+    const.getGEN_BMYRI = getGEN_BMYRI
+    const.getGEN_BMYST = getGEN_BMYST
+    const.getGEN_BYMPI = getGEN_BYMPI
+    const.getGEN_CWFOFR = getGEN_CWFOFR
+    const.getGEN_CWFOHB = getGEN_CWFOHB
+    const.getGEN_CWFYFR1 = getGEN_CWFYFR1
+    const.getGEN_CWFYFR2 = getGEN_CWFYFR2
+    const.getGEN_CWFYHB1 = getGEN_CWFYHB1
+    const.getGEN_CWMOFR1 = getGEN_CWMOFR1
+    const.getGEN_CWMOHB1 = getGEN_CWMOHB1
+    const.getGEN_CWMOHB2 = getGEN_CWMOHB2
+    const.getGEN_CWMYFR = getGEN_CWMYFR
+    const.getGEN_CWMYHB1 = getGEN_CWMYHB1
+    const.getGEN_CWMYHB2 = getGEN_CWMYHB2
+    const.getGEN_DNFOLC1 = getGEN_DNFOLC1
+    const.getGEN_DNFOLC2 = getGEN_DNFOLC2
+    const.getGEN_DNFYLC = getGEN_DNFYLC
+    const.getGEN_DNMOLC1 = getGEN_DNMOLC1
+    const.getGEN_DNMOLC2 = getGEN_DNMOLC2
+    const.getGEN_DNMYLC = getGEN_DNMYLC
+    const.getGEN_DWFOLC = getGEN_DWFOLC
+    const.getGEN_DWFYLC1 = getGEN_DWFYLC1
+    const.getGEN_DWFYLC2 = getGEN_DWFYLC2
+    const.getGEN_DWMOLC1 = getGEN_DWMOLC1
+    const.getGEN_DWMOLC2 = getGEN_DWMOLC2
+    const.getGEN_DWMYLC1 = getGEN_DWMYLC1
+    const.getGEN_DWMYLC2 = getGEN_DWMYLC2
+    const.getGEN_HFORI = getGEN_HFORI
+    const.getGEN_HFOST = getGEN_HFOST
+    const.getGEN_HFYBE = getGEN_HFYBE
+    const.getGEN_HFYPRO = getGEN_HFYPRO
+    const.getGEN_HFYRI = getGEN_HFYRI
+    const.getGEN_HFYST = getGEN_HFYST
+    const.getGEN_HMORI = getGEN_HMORI
+    const.getGEN_HMOST = getGEN_HMOST
+    const.getGEN_HMYBE = getGEN_HMYBE
+    const.getGEN_HMYCM = getGEN_HMYCM
+    const.getGEN_HMYCR = getGEN_HMYCR
+    const.getGEN_HMYDRUG = getGEN_HMYDRUG
+    const.getGEN_HMYRI = getGEN_HMYRI
+    const.getGEN_HMYST = getGEN_HMYST
+    const.getGEN_IMYST = getGEN_IMYST
+    const.getGEN_IRFYST = getGEN_IRFYST
+    const.getGEN_IRMYST = getGEN_IRMYST
+    const.getGEN_MAFFA = getGEN_MAFFA
+    const.getGEN_MAFFB = getGEN_MAFFB
+    const.getGEN_MALE01 = getGEN_MALE01
+    const.getGEN_NOVOICE = getGEN_NOVOICE
+    const.getGEN_OFORI = getGEN_OFORI
+    const.getGEN_OFOST = getGEN_OFOST
+    const.getGEN_OFYRI = getGEN_OFYRI
+    const.getGEN_OFYST = getGEN_OFYST
+    const.getGEN_OMOBOAT = getGEN_OMOBOAT
+    const.getGEN_OMOKUNG = getGEN_OMOKUNG
+    const.getGEN_OMORI = getGEN_OMORI
+    const.getGEN_OMOST = getGEN_OMOST
+    const.getGEN_OMYRI = getGEN_OMYRI
+    const.getGEN_OMYST = getGEN_OMYST
+    const.getGEN_SBFORI = getGEN_SBFORI
+    const.getGEN_SBFOST = getGEN_SBFOST
+    const.getGEN_SBFYPRO = getGEN_SBFYPRO
+    const.getGEN_SBFYRI = getGEN_SBFYRI
+    const.getGEN_SBFYST = getGEN_SBFYST
+    const.getGEN_SBFYSTR = getGEN_SBFYSTR
+    const.getGEN_SBMOCD = getGEN_SBMOCD
+    const.getGEN_SBMORI = getGEN_SBMORI
+    const.getGEN_SBMOST = getGEN_SBMOST
+    const.getGEN_SBMOTR1 = getGEN_SBMOTR1
+    const.getGEN_SBMOTR2 = getGEN_SBMOTR2
+    const.getGEN_SBMYCR = getGEN_SBMYCR
+    const.getGEN_SBMYRI = getGEN_SBMYRI
+    const.getGEN_SBMYST = getGEN_SBMYST
+    const.getGEN_SBMYTR3 = getGEN_SBMYTR3
+    const.getGEN_SFYPRO = getGEN_SFYPRO
+    const.getGEN_SHFYPRO = getGEN_SHFYPRO
+    const.getGEN_SHMYCR = getGEN_SHMYCR
+    const.getGEN_SMYST = getGEN_SMYST
+    const.getGEN_SMYST2 = getGEN_SMYST2
+    const.getGEN_SOFORI = getGEN_SOFORI
+    const.getGEN_SOFOST = getGEN_SOFOST
+    const.getGEN_SOFYBU = getGEN_SOFYBU
+    const.getGEN_SOFYRI = getGEN_SOFYRI
+    const.getGEN_SOFYST = getGEN_SOFYST
+    const.getGEN_SOMOBU = getGEN_SOMOBU
+    const.getGEN_SOMORI = getGEN_SOMORI
+    const.getGEN_SOMOST = getGEN_SOMOST
+    const.getGEN_SOMYAP = getGEN_SOMYAP
+    const.getGEN_SOMYBU = getGEN_SOMYBU
+    const.getGEN_SOMYRI = getGEN_SOMYRI
+    const.getGEN_SOMYST = getGEN_SOMYST
+    const.getGEN_SWFOPRO = getGEN_SWFOPRO
+    const.getGEN_SWFORI = getGEN_SWFORI
+    const.getGEN_SWFOST = getGEN_SWFOST
+    const.getGEN_SWFYRI = getGEN_SWFYRI
+    const.getGEN_SWFYST = getGEN_SWFYST
+    const.getGEN_SWFYSTR = getGEN_SWFYSTR
+    const.getGEN_SWMOCD = getGEN_SWMOCD
+    const.getGEN_SWMORI = getGEN_SWMORI
+    const.getGEN_SWMOST = getGEN_SWMOST
+    const.getGEN_SWMOTR1 = getGEN_SWMOTR1
+    const.getGEN_SWMOTR2 = getGEN_SWMOTR2
+    const.getGEN_SWMOTR3 = getGEN_SWMOTR3
+    const.getGEN_SWMOTR4 = getGEN_SWMOTR4
+    const.getGEN_SWMOTR5 = getGEN_SWMOTR5
+    const.getGEN_SWMYCR = getGEN_SWMYCR
+    const.getGEN_SWMYHP1 = getGEN_SWMYHP1
+    const.getGEN_SWMYHP2 = getGEN_SWMYHP2
+    const.getGEN_SWMYRI = getGEN_SWMYRI
+    const.getGEN_SWMYST = getGEN_SWMYST
+    const.getGEN_VBFYPRO = getGEN_VBFYPRO
+    const.getGEN_VBFYST2 = getGEN_VBFYST2
+    const.getGEN_VBMOCD = getGEN_VBMOCD
+    const.getGEN_VBMYCR = getGEN_VBMYCR
+    const.getGEN_VBMYELV = getGEN_VBMYELV
+    const.getGEN_VHFYPRO = getGEN_VHFYPRO
+    const.getGEN_VHFYST3 = getGEN_VHFYST3
+    const.getGEN_VHMYCR = getGEN_VHMYCR
+    const.getGEN_VHMYELV = getGEN_VHMYELV
+    const.getGEN_VIMYELV = getGEN_VIMYELV
+    const.getGEN_VWFYPRO = getGEN_VWFYPRO
+    const.getGEN_VWFYST1 = getGEN_VWFYST1
+    const.getGEN_VWFYWAI = getGEN_VWFYWAI
+    const.getGEN_VWMOTR1 = getGEN_VWMOTR1
+    const.getGEN_VWMOTR2 = getGEN_VWMOTR2
+    const.getGEN_VWMYAP = getGEN_VWMYAP
+    const.getGEN_VWMYBJD = getGEN_VWMYBJD
+    const.getGEN_VWMYCD = getGEN_VWMYCD
+    const.getGEN_VWMYCR = getGEN_VWMYCR
+    const.getGEN_WFOPJ = getGEN_WFOPJ
+    const.getGEN_WFORI = getGEN_WFORI
+    const.getGEN_WFOST = getGEN_WFOST
+    const.getGEN_WFYBE = getGEN_WFYBE
+    const.getGEN_WFYBU = getGEN_WFYBU
+    const.getGEN_WFYCRK = getGEN_WFYCRK
+    const.getGEN_WFYCRP = getGEN_WFYCRP
+    const.getGEN_WFYJG = getGEN_WFYJG
+    const.getGEN_WFYLG = getGEN_WFYLG
+    const.getGEN_WFYPRO = getGEN_WFYPRO
+    const.getGEN_WFYRI = getGEN_WFYRI
+    const.getGEN_WFYRO = getGEN_WFYRO
+    const.getGEN_WFYST = getGEN_WFYST
+    const.getGEN_WFYSTEW = getGEN_WFYSTEW
+    const.getGEN_WMOMIB = getGEN_WMOMIB
+    const.getGEN_WMOPJ = getGEN_WMOPJ
+    const.getGEN_WMOPREA = getGEN_WMOPREA
+    const.getGEN_WMORI = getGEN_WMORI
+    const.getGEN_WMOSCI = getGEN_WMOSCI
+    const.getGEN_WMOST = getGEN_WMOST
+    const.getGEN_WMOTR1 = getGEN_WMOTR1
+    const.getGEN_WMYBE = getGEN_WMYBE
+    const.getGEN_WMYBMX = getGEN_WMYBMX
+    const.getGEN_WMYBOUN = getGEN_WMYBOUN
+    const.getGEN_WMYBOX = getGEN_WMYBOX
+    const.getGEN_WMYBP = getGEN_WMYBP
+    const.getGEN_WMYBU = getGEN_WMYBU
+    const.getGEN_WMYCD1 = getGEN_WMYCD1
+    const.getGEN_WMYCD2 = getGEN_WMYCD2
+    const.getGEN_WMYCH = getGEN_WMYCH
+    const.getGEN_WMYCON = getGEN_WMYCON
+    const.getGEN_WMYCONB = getGEN_WMYCONB
+    const.getGEN_WMYCR = getGEN_WMYCR
+    const.getGEN_WMYDRUG = getGEN_WMYDRUG
+    const.getGEN_WMYGAR = getGEN_WMYGAR
+    const.getGEN_WMYGOL1 = getGEN_WMYGOL1
+    const.getGEN_WMYGOL2 = getGEN_WMYGOL2
+    const.getGEN_WMYJG = getGEN_WMYJG
+    const.getGEN_WMYLG = getGEN_WMYLG
+    const.getGEN_WMYMECH = getGEN_WMYMECH
+    const.getGEN_WMYMOUN = getGEN_WMYMOUN
+    const.getGEN_WMYPLT = getGEN_WMYPLT
+    const.getGEN_WMYRI = getGEN_WMYRI
+    const.getGEN_WMYRO = getGEN_WMYRO
+    const.getGEN_WMYSGRD = getGEN_WMYSGRD
+    const.getGEN_WMYSKAT = getGEN_WMYSKAT
+    const.getGEN_WMYST = getGEN_WMYST
+    const.getGEN_WMYTX1 = getGEN_WMYTX1
+    const.getGEN_WMYTX2 = getGEN_WMYTX2
+    const.getGEN_WMYVA = getGEN_WMYVA
+    const.getGFD_BARBARA = getGFD_BARBARA
+    const.getGFD_BMOBAR = getGFD_BMOBAR
+    const.getGFD_BMYBARB = getGFD_BMYBARB
+    const.getGFD_BMYTATT = getGFD_BMYTATT
+    const.getGFD_CATALINA = getGFD_CATALINA
+    const.getGFD_DENISE = getGFD_DENISE
+    const.getGFD_HELENA = getGFD_HELENA
+    const.getGFD_KATIE = getGFD_KATIE
+    const.getGFD_MICHELLE = getGFD_MICHELLE
+    const.getGFD_MILLIE = getGFD_MILLIE
+    const.getGFD_POL_ANN = getGFD_POL_ANN
+    const.getGFD_WFYBURG = getGFD_WFYBURG
+    const.getGFD_WFYCLOT = getGFD_WFYCLOT
+    const.getGFD_WMYAMMO = getGFD_WMYAMMO
+    const.getGFD_WMYBARB = getGFD_WMYBARB
+    const.getGFD_WMYBELL = getGFD_WMYBELL
+    const.getGFD_WMYCLOT = getGFD_WMYCLOT
+    const.getGFD_WMYPIZZ = getGFD_WMYPIZZ
+    const.getGNG_BALLAS1 = getGNG_BALLAS1
+    const.getGNG_BALLAS2 = getGNG_BALLAS2
+    const.getGNG_BALLAS3 = getGNG_BALLAS3
+    const.getGNG_BALLAS4 = getGNG_BALLAS4
+    const.getGNG_BALLAS5 = getGNG_BALLAS5
+    const.getGNG_BIG_BEAR = getGNG_BIG_BEAR
+    const.getGNG_CESAR = getGNG_CESAR
+    const.getGNG_DNB1 = getGNG_DNB1
+    const.getGNG_DNB2 = getGNG_DNB2
+    const.getGNG_DNB3 = getGNG_DNB3
+    const.getGNG_DNB5 = getGNG_DNB5
+    const.getGNG_DWAINE = getGNG_DWAINE
+    const.getGNG_FAM1 = getGNG_FAM1
+    const.getGNG_FAM2 = getGNG_FAM2
+    const.getGNG_FAM3 = getGNG_FAM3
+    const.getGNG_FAM4 = getGNG_FAM4
+    const.getGNG_FAM5 = getGNG_FAM5
+    const.getGNG_JIZZY = getGNG_JIZZY
+    const.getGNG_LSV1 = getGNG_LSV1
+    const.getGNG_LSV2 = getGNG_LSV2
+    const.getGNG_LSV3 = getGNG_LSV3
+    const.getGNG_LSV4 = getGNG_LSV4
+    const.getGNG_LSV5 = getGNG_LSV5
+    const.getGNG_MACCER = getGNG_MACCER
+    const.getGNG_MAFBOSS = getGNG_MAFBOSS
+    const.getGNG_OGLOC = getGNG_OGLOC
+    const.getGNG_RYDER = getGNG_RYDER
+    const.getGNG_SFR1 = getGNG_SFR1
+    const.getGNG_SFR2 = getGNG_SFR2
+    const.getGNG_SFR3 = getGNG_SFR3
+    const.getGNG_SFR4 = getGNG_SFR4
+    const.getGNG_SFR5 = getGNG_SFR5
+    const.getGNG_SMOKE = getGNG_SMOKE
+    const.getGNG_STRI1 = getGNG_STRI1
+    const.getGNG_STRI2 = getGNG_STRI2
+    const.getGNG_STRI4 = getGNG_STRI4
+    const.getGNG_STRI5 = getGNG_STRI5
+    const.getGNG_SWEET = getGNG_SWEET
+    const.getGNG_TBONE = getGNG_TBONE
+    const.getGNG_TORENO = getGNG_TORENO
+    const.getGNG_TRUTH = getGNG_TRUTH
+    const.getGNG_VLA1 = getGNG_VLA1
+    const.getGNG_VLA2 = getGNG_VLA2
+    const.getGNG_VLA3 = getGNG_VLA3
+    const.getGNG_VLA4 = getGNG_VLA4
+    const.getGNG_VLA5 = getGNG_VLA5
+    const.getGNG_VMAFF1 = getGNG_VMAFF1
+    const.getGNG_VMAFF2 = getGNG_VMAFF2
+    const.getGNG_VMAFF3 = getGNG_VMAFF3
+    const.getGNG_VMAFF4 = getGNG_VMAFF4
+    const.getGNG_VMAFF5 = getGNG_VMAFF5
+    const.getGNG_WOOZIE = getGNG_WOOZIE
+    const.getPLY_AG = getPLY_AG
+    const.getPLY_AG2 = getPLY_AG2
+    const.getPLY_AR = getPLY_AR
+    const.getPLY_AR2 = getPLY_AR2
+    const.getPLY_CD = getPLY_CD
+    const.getPLY_CD2 = getPLY_CD2
+    const.getPLY_CF = getPLY_CF
+    const.getPLY_CF2 = getPLY_CF2
+    const.getPLY_CG = getPLY_CG
+    const.getPLY_CG2 = getPLY_CG2
+    const.getPLY_CR = getPLY_CR
+    const.getPLY_CR2 = getPLY_CR2
+    const.getPLY_PG = getPLY_PG
+    const.getPLY_PG2 = getPLY_PG2
+    const.getPLY_PR = getPLY_PR
+    const.getPLY_PR2 = getPLY_PR2
+    const.getPLY_WG = getPLY_WG
+    const.getPLY_WG2 = getPLY_WG2
+    const.getPLY_WR = getPLY_WR
+    const.getPLY_WR2 = getPLY_WR2
     class = {
       getDISABLED = getDISABLED,
       getGEN_BBDYG1 = getGEN_BBDYG1,
@@ -1429,7 +1719,364 @@ System.namespace("Slipe.Client.Peds", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "DISABLED", 0x20E, class, getDISABLED },
+            { "EMG_ARMY1", 0x20E, class, getEMG_ARMY1 },
+            { "EMG_ARMY2", 0x20E, class, getEMG_ARMY2 },
+            { "EMG_ARMY3", 0x20E, class, getEMG_ARMY3 },
+            { "EMG_EMT1", 0x20E, class, getEMG_EMT1 },
+            { "EMG_EMT2", 0x20E, class, getEMG_EMT2 },
+            { "EMG_EMT3", 0x20E, class, getEMG_EMT3 },
+            { "EMG_EMT4", 0x20E, class, getEMG_EMT4 },
+            { "EMG_EMT5", 0x20E, class, getEMG_EMT5 },
+            { "EMG_FBI2", 0x20E, class, getEMG_FBI2 },
+            { "EMG_FBI3", 0x20E, class, getEMG_FBI3 },
+            { "EMG_FBI4", 0x20E, class, getEMG_FBI4 },
+            { "EMG_FBI5", 0x20E, class, getEMG_FBI5 },
+            { "EMG_FBI6", 0x20E, class, getEMG_FBI6 },
+            { "EMG_LAPD1", 0x20E, class, getEMG_LAPD1 },
+            { "EMG_LAPD2", 0x20E, class, getEMG_LAPD2 },
+            { "EMG_LAPD3", 0x20E, class, getEMG_LAPD3 },
+            { "EMG_LAPD4", 0x20E, class, getEMG_LAPD4 },
+            { "EMG_LAPD5", 0x20E, class, getEMG_LAPD5 },
+            { "EMG_LAPD6", 0x20E, class, getEMG_LAPD6 },
+            { "EMG_LAPD7", 0x20E, class, getEMG_LAPD7 },
+            { "EMG_LAPD8", 0x20E, class, getEMG_LAPD8 },
+            { "EMG_LVPD1", 0x20E, class, getEMG_LVPD1 },
+            { "EMG_LVPD2", 0x20E, class, getEMG_LVPD2 },
+            { "EMG_LVPD3", 0x20E, class, getEMG_LVPD3 },
+            { "EMG_LVPD4", 0x20E, class, getEMG_LVPD4 },
+            { "EMG_LVPD5", 0x20E, class, getEMG_LVPD5 },
+            { "EMG_MCOP1", 0x20E, class, getEMG_MCOP1 },
+            { "EMG_MCOP2", 0x20E, class, getEMG_MCOP2 },
+            { "EMG_MCOP3", 0x20E, class, getEMG_MCOP3 },
+            { "EMG_MCOP4", 0x20E, class, getEMG_MCOP4 },
+            { "EMG_MCOP5", 0x20E, class, getEMG_MCOP5 },
+            { "EMG_MCOP6", 0x20E, class, getEMG_MCOP6 },
+            { "EMG_PULASKI", 0x20E, class, getEMG_PULASKI },
+            { "EMG_RCOP1", 0x20E, class, getEMG_RCOP1 },
+            { "EMG_RCOP2", 0x20E, class, getEMG_RCOP2 },
+            { "EMG_RCOP3", 0x20E, class, getEMG_RCOP3 },
+            { "EMG_RCOP4", 0x20E, class, getEMG_RCOP4 },
+            { "EMG_SFPD1", 0x20E, class, getEMG_SFPD1 },
+            { "EMG_SFPD2", 0x20E, class, getEMG_SFPD2 },
+            { "EMG_SFPD3", 0x20E, class, getEMG_SFPD3 },
+            { "EMG_SFPD4", 0x20E, class, getEMG_SFPD4 },
+            { "EMG_SFPD5", 0x20E, class, getEMG_SFPD5 },
+            { "EMG_SWAT1", 0x20E, class, getEMG_SWAT1 },
+            { "EMG_SWAT2", 0x20E, class, getEMG_SWAT2 },
+            { "EMG_SWAT4", 0x20E, class, getEMG_SWAT4 },
+            { "EMG_SWAT6", 0x20E, class, getEMG_SWAT6 },
+            { "GEN_BBDYG1", 0x20E, class, getGEN_BBDYG1 },
+            { "GEN_BBDYG2", 0x20E, class, getGEN_BBDYG2 },
+            { "GEN_BFORI", 0x20E, class, getGEN_BFORI },
+            { "GEN_BFOST", 0x20E, class, getGEN_BFOST },
+            { "GEN_BFYBE", 0x20E, class, getGEN_BFYBE },
+            { "GEN_BFYBU", 0x20E, class, getGEN_BFYBU },
+            { "GEN_BFYCRP", 0x20E, class, getGEN_BFYCRP },
+            { "GEN_BFYPRO", 0x20E, class, getGEN_BFYPRO },
+            { "GEN_BFYRI", 0x20E, class, getGEN_BFYRI },
+            { "GEN_BFYST", 0x20E, class, const.getGEN_BFYST },
+            { "GEN_BIKDRUG", 0x20E, class, const.getGEN_BIKDRUG },
+            { "GEN_BIKERA", 0x20E, class, const.getGEN_BIKERA },
+            { "GEN_BIKERB", 0x20E, class, const.getGEN_BIKERB },
+            { "GEN_BMOCD", 0x20E, class, const.getGEN_BMOCD },
+            { "GEN_BMORI", 0x20E, class, const.getGEN_BMORI },
+            { "GEN_BMOSEC", 0x20E, class, const.getGEN_BMOSEC },
+            { "GEN_BMOST", 0x20E, class, const.getGEN_BMOST },
+            { "GEN_BMOTR1", 0x20E, class, const.getGEN_BMOTR1 },
+            { "GEN_BMYAP", 0x20E, class, const.getGEN_BMYAP },
+            { "GEN_BMYBE", 0x20E, class, const.getGEN_BMYBE },
+            { "GEN_BMYBOUN", 0x20E, class, const.getGEN_BMYBOUN },
+            { "GEN_BMYBOX", 0x20E, class, const.getGEN_BMYBOX },
+            { "GEN_BMYBU", 0x20E, class, const.getGEN_BMYBU },
+            { "GEN_BMYCG", 0x20E, class, const.getGEN_BMYCG },
+            { "GEN_BMYCON", 0x20E, class, const.getGEN_BMYCON },
+            { "GEN_BMYCR", 0x20E, class, const.getGEN_BMYCR },
+            { "GEN_BMYDJ", 0x20E, class, const.getGEN_BMYDJ },
+            { "GEN_BMYDRUG", 0x20E, class, const.getGEN_BMYDRUG },
+            { "GEN_BMYMOUN", 0x20E, class, const.getGEN_BMYMOUN },
+            { "GEN_BMYPOL1", 0x20E, class, const.getGEN_BMYPOL1 },
+            { "GEN_BMYPOL2", 0x20E, class, const.getGEN_BMYPOL2 },
+            { "GEN_BMYRI", 0x20E, class, const.getGEN_BMYRI },
+            { "GEN_BMYST", 0x20E, class, const.getGEN_BMYST },
+            { "GEN_BYMPI", 0x20E, class, const.getGEN_BYMPI },
+            { "GEN_CWFOFR", 0x20E, class, const.getGEN_CWFOFR },
+            { "GEN_CWFOHB", 0x20E, class, const.getGEN_CWFOHB },
+            { "GEN_CWFYFR1", 0x20E, class, const.getGEN_CWFYFR1 },
+            { "GEN_CWFYFR2", 0x20E, class, const.getGEN_CWFYFR2 },
+            { "GEN_CWFYHB1", 0x20E, class, const.getGEN_CWFYHB1 },
+            { "GEN_CWMOFR1", 0x20E, class, const.getGEN_CWMOFR1 },
+            { "GEN_CWMOHB1", 0x20E, class, const.getGEN_CWMOHB1 },
+            { "GEN_CWMOHB2", 0x20E, class, const.getGEN_CWMOHB2 },
+            { "GEN_CWMYFR", 0x20E, class, const.getGEN_CWMYFR },
+            { "GEN_CWMYHB1", 0x20E, class, const.getGEN_CWMYHB1 },
+            { "GEN_CWMYHB2", 0x20E, class, const.getGEN_CWMYHB2 },
+            { "GEN_DNFOLC1", 0x20E, class, const.getGEN_DNFOLC1 },
+            { "GEN_DNFOLC2", 0x20E, class, const.getGEN_DNFOLC2 },
+            { "GEN_DNFYLC", 0x20E, class, const.getGEN_DNFYLC },
+            { "GEN_DNMOLC1", 0x20E, class, const.getGEN_DNMOLC1 },
+            { "GEN_DNMOLC2", 0x20E, class, const.getGEN_DNMOLC2 },
+            { "GEN_DNMYLC", 0x20E, class, const.getGEN_DNMYLC },
+            { "GEN_DWFOLC", 0x20E, class, const.getGEN_DWFOLC },
+            { "GEN_DWFYLC1", 0x20E, class, const.getGEN_DWFYLC1 },
+            { "GEN_DWFYLC2", 0x20E, class, const.getGEN_DWFYLC2 },
+            { "GEN_DWMOLC1", 0x20E, class, const.getGEN_DWMOLC1 },
+            { "GEN_DWMOLC2", 0x20E, class, const.getGEN_DWMOLC2 },
+            { "GEN_DWMYLC1", 0x20E, class, const.getGEN_DWMYLC1 },
+            { "GEN_DWMYLC2", 0x20E, class, const.getGEN_DWMYLC2 },
+            { "GEN_HFORI", 0x20E, class, const.getGEN_HFORI },
+            { "GEN_HFOST", 0x20E, class, const.getGEN_HFOST },
+            { "GEN_HFYBE", 0x20E, class, const.getGEN_HFYBE },
+            { "GEN_HFYPRO", 0x20E, class, const.getGEN_HFYPRO },
+            { "GEN_HFYRI", 0x20E, class, const.getGEN_HFYRI },
+            { "GEN_HFYST", 0x20E, class, const.getGEN_HFYST },
+            { "GEN_HMORI", 0x20E, class, const.getGEN_HMORI },
+            { "GEN_HMOST", 0x20E, class, const.getGEN_HMOST },
+            { "GEN_HMYBE", 0x20E, class, const.getGEN_HMYBE },
+            { "GEN_HMYCM", 0x20E, class, const.getGEN_HMYCM },
+            { "GEN_HMYCR", 0x20E, class, const.getGEN_HMYCR },
+            { "GEN_HMYDRUG", 0x20E, class, const.getGEN_HMYDRUG },
+            { "GEN_HMYRI", 0x20E, class, const.getGEN_HMYRI },
+            { "GEN_HMYST", 0x20E, class, const.getGEN_HMYST },
+            { "GEN_IMYST", 0x20E, class, const.getGEN_IMYST },
+            { "GEN_IRFYST", 0x20E, class, const.getGEN_IRFYST },
+            { "GEN_IRMYST", 0x20E, class, const.getGEN_IRMYST },
+            { "GEN_MAFFA", 0x20E, class, const.getGEN_MAFFA },
+            { "GEN_MAFFB", 0x20E, class, const.getGEN_MAFFB },
+            { "GEN_MALE01", 0x20E, class, const.getGEN_MALE01 },
+            { "GEN_NOVOICE", 0x20E, class, const.getGEN_NOVOICE },
+            { "GEN_OFORI", 0x20E, class, const.getGEN_OFORI },
+            { "GEN_OFOST", 0x20E, class, const.getGEN_OFOST },
+            { "GEN_OFYRI", 0x20E, class, const.getGEN_OFYRI },
+            { "GEN_OFYST", 0x20E, class, const.getGEN_OFYST },
+            { "GEN_OMOBOAT", 0x20E, class, const.getGEN_OMOBOAT },
+            { "GEN_OMOKUNG", 0x20E, class, const.getGEN_OMOKUNG },
+            { "GEN_OMORI", 0x20E, class, const.getGEN_OMORI },
+            { "GEN_OMOST", 0x20E, class, const.getGEN_OMOST },
+            { "GEN_OMYRI", 0x20E, class, const.getGEN_OMYRI },
+            { "GEN_OMYST", 0x20E, class, const.getGEN_OMYST },
+            { "GEN_SBFORI", 0x20E, class, const.getGEN_SBFORI },
+            { "GEN_SBFOST", 0x20E, class, const.getGEN_SBFOST },
+            { "GEN_SBFYPRO", 0x20E, class, const.getGEN_SBFYPRO },
+            { "GEN_SBFYRI", 0x20E, class, const.getGEN_SBFYRI },
+            { "GEN_SBFYST", 0x20E, class, const.getGEN_SBFYST },
+            { "GEN_SBFYSTR", 0x20E, class, const.getGEN_SBFYSTR },
+            { "GEN_SBMOCD", 0x20E, class, const.getGEN_SBMOCD },
+            { "GEN_SBMORI", 0x20E, class, const.getGEN_SBMORI },
+            { "GEN_SBMOST", 0x20E, class, const.getGEN_SBMOST },
+            { "GEN_SBMOTR1", 0x20E, class, const.getGEN_SBMOTR1 },
+            { "GEN_SBMOTR2", 0x20E, class, const.getGEN_SBMOTR2 },
+            { "GEN_SBMYCR", 0x20E, class, const.getGEN_SBMYCR },
+            { "GEN_SBMYRI", 0x20E, class, const.getGEN_SBMYRI },
+            { "GEN_SBMYST", 0x20E, class, const.getGEN_SBMYST },
+            { "GEN_SBMYTR3", 0x20E, class, const.getGEN_SBMYTR3 },
+            { "GEN_SFYPRO", 0x20E, class, const.getGEN_SFYPRO },
+            { "GEN_SHFYPRO", 0x20E, class, const.getGEN_SHFYPRO },
+            { "GEN_SHMYCR", 0x20E, class, const.getGEN_SHMYCR },
+            { "GEN_SMYST", 0x20E, class, const.getGEN_SMYST },
+            { "GEN_SMYST2", 0x20E, class, const.getGEN_SMYST2 },
+            { "GEN_SOFORI", 0x20E, class, const.getGEN_SOFORI },
+            { "GEN_SOFOST", 0x20E, class, const.getGEN_SOFOST },
+            { "GEN_SOFYBU", 0x20E, class, const.getGEN_SOFYBU },
+            { "GEN_SOFYRI", 0x20E, class, const.getGEN_SOFYRI },
+            { "GEN_SOFYST", 0x20E, class, const.getGEN_SOFYST },
+            { "GEN_SOMOBU", 0x20E, class, const.getGEN_SOMOBU },
+            { "GEN_SOMORI", 0x20E, class, const.getGEN_SOMORI },
+            { "GEN_SOMOST", 0x20E, class, const.getGEN_SOMOST },
+            { "GEN_SOMYAP", 0x20E, class, const.getGEN_SOMYAP },
+            { "GEN_SOMYBU", 0x20E, class, const.getGEN_SOMYBU },
+            { "GEN_SOMYRI", 0x20E, class, const.getGEN_SOMYRI },
+            { "GEN_SOMYST", 0x20E, class, const.getGEN_SOMYST },
+            { "GEN_SWFOPRO", 0x20E, class, const.getGEN_SWFOPRO },
+            { "GEN_SWFORI", 0x20E, class, const.getGEN_SWFORI },
+            { "GEN_SWFOST", 0x20E, class, const.getGEN_SWFOST },
+            { "GEN_SWFYRI", 0x20E, class, const.getGEN_SWFYRI },
+            { "GEN_SWFYST", 0x20E, class, const.getGEN_SWFYST },
+            { "GEN_SWFYSTR", 0x20E, class, const.getGEN_SWFYSTR },
+            { "GEN_SWMOCD", 0x20E, class, const.getGEN_SWMOCD },
+            { "GEN_SWMORI", 0x20E, class, const.getGEN_SWMORI },
+            { "GEN_SWMOST", 0x20E, class, const.getGEN_SWMOST },
+            { "GEN_SWMOTR1", 0x20E, class, const.getGEN_SWMOTR1 },
+            { "GEN_SWMOTR2", 0x20E, class, const.getGEN_SWMOTR2 },
+            { "GEN_SWMOTR3", 0x20E, class, const.getGEN_SWMOTR3 },
+            { "GEN_SWMOTR4", 0x20E, class, const.getGEN_SWMOTR4 },
+            { "GEN_SWMOTR5", 0x20E, class, const.getGEN_SWMOTR5 },
+            { "GEN_SWMYCR", 0x20E, class, const.getGEN_SWMYCR },
+            { "GEN_SWMYHP1", 0x20E, class, const.getGEN_SWMYHP1 },
+            { "GEN_SWMYHP2", 0x20E, class, const.getGEN_SWMYHP2 },
+            { "GEN_SWMYRI", 0x20E, class, const.getGEN_SWMYRI },
+            { "GEN_SWMYST", 0x20E, class, const.getGEN_SWMYST },
+            { "GEN_VBFYPRO", 0x20E, class, const.getGEN_VBFYPRO },
+            { "GEN_VBFYST2", 0x20E, class, const.getGEN_VBFYST2 },
+            { "GEN_VBMOCD", 0x20E, class, const.getGEN_VBMOCD },
+            { "GEN_VBMYCR", 0x20E, class, const.getGEN_VBMYCR },
+            { "GEN_VBMYELV", 0x20E, class, const.getGEN_VBMYELV },
+            { "GEN_VHFYPRO", 0x20E, class, const.getGEN_VHFYPRO },
+            { "GEN_VHFYST3", 0x20E, class, const.getGEN_VHFYST3 },
+            { "GEN_VHMYCR", 0x20E, class, const.getGEN_VHMYCR },
+            { "GEN_VHMYELV", 0x20E, class, const.getGEN_VHMYELV },
+            { "GEN_VIMYELV", 0x20E, class, const.getGEN_VIMYELV },
+            { "GEN_VWFYPRO", 0x20E, class, const.getGEN_VWFYPRO },
+            { "GEN_VWFYST1", 0x20E, class, const.getGEN_VWFYST1 },
+            { "GEN_VWFYWAI", 0x20E, class, const.getGEN_VWFYWAI },
+            { "GEN_VWMOTR1", 0x20E, class, const.getGEN_VWMOTR1 },
+            { "GEN_VWMOTR2", 0x20E, class, const.getGEN_VWMOTR2 },
+            { "GEN_VWMYAP", 0x20E, class, const.getGEN_VWMYAP },
+            { "GEN_VWMYBJD", 0x20E, class, const.getGEN_VWMYBJD },
+            { "GEN_VWMYCD", 0x20E, class, const.getGEN_VWMYCD },
+            { "GEN_VWMYCR", 0x20E, class, const.getGEN_VWMYCR },
+            { "GEN_WFOPJ", 0x20E, class, const.getGEN_WFOPJ },
+            { "GEN_WFORI", 0x20E, class, const.getGEN_WFORI },
+            { "GEN_WFOST", 0x20E, class, const.getGEN_WFOST },
+            { "GEN_WFYBE", 0x20E, class, const.getGEN_WFYBE },
+            { "GEN_WFYBU", 0x20E, class, const.getGEN_WFYBU },
+            { "GEN_WFYCRK", 0x20E, class, const.getGEN_WFYCRK },
+            { "GEN_WFYCRP", 0x20E, class, const.getGEN_WFYCRP },
+            { "GEN_WFYJG", 0x20E, class, const.getGEN_WFYJG },
+            { "GEN_WFYLG", 0x20E, class, const.getGEN_WFYLG },
+            { "GEN_WFYPRO", 0x20E, class, const.getGEN_WFYPRO },
+            { "GEN_WFYRI", 0x20E, class, const.getGEN_WFYRI },
+            { "GEN_WFYRO", 0x20E, class, const.getGEN_WFYRO },
+            { "GEN_WFYST", 0x20E, class, const.getGEN_WFYST },
+            { "GEN_WFYSTEW", 0x20E, class, const.getGEN_WFYSTEW },
+            { "GEN_WMOMIB", 0x20E, class, const.getGEN_WMOMIB },
+            { "GEN_WMOPJ", 0x20E, class, const.getGEN_WMOPJ },
+            { "GEN_WMOPREA", 0x20E, class, const.getGEN_WMOPREA },
+            { "GEN_WMORI", 0x20E, class, const.getGEN_WMORI },
+            { "GEN_WMOSCI", 0x20E, class, const.getGEN_WMOSCI },
+            { "GEN_WMOST", 0x20E, class, const.getGEN_WMOST },
+            { "GEN_WMOTR1", 0x20E, class, const.getGEN_WMOTR1 },
+            { "GEN_WMYBE", 0x20E, class, const.getGEN_WMYBE },
+            { "GEN_WMYBMX", 0x20E, class, const.getGEN_WMYBMX },
+            { "GEN_WMYBOUN", 0x20E, class, const.getGEN_WMYBOUN },
+            { "GEN_WMYBOX", 0x20E, class, const.getGEN_WMYBOX },
+            { "GEN_WMYBP", 0x20E, class, const.getGEN_WMYBP },
+            { "GEN_WMYBU", 0x20E, class, const.getGEN_WMYBU },
+            { "GEN_WMYCD1", 0x20E, class, const.getGEN_WMYCD1 },
+            { "GEN_WMYCD2", 0x20E, class, const.getGEN_WMYCD2 },
+            { "GEN_WMYCH", 0x20E, class, const.getGEN_WMYCH },
+            { "GEN_WMYCON", 0x20E, class, const.getGEN_WMYCON },
+            { "GEN_WMYCONB", 0x20E, class, const.getGEN_WMYCONB },
+            { "GEN_WMYCR", 0x20E, class, const.getGEN_WMYCR },
+            { "GEN_WMYDRUG", 0x20E, class, const.getGEN_WMYDRUG },
+            { "GEN_WMYGAR", 0x20E, class, const.getGEN_WMYGAR },
+            { "GEN_WMYGOL1", 0x20E, class, const.getGEN_WMYGOL1 },
+            { "GEN_WMYGOL2", 0x20E, class, const.getGEN_WMYGOL2 },
+            { "GEN_WMYJG", 0x20E, class, const.getGEN_WMYJG },
+            { "GEN_WMYLG", 0x20E, class, const.getGEN_WMYLG },
+            { "GEN_WMYMECH", 0x20E, class, const.getGEN_WMYMECH },
+            { "GEN_WMYMOUN", 0x20E, class, const.getGEN_WMYMOUN },
+            { "GEN_WMYPLT", 0x20E, class, const.getGEN_WMYPLT },
+            { "GEN_WMYRI", 0x20E, class, const.getGEN_WMYRI },
+            { "GEN_WMYRO", 0x20E, class, const.getGEN_WMYRO },
+            { "GEN_WMYSGRD", 0x20E, class, const.getGEN_WMYSGRD },
+            { "GEN_WMYSKAT", 0x20E, class, const.getGEN_WMYSKAT },
+            { "GEN_WMYST", 0x20E, class, const.getGEN_WMYST },
+            { "GEN_WMYTX1", 0x20E, class, const.getGEN_WMYTX1 },
+            { "GEN_WMYTX2", 0x20E, class, const.getGEN_WMYTX2 },
+            { "GEN_WMYVA", 0x20E, class, const.getGEN_WMYVA },
+            { "GFD_BARBARA", 0x20E, class, const.getGFD_BARBARA },
+            { "GFD_BMOBAR", 0x20E, class, const.getGFD_BMOBAR },
+            { "GFD_BMYBARB", 0x20E, class, const.getGFD_BMYBARB },
+            { "GFD_BMYTATT", 0x20E, class, const.getGFD_BMYTATT },
+            { "GFD_CATALINA", 0x20E, class, const.getGFD_CATALINA },
+            { "GFD_DENISE", 0x20E, class, const.getGFD_DENISE },
+            { "GFD_HELENA", 0x20E, class, const.getGFD_HELENA },
+            { "GFD_KATIE", 0x20E, class, const.getGFD_KATIE },
+            { "GFD_MICHELLE", 0x20E, class, const.getGFD_MICHELLE },
+            { "GFD_MILLIE", 0x20E, class, const.getGFD_MILLIE },
+            { "GFD_POL_ANN", 0x20E, class, const.getGFD_POL_ANN },
+            { "GFD_WFYBURG", 0x20E, class, const.getGFD_WFYBURG },
+            { "GFD_WFYCLOT", 0x20E, class, const.getGFD_WFYCLOT },
+            { "GFD_WMYAMMO", 0x20E, class, const.getGFD_WMYAMMO },
+            { "GFD_WMYBARB", 0x20E, class, const.getGFD_WMYBARB },
+            { "GFD_WMYBELL", 0x20E, class, const.getGFD_WMYBELL },
+            { "GFD_WMYCLOT", 0x20E, class, const.getGFD_WMYCLOT },
+            { "GFD_WMYPIZZ", 0x20E, class, const.getGFD_WMYPIZZ },
+            { "GNG_BALLAS1", 0x20E, class, const.getGNG_BALLAS1 },
+            { "GNG_BALLAS2", 0x20E, class, const.getGNG_BALLAS2 },
+            { "GNG_BALLAS3", 0x20E, class, const.getGNG_BALLAS3 },
+            { "GNG_BALLAS4", 0x20E, class, const.getGNG_BALLAS4 },
+            { "GNG_BALLAS5", 0x20E, class, const.getGNG_BALLAS5 },
+            { "GNG_BIG_BEAR", 0x20E, class, const.getGNG_BIG_BEAR },
+            { "GNG_CESAR", 0x20E, class, const.getGNG_CESAR },
+            { "GNG_DNB1", 0x20E, class, const.getGNG_DNB1 },
+            { "GNG_DNB2", 0x20E, class, const.getGNG_DNB2 },
+            { "GNG_DNB3", 0x20E, class, const.getGNG_DNB3 },
+            { "GNG_DNB5", 0x20E, class, const.getGNG_DNB5 },
+            { "GNG_DWAINE", 0x20E, class, const.getGNG_DWAINE },
+            { "GNG_FAM1", 0x20E, class, const.getGNG_FAM1 },
+            { "GNG_FAM2", 0x20E, class, const.getGNG_FAM2 },
+            { "GNG_FAM3", 0x20E, class, const.getGNG_FAM3 },
+            { "GNG_FAM4", 0x20E, class, const.getGNG_FAM4 },
+            { "GNG_FAM5", 0x20E, class, const.getGNG_FAM5 },
+            { "GNG_JIZZY", 0x20E, class, const.getGNG_JIZZY },
+            { "GNG_LSV1", 0x20E, class, const.getGNG_LSV1 },
+            { "GNG_LSV2", 0x20E, class, const.getGNG_LSV2 },
+            { "GNG_LSV3", 0x20E, class, const.getGNG_LSV3 },
+            { "GNG_LSV4", 0x20E, class, const.getGNG_LSV4 },
+            { "GNG_LSV5", 0x20E, class, const.getGNG_LSV5 },
+            { "GNG_MACCER", 0x20E, class, const.getGNG_MACCER },
+            { "GNG_MAFBOSS", 0x20E, class, const.getGNG_MAFBOSS },
+            { "GNG_OGLOC", 0x20E, class, const.getGNG_OGLOC },
+            { "GNG_RYDER", 0x20E, class, const.getGNG_RYDER },
+            { "GNG_SFR1", 0x20E, class, const.getGNG_SFR1 },
+            { "GNG_SFR2", 0x20E, class, const.getGNG_SFR2 },
+            { "GNG_SFR3", 0x20E, class, const.getGNG_SFR3 },
+            { "GNG_SFR4", 0x20E, class, const.getGNG_SFR4 },
+            { "GNG_SFR5", 0x20E, class, const.getGNG_SFR5 },
+            { "GNG_SMOKE", 0x20E, class, const.getGNG_SMOKE },
+            { "GNG_STRI1", 0x20E, class, const.getGNG_STRI1 },
+            { "GNG_STRI2", 0x20E, class, const.getGNG_STRI2 },
+            { "GNG_STRI4", 0x20E, class, const.getGNG_STRI4 },
+            { "GNG_STRI5", 0x20E, class, const.getGNG_STRI5 },
+            { "GNG_SWEET", 0x20E, class, const.getGNG_SWEET },
+            { "GNG_TBONE", 0x20E, class, const.getGNG_TBONE },
+            { "GNG_TORENO", 0x20E, class, const.getGNG_TORENO },
+            { "GNG_TRUTH", 0x20E, class, const.getGNG_TRUTH },
+            { "GNG_VLA1", 0x20E, class, const.getGNG_VLA1 },
+            { "GNG_VLA2", 0x20E, class, const.getGNG_VLA2 },
+            { "GNG_VLA3", 0x20E, class, const.getGNG_VLA3 },
+            { "GNG_VLA4", 0x20E, class, const.getGNG_VLA4 },
+            { "GNG_VLA5", 0x20E, class, const.getGNG_VLA5 },
+            { "GNG_VMAFF1", 0x20E, class, const.getGNG_VMAFF1 },
+            { "GNG_VMAFF2", 0x20E, class, const.getGNG_VMAFF2 },
+            { "GNG_VMAFF3", 0x20E, class, const.getGNG_VMAFF3 },
+            { "GNG_VMAFF4", 0x20E, class, const.getGNG_VMAFF4 },
+            { "GNG_VMAFF5", 0x20E, class, const.getGNG_VMAFF5 },
+            { "GNG_WOOZIE", 0x20E, class, const.getGNG_WOOZIE },
+            { "Group", 0x6, System.String },
+            { "Name", 0x6, System.String },
+            { "PLY_AG", 0x20E, class, const.getPLY_AG },
+            { "PLY_AG2", 0x20E, class, const.getPLY_AG2 },
+            { "PLY_AR", 0x20E, class, const.getPLY_AR },
+            { "PLY_AR2", 0x20E, class, const.getPLY_AR2 },
+            { "PLY_CD", 0x20E, class, const.getPLY_CD },
+            { "PLY_CD2", 0x20E, class, const.getPLY_CD2 },
+            { "PLY_CF", 0x20E, class, const.getPLY_CF },
+            { "PLY_CF2", 0x20E, class, const.getPLY_CF2 },
+            { "PLY_CG", 0x20E, class, const.getPLY_CG },
+            { "PLY_CG2", 0x20E, class, const.getPLY_CG2 },
+            { "PLY_CR", 0x20E, class, const.getPLY_CR },
+            { "PLY_CR2", 0x20E, class, const.getPLY_CR2 },
+            { "PLY_PG", 0x20E, class, const.getPLY_PG },
+            { "PLY_PG2", 0x20E, class, const.getPLY_PG2 },
+            { "PLY_PR", 0x20E, class, const.getPLY_PR },
+            { "PLY_PR2", 0x20E, class, const.getPLY_PR2 },
+            { "PLY_WG", 0x20E, class, const.getPLY_WG },
+            { "PLY_WG2", 0x20E, class, const.getPLY_WG2 },
+            { "PLY_WR", 0x20E, class, const.getPLY_WR },
+            { "PLY_WR2", 0x20E, class, const.getPLY_WR2 }
+          },
+          methods = {
+            { ".ctor", 0x206, __ctor2__, System.String, System.String }
+          }
+        }
+      end
     }
     return class
   end)

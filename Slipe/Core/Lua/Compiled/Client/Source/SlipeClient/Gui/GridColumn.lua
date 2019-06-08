@@ -50,7 +50,25 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       getRelativeWidth = getRelativeWidth,
       setRelativeWidth = setRelativeWidth,
       AutoSize = AutoSize,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "glist", 0x1, out.Slipe.Client.Gui.GridList }
+          },
+          properties = {
+            { "AbsoluteWidth", 0x106, System.Single, getAbsoluteWidth, setAbsoluteWidth },
+            { "ID", 0x6, System.Int32 },
+            { "RelativeWidth", 0x106, System.Single, getRelativeWidth, setRelativeWidth },
+            { "Title", 0x106, System.String, getTitle, setTitle }
+          },
+          methods = {
+            { ".ctor", 0x306, nil, System.String, System.Single, out.Slipe.Client.Gui.GridList },
+            { "AutoSize", 0x86, AutoSize, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

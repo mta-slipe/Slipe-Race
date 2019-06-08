@@ -107,7 +107,29 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
       getOn1 = getOn1,
       setOn1 = setOn1,
       Add = Add,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "count", 0x1, System.Int32 },
+            { "initialized", 0x1, System.Boolean }
+          },
+          properties = {
+            { "CheckLineOfSight", 0x106, System.Boolean, getCheckLineOfSight1, setCheckLineOfSight1 },
+            { "On", 0x106, System.Boolean, getOn1, setOn1 },
+            { "Silent", 0x106, System.Boolean, getSilent1, setSilent1 },
+            { "Type", 0x106, System.Int32, getType1, setType1 },
+            { "UseRandomiser", 0x106, System.Boolean, getUseRandomiser1, setUseRandomiser1 },
+            { "VisibleFromAllDirections", 0x106, System.Boolean, getVisibleFromAllDirections1, setVisibleFromAllDirections1 }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.Shared.Vehicles.SharedVehicle },
+            { "Add", 0x386, Add, System.Numerics.Vector3, out.Slipe.Shared.Utilities.Color, System.Single, System.Boolean },
+            { "Reinitialize", 0x81, Reinitialize, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

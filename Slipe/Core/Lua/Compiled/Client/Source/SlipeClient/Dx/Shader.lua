@@ -103,7 +103,27 @@ System.namespace("Slipe.Client.Dx", function (namespace)
       Apply1 = Apply1,
       Remove = Remove,
       Remove1 = Remove1,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "TechniqueName", 0x6, System.String }
+          },
+          methods = {
+            { ".ctor", 0x506, nil, System.String, System.Single, System.Single, System.Boolean, System.Int32 },
+            { "Apply", 0x386, Apply, System.String, out.Slipe.Shared.Elements.Element, System.Boolean, System.Boolean },
+            { "Apply", 0x286, Apply1, System.String, System.Boolean, System.Boolean },
+            { "Remove", 0x286, Remove, System.String, out.Slipe.Shared.Elements.Element, System.Boolean },
+            { "Remove", 0x186, Remove1, System.String, System.Boolean },
+            { "SetTessellation", 0x186, SetTessellation, System.Numerics.Vector2, System.Boolean },
+            { "SetTransform", 0x586, SetTransform, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector2, System.Boolean, System.Boolean, System.Boolean },
+            { "SetTransform", 0x386, SetTransform1, System.Numerics.Vector3, System.Numerics.Vector3, System.Boolean, System.Boolean },
+            { "SetTransform", 0x186, SetTransform2, System.Numerics.Vector3, System.Boolean },
+            { "SetValue", 0x286, SetValue, System.String, System.Object, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

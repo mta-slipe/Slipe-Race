@@ -11,8 +11,8 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
   -- Class representing an object in the GTA world
   -- </summary>
   namespace.class("WorldObject", function (namespace)
-    local getMass, setMass, getBreakable, setBreakable, setRespawns, Break, Respawn, __ctor1__, 
-    __ctor2__, __ctor3__
+    local getMass, setMass, getBreakable, setBreakable, setRespawns, Break, Respawn, class, 
+    __ctor1__, __ctor2__, __ctor3__
     __ctor1__ = function (this, element)
       SlipeSharedGameWorld.SharedWorldObject.__ctor__[1](this, element)
     end
@@ -55,7 +55,7 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
     Respawn = function (this)
       SlipeMtaDefinitions.MtaClient.RespawnObject(this.element)
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Shared.GameWorld.SharedWorldObject
@@ -75,9 +75,27 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Breakable", 0x106, System.Boolean, getBreakable, setBreakable },
+            { "Mass", 0x106, System.Single, getMass, setMass },
+            { "Respawns", 0x306, System.Boolean, setRespawns }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x206, __ctor2__, System.Int32, System.Numerics.Vector3 },
+            { ".ctor", 0x406, __ctor3__, System.Int32, System.Numerics.Vector3, System.Numerics.Vector3, System.Boolean },
+            { "Break", 0x6, Break },
+            { "Respawn", 0x6, Respawn }
+          },
+          events = {
+            { "OnBreak", 0x6, System.Delegate(class, out.Slipe.Client.GameWorld.Events.OnBreakEventArgs, System.Void) },
+            { "OnDamage", 0x6, System.Delegate(class, out.Slipe.Client.GameWorld.Events.OnDamageEventArgs, System.Void) },
+            { "OnExplosion", 0x6, System.Delegate(class, out.Slipe.Client.Elements.Events.OnExplosionEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 4 --[[ElementType.Object]]) }
         }
       end
     }
+    return class
   end)
 end)

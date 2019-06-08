@@ -50,6 +50,16 @@ System.namespace("Slipe.Client.Game", function (namespace)
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Color", 0x206, out.Slipe.Shared.Utilities.Color, getColor },
+            { "FriendlyFire", 0x206, System.Boolean, getFriendlyFire },
+            { "Name", 0x206, System.String, getName },
+            { "PlayerCount", 0x206, System.Int32, getPlayerCount },
+            { "Players", 0x206, System.Array(out.Slipe.Client.Peds.Player), getPlayers }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.MtaDefinitions.MtaElement }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 11 --[[ElementType.Team]]) }
         }
       end

@@ -22,7 +22,15 @@ System.namespace("Slipe.Client.Rendering", function (namespace)
           out.Slipe.Client.Dx.Texture
         }
       end,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x206, nil, System.Numerics.Vector2, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

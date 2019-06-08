@@ -26,7 +26,21 @@ System.namespace("Slipe.Shared.GameWorld", function (namespace)
       _garageID = 0,
       getOpen = getOpen,
       setOpen = setOpen,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "_garageID", 0x3, System.Int32 }
+          },
+          properties = {
+            { "Open", 0x106, System.Boolean, getOpen, setOpen }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, System.Int32 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

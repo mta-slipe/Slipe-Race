@@ -11,7 +11,16 @@ System.namespace("Slipe.Server.IO", function (namespace)
       SlipeMtaDefinitions.MtaServer.OutputServerLog(line)
     end
     return {
-      WriteLine = WriteLine
+      WriteLine = WriteLine,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x4, nil },
+            { "WriteLine", 0x106, WriteLine, System.String }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

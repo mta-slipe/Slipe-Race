@@ -72,6 +72,17 @@ System.namespace("Slipe.Client.Lights", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Color", 0x106, out.Slipe.Shared.Utilities.Color, getColor, setColor },
+            { "Direction", 0x106, System.Numerics.Vector3, getDirection, setDirection },
+            { "LightType", 0x206, System.Int32, getLightType },
+            { "Radius", 0x106, System.Single, getRadius, setRadius }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x606, __ctor2__, System.Int32, System.Numerics.Vector3, System.Single, out.Slipe.Shared.Utilities.Color, System.Numerics.Vector3, System.Boolean },
+            { ".ctor", 0x306, __ctor3__, System.Int32, System.Numerics.Vector3, System.Single }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 32 --[[ElementType.Light]]) }
         }
       end

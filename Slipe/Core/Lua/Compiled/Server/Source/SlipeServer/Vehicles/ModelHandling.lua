@@ -31,7 +31,20 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
       model = 0,
       UpdateFromGame = UpdateFromGame,
       UpdateToGame = UpdateToGame,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "model", 0x3, System.Int32 }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, System.Int32 },
+            { "UpdateFromGame", 0x3, UpdateFromGame },
+            { "UpdateToGame", 0x203, UpdateToGame, System.String, System.Object }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

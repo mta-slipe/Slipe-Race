@@ -15,8 +15,8 @@ System.namespace("Slipe.Client.Weapons", function (namespace)
   -- Represents a custom projectile
   -- </summary>
   namespace.class("Projectile", function (namespace)
-    local getCounter, setCounter, getCreator, getTarget, getForce, getProjectileType, __ctor1__, __ctor2__, 
-    __ctor3__, __ctor4__, __ctor5__
+    local getCounter, setCounter, getCreator, getTarget, getForce, getProjectileType, class, __ctor1__, 
+    __ctor2__, __ctor3__, __ctor4__, __ctor5__
     __ctor1__ = function (this, element)
       SlipeSharedElements.PhysicalElement.__ctor__(this, element)
     end
@@ -84,7 +84,7 @@ System.namespace("Slipe.Client.Weapons", function (namespace)
     getProjectileType = function (this)
       return SlipeMtaDefinitions.MtaClient.GetProjectileType(this.element)
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Shared.Elements.PhysicalElement
@@ -105,9 +105,27 @@ System.namespace("Slipe.Client.Weapons", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Counter", 0x106, System.Int32, getCounter, setCounter },
+            { "Creator", 0x206, out.Slipe.Client.Peds.Player, getCreator },
+            { "Force", 0x206, System.Single, getForce },
+            { "ProjectileType", 0x206, System.Int32, getProjectileType },
+            { "Target", 0x206, out.Slipe.Shared.Elements.PhysicalElement, getTarget }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x806, __ctor2__, out.Slipe.Shared.Elements.PhysicalElement, System.Int32, System.Numerics.Vector3, System.Single, out.Slipe.Shared.Elements.PhysicalElement, System.Numerics.Vector3, System.Numerics.Vector3, System.Int32 },
+            { ".ctor", 0x606, __ctor3__, out.Slipe.Shared.Elements.PhysicalElement, System.Int32, System.Numerics.Vector3, System.Single, out.Slipe.Shared.Elements.PhysicalElement, System.Numerics.Vector3 },
+            { ".ctor", 0x506, __ctor4__, out.Slipe.Shared.Elements.PhysicalElement, System.Int32, System.Numerics.Vector3, System.Single, out.Slipe.Shared.Elements.PhysicalElement },
+            { ".ctor", 0x406, __ctor5__, out.Slipe.Shared.Elements.PhysicalElement, System.Int32, System.Numerics.Vector3, System.Single }
+          },
+          events = {
+            { "OnCreated", 0x6, System.Delegate(class, out.Slipe.Client.Weapons.Events.OnCreatedEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 10 --[[ElementType.Projectile]]) }
         }
       end
     }
+    return class
   end)
 end)

@@ -24,7 +24,16 @@ System.namespace("Slipe.Shared.Cryptography", function (namespace)
     end
     return {
       Encode = Encode,
-      Decode = Decode
+      Decode = Decode,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "Decode", 0x18E, Decode, System.String, System.String },
+            { "Encode", 0x18E, Encode, System.String, System.String }
+          },
+          class = { 0xE }
+        }
+      end
     }
   end)
 end)

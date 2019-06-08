@@ -15,7 +15,20 @@ System.namespace("Slipe.Shared.Rpc", function (namespace)
         }
       end,
       x = 0,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "element", 0x6, out.Slipe.MtaDefinitions.MtaElement },
+            { "name", 0x6, System.String },
+            { "x", 0x6, System.Int32 }
+          },
+          methods = {
+            { ".ctor", 0x306, nil, System.String, System.Int32, out.Slipe.Shared.Elements.Element }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

@@ -14,7 +14,7 @@ System.namespace("Slipe.Shared.Pickups", function (namespace)
   -- </summary>
   namespace.class("SharedPickup", function (namespace)
     local getPickupType, getAmmo, getWeaponModel, getAmount, Morph, Morph1, Morph2, Morph3, 
-    __ctor__
+    class, __ctor__
     __ctor__ = function (this, element)
       SlipeSharedElements.PhysicalElement.__ctor__(this, element)
     end
@@ -54,7 +54,7 @@ System.namespace("Slipe.Shared.Pickups", function (namespace)
     Morph3 = function (this, model)
       return Morph(this, 3 --[[PickupType.Custom]], model, 50)
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Shared.Elements.PhysicalElement
@@ -68,7 +68,30 @@ System.namespace("Slipe.Shared.Pickups", function (namespace)
       Morph1 = Morph1,
       Morph2 = Morph2,
       Morph3 = Morph3,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Ammo", 0x206, System.Int32, getAmmo },
+            { "Amount", 0x206, System.Int32, getAmount },
+            { "PickupType", 0x206, System.Int32, getPickupType },
+            { "WeaponModel", 0x206, out.Slipe.Shared.Weapons.SharedWeaponModel, getWeaponModel }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.MtaDefinitions.MtaElement },
+            { "Morph", 0x386, Morph, System.Int32, System.Int32, System.Int32, System.Boolean },
+            { "Morph", 0x286, Morph1, out.Slipe.Shared.Weapons.SharedWeaponModel, System.Int32, System.Boolean },
+            { "Morph", 0x186, Morph2, System.Int32, System.Boolean },
+            { "Morph", 0x186, Morph3, System.Int32, System.Boolean }
+          },
+          events = {
+            { "OnHit", 0x6, System.Delegate(class, out.Slipe.Shared.Pickups.Events.OnHitArgs, System.Void) },
+            { "OnLeave", 0x6, System.Delegate(class, out.Slipe.Shared.Pickups.Events.OnLeaveArgs, System.Void) }
+          },
+          class = { 0x6 }
+        }
+      end
     }
+    return class
   end)
 end)

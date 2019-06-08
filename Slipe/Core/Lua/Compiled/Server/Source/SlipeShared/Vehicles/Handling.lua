@@ -314,6 +314,19 @@ System.namespace("Slipe.Shared.Vehicles", function (namespace)
         SlipeMtaDefinitions.MtaShared.SetVehicleHandling(this.vehicleElement, key, value)
       end
     end
+    --too many upvalues (limit is 60)
+    local const = {}
+    const.setSuspensionUpperLimit = setSuspensionUpperLimit
+    const.getTailLight = getTailLight
+    const.setTailLight = setTailLight
+    const.getTractionBias = getTractionBias
+    const.setTractionBias = setTractionBias
+    const.getTractionLoss = getTractionLoss
+    const.setTractionLoss = setTractionLoss
+    const.getTractionMultiplier = getTractionMultiplier
+    const.setTractionMultiplier = setTractionMultiplier
+    const.getTurnMass = getTurnMass
+    const.setTurnMass = setTurnMass
     return {
       mass = 0,
       getMass = getMass,
@@ -416,7 +429,89 @@ System.namespace("Slipe.Shared.Vehicles", function (namespace)
         __ctor1__,
         __ctor2__,
         __ctor3__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "animGroup", 0x3, System.Int32 },
+            { "brakeBias", 0x3, System.Single },
+            { "brakeDeceleration", 0x3, System.Single },
+            { "centerOfMass", 0x3, System.Numerics.Vector3 },
+            { "collisionDamageMultiplier", 0x3, System.Single },
+            { "dragCoeff", 0x3, System.Single },
+            { "driveType", 0x3, System.Int32 },
+            { "engineAcceleration", 0x3, System.Single },
+            { "engineInertia", 0x3, System.Single },
+            { "engineType", 0x3, System.Int32 },
+            { "handlingFlags", 0x3, System.UInt32 },
+            { "headLight", 0x3, System.Int32 },
+            { "mass", 0x3, System.Single },
+            { "maxVelocity", 0x3, System.Single },
+            { "modelFlags", 0x3, System.UInt32 },
+            { "monetary", 0x3, System.Int32 },
+            { "numberOfGears", 0x3, System.Int32 },
+            { "percentSubmerged", 0x3, System.Int32 },
+            { "seatOffsetDistance", 0x3, System.Single },
+            { "steeringLock", 0x3, System.Single },
+            { "suspensionAntiDiveMultiplier", 0x3, System.Single },
+            { "suspensionDamping", 0x3, System.Single },
+            { "suspensionForceLevel", 0x3, System.Single },
+            { "suspensionFrontRearBias", 0x3, System.Single },
+            { "suspensionHighSpeedDamping", 0x3, System.Single },
+            { "suspensionLowerLimit", 0x3, System.Single },
+            { "suspensionUpperLimit", 0x3, System.Single },
+            { "tailLight", 0x3, System.Int32 },
+            { "tractionBias", 0x3, System.Single },
+            { "tractionLoss", 0x3, System.Single },
+            { "tractionMultiplier", 0x3, System.Single },
+            { "turnMass", 0x3, System.Single },
+            { "vehicleElement", 0x1, out.Slipe.MtaDefinitions.MtaElement }
+          },
+          properties = {
+            { "AnimationGroup", 0x106, System.Int32, getAnimationGroup, setAnimationGroup },
+            { "BrakeBias", 0x106, System.Single, getBrakeBias, setBrakeBias },
+            { "BrakeDeceleration", 0x106, System.Single, getBrakeDeceleration, setBrakeDeceleration },
+            { "CenterOfMass", 0x106, System.Numerics.Vector3, getCenterOfMass, setCenterOfMass },
+            { "CollisionDamageMultiplier", 0x106, System.Single, getCollisionDamageMultiplier, setCollisionDamageMultiplier },
+            { "DragCoefficient", 0x106, System.Single, getDragCoefficient, setDragCoefficient },
+            { "DriveType", 0x106, System.Int32, getDriveType, setDriveType },
+            { "EngineAcceleration", 0x106, System.Single, getEngineAcceleration, setEngineAcceleration },
+            { "EngineInertia", 0x106, System.Single, getEngineInertia, setEngineInertia },
+            { "EngineType", 0x106, System.Int32, getEngineType, setEngineType },
+            { "HandlingFlags", 0x106, System.UInt32, getHandlingFlags, setHandlingFlags },
+            { "HeadLight", 0x106, System.Int32, getHeadLight, setHeadLight },
+            { "Mass", 0x106, System.Single, getMass, setMass },
+            { "MaxVelocity", 0x106, System.Single, getMaxVelocity, setMaxVelocity },
+            { "ModelFlags", 0x106, System.UInt32, getModelFlags, setModelFlags },
+            { "Monetary", 0x206, System.Int32, getMonetary },
+            { "NumberOfGears", 0x106, System.Int32, getNumberOfGears, setNumberOfGears },
+            { "PercentSubmerged", 0x106, System.Int32, getPercentSubmerged, setPercentSubmerged },
+            { "SeatOffsetDistance", 0x106, System.Single, getSeatOffsetDistance, setSeatOffsetDistance },
+            { "SteeringLock", 0x106, System.Single, getSteeringLock, setSteeringLock },
+            { "SuspensionAntiDiveMultiplier", 0x106, System.Single, getSuspensionAntiDiveMultiplier, setSuspensionAntiDiveMultiplier },
+            { "SuspensionDamping", 0x106, System.Single, getSuspensionDamping, setSuspensionDamping },
+            { "SuspensionForceLevel", 0x106, System.Single, getSuspensionForceLevel, setSuspensionForceLevel },
+            { "SuspensionFrontRearBias", 0x106, System.Single, getSuspensionFrontRearBias, setSuspensionFrontRearBias },
+            { "SuspensionHighSpeedDamping", 0x106, System.Single, getSuspensionHighSpeedDamping, setSuspensionHighSpeedDamping },
+            { "SuspensionLowerLimit", 0x106, System.Single, getSuspensionLowerLimit, setSuspensionLowerLimit },
+            { "SuspensionUpperLimit", 0x106, System.Single, getSuspensionUpperLimit, const.setSuspensionUpperLimit },
+            { "TailLight", 0x106, System.Int32, const.getTailLight, const.setTailLight },
+            { "TractionBias", 0x106, System.Single, const.getTractionBias, const.setTractionBias },
+            { "TractionLoss", 0x106, System.Single, const.getTractionLoss, const.setTractionLoss },
+            { "TractionMultiplier", 0x106, System.Single, const.getTractionMultiplier, const.setTractionMultiplier },
+            { "TurnMass", 0x106, System.Single, const.getTurnMass, const.setTurnMass }
+          },
+          methods = {
+            { ".ctor", 0x3, __ctor1__ },
+            { ".ctor", 0x106, __ctor2__, out.Slipe.Shared.Vehicles.SharedVehicle },
+            { ".ctor", 0x106, __ctor3__, System.Dictionary(System.String, System.Object) },
+            { "BuildFromTable", 0x103, BuildFromTable, System.Dictionary(System.String, System.Object) },
+            { "UpdateFromGame", 0x3, UpdateFromGame },
+            { "UpdateToGame", 0x203, UpdateToGame, System.String, System.Object }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

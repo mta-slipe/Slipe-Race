@@ -22,10 +22,13 @@ local Stack = {
   __ctor__ = Array.ctorList,
   getCount = Array.getLength,
   Clear = Array.clear,
-  Contains = Array.contains,
+  Contains = Array.Contains,
+  GetEnumerator = Array.reverseEnumerator,
   Push = Array.add,
   Peek = Array.last,
-  Pop = Array.popLast
+  Pop = Array.popLast,
+  ToArray = Array.toArray,
+  TrimExcess = System.emptyFn
 }
 
 function System.stackFromTable(t, T)

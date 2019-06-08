@@ -26,7 +26,16 @@ System.namespace("Slipe.Client.Helpers", function (namespace)
         }
       end,
       OnAttach = OnAttach,
-      OnDetach = OnDetach
+      OnDetach = OnDetach,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnAttach", 0x3, OnAttach },
+            { "OnDetach", 0x3, OnDetach }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

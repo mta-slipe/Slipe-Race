@@ -24,7 +24,16 @@ System.namespace("Slipe.Shared.Cryptography", function (namespace)
     end
     return {
       Hash = Hash,
-      Verify = Verify
+      Verify = Verify,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "Hash", 0x28E, Hash, System.String, System.Int32, System.Task },
+            { "Verify", 0x28E, Verify, System.String, System.String, System.Task }
+          },
+          class = { 0xE }
+        }
+      end
     }
   end)
 end)

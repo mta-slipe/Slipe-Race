@@ -64,7 +64,25 @@ System.namespace("Slipe.Client.Dx", function (namespace)
       SetPixelColor = SetPixelColor,
       getSize = getSize,
       getFormat = getFormat,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "pixels", 0x1, System.String }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, System.String },
+            { "Convert", 0x286, Convert, System.Int32, System.Int32, System.String },
+            { "GetPixelColor", 0x186, GetPixelColor, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color },
+            { "SetPixelColor", 0x286, SetPixelColor, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color, System.Boolean }
+          },
+          properties = {
+            { "Format", 0x206, System.Int32, getFormat },
+            { "Size", 0x206, System.Numerics.Vector2, getSize }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

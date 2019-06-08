@@ -61,7 +61,28 @@ System.namespace("Slipe.Shared.Vehicles", function (namespace)
       getMinimalAlpha = getMinimalAlpha,
       setMinimalAlpha = setMinimalAlpha,
       UpdateThisSiren = UpdateThisSiren,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "color", 0x1, out.Slipe.Shared.Utilities.Color },
+            { "minAlpha", 0x1, System.Single },
+            { "point", 0x1, System.Int32 },
+            { "position", 0x1, System.Numerics.Vector3 },
+            { "vehicle", 0x1, out.Slipe.Shared.Vehicles.SharedVehicle }
+          },
+          properties = {
+            { "Color", 0x106, out.Slipe.Shared.Utilities.Color, getColor, setColor },
+            { "MinimalAlpha", 0x106, System.Single, getMinimalAlpha, setMinimalAlpha },
+            { "Position", 0x106, System.Numerics.Vector3, getPosition, setPosition }
+          },
+          methods = {
+            { ".ctor", 0x606, nil, out.Slipe.Shared.Vehicles.SharedVehicle, System.Int32, System.Numerics.Vector3, out.Slipe.Shared.Utilities.Color, System.Single, System.Boolean },
+            { "UpdateThisSiren", 0x3, UpdateThisSiren }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

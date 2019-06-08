@@ -118,7 +118,39 @@ System.namespace("Slipe.Client.Sounds", function (namespace)
       flanger = false,
       getFlanger = getFlanger,
       setFlanger = setFlanger,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "chorus", 0x1, System.Boolean },
+            { "compressor", 0x1, System.Boolean },
+            { "distortion", 0x1, System.Boolean },
+            { "echo", 0x1, System.Boolean },
+            { "flanger", 0x1, System.Boolean },
+            { "gargle", 0x1, System.Boolean },
+            { "i3dl2reverb", 0x1, System.Boolean },
+            { "parameq", 0x1, System.Boolean },
+            { "reverb", 0x1, System.Boolean },
+            { "sound", 0x1, out.Slipe.Client.Sounds.Sound }
+          },
+          properties = {
+            { "Chorus", 0x106, System.Boolean, getChorus, setChorus },
+            { "Compressor", 0x106, System.Boolean, getCompressor, setCompressor },
+            { "Distorion", 0x106, System.Boolean, getDistorion, setDistorion },
+            { "Echo", 0x106, System.Boolean, getEcho, setEcho },
+            { "Flanger", 0x106, System.Boolean, getFlanger, setFlanger },
+            { "Gargle", 0x106, System.Boolean, getGargle, setGargle },
+            { "I3Dl2Reverb", 0x106, System.Boolean, getI3Dl2Reverb, setI3Dl2Reverb },
+            { "Parameq", 0x106, System.Boolean, getParameq, setParameq },
+            { "Reverb", 0x106, System.Boolean, getReverb, setReverb }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.Client.Sounds.Sound },
+            { "updateSoundEffects", 0x1, updateSoundEffects }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

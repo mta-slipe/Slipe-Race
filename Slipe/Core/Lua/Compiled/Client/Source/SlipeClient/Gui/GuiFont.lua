@@ -27,7 +27,16 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x206, __ctor2__, System.String, System.Int32 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

@@ -15,28 +15,28 @@ System.namespace("Slipe.Client.Sounds", function (namespace)
       this.sound = sound
     end
     getSampleRate = function (this)
-      sampleRate, _, _, _ = SlipeMtaDefinitions.MtaClient.GetSoundProperties(this.sound:getMTAElement()):Deconstruct()
+      local sampleRate, _, _, _ = SlipeMtaDefinitions.MtaClient.GetSoundProperties(this.sound:getMTAElement()):Deconstruct()
       return sampleRate
     end
     setSampleRate = function (this, value)
       SlipeMtaDefinitions.MtaClient.SetSoundProperties(this.sound:getMTAElement(), value, getTempo(this), getPitch(this), getReverse(this))
     end
     getTempo = function (this)
-      _, tempo, _, _ = SlipeMtaDefinitions.MtaClient.GetSoundProperties(this.sound:getMTAElement()):Deconstruct()
+      local _, tempo, _, _ = SlipeMtaDefinitions.MtaClient.GetSoundProperties(this.sound:getMTAElement()):Deconstruct()
       return tempo
     end
     setTempo = function (this, value)
       SlipeMtaDefinitions.MtaClient.SetSoundProperties(this.sound:getMTAElement(), getSampleRate(this), value, getPitch(this), getReverse(this))
     end
     getPitch = function (this)
-      _, _, pitch, _ = SlipeMtaDefinitions.MtaClient.GetSoundProperties(this.sound:getMTAElement()):Deconstruct()
+      local _, _, pitch, _ = SlipeMtaDefinitions.MtaClient.GetSoundProperties(this.sound:getMTAElement()):Deconstruct()
       return pitch
     end
     setPitch = function (this, value)
       SlipeMtaDefinitions.MtaClient.SetSoundProperties(this.sound:getMTAElement(), getSampleRate(this), getTempo(this), value, getReverse(this))
     end
     getReverse = function (this)
-      _, _, _, reverse = SlipeMtaDefinitions.MtaClient.GetSoundProperties(this.sound:getMTAElement()):Deconstruct()
+      local _, _, _, reverse = SlipeMtaDefinitions.MtaClient.GetSoundProperties(this.sound:getMTAElement()):Deconstruct()
       return reverse
     end
     setReverse = function (this, value)
@@ -51,7 +51,24 @@ System.namespace("Slipe.Client.Sounds", function (namespace)
       setPitch = setPitch,
       getReverse = getReverse,
       setReverse = setReverse,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "sound", 0x1, out.Slipe.Client.Sounds.Sound }
+          },
+          properties = {
+            { "Pitch", 0x106, System.Single, getPitch, setPitch },
+            { "Reverse", 0x106, System.Boolean, getReverse, setReverse },
+            { "SampleRate", 0x106, System.Single, getSampleRate, setSampleRate },
+            { "Tempo", 0x106, System.Single, getTempo, setTempo }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.Client.Sounds.Sound }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

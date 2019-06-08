@@ -78,7 +78,46 @@ System.namespace("Slipe.Client.Rendering", function (namespace)
       AllowScreenUpload = false,
       UsingDepthBuffer = false,
       Update = Update,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "AllowScreenUpload", 0x6, System.Boolean },
+            { "DepthBufferFormat", 0x6, System.String },
+            { "Setting32BitColor", 0x6, System.Boolean },
+            { "SettingAnisotropicFiltering", 0x6, System.Int32 },
+            { "SettingAntiAliasing", 0x6, System.Int32 },
+            { "SettingAspectRatio", 0x6, System.String },
+            { "SettingDrawDistance", 0x6, System.Int32 },
+            { "SettingFOV", 0x6, System.Int32 },
+            { "SettingFullScreenStyle", 0x6, System.Int32 },
+            { "SettingFXQuality", 0x6, System.Int32 },
+            { "SettingGrassEffect", 0x6, System.Boolean },
+            { "SettingHeatHaze", 0x6, System.Boolean },
+            { "SettingHighDetailVehicles", 0x6, System.Boolean },
+            { "SettingHUDMatchAspectRatio", 0x6, System.Boolean },
+            { "SettingStreamingVideoMemoryForGTA", 0x6, System.Int32 },
+            { "SettingVolumetricShadows", 0x6, System.Boolean },
+            { "SettingWindowed", 0x6, System.Boolean },
+            { "TestMode", 0x6, System.Int32 },
+            { "UsingDepthBuffer", 0x6, System.Boolean },
+            { "VideoCardMaxAnisotropy", 0x6, System.Int32 },
+            { "VideoCardName", 0x6, System.String },
+            { "VideoCardNumRenderTargets", 0x6, System.Int32 },
+            { "VideoCardPSVersion", 0x6, System.String },
+            { "VideoCardRAM", 0x6, System.Int32 },
+            { "VideoMemoryFreeForMTA", 0x6, System.Int32 },
+            { "VideoMemoryUsedByFonts", 0x6, System.Int32 },
+            { "VideoMemoryUsedByRenderTargets", 0x6, System.Int32 },
+            { "VideoMemoryUsedByTextures", 0x6, System.Int32 }
+          },
+          methods = {
+            { ".ctor", 0x6, nil },
+            { "Update", 0x6, Update }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

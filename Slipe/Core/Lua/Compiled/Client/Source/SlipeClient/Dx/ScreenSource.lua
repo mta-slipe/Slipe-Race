@@ -32,7 +32,16 @@ System.namespace("Slipe.Client.Dx", function (namespace)
         }
       end,
       Update = Update,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x106, nil, System.Numerics.Vector2 },
+            { "Update", 0x186, Update, System.Boolean, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

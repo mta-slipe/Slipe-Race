@@ -18,7 +18,7 @@ System.namespace("Slipe.Server.Game", function (namespace)
     local getPassword, setPassword, getMaxPlayers, setMaxPlayers, getFPSLimit, setFPSLimit, getPort, getHTTPPort, 
     getName, getIsVoiceEnabled, config, getConfig, getTickCount, version, getVersion, console, 
     getConsole, debug, getDebug, log, getLog, getFpsLimit, setFpsLimit, SetGlitchEnabled, 
-    IsGlitchEnabled, Shutdown, HandlePlayerConnected, HandleSettingChange, HandlePreStart, HandleStart, HandleStop, class
+    IsGlitchEnabled, Shutdown
     getPassword = function ()
       return SlipeMtaDefinitions.MtaServer.GetServerPassword()
     end
@@ -106,37 +106,7 @@ System.namespace("Slipe.Server.Game", function (namespace)
     Shutdown = function (reason)
       SlipeMtaDefinitions.MtaServer.Shutdown(reason)
     end
-    HandlePlayerConnected = function (nickName, Ip, username, serial, versionNumber, versionString)
-      local default = class.OnPlayerConnect
-      if default ~= nil then
-        default(nickName, Ip, username, serial, versionNumber, versionString)
-      end
-    end
-    HandleSettingChange = function (setting, oldValue, newValue)
-      local default = class.OnSettingChange
-      if default ~= nil then
-        default(setting, oldValue, newValue)
-      end
-    end
-    HandlePreStart = function (resource)
-      local default = class.OnPreStart
-      if default ~= nil then
-        default(resource)
-      end
-    end
-    HandleStart = function (resource)
-      local default = class.OnStart
-      if default ~= nil then
-        default(resource)
-      end
-    end
-    HandleStop = function (resource, wasDeleted)
-      local default = class.OnStop
-      if default ~= nil then
-        default(resource, wasDeleted)
-      end
-    end
-    class = {
+    return {
       getPassword = getPassword,
       setPassword = setPassword,
       getMaxPlayers = getMaxPlayers,
@@ -158,12 +128,46 @@ System.namespace("Slipe.Server.Game", function (namespace)
       SetGlitchEnabled = SetGlitchEnabled,
       IsGlitchEnabled = IsGlitchEnabled,
       Shutdown = Shutdown,
-      HandlePlayerConnected = HandlePlayerConnected,
-      HandleSettingChange = HandleSettingChange,
-      HandlePreStart = HandlePreStart,
-      HandleStart = HandleStart,
-      HandleStop = HandleStop
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Config", 0x20E, out.Slipe.Server.Game.Config, getConfig },
+            { "Console", 0x20E, out.Slipe.Server.IO.MtaConsole, getConsole },
+            { "Debug", 0x20E, out.Slipe.Server.IO.MtaDebug, getDebug },
+            { "FpsLimit", 0x10E, System.Int32, getFpsLimit, setFpsLimit },
+            { "FPSLimit", 0x10E, System.Int32, getFPSLimit, setFPSLimit },
+            { "HTTPPort", 0x20E, System.Int32, getHTTPPort },
+            { "IsVoiceEnabled", 0x20E, System.Boolean, getIsVoiceEnabled },
+            { "Log", 0x20E, out.Slipe.Server.IO.ServerLog, getLog },
+            { "MaxPlayers", 0x10E, System.Int32, getMaxPlayers, setMaxPlayers },
+            { "Name", 0x20E, System.String, getName },
+            { "Password", 0x10E, System.String, getPassword, setPassword },
+            { "Port", 0x20E, System.Int32, getPort },
+            { "TickCount", 0x20E, System.Int32, getTickCount },
+            { "Version", 0x20E, out.Slipe.Shared.Helpers.SystemVersion, getVersion }
+          },
+          fields = {
+            { "config", 0x9, out.Slipe.Server.Game.Config },
+            { "console", 0x9, out.Slipe.Server.IO.MtaConsole },
+            { "debug", 0x9, out.Slipe.Server.IO.MtaDebug },
+            { "log", 0x9, out.Slipe.Server.IO.ServerLog },
+            { "version", 0x9, out.Slipe.Shared.Helpers.SystemVersion }
+          },
+          methods = {
+            { "IsGlitchEnabled", 0x18E, IsGlitchEnabled, System.Int32, System.Boolean },
+            { "SetGlitchEnabled", 0x28E, SetGlitchEnabled, System.Int32, System.Boolean, System.Boolean },
+            { "Shutdown", 0x10E, Shutdown, System.String }
+          },
+          events = {
+            { "OnPreStart", 0xE, System.Delegate(out.Slipe.Server.Elements.ResourceRootElement, out.Slipe.Server.Game.Events.OnPreStartEventArgs, System.Void) },
+            { "OnStart", 0xE, System.Delegate(out.Slipe.Server.Elements.ResourceRootElement, out.Slipe.Server.Game.Events.OnStartEventArgs, System.Void) },
+            { "OnStop", 0xE, System.Delegate(out.Slipe.Server.Elements.ResourceRootElement, out.Slipe.Server.Game.Events.OnStopEventArgs, System.Void) },
+            { "OnPlayerConnect", 0xE, System.Delegate(out.Slipe.Server.Elements.RootElement, out.Slipe.Server.Game.Events.OnPlayerConnectEventArgs, System.Void) },
+            { "OnSettingChange", 0xE, System.Delegate(out.Slipe.Server.Elements.RootElement, out.Slipe.Server.Game.Events.OnSettingChangeEventArgs, System.Void) }
+          },
+          class = { 0xE }
+        }
+      end
     }
-    return class
   end)
 end)

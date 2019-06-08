@@ -15,7 +15,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     local getVisible, setVisible, getAlpha, setAlpha, getEnabled, setEnabled, getStandardFont, setStandardFont, 
     getCustomFont, setCustomFont, getPosition, setPosition, getRelativePosition, setRelativePosition, getSize, setSize, 
     getRelativeSize, setRelativeSize, getContent, setContent, BringToFront, MoveToBack, Blur, Focus, 
-    SetProperty, GetProperty, __ctor__
+    SetProperty, GetProperty, class, __ctor__
     __ctor__ = function (this, element)
       SlipeSharedElements.Element.__ctor__[2](this, element)
     end
@@ -38,42 +38,42 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       SlipeMtaDefinitions.MtaClient.GuiSetEnabled(this.element, value)
     end
     getStandardFont = function (this)
-      s, _ = SlipeMtaDefinitions.MtaClient.GuiGetFont(this.element):Deconstruct()
+      local s, _ = SlipeMtaDefinitions.MtaClient.GuiGetFont(this.element):Deconstruct()
       return System.cast(System.Int32, System.Enum.Parse(System.typeof(SlipeClientGui.StandardGuiFont), s:Replace("-", "_"), true))
     end
     setStandardFont = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiSetFont(this.element, value:ToEnumString(SlipeClientGui.StandardGuiFont):ToLower():Replace("_", "-"))
     end
     getCustomFont = function (this)
-      _, e = SlipeMtaDefinitions.MtaClient.GuiGetFont(this.element):Deconstruct()
+      local _, e = SlipeMtaDefinitions.MtaClient.GuiGetFont(this.element):Deconstruct()
       return SlipeSharedElements.ElementManager.getInstance():GetElement(e, SlipeClientGui.GuiFont)
     end
     setCustomFont = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiSetFont(this.element, value:getMTAElement())
     end
     getPosition = function (this)
-      x, y = SlipeMtaDefinitions.MtaClient.GuiGetPosition(this.element, false):Deconstruct()
+      local x, y = SlipeMtaDefinitions.MtaClient.GuiGetPosition(this.element, false):Deconstruct()
       return SystemNumerics.Vector2(x, y)
     end
     setPosition = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiSetPosition(this.element, value.X, value.Y, false)
     end
     getRelativePosition = function (this)
-      x, y = SlipeMtaDefinitions.MtaClient.GuiGetPosition(this.element, true):Deconstruct()
+      local x, y = SlipeMtaDefinitions.MtaClient.GuiGetPosition(this.element, true):Deconstruct()
       return SystemNumerics.Vector2(x, y)
     end
     setRelativePosition = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiSetPosition(this.element, value.X, value.Y, true)
     end
     getSize = function (this)
-      x, y = SlipeMtaDefinitions.MtaClient.GuiGetSize(this.element, false):Deconstruct()
+      local x, y = SlipeMtaDefinitions.MtaClient.GuiGetSize(this.element, false):Deconstruct()
       return SystemNumerics.Vector2(x, y)
     end
     setSize = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiSetSize(this.element, value.X, value.Y, false)
     end
     getRelativeSize = function (this)
-      x, y = SlipeMtaDefinitions.MtaClient.GuiGetSize(this.element, true):Deconstruct()
+      local x, y = SlipeMtaDefinitions.MtaClient.GuiGetSize(this.element, true):Deconstruct()
       return SystemNumerics.Vector2(x, y)
     end
     setRelativeSize = function (this, value)
@@ -121,7 +121,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     GetProperty = function (this, property)
       return SlipeMtaDefinitions.MtaClient.GuiGetProperty(this.element, property)
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Shared.Elements.Element
@@ -153,7 +153,48 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       Focus = Focus,
       SetProperty = SetProperty,
       GetProperty = GetProperty,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Alpha", 0x106, System.Single, getAlpha, setAlpha },
+            { "Content", 0x106, System.String, getContent, setContent },
+            { "CustomFont", 0x106, out.Slipe.Client.Gui.GuiFont, getCustomFont, setCustomFont },
+            { "Enabled", 0x106, System.Boolean, getEnabled, setEnabled },
+            { "Position", 0x106, System.Numerics.Vector2, getPosition, setPosition },
+            { "RelativePosition", 0x106, System.Numerics.Vector2, getRelativePosition, setRelativePosition },
+            { "RelativeSize", 0x106, System.Numerics.Vector2, getRelativeSize, setRelativeSize },
+            { "Size", 0x106, System.Numerics.Vector2, getSize, setSize },
+            { "StandardFont", 0x106, System.Int32, getStandardFont, setStandardFont },
+            { "Visible", 0x106, System.Boolean, getVisible, setVisible }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.MtaDefinitions.MtaElement },
+            { "Blur", 0x86, Blur, System.Boolean },
+            { "BringToFront", 0x86, BringToFront, System.Boolean },
+            { "Focus", 0x86, Focus, System.Boolean },
+            { "GetProperty", 0x186, GetProperty, System.String, System.String },
+            { "MoveToBack", 0x86, MoveToBack, System.Boolean },
+            { "SetProperty", 0x286, SetProperty, System.String, System.String, System.Boolean }
+          },
+          events = {
+            { "OnBlur", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnBlurEventArgs, System.Void) },
+            { "OnFocus", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnFocusEventArgs, System.Void) },
+            { "OnClick", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnClickEventArgs, System.Void) },
+            { "OnDoubleClick", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnDoubleClickEventArgs, System.Void) },
+            { "OnMouseDown", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnMouseDownEventArgs, System.Void) },
+            { "OnMouseUp", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnMouseUpEventArgs, System.Void) },
+            { "OnMove", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnMoveEventArgs, System.Void) },
+            { "OnResize", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnResizeEventArgs, System.Void) },
+            { "OnMouseEnter", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnMouseEnterEventArgs, System.Void) },
+            { "OnMouseLeave", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnMouseLeaveEventArgs, System.Void) },
+            { "OnMouseMove", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnMouseMoveEventArgs, System.Void) },
+            { "OnMouseWheel", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnMouseWheelEventArgs, System.Void) }
+          },
+          class = { 0x6 }
+        }
+      end
     }
+    return class
   end)
 end)

@@ -32,7 +32,6 @@ System.namespace("Slipe.Client.SightLines", function (namespace)
         this.Lighting = d:getRest()[3]
         this.piece = d:getRest()[4]
         this.WorldModelID = d:getRest()[5]
-
         this.WorldModelMatrix = SystemNumerics.Matrix4x4.op_Addition(SystemNumerics.Matrix4x4.CreateTranslation(d:getRest()[6], d:getRest()[7], d:getRest():getRest()[1]), SystemNumerics.Matrix4x4.CreateFromQuaternion(SlipeSharedHelpers.NumericHelper.EulerToQuaternion(SystemNumerics.Vector3(d:getRest():getRest()[2], d:getRest():getRest()[3], d:getRest():getRest()[4]))))
         this.WorldLODModelID = d:getRest()[5]
       end
@@ -52,7 +51,31 @@ System.namespace("Slipe.Client.SightLines", function (namespace)
       getVehiclePart = getVehiclePart,
       WorldModelID = 0,
       WorldLODModelID = 0,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "piece", 0x1, System.Int32 }
+          },
+          properties = {
+            { "BodyPart", 0x206, System.Int32, getBodyPart },
+            { "CollisionPosition", 0x6, System.Numerics.Vector3 },
+            { "DidHit", 0x6, System.Boolean },
+            { "HitElement", 0x6, out.Slipe.Shared.Elements.PhysicalElement },
+            { "Lighting", 0x6, System.Single },
+            { "Normal", 0x6, System.Numerics.Vector3 },
+            { "SurfaceMaterial", 0x6, System.Int32 },
+            { "VehiclePart", 0x206, System.Int32, getVehiclePart },
+            { "WorldLODModelID", 0x6, System.Int32 },
+            { "WorldModelID", 0x6, System.Int32 },
+            { "WorldModelMatrix", 0x6, System.Numerics.Matrix4x4 }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, System.Tuple }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

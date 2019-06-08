@@ -14,8 +14,8 @@ System.namespace("Slipe.Client.Weapons", function (namespace)
   -- </summary>
   namespace.class("CustomWeapon", function (namespace)
     local getAmmo, setAmmo, getAmmoInClip, setAmmoInClip, getFiringRate, setFiringRate, getState, setState, 
-    Fire, SetTarget, SetTarget1, SetTarget2, SetTarget3, SetTarget4, ResetFiringRate, __ctor1__, 
-    __ctor2__
+    Fire, SetTarget, SetTarget1, SetTarget2, SetTarget3, SetTarget4, ResetFiringRate, class, 
+    __ctor1__, __ctor2__
     __ctor1__ = function (this, element)
       SlipeSharedElements.PhysicalElement.__ctor__(this, element)
     end
@@ -91,7 +91,7 @@ System.namespace("Slipe.Client.Weapons", function (namespace)
     ResetFiringRate = function (this)
       return SlipeMtaDefinitions.MtaClient.ResetWeaponFiringRate(this.element)
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Shared.Elements.PhysicalElement
@@ -118,9 +118,30 @@ System.namespace("Slipe.Client.Weapons", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Ammo", 0x106, System.Int32, getAmmo, setAmmo },
+            { "AmmoInClip", 0x106, System.Int32, getAmmoInClip, setAmmoInClip },
+            { "FiringRate", 0x106, System.Int32, getFiringRate, setFiringRate },
+            { "State", 0x106, System.Int32, getState, setState }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x206, __ctor2__, out.Slipe.Shared.Weapons.SharedWeaponModel, System.Numerics.Vector3 },
+            { "Fire", 0x86, Fire, System.Boolean },
+            { "ResetFiringRate", 0x86, ResetFiringRate, System.Boolean },
+            { "SetTarget", 0x286, SetTarget, out.Slipe.Client.Vehicles.BaseVehicle, System.Int32, System.Boolean },
+            { "SetTarget", 0x186, SetTarget1, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean },
+            { "SetTarget", 0x286, SetTarget2, out.Slipe.Client.Peds.Ped, System.Int32, System.Boolean },
+            { "SetTarget", 0x186, SetTarget3, System.Numerics.Vector3, System.Boolean },
+            { "SetTarget", 0x86, SetTarget4, System.Boolean }
+          },
+          events = {
+            { "OnFire", 0x6, System.Delegate(class, out.Slipe.Client.Weapons.Events.OnFireEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 29 --[[ElementType.Weapon]]) }
         }
       end
     }
+    return class
   end)
 end)

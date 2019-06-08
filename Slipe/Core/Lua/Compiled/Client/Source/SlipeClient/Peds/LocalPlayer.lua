@@ -118,7 +118,43 @@ System.namespace("Slipe.Client.Peds", function (namespace)
       IsHudComponentVisible = IsHudComponentVisible,
       TakeMoney = TakeMoney,
       PlaySoundFrontEnd = PlaySoundFrontEnd,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "instance", 0x9, class }
+          },
+          properties = {
+            { "ActiveRadioStation", 0x106, System.Int32, getActiveRadioStation, setActiveRadioStation },
+            { "BlurLevel", 0x106, System.Int32, getBlurLevel, setBlurLevel },
+            { "ForceMap", 0x106, System.Boolean, getForceMap, setForceMap },
+            { "Instance", 0x20E, class, getInstance },
+            { "IsMapVisible", 0x206, System.Boolean, getIsMapVisible },
+            { "MapBoundingBox", 0x206, System.Tuple, getMapBoundingBox },
+            { "Money", 0x106, System.Int32, getMoney, setMoney },
+            { "WantedLevel", 0x206, System.Int32, getWantedLevel }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.MtaDefinitions.MtaElement },
+            { "DetonateSatchels", 0x86, DetonateSatchels, System.Boolean },
+            { "GiveMoney", 0x186, GiveMoney, System.Int32, System.Boolean },
+            { "IsHudComponentVisible", 0x186, IsHudComponentVisible, System.Int32, System.Boolean },
+            { "PlaySoundFrontEnd", 0x186, PlaySoundFrontEnd, System.Int32, System.Boolean },
+            { "SetHudComponentVisible", 0x286, SetHudComponentVisible, System.Int32, System.Boolean, System.Boolean },
+            { "TakeMoney", 0x186, TakeMoney, System.Int32, System.Boolean }
+          },
+          events = {
+            { "OnChoke", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnChokeEventArgs, System.Void) },
+            { "OnRadioSwitch", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnRadioSwitchEventArgs, System.Void) },
+            { "OnStealthKill", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnStealthKillEventArgs, System.Void) },
+            { "OnStuntStart", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnStuntStartEventArgs, System.Void) },
+            { "OnStuntFinish", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnStuntFinishEventArgs, System.Void) },
+            { "OnTarget", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnTargetEventArgs, System.Void) },
+            { "OnConsole", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnConsoleEventArgs, System.Void) }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

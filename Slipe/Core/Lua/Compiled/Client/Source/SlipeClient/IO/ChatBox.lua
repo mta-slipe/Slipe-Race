@@ -15,8 +15,7 @@ System.namespace("Slipe.Client.IO", function (namespace)
   namespace.class("ChatBox", function (namespace)
     local getActive, getVisible, setVisible, getInputBoxActive, getFont, getLines, getBackgroundColor, getTextColor, 
     getInputColor, getInputPrefixColor, getInputTextColor, getScale, getOffset, getPositionalAlignment, getAllignment, getWidth, 
-    getTextFades, getBackgroundFades, getLineLife, getLineFadeOut, getUseCegui, getTextScale, WriteLine, Clear, 
-    HandleMessage, class
+    getTextFades, getBackgroundFades, getLineLife, getLineFadeOut, getUseCegui, getTextScale, WriteLine, Clear
     getActive = function ()
       return SlipeMtaDefinitions.MtaClient.IsChatBoxInputActive()
     end
@@ -107,13 +106,7 @@ System.namespace("Slipe.Client.IO", function (namespace)
     Clear = function ()
       SlipeMtaDefinitions.MtaClient.ClearChatBox()
     end
-    HandleMessage = function (message, color)
-      local default = class.OnMessage
-      if default ~= nil then
-        default(message, color)
-      end
-    end
-    class = {
+    return {
       getActive = getActive,
       getVisible = getVisible,
       setVisible = setVisible,
@@ -138,8 +131,41 @@ System.namespace("Slipe.Client.IO", function (namespace)
       getTextScale = getTextScale,
       WriteLine = WriteLine,
       Clear = Clear,
-      HandleMessage = HandleMessage
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Active", 0x20E, System.Boolean, getActive },
+            { "Allignment", 0x20E, System.Int32, getAllignment },
+            { "BackgroundColor", 0x20E, out.Slipe.Shared.Utilities.Color, getBackgroundColor },
+            { "BackgroundFades", 0x20E, System.Boolean, getBackgroundFades },
+            { "Font", 0x20E, System.Int32, getFont },
+            { "InputBoxActive", 0x20E, System.Boolean, getInputBoxActive },
+            { "InputColor", 0x20E, out.Slipe.Shared.Utilities.Color, getInputColor },
+            { "InputPrefixColor", 0x20E, out.Slipe.Shared.Utilities.Color, getInputPrefixColor },
+            { "InputTextColor", 0x20E, out.Slipe.Shared.Utilities.Color, getInputTextColor },
+            { "LineFadeOut", 0x20E, System.Single, getLineFadeOut },
+            { "LineLife", 0x20E, System.Single, getLineLife },
+            { "Lines", 0x20E, System.Int32, getLines },
+            { "Offset", 0x20E, System.Numerics.Vector2, getOffset },
+            { "PositionalAlignment", 0x20E, System.Numerics.Vector2, getPositionalAlignment },
+            { "Scale", 0x20E, System.Numerics.Vector2, getScale },
+            { "TextColor", 0x20E, out.Slipe.Shared.Utilities.Color, getTextColor },
+            { "TextFades", 0x20E, System.Boolean, getTextFades },
+            { "TextScale", 0x20E, System.Single, getTextScale },
+            { "UseCegui", 0x20E, System.Boolean, getUseCegui },
+            { "Visible", 0x10E, System.Boolean, getVisible, setVisible },
+            { "Width", 0x20E, System.Single, getWidth }
+          },
+          methods = {
+            { "Clear", 0xE, Clear },
+            { "WriteLine", 0x30E, WriteLine, System.String, out.Slipe.Shared.Utilities.Color, System.Boolean }
+          },
+          events = {
+            { "OnMessage", 0xE, System.Delegate(out.Slipe.Shared.Elements.Element, out.Slipe.Client.IO.Events.OnChatMessageEventArgs, System.Void) }
+          },
+          class = { 0xE }
+        }
+      end
     }
-    return class
   end)
 end)

@@ -131,7 +131,31 @@ System.namespace("Slipe.Server.Game", function (namespace)
       setMouseKeySyncInterval = setMouseKeySyncInterval,
       getAnalogKeySyncInterval = getAnalogKeySyncInterval,
       setAnalogKeySyncInterval = setAnalogKeySyncInterval,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "AnalogKeySyncInterval", 0x106, System.Int32, getAnalogKeySyncInterval, setAnalogKeySyncInterval },
+            { "BandwidthReduction", 0x106, System.Int32, getBandwidthReduction, setBandwidthReduction },
+            { "CameraSyncInterval", 0x106, System.Int32, getCameraSyncInterval, setCameraSyncInterval },
+            { "FpsLimit", 0x106, System.Int32, getFpsLimit, setFpsLimit },
+            { "LightweightSyncInterval", 0x106, System.Int32, getLightweightSyncInterval, setLightweightSyncInterval },
+            { "MinClientVersion", 0x106, System.String, getMinClientVersion, setMinClientVersion },
+            { "MouseKeySyncInterval", 0x106, System.Int32, getMouseKeySyncInterval, setMouseKeySyncInterval },
+            { "NetworkEncryption", 0x106, System.Boolean, getNetworkEncryption, setNetworkEncryption },
+            { "Password", 0x106, System.String, getPassword, setPassword },
+            { "PedSyncInterval", 0x106, System.Int32, getPedSyncInterval, setPedSyncInterval },
+            { "PermanentSaveFlag", 0x6, System.Boolean },
+            { "PlayerSyncInterval", 0x106, System.Int32, getPlayerSyncInterval, setPlayerSyncInterval },
+            { "RecommendedClientVersion", 0x106, System.String, getRecommendedClientVersion, setRecommendedClientVersion },
+            { "UnoccupiedVehicleSyncInterval", 0x106, System.Int32, getUnoccupiedVehicleSyncInterval, setUnoccupiedVehicleSyncInterval }
+          },
+          methods = {
+            { ".ctor", 0x6, nil }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

@@ -11,7 +11,7 @@ System.namespace("Slipe.Server.IO", function (namespace)
   -- Represents the ingame chatbox
   -- </summary>
   namespace.class("ChatBox", function (namespace)
-    local WriteLine, WriteLine1, Clear, SetVisible, HandleMessage, class
+    local WriteLine, WriteLine1, Clear, SetVisible
     -- <summary>
     -- Writes a line to the chatbox
     -- </summary>
@@ -55,19 +55,25 @@ System.namespace("Slipe.Server.IO", function (namespace)
       end
       return SlipeMtaDefinitions.MtaServer.ShowChat(default, visible)
     end
-    HandleMessage = function (message, playerOrResource)
-      local default = class.OnMessage
-      if default ~= nil then
-        default(message, playerOrResource)
-      end
-    end
-    class = {
+    return {
       WriteLine = WriteLine,
       WriteLine1 = WriteLine1,
       Clear = Clear,
       SetVisible = SetVisible,
-      HandleMessage = HandleMessage
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "Clear", 0x10E, Clear, out.Slipe.Server.Peds.Player },
+            { "SetVisible", 0x28E, SetVisible, System.Boolean, out.Slipe.Server.Peds.Player, System.Boolean },
+            { "WriteLine", 0x40E, WriteLine, System.String, out.Slipe.Server.Peds.Player, out.Slipe.Shared.Utilities.Color, System.Boolean },
+            { "WriteLine", 0x30E, WriteLine1, System.String, out.Slipe.Shared.Utilities.Color, System.Boolean }
+          },
+          events = {
+            { "OnMessage", 0xE, System.Delegate(out.Slipe.Shared.Elements.Element, out.Slipe.Server.IO.Events.OnChatMessageEventArgs, System.Void) }
+          },
+          class = { 0xE }
+        }
+      end
     }
-    return class
   end)
 end)

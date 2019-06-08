@@ -101,6 +101,41 @@ System.namespace("Slipe.Client.Peds", function (namespace)
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Local", 0x20E, out.Slipe.Client.Peds.LocalPlayer, getLocal },
+            { "Name", 0x206, System.String, getName },
+            { "NametagColor", 0x106, out.Slipe.Shared.Utilities.Color, getNametagColor, setNametagColor },
+            { "NametagShowing", 0x106, System.Boolean, getNametagShowing, setNametagShowing },
+            { "NametagText", 0x106, System.String, getNametagText, setNametagText },
+            { "Ping", 0x206, System.Int32, getPing },
+            { "Team", 0x206, out.Slipe.Client.Game.Team, getTeam },
+            { "Voice", 0x206, out.Slipe.Client.Sounds.Sound, getVoice }
+          },
+          fields = {
+            { "voice", 0x1, out.Slipe.Client.Sounds.Sound }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.MtaDefinitions.MtaElement },
+            { "GetFromName", 0x18E, GetFromName, System.String, class }
+          },
+          events = {
+            { "OnJoin", 0xE, System.Delegate(class, out.Slipe.Client.Peds.Events.OnJoinEventArgs, System.Void) },
+            { "OnCollisionShapeHit", 0x6, System.Delegate(class, out.Slipe.Shared.Elements.Events.OnCollisionShapeHitEventArgs, System.Void) },
+            { "OnCollisionShapeLeave", 0x6, System.Delegate(class, out.Slipe.Shared.Elements.Events.OnCollisionShapeLeaveEventArgs, System.Void) },
+            { "OnNicknameChanged", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnNicknameChangedEventArgs, System.Void) },
+            { "OnPickupHit", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnPickupHitEventArgs, System.Void) },
+            { "OnPickupLeave", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnPickupLeaveEventArgs, System.Void) },
+            { "OnQuit", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnQuitEventArgs, System.Void) },
+            { "OnSpawn", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnSpawnEventArgs, System.Void) },
+            { "OnVehicleEnter", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnVehicleEnterEventArgs, System.Void) },
+            { "OnVehicleExit", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnVehicleExitEventArgs, System.Void) },
+            { "OnVoicePaused", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnVoicePausedEventArgs, System.Void) },
+            { "OnVoiceResumed", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnVoiceResumedEventArgs, System.Void) },
+            { "OnVoiceStart", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnVoiceStartEventArgs, System.Void) },
+            { "OnVoiceStop", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnVoiceStopEventArgs, System.Void) },
+            { "OnWeaponSwitch", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnWeaponSwitchEventArgs, System.Void) },
+            { "OnChatMessage", 0x6, System.Delegate(class, out.Slipe.Client.IO.Events.OnChatMessageEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 1 --[[ElementType.Player]]) }
         }
       end

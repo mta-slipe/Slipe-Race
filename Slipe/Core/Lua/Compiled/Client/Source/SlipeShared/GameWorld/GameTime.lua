@@ -29,7 +29,19 @@ System.namespace("Slipe.Shared.GameWorld", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Hour", 0x6, System.Int32 },
+            { "Minute", 0x6, System.Int32 }
+          },
+          methods = {
+            { ".ctor", 0x206, __ctor1__, System.Int32, System.Int32 },
+            { ".ctor", 0x106, __ctor2__, System.DateTime }
+          }
+        }
+      end
     }
   end)
 end)

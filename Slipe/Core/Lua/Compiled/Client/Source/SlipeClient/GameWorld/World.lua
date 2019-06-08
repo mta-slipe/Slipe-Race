@@ -13,7 +13,13 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
     local getInstance1, getInteriorSounds1, setInteriorSounds1, getPedsLodDistance, setPedsLodDistance, getVehiclesLodDistance, setVehiclesLodDistance, getTrainsAndPlanesLodDistance, 
     setTrainsAndPlanesLodDistance, getBirdsEnabled, setBirdsEnabled, getWaterDrawnLast, setWaterDrawnLast, getPedTargetingMarkersEnabled, setPedTargetingMarkersEnabled, GetGarage1, 
     GetGroundPosition, ResetVehiclesLodDistance, ResetPedsLodDistance, SetAmbientSoundEnabled, IsAmbientSoundEnabled, ResetAmbientSounds, IsSoundEnabled, ResetWorldSounds, 
-    SetSoundEnabled, SetSpecialPropertyEnabled, IsSpecialPropertyEnabled, SetRoomFurnitureEnabled, IsRoomFurnitureEnabled, GetWaterLevelAtPosition, class
+    SetSoundEnabled, SetSpecialPropertyEnabled, IsSpecialPropertyEnabled, SetRoomFurnitureEnabled, IsRoomFurnitureEnabled, GetWaterLevelAtPosition, class, __ctor__
+    -- <summary>
+    -- Instantiate a new world
+    -- </summary>
+    __ctor__ = function (this)
+      SlipeSharedGameWorld.SharedWorld.__ctor__(this)
+    end
     getInstance1 = function ()
       if SlipeSharedGameWorld.SharedWorld.instance == nil then
         SlipeSharedGameWorld.SharedWorld.instance = class()
@@ -69,7 +75,7 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
       return SlipeClientGameWorld.Garage(garage)
     end
     -- <summary>
-    -- This function gets the Z level of the highest ground below a point.
+    -- This function gets the position of the highest ground below a point.
     -- </summary>
     GetGroundPosition = function (this, position)
       return SlipeMtaDefinitions.MtaClient.GetGroundPosition(position.X, position.Y, position.Z)
@@ -187,7 +193,41 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
       IsSpecialPropertyEnabled = IsSpecialPropertyEnabled,
       SetRoomFurnitureEnabled = SetRoomFurnitureEnabled,
       IsRoomFurnitureEnabled = IsRoomFurnitureEnabled,
-      GetWaterLevelAtPosition = GetWaterLevelAtPosition
+      GetWaterLevelAtPosition = GetWaterLevelAtPosition,
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "BirdsEnabled", 0x106, System.Boolean, getBirdsEnabled, setBirdsEnabled },
+            { "Instance", 0x20E, class, getInstance1 },
+            { "InteriorSounds", 0x106, System.Boolean, getInteriorSounds1, setInteriorSounds1 },
+            { "PedsLodDistance", 0x106, System.Single, getPedsLodDistance, setPedsLodDistance },
+            { "PedTargetingMarkersEnabled", 0x106, System.Boolean, getPedTargetingMarkersEnabled, setPedTargetingMarkersEnabled },
+            { "TrainsAndPlanesLodDistance", 0x106, System.Single, getTrainsAndPlanesLodDistance, setTrainsAndPlanesLodDistance },
+            { "VehiclesLodDistance", 0x106, System.Single, getVehiclesLodDistance, setVehiclesLodDistance },
+            { "WaterDrawnLast", 0x106, System.Boolean, getWaterDrawnLast, setWaterDrawnLast }
+          },
+          methods = {
+            { ".ctor", 0x6, nil },
+            { "GetGarage", 0x186, GetGarage1, System.Int32, out.Slipe.Client.GameWorld.Garage },
+            { "GetGroundPosition", 0x186, GetGroundPosition, System.Numerics.Vector3, System.Single },
+            { "GetWaterLevelAtPosition", 0x286, GetWaterLevelAtPosition, System.Numerics.Vector3, System.Boolean, System.Single },
+            { "IsAmbientSoundEnabled", 0x186, IsAmbientSoundEnabled, System.Int32, System.Boolean },
+            { "IsRoomFurnitureEnabled", 0x186, IsRoomFurnitureEnabled, System.Int32, System.Boolean },
+            { "IsSoundEnabled", 0x286, IsSoundEnabled, System.Int32, System.Int32, System.Boolean },
+            { "IsSpecialPropertyEnabled", 0x186, IsSpecialPropertyEnabled, System.Int32, System.Boolean },
+            { "ResetAmbientSounds", 0x86, ResetAmbientSounds, System.Boolean },
+            { "ResetPedsLodDistance", 0x86, ResetPedsLodDistance, System.Boolean },
+            { "ResetVehiclesLodDistance", 0x86, ResetVehiclesLodDistance, System.Boolean },
+            { "ResetWorldSounds", 0x86, ResetWorldSounds, System.Boolean },
+            { "SetAmbientSoundEnabled", 0x286, SetAmbientSoundEnabled, System.Int32, System.Boolean, System.Boolean },
+            { "SetRoomFurnitureEnabled", 0x286, SetRoomFurnitureEnabled, System.Int32, System.Boolean, System.Boolean },
+            { "SetSoundEnabled", 0x486, SetSoundEnabled, System.Int32, System.Boolean, System.Int32, System.Boolean, System.Boolean },
+            { "SetSpecialPropertyEnabled", 0x286, SetSpecialPropertyEnabled, System.Int32, System.Boolean, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

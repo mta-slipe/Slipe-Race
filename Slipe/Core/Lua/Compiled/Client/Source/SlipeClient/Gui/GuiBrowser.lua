@@ -44,6 +44,16 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          fields = {
+            { "browser", 0x1, out.Slipe.Client.Browsers.Browser }
+          },
+          properties = {
+            { "Browser", 0x206, out.Slipe.Client.Browsers.Browser, getBrowser }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x706, __ctor2__, System.Numerics.Vector2, System.Single, System.Single, System.Boolean, System.Boolean, System.Boolean, out.Slipe.Client.Gui.GuiElement }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 13 --[[ElementType.GuiBrowser]]) }
         }
       end

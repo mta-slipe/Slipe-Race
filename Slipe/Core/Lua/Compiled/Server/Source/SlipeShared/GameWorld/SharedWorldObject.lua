@@ -74,7 +74,23 @@ System.namespace("Slipe.Shared.GameWorld", function (namespace)
         __ctor1__,
         __ctor2__,
         __ctor3__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Scale", 0x106, System.Numerics.Vector3, getScale, setScale }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x406, __ctor2__, System.Int32, System.Numerics.Vector3, System.Numerics.Vector3, System.Boolean },
+            { ".ctor", 0x206, __ctor3__, System.Int32, System.Numerics.Vector3 },
+            { "Move", 0x486, Move, System.Int32, System.Numerics.Vector3, System.Numerics.Vector3, out.Slipe.Shared.Helpers.EasingFunction, System.Boolean },
+            { "Move", 0x286, Move1, System.Int32, System.Numerics.Vector3, System.Boolean },
+            { "Stop", 0x86, Stop, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

@@ -5177,6 +5177,1662 @@ System.namespace("Slipe.Shared.Peds", function (namespace)
     const.getWuzi_walk = function ()
       return System.new(class, 2, "wuzi", "wuzi_walk")
     end
+    const.getBball_run = getBball_run
+    const.getBball_run_o = getBball_run_o
+    const.getBball_skidstop_l = getBball_skidstop_l
+    const.getBball_skidstop_l_o = getBball_skidstop_l_o
+    const.getBball_skidstop_r = getBball_skidstop_r
+    const.getBball_skidstop_r_o = getBball_skidstop_r_o
+    const.getBball_walk = getBball_walk
+    const.getBball_walk_o = getBball_walk_o
+    const.getBball_walk_start = getBball_walk_start
+    const.getBball_walk_start_o = getBball_walk_start_o
+    const.getBball_walkstop_l = getBball_walkstop_l
+    const.getBball_walkstop_l_o = getBball_walkstop_l_o
+    const.getBball_walkstop_r = getBball_walkstop_r
+    const.getBball_walkstop_r_o = getBball_walkstop_r_o
+    const.getBd_clap = getBd_clap
+    const.getBd_clap1 = getBd_clap1
+    const.getBd_fire1 = getBd_fire1
+    const.getBd_fire2 = getBd_fire2
+    const.getBd_fire3 = getBd_fire3
+    const.getBd_gf_wave = getBd_gf_wave
+    const.getBd_panic_01 = getBd_panic_01
+    const.getBd_panic_02 = getBd_panic_02
+    const.getBd_panic_03 = getBd_panic_03
+    const.getBd_panic_04 = getBd_panic_04
+    const.getBd_panic_loop = getBd_panic_loop
+    const.getBed_in_l = getBed_in_l
+    const.getBed_in_r = getBed_in_r
+    const.getBed_loop_l = getBed_loop_l
+    const.getBed_loop_r = getBed_loop_r
+    const.getBed_out_l = getBed_out_l
+    const.getBed_out_r = getBed_out_r
+    const.getBetslp_in = getBetslp_in
+    const.getBetslp_lkabt = getBetslp_lkabt
+    const.getBetslp_loop = getBetslp_loop
+    const.getBetslp_out = getBetslp_out
+    const.getBetslp_tnk = getBetslp_tnk
+    const.getBf_getin_lhs = getBf_getin_lhs
+    const.getBf_getin_rhs = getBf_getin_rhs
+    const.getBf_getout_lhs = getBf_getout_lhs
+    const.getBf_getout_rhs = getBf_getout_rhs
+    const.getBike_elbowl = getBike_elbowl
+    const.getBike_elbowr = getBike_elbowr
+    const.getBike_fall_off = getBike_fall_off
+    const.getBike_fallr = getBike_fallr
+    const.getBike_pickupl = getBike_pickupl
+    const.getBike_pickupr = getBike_pickupr
+    const.getBike_pullupl = getBike_pullupl
+    const.getBike_pullupr = getBike_pullupr
+    const.getBiked_back = getBiked_back
+    const.getBiked_drivebyft = getBiked_drivebyft
+    const.getBiked_drivebylhs = getBiked_drivebylhs
+    const.getBiked_drivebyrhs = getBiked_drivebyrhs
+    const.getBiked_fwd = getBiked_fwd
+    const.getBiked_getoffback = getBiked_getoffback
+    const.getBiked_getofflhs = getBiked_getofflhs
+    const.getBiked_getoffrhs = getBiked_getoffrhs
+    const.getBiked_hit = getBiked_hit
+    const.getBiked_jumponl = getBiked_jumponl
+    const.getBiked_jumponr = getBiked_jumponr
+    const.getBiked_kick = getBiked_kick
+    const.getBiked_left = getBiked_left
+    const.getBiked_passenger = getBiked_passenger
+    const.getBiked_pushes = getBiked_pushes
+    const.getBiked_ride = getBiked_ride
+    const.getBiked_right = getBiked_right
+    const.getBiked_shuffle = getBiked_shuffle
+    const.getBiked_still = getBiked_still
+    const.getBikeh_back = getBikeh_back
+    const.getBikeh_drivebyft = getBikeh_drivebyft
+    const.getBikeh_drivebylhs = getBikeh_drivebylhs
+    const.getBikeh_drivebyrhs = getBikeh_drivebyrhs
+    const.getBikeh_fwd = getBikeh_fwd
+    const.getBikeh_getoffback = getBikeh_getoffback
+    const.getBikeh_getofflhs = getBikeh_getofflhs
+    const.getBikeh_getoffrhs = getBikeh_getoffrhs
+    const.getBikeh_hit = getBikeh_hit
+    const.getBikeh_jumponl = getBikeh_jumponl
+    const.getBikeh_jumponr = getBikeh_jumponr
+    const.getBikeh_kick = getBikeh_kick
+    const.getBikeh_left = getBikeh_left
+    const.getBikeh_passenger = getBikeh_passenger
+    const.getBikeh_pushes = getBikeh_pushes
+    const.getBikeh_ride = getBikeh_ride
+    const.getBikeh_right = getBikeh_right
+    const.getBikeh_still = getBikeh_still
+    const.getBikes_back = getBikes_back
+    const.getBikes_drivebyft = getBikes_drivebyft
+    const.getBikes_drivebylhs = getBikes_drivebylhs
+    const.getBikes_drivebyrhs = getBikes_drivebyrhs
+    const.getBikes_fwd = getBikes_fwd
+    const.getBikes_getoffback = getBikes_getoffback
+    const.getBikes_getofflhs = getBikes_getofflhs
+    const.getBikes_getoffrhs = getBikes_getoffrhs
+    const.getBikes_hit = getBikes_hit
+    const.getBikes_jumponl = getBikes_jumponl
+    const.getBikes_jumponr = getBikes_jumponr
+    const.getBikes_kick = getBikes_kick
+    const.getBikes_left = getBikes_left
+    const.getBikes_passenger = getBikes_passenger
+    const.getBikes_pushes = getBikes_pushes
+    const.getBikes_ride = getBikes_ride
+    const.getBikes_right = getBikes_right
+    const.getBikes_snatch_l = getBikes_snatch_l
+    const.getBikes_snatch_r = getBikes_snatch_r
+    const.getBikes_still = getBikes_still
+    const.getBikev_back = getBikev_back
+    const.getBikev_drivebyft = getBikev_drivebyft
+    const.getBikev_drivebylhs = getBikev_drivebylhs
+    const.getBikev_drivebyrhs = getBikev_drivebyrhs
+    const.getBikev_fwd = getBikev_fwd
+    const.getBikev_getoffback = getBikev_getoffback
+    const.getBikev_getofflhs = getBikev_getofflhs
+    const.getBikev_getoffrhs = getBikev_getoffrhs
+    const.getBikev_hit = getBikev_hit
+    const.getBikev_jumponl = getBikev_jumponl
+    const.getBikev_jumponr = getBikev_jumponr
+    const.getBikev_kick = getBikev_kick
+    const.getBikev_left = getBikev_left
+    const.getBikev_passenger = getBikev_passenger
+    const.getBikev_pushes = getBikev_pushes
+    const.getBikev_ride = getBikev_ride
+    const.getBikev_right = getBikev_right
+    const.getBikev_still = getBikev_still
+    const.getBitchslap = getBitchslap
+    const.getBk_blnce_in = getBk_blnce_in
+    const.getBk_blnce_out = getBk_blnce_out
+    const.getBk_jmp = getBk_jmp
+    const.getBk_rdy_in = getBk_rdy_in
+    const.getBk_rdy_out = getBk_rdy_out
+    const.getBmx_back = getBmx_back
+    const.getBmx_bunnyhop = getBmx_bunnyhop
+    const.getBmx_celebrate = getBmx_celebrate
+    const.getBmx_comeon = getBmx_comeon
+    const.getBmx_driveby_lhs = getBmx_driveby_lhs
+    const.getBmx_driveby_rhs = getBmx_driveby_rhs
+    const.getBmx_drivebyft = getBmx_drivebyft
+    const.getBmx_fwd = getBmx_fwd
+    const.getBmx_getoffback = getBmx_getoffback
+    const.getBmx_getofflhs = getBmx_getofflhs
+    const.getBmx_getoffrhs = getBmx_getoffrhs
+    const.getBmx_idleloop_01 = getBmx_idleloop_01
+    const.getBmx_idleloop_02 = getBmx_idleloop_02
+    const.getBmx_jumponl = getBmx_jumponl
+    const.getBmx_jumponr = getBmx_jumponr
+    const.getBmx_left = getBmx_left
+    const.getBmx_pedal = getBmx_pedal
+    const.getBmx_pushes = getBmx_pushes
+    const.getBmx_ride = getBmx_ride
+    const.getBmx_right = getBmx_right
+    const.getBmx_sprint = getBmx_sprint
+    const.getBmx_still = getBmx_still
+    const.getBmx_talkleft_in = getBmx_talkleft_in
+    const.getBmx_talkleft_loop = getBmx_talkleft_loop
+    const.getBmx_talkleft_out = getBmx_talkleft_out
+    const.getBmx_talkright_in = getBmx_talkright_in
+    const.getBmx_talkright_loop = getBmx_talkright_loop
+    const.getBmx_talkright_out = getBmx_talkright_out
+    const.getBng_wndw = getBng_wndw
+    const.getBng_wndw_02 = getBng_wndw_02
+    const.getBom_plant = getBom_plant
+    const.getBom_plant_2idle = getBom_plant_2idle
+    const.getBom_plant_crouch_in = getBom_plant_crouch_in
+    const.getBom_plant_crouch_out = getBom_plant_crouch_out
+    const.getBom_plant_in = getBom_plant_in
+    const.getBom_plant_loop = getBom_plant_loop
+    const.getBomber = getBomber
+    const.getBoxhipin = getBoxhipin
+    const.getBoxhipup = getBoxhipup
+    const.getBoxshdwn = getBoxshdwn
+    const.getBoxshup = getBoxshup
+    const.getBrb_beard_01 = getBrb_beard_01
+    const.getBrb_buy = getBrb_buy
+    const.getBrb_cut = getBrb_cut
+    const.getBrb_cut_in = getBrb_cut_in
+    const.getBrb_cut_out = getBrb_cut_out
+    const.getBrb_hair_01 = getBrb_hair_01
+    const.getBrb_hair_02 = getBrb_hair_02
+    const.getBrb_in = getBrb_in
+    const.getBrb_loop = getBrb_loop
+    const.getBrb_out = getBrb_out
+    const.getBrb_sit_in = getBrb_sit_in
+    const.getBrb_sit_loop = getBrb_sit_loop
+    const.getBrb_sit_out = getBrb_sit_out
+    const.getBuddy_crouchfire = getBuddy_crouchfire
+    const.getBuddy_crouchreload = getBuddy_crouchreload
+    const.getBuddy_fire = getBuddy_fire
+    const.getBuddy_fire_poor = getBuddy_fire_poor
+    const.getBuddy_reload = getBuddy_reload
+    const.getBus_close = getBus_close
+    const.getBus_getin_lhs = getBus_getin_lhs
+    const.getBus_getin_rhs = getBus_getin_rhs
+    const.getBus_getout_lhs = getBus_getout_lhs
+    const.getBus_getout_rhs = getBus_getout_rhs
+    const.getBus_jacked_lhs = getBus_jacked_lhs
+    const.getBus_open = getBus_open
+    const.getBus_open_rhs = getBus_open_rhs
+    const.getBus_pullout_lhs = getBus_pullout_lhs
+    const.getBxhipwlk = getBxhipwlk
+    const.getBxhwlki = getBxhwlki
+    const.getBxshwlk = getBxshwlk
+    const.getBxshwlki = getBxshwlki
+    const.getBxwlko = getBxwlko
+    const.getCamcrch_cmon = getCamcrch_cmon
+    const.getCamcrch_idleloop = getCamcrch_idleloop
+    const.getCamcrch_stay = getCamcrch_stay
+    const.getCamcrch_to_camstnd = getCamcrch_to_camstnd
+    const.getCamstnd_cmon = getCamstnd_cmon
+    const.getCamstnd_idleloop = getCamstnd_idleloop
+    const.getCamstnd_lkabt = getCamstnd_lkabt
+    const.getCamstnd_to_camcrch = getCamstnd_to_camcrch
+    const.getCar_align_lhs = getCar_align_lhs
+    const.getCar_align_rhs = getCar_align_rhs
+    const.getCar_alignhi_lhs = getCar_alignhi_lhs
+    const.getCar_alignhi_rhs = getCar_alignhi_rhs
+    const.getCar_close_lhs = getCar_close_lhs
+    const.getCar_close_rhs = getCar_close_rhs
+    const.getCar_closedoor_lhs = getCar_closedoor_lhs
+    const.getCar_closedoor_rhs = getCar_closedoor_rhs
+    const.getCar_closedoorl_lhs = getCar_closedoorl_lhs
+    const.getCar_closedoorl_rhs = getCar_closedoorl_rhs
+    const.getCar_crawloutrhs = getCar_crawloutrhs
+    const.getCar_dead_lhs = getCar_dead_lhs
+    const.getCar_dead_rhs = getCar_dead_rhs
+    const.getCar_doorlocked_lhs = getCar_doorlocked_lhs
+    const.getCar_doorlocked_rhs = getCar_doorlocked_rhs
+    const.getCar_fallout_lhs = getCar_fallout_lhs
+    const.getCar_fallout_rhs = getCar_fallout_rhs
+    const.getCar_getin_lhs = getCar_getin_lhs
+    const.getCar_getin_rhs = getCar_getin_rhs
+    const.getCar_getinl_lhs = getCar_getinl_lhs
+    const.getCar_getinl_rhs = getCar_getinl_rhs
+    const.getCar_getout_lhs = getCar_getout_lhs
+    const.getCar_getout_rhs = getCar_getout_rhs
+    const.getCar_getoutl_lhs = getCar_getoutl_lhs
+    const.getCar_getoutl_rhs = getCar_getoutl_rhs
+    const.getCar_hookertalk = getCar_hookertalk
+    const.getCar_jackedlhs = getCar_jackedlhs
+    const.getCar_jackedrhs = getCar_jackedrhs
+    const.getCar_jumpin_lhs = getCar_jumpin_lhs
+    const.getCar_jumpin_lhs_vrtx = getCar_jumpin_lhs_vrtx
+    const.getCar_jumpin_rhs = getCar_jumpin_rhs
+    const.getCar_lb = getCar_lb
+    const.getCar_lb_pro = getCar_lb_pro
+    const.getCar_lb_weak = getCar_lb_weak
+    const.getCar_ljackedlhs = getCar_ljackedlhs
+    const.getCar_ljackedrhs = getCar_ljackedrhs
+    const.getCar_lshuffle_rhs = getCar_lshuffle_rhs
+    const.getCar_lsit = getCar_lsit
+    const.getCar_open_lhs = getCar_open_lhs
+    const.getCar_open_rhs = getCar_open_rhs
+    const.getCar_pullout_lhs = getCar_pullout_lhs
+    const.getCar_pullout_rhs = getCar_pullout_rhs
+    const.getCar_pulloutl_lhs = getCar_pulloutl_lhs
+    const.getCar_pulloutl_rhs = getCar_pulloutl_rhs
+    const.getCar_qjacked = getCar_qjacked
+    const.getCar_rolldoor = getCar_rolldoor
+    const.getCar_rolldoorlo = getCar_rolldoorlo
+    const.getCar_rollout_lhs = getCar_rollout_lhs
+    const.getCar_rollout_rhs = getCar_rollout_rhs
+    const.getCar_sc1_bl = getCar_sc1_bl
+    const.getCar_sc1_br = getCar_sc1_br
+    const.getCar_sc1_fl = getCar_sc1_fl
+    const.getCar_sc1_fr = getCar_sc1_fr
+    const.getCar_sc2_fl = getCar_sc2_fl
+    const.getCar_sc3_br = getCar_sc3_br
+    const.getCar_sc3_fl = getCar_sc3_fl
+    const.getCar_sc3_fr = getCar_sc3_fr
+    const.getCar_sc4_bl = getCar_sc4_bl
+    const.getCar_sc4_br = getCar_sc4_br
+    const.getCar_sc4_fl = getCar_sc4_fl
+    const.getCar_sc4_fr = getCar_sc4_fr
+    const.getCar_shuffle_rhs = getCar_shuffle_rhs
+    const.getCar_sit = getCar_sit
+    const.getCar_sit_pro = getCar_sit_pro
+    const.getCar_sit_weak = getCar_sit_weak
+    const.getCar_sitp = getCar_sitp
+    const.getCar_sitplo = getCar_sitplo
+    const.getCar_talkm_in = getCar_talkm_in
+    const.getCar_talkm_loop = getCar_talkm_loop
+    const.getCar_talkm_out = getCar_talkm_out
+    const.getCar_tune_radio = getCar_tune_radio
+    const.getCards_in = getCards_in
+    const.getCards_loop = getCards_loop
+    const.getCards_lose = getCards_lose
+    const.getCards_out = getCards_out
+    const.getCards_pick_01 = getCards_pick_01
+    const.getCards_pick_02 = getCards_pick_02
+    const.getCards_raise = getCards_raise
+    const.getCards_win = getCards_win
+    const.getCarfone_in = getCarfone_in
+    const.getCarfone_loopa = getCarfone_loopa
+    const.getCarfone_loopa_to_b = getCarfone_loopa_to_b
+    const.getCarfone_loopb = getCarfone_loopb
+    const.getCarfone_loopb_to_a = getCarfone_loopb_to_a
+    const.getCarfone_out = getCarfone_out
+    const.getCarhit_hangon = getCarhit_hangon
+    const.getCarhit_tumble = getCarhit_tumble
+    const.getCas_g2_gasko = getCas_g2_gasko
+    const.getCase_pickup = getCase_pickup
+    const.getCat_safe_end = getCat_safe_end
+    const.getCat_safe_open = getCat_safe_open
+    const.getCat_safe_open_o = getCat_safe_open_o
+    const.getCat_safe_rob = getCat_safe_rob
+    const.getCatch_box = getCatch_box
+    const.getChoppa_back = getChoppa_back
+    const.getChoppa_bunnyhop = getChoppa_bunnyhop
+    const.getChoppa_driveby_lhs = getChoppa_driveby_lhs
+    const.getChoppa_driveby_rhs = getChoppa_driveby_rhs
+    const.getChoppa_drivebyft = getChoppa_drivebyft
+    const.getChoppa_fwd = getChoppa_fwd
+    const.getChoppa_getoffback = getChoppa_getoffback
+    const.getChoppa_getofflhs = getChoppa_getofflhs
+    const.getChoppa_getoffrhs = getChoppa_getoffrhs
+    const.getChoppa_jumponl = getChoppa_jumponl
+    const.getChoppa_jumponr = getChoppa_jumponr
+    const.getChoppa_left = getChoppa_left
+    const.getChoppa_pedal = getChoppa_pedal
+    const.getChoppa_pushes = getChoppa_pushes
+    const.getChoppa_ride = getChoppa_ride
+    const.getChoppa_right = getChoppa_right
+    const.getChoppa_sprint = getChoppa_sprint
+    const.getChoppa_still = getChoppa_still
+    const.getClimb_idle = getClimb_idle
+    const.getClimb_jump = getClimb_jump
+    const.getClimb_jump_b = getClimb_jump_b
+    const.getClimb_jump2fall = getClimb_jump2fall
+    const.getClimb_pull = getClimb_pull
+    const.getClimb_stand = getClimb_stand
+    const.getClimb_stand_finish = getClimb_stand_finish
+    const.getClo_buy = getClo_buy
+    const.getClo_in = getClo_in
+    const.getClo_out = getClo_out
+    const.getClo_pose_hat = getClo_pose_hat
+    const.getClo_pose_in = getClo_pose_in
+    const.getClo_pose_in_o = getClo_pose_in_o
+    const.getClo_pose_legs = getClo_pose_legs
+    const.getClo_pose_loop = getClo_pose_loop
+    const.getClo_pose_out = getClo_pose_out
+    const.getClo_pose_out_o = getClo_pose_out_o
+    const.getClo_pose_shoes = getClo_pose_shoes
+    const.getClo_pose_torso = getClo_pose_torso
+    const.getClo_pose_watch = getClo_pose_watch
+    const.getCoach_inl = getCoach_inl
+    const.getCoach_inr = getCoach_inr
+    const.getCoach_opnl = getCoach_opnl
+    const.getCoach_opnr = getCoach_opnr
+    const.getCoach_outl = getCoach_outl
+    const.getCoach_outr = getCoach_outr
+    const.getColt45_crouchfire = getColt45_crouchfire
+    const.getColt45_crouchreload = getColt45_crouchreload
+    const.getColt45_fire = getColt45_fire
+    const.getColt45_fire_2hands = getColt45_fire_2hands
+    const.getColt45_reload = getColt45_reload
+    const.getCop_dvby_b = getCop_dvby_b
+    const.getCop_dvby_ft = getCop_dvby_ft
+    const.getCop_dvby_l = getCop_dvby_l
+    const.getCop_dvby_r = getCop_dvby_r
+    const.getCop_getoutcar_lhs = getCop_getoutcar_lhs
+    const.getCop_move_fwd = getCop_move_fwd
+    const.getCopbrowse_in = getCopbrowse_in
+    const.getCopbrowse_loop = getCopbrowse_loop
+    const.getCopbrowse_nod = getCopbrowse_nod
+    const.getCopbrowse_out = getCopbrowse_out
+    const.getCopbrowse_shake = getCopbrowse_shake
+    const.getCoplook_in = getCoplook_in
+    const.getCoplook_loop = getCoplook_loop
+    const.getCoplook_nod = getCoplook_nod
+    const.getCoplook_out = getCoplook_out
+    const.getCoplook_shake = getCoplook_shake
+    const.getCoplook_think = getCoplook_think
+    const.getCoplook_watch = getCoplook_watch
+    const.getCoptraf_away = getCoptraf_away
+    const.getCoptraf_come = getCoptraf_come
+    const.getCoptraf_left = getCoptraf_left
+    const.getCoptraf_stop = getCoptraf_stop
+    const.getCover_dive_01 = getCover_dive_01
+    const.getCover_dive_02 = getCover_dive_02
+    const.getCower = getCower
+    const.getCpr = getCpr
+    const.getCrckdeth1 = getCrckdeth1
+    const.getCrckdeth2 = getCrckdeth2
+    const.getCrckdeth3 = getCrckdeth3
+    const.getCrckdeth4 = getCrckdeth4
+    const.getCrckidle1 = getCrckidle1
+    const.getCrckidle2 = getCrckidle2
+    const.getCrckidle3 = getCrckidle3
+    const.getCrckidle4 = getCrckidle4
+    const.getCrib_console_loop = getCrib_console_loop
+    const.getCrib_use_switch = getCrib_use_switch
+    const.getCrm_drgbst_01 = getCrm_drgbst_01
+    const.getCrouch_roll_l = getCrouch_roll_l
+    const.getCrouch_roll_r = getCrouch_roll_r
+    const.getCrouchreload = getCrouchreload
+    const.getCrry_prtial = getCrry_prtial
+    const.getCrush_jump = getCrush_jump
+    const.getCrushed = getCrushed
+    const.getCs_dead_guy = getCs_dead_guy
+    const.getCs_plyr_pt1 = getCs_plyr_pt1
+    const.getCs_plyr_pt2 = getCs_plyr_pt2
+    const.getCs_wuzi_pt1 = getCs_wuzi_pt1
+    const.getCs_wuzi_pt2 = getCs_wuzi_pt2
+    const.getCsaw_1 = getCsaw_1
+    const.getCsaw_2 = getCsaw_2
+    const.getCsaw_3 = getCsaw_3
+    const.getCsaw_g = getCsaw_g
+    const.getCsaw_hit_1 = getCsaw_hit_1
+    const.getCsaw_hit_2 = getCsaw_hit_2
+    const.getCsaw_hit_3 = getCsaw_hit_3
+    const.getCsaw_part = getCsaw_part
+    const.getDam_arml_frmbk = getDam_arml_frmbk
+    const.getDam_arml_frmft = getDam_arml_frmft
+    const.getDam_arml_frmlt = getDam_arml_frmlt
+    const.getDam_armr_frmbk = getDam_armr_frmbk
+    const.getDam_armr_frmft = getDam_armr_frmft
+    const.getDam_armr_frmrt = getDam_armr_frmrt
+    const.getDam_dive_loop = getDam_dive_loop
+    const.getDam_land = getDam_land
+    const.getDam_launch = getDam_launch
+    const.getDam_legl_frmbk = getDam_legl_frmbk
+    const.getDam_legl_frmft = getDam_legl_frmft
+    const.getDam_legl_frmlt = getDam_legl_frmlt
+    const.getDam_legr_frmbk = getDam_legr_frmbk
+    const.getDam_legr_frmft = getDam_legr_frmft
+    const.getDam_legr_frmrt = getDam_legr_frmrt
+    const.getDam_stomach_frmbk = getDam_stomach_frmbk
+    const.getDam_stomach_frmft = getDam_stomach_frmft
+    const.getDam_stomach_frmlt = getDam_stomach_frmlt
+    const.getDam_stomach_frmrt = getDam_stomach_frmrt
+    const.getDan_down_a = getDan_down_a
+    const.getDan_left_a = getDan_left_a
+    const.getDan_loop_a = getDan_loop_a
+    const.getDan_right_a = getDan_right_a
+    const.getDan_up_a = getDan_up_a
+    const.getDance_loop = getDance_loop
+    const.getDealer_deal = getDealer_deal
+    const.getDealer_idle = getDealer_idle
+    const.getDealer_idle_01 = getDealer_idle_01
+    const.getDealer_idle_02 = getDealer_idle_02
+    const.getDealer_idle_03 = getDealer_idle_03
+    const.getDealone = getDealone
+    const.getDildo_1 = getDildo_1
+    const.getDildo_2 = getDildo_2
+    const.getDildo_3 = getDildo_3
+    const.getDildo_block = getDildo_block
+    const.getDildo_g = getDildo_g
+    const.getDildo_hit_1 = getDildo_hit_1
+    const.getDildo_hit_2 = getDildo_hit_2
+    const.getDildo_hit_3 = getDildo_hit_3
+    const.getDildo_idle = getDildo_idle
+    const.getDnce_m_a = getDnce_m_a
+    const.getDnce_m_b = getDnce_m_b
+    const.getDnce_m_c = getDnce_m_c
+    const.getDnce_m_d = getDnce_m_d
+    const.getDnce_m_e = getDnce_m_e
+    const.getDnk_stndf_loop = getDnk_stndf_loop
+    const.getDnk_stndm_loop = getDnk_stndm_loop
+    const.getDonutdrop = getDonutdrop
+    const.getDoor_jet = getDoor_jet
+    const.getDoor_kick = getDoor_kick
+    const.getDoor_lhinge_o = getDoor_lhinge_o
+    const.getDoor_rhinge_o = getDoor_rhinge_o
+    const.getDoubleguns_crouchfire = getDoubleguns_crouchfire
+    const.getDozer_align_lhs = getDozer_align_lhs
+    const.getDozer_align_rhs = getDozer_align_rhs
+    const.getDozer_getin_lhs = getDozer_getin_lhs
+    const.getDozer_getin_rhs = getDozer_getin_rhs
+    const.getDozer_getout_lhs = getDozer_getout_lhs
+    const.getDozer_getout_rhs = getDozer_getout_rhs
+    const.getDozer_jacked_lhs = getDozer_jacked_lhs
+    const.getDozer_jacked_rhs = getDozer_jacked_rhs
+    const.getDozer_pullout_lhs = getDozer_pullout_lhs
+    const.getDozer_pullout_rhs = getDozer_pullout_rhs
+    const.getDrive_boat = getDrive_boat
+    const.getDrive_boat_back = getDrive_boat_back
+    const.getDrive_boat_l = getDrive_boat_l
+    const.getDrive_boat_r = getDrive_boat_r
+    const.getDrive_l = getDrive_l
+    const.getDrive_l_pro = getDrive_l_pro
+    const.getDrive_l_pro_slow = getDrive_l_pro_slow
+    const.getDrive_l_slow = getDrive_l_slow
+    const.getDrive_l_weak = getDrive_l_weak
+    const.getDrive_l_weak_slow = getDrive_l_weak_slow
+    const.getDrive_lo_l = getDrive_lo_l
+    const.getDrive_lo_r = getDrive_lo_r
+    const.getDrive_r = getDrive_r
+    const.getDrive_r_pro = getDrive_r_pro
+    const.getDrive_r_pro_slow = getDrive_r_pro_slow
+    const.getDrive_r_slow = getDrive_r_slow
+    const.getDrive_r_weak = getDrive_r_weak
+    const.getDrive_r_weak_slow = getDrive_r_weak_slow
+    const.getDrive_truck = getDrive_truck
+    const.getDrive_truck_back = getDrive_truck_back
+    const.getDrive_truck_l = getDrive_truck_l
+    const.getDrive_truck_r = getDrive_truck_r
+    const.getDriveby_l = getDriveby_l
+    const.getDriveby_r = getDriveby_r
+    const.getDrivebyl_l = getDrivebyl_l
+    const.getDrivebyl_r = getDrivebyl_r
+    const.getDrnkbr_prtl = getDrnkbr_prtl
+    const.getDrnkbr_prtl_f = getDrnkbr_prtl_f
+    const.getDrown = getDrown
+    const.getDrugs_buy = getDrugs_buy
+    const.getDuck_cower = getDuck_cower
+    const.getEat_burger = getEat_burger
+    const.getEat_chicken = getEat_chicken
+    const.getEat_pizza = getEat_pizza
+    const.getEat_vomit_p = getEat_vomit_p
+    const.getEat_vomit_sk = getEat_vomit_sk
+    const.getEnd_sc1_ply = getEnd_sc1_ply
+    const.getEnd_sc1_ryd = getEnd_sc1_ryd
+    const.getEnd_sc1_smo = getEnd_sc1_smo
+    const.getEnd_sc1_swe = getEnd_sc1_swe
+    const.getEnd_sc2_ply = getEnd_sc2_ply
+    const.getEnd_sc2_ryd = getEnd_sc2_ryd
+    const.getEnd_sc2_smo = getEnd_sc2_smo
+    const.getEnd_sc2_swe = getEnd_sc2_swe
+    const.getEndchat_01 = getEndchat_01
+    const.getEndchat_02 = getEndchat_02
+    const.getEndchat_03 = getEndchat_03
+    const.getEv_dive = getEv_dive
+    const.getEv_step = getEv_step
+    const.getF_smklean_loop = getF_smklean_loop
+    const.getF_smklean_loop_2 = getF_smklean_loop_2
+    const.getFacanger = getFacanger
+    const.getFacgum = getFacgum
+    const.getFacsurp = getFacsurp
+    const.getFacsurpm = getFacsurpm
+    const.getFactalk = getFactalk
+    const.getFacurios = getFacurios
+    const.getFall_back = getFall_back
+    const.getFall_collapse = getFall_collapse
+    const.getFall_fall = getFall_fall
+    const.getFall_front = getFall_front
+    const.getFall_glide = getFall_glide
+    const.getFall_land = getFall_land
+    const.getFall_skydive = getFall_skydive
+    const.getFall_skydive_accel = getFall_skydive_accel
+    const.getFall_skydive_die = getFall_skydive_die
+    const.getFall_skydive_l = getFall_skydive_l
+    const.getFall_skydive_r = getFall_skydive_r
+    const.getFatidle = getFatidle
+    const.getFatidle_armed = getFatidle_armed
+    const.getFatidle_csaw = getFatidle_csaw
+    const.getFatidle_rocket = getFatidle_rocket
+    const.getFatrun = getFatrun
+    const.getFatrun_armed = getFatrun_armed
+    const.getFatrun_csaw = getFatrun_csaw
+    const.getFatrun_rocket = getFatrun_rocket
+    const.getFatsprint = getFatsprint
+    const.getFatwalk = getFatwalk
+    const.getFatwalk_armed = getFatwalk_armed
+    const.getFatwalk_csaw = getFatwalk_csaw
+    const.getFatwalk_rocket = getFatwalk_rocket
+    const.getFatwalkst_armed = getFatwalkst_armed
+    const.getFatwalkst_rocket = getFatwalkst_rocket
+    const.getFatwalkstart = getFatwalkstart
+    const.getFatwalkstart_csaw = getFatwalkstart_csaw
+    const.getFen_choppa_l1 = getFen_choppa_l1
+    const.getFen_choppa_l2 = getFen_choppa_l2
+    const.getFen_choppa_l3 = getFen_choppa_l3
+    const.getFen_choppa_r1 = getFen_choppa_r1
+    const.getFen_choppa_r2 = getFen_choppa_r2
+    const.getFen_choppa_r3 = getFen_choppa_r3
+    const.getFf_dam_bkw = getFf_dam_bkw
+    const.getFf_dam_fwd = getFf_dam_fwd
+    const.getFf_dam_left = getFf_dam_left
+    const.getFf_dam_right = getFf_dam_right
+    const.getFf_die_bkw = getFf_die_bkw
+    const.getFf_die_fwd = getFf_die_fwd
+    const.getFf_die_left = getFf_die_left
+    const.getFf_die_right = getFf_die_right
+    const.getFf_sit_eat1 = getFf_sit_eat1
+    const.getFf_sit_eat2 = getFf_sit_eat2
+    const.getFf_sit_eat3 = getFf_sit_eat3
+    const.getFf_sit_in = getFf_sit_in
+    const.getFf_sit_in_l = getFf_sit_in_l
+    const.getFf_sit_in_r = getFf_sit_in_r
+    const.getFf_sit_look = getFf_sit_look
+    const.getFf_sit_loop = getFf_sit_loop
+    const.getFf_sit_out_180 = getFf_sit_out_180
+    const.getFf_sit_out_l_180 = getFf_sit_out_l_180
+    const.getFf_sit_out_r_180 = getFf_sit_out_r_180
+    const.getFight2idle = getFight2idle
+    const.getFighta_1 = getFighta_1
+    const.getFighta_2 = getFighta_2
+    const.getFighta_3 = getFighta_3
+    const.getFighta_block = getFighta_block
+    const.getFighta_g = getFighta_g
+    const.getFighta_m = getFighta_m
+    const.getFightb_1 = getFightb_1
+    const.getFightb_2 = getFightb_2
+    const.getFightb_3 = getFightb_3
+    const.getFightb_block = getFightb_block
+    const.getFightb_g = getFightb_g
+    const.getFightb_idle = getFightb_idle
+    const.getFightb_m = getFightb_m
+    const.getFightc_1 = getFightc_1
+    const.getFightc_2 = getFightc_2
+    const.getFightc_3 = getFightc_3
+    const.getFightc_block = getFightc_block
+    const.getFightc_blocking = getFightc_blocking
+    const.getFightc_g = getFightc_g
+    const.getFightc_idle = getFightc_idle
+    const.getFightc_m = getFightc_m
+    const.getFightc_spar = getFightc_spar
+    const.getFightd_1 = getFightd_1
+    const.getFightd_2 = getFightd_2
+    const.getFightd_3 = getFightd_3
+    const.getFightd_block = getFightd_block
+    const.getFightd_g = getFightd_g
+    const.getFightd_idle = getFightd_idle
+    const.getFightd_m = getFightd_m
+    const.getFightidle = getFightidle
+    const.getFightkick = getFightkick
+    const.getFightkick_b = getFightkick_b
+    const.getFightsh_bwd = getFightsh_bwd
+    const.getFightsh_fwd = getFightsh_fwd
+    const.getFightsh_left = getFightsh_left
+    const.getFightsh_right = getFightsh_right
+    const.getFightshb = getFightshb
+    const.getFightshf = getFightshf
+    const.getFin_climb_in = getFin_climb_in
+    const.getFin_cop1_climbout = getFin_cop1_climbout
+    const.getFin_cop1_climbout2 = getFin_cop1_climbout2
+    const.getFin_cop1_fall = getFin_cop1_fall
+    const.getFin_cop1_loop = getFin_cop1_loop
+    const.getFin_cop1_shot = getFin_cop1_shot
+    const.getFin_cop1_stomp = getFin_cop1_stomp
+    const.getFin_cop1_swing = getFin_cop1_swing
+    const.getFin_cop2_climbout = getFin_cop2_climbout
+    const.getFin_hang_l = getFin_hang_l
+    const.getFin_hang_loop = getFin_hang_loop
+    const.getFin_hang_r = getFin_hang_r
+    const.getFin_hang_slip = getFin_hang_slip
+    const.getFin_jump_on = getFin_jump_on
+    const.getFin_land_car = getFin_land_car
+    const.getFin_land_die = getFin_land_die
+    const.getFin_legsup = getFin_legsup
+    const.getFin_legsup_l = getFin_legsup_l
+    const.getFin_legsup_loop = getFin_legsup_loop
+    const.getFin_legsup_r = getFin_legsup_r
+    const.getFin_let_go = getFin_let_go
+    const.getFin_switch_p = getFin_switch_p
+    const.getFin_switch_s = getFin_switch_s
+    const.getFin2_cop1_loop = getFin2_cop1_loop
+    const.getFixn_car_loop = getFixn_car_loop
+    const.getFixn_car_out = getFixn_car_out
+    const.getFlag_drop = getFlag_drop
+    const.getFlame_fire = getFlame_fire
+    const.getFlee_lkaround_01 = getFlee_lkaround_01
+    const.getFloor_hit = getFloor_hit
+    const.getFloor_hit_f = getFloor_hit_f
+    const.getFlower_attack = getFlower_attack
+    const.getFlower_attack_m = getFlower_attack_m
+    const.getFlower_hit = getFlower_hit
+    const.getFucku = getFucku
+    const.getGang_dealer_deal = getGang_dealer_deal
+    const.getGang_dealer_idle = getGang_dealer_idle
+    const.getGang_drivebylhs = getGang_drivebylhs
+    const.getGang_drivebylhs_bwd = getGang_drivebylhs_bwd
+    const.getGang_drivebylhs_fwd = getGang_drivebylhs_fwd
+    const.getGang_drivebyrhs = getGang_drivebyrhs
+    const.getGang_drivebyrhs_bwd = getGang_drivebyrhs_bwd
+    const.getGang_drivebyrhs_fwd = getGang_drivebyrhs_fwd
+    const.getGang_drivebytop_lhs = getGang_drivebytop_lhs
+    const.getGang_drivebytop_rhs = getGang_drivebytop_rhs
+    const.getGang_drugs_buy = getGang_drugs_buy
+    const.getGang_gunstand = getGang_gunstand
+    const.getGas_cwr = getGas_cwr
+    const.getGdb_car_ply = getGdb_car_ply
+    const.getGdb_car_ryd = getGdb_car_ryd
+    const.getGdb_car_smo = getGdb_car_smo
+    const.getGdb_car_swe = getGdb_car_swe
+    const.getGdb_car2_ply = getGdb_car2_ply
+    const.getGdb_car2_smo = getGdb_car2_smo
+    const.getGdb_car2_swe = getGdb_car2_swe
+    const.getGetup = getGetup
+    const.getGetup_front = getGetup_front
+    const.getGf_carargue_01 = getGf_carargue_01
+    const.getGf_carargue_02 = getGf_carargue_02
+    const.getGf_carspot = getGf_carspot
+    const.getGf_streetargue_01 = getGf_streetargue_01
+    const.getGf_streetargue_02 = getGf_streetargue_02
+    const.getGfwave2 = getGfwave2
+    const.getGift_get = getGift_get
+    const.getGift_give = getGift_give
+    const.getGirl_01 = getGirl_01
+    const.getGirl_02 = getGirl_02
+    const.getGnstwall_injurd = getGnstwall_injurd
+    const.getGoggles_put_on = getGoggles_put_on
+    const.getGrab_l = getGrab_l
+    const.getGrab_r = getGrab_r
+    const.getGraffiti_chkout = getGraffiti_chkout
+    const.getGrlfrd_kiss_01 = getGrlfrd_kiss_01
+    const.getGrlfrd_kiss_02 = getGrlfrd_kiss_02
+    const.getGrlfrd_kiss_03 = getGrlfrd_kiss_03
+    const.getGsign1 = getGsign1
+    const.getGsign1lh = getGsign1lh
+    const.getGsign2 = getGsign2
+    const.getGsign2lh = getGsign2lh
+    const.getGsign3 = getGsign3
+    const.getGsign3lh = getGsign3lh
+    const.getGsign4 = getGsign4
+    const.getGsign4lh = getGsign4lh
+    const.getGsign5 = getGsign5
+    const.getGsign5lh = getGsign5lh
+    const.getGum_eat = getGum_eat
+    const.getGun_2_idle = getGun_2_idle
+    const.getGun_butt = getGun_butt
+    const.getGun_butt_crouch = getGun_butt_crouch
+    const.getGun_stand = getGun_stand
+    const.getGuncrouchbwd = getGuncrouchbwd
+    const.getGuncrouchfwd = getGuncrouchfwd
+    const.getGunmove_bwd = getGunmove_bwd
+    const.getGunmove_fwd = getGunmove_fwd
+    const.getGunmove_l = getGunmove_l
+    const.getGunmove_r = getGunmove_r
+    const.getGym_barbell = getGym_barbell
+    const.getGym_bike_celebrate = getGym_bike_celebrate
+    const.getGym_bike_fast = getGym_bike_fast
+    const.getGym_bike_faster = getGym_bike_faster
+    const.getGym_bike_getoff = getGym_bike_getoff
+    const.getGym_bike_geton = getGym_bike_geton
+    const.getGym_bike_pedal = getGym_bike_pedal
+    const.getGym_bike_slow = getGym_bike_slow
+    const.getGym_bike_still = getGym_bike_still
+    const.getGym_bp_celebrate = getGym_bp_celebrate
+    const.getGym_bp_down = getGym_bp_down
+    const.getGym_bp_getoff = getGym_bp_getoff
+    const.getGym_bp_geton = getGym_bp_geton
+    const.getGym_bp_up_a = getGym_bp_up_a
+    const.getGym_bp_up_b = getGym_bp_up_b
+    const.getGym_bp_up_smooth = getGym_bp_up_smooth
+    const.getGym_free_a = getGym_free_a
+    const.getGym_free_b = getGym_free_b
+    const.getGym_free_celebrate = getGym_free_celebrate
+    const.getGym_free_down = getGym_free_down
+    const.getGym_free_loop = getGym_free_loop
+    const.getGym_free_pickup = getGym_free_pickup
+    const.getGym_free_putdown = getGym_free_putdown
+    const.getGym_free_up_smooth = getGym_free_up_smooth
+    const.getGym_jog_falloff = getGym_jog_falloff
+    const.getGym_shadowbox = getGym_shadowbox
+    const.getGym_tread_celebrate = getGym_tread_celebrate
+    const.getGym_tread_falloff = getGym_tread_falloff
+    const.getGym_tread_getoff = getGym_tread_getoff
+    const.getGym_tread_geton = getGym_tread_geton
+    const.getGym_tread_jog = getGym_tread_jog
+    const.getGym_tread_sprint = getGym_tread_sprint
+    const.getGym_tread_tired = getGym_tread_tired
+    const.getGym_tread_walk = getGym_tread_walk
+    const.getGym_walk_falloff = getGym_walk_falloff
+    const.getGymshadowbox = getGymshadowbox
+    const.getHandscower = getHandscower
+    const.getHandsup = getHandsup
+    const.getHangon_stun_loop = getHangon_stun_loop
+    const.getHangon_stun_turn = getHangon_stun_turn
+    const.getHiker_pose = getHiker_pose
+    const.getHiker_pose_l = getHiker_pose_l
+    const.getHit_back = getHit_back
+    const.getHit_behind = getHit_behind
+    const.getHit_fightkick = getHit_fightkick
+    const.getHit_fightkick_b = getHit_fightkick_b
+    const.getHit_front = getHit_front
+    const.getHit_gun_butt = getHit_gun_butt
+    const.getHit_l = getHit_l
+    const.getHit_r = getHit_r
+    const.getHit_walk = getHit_walk
+    const.getHit_wall = getHit_wall
+    const.getHita_1 = getHita_1
+    const.getHita_2 = getHita_2
+    const.getHita_3 = getHita_3
+    const.getHitb_1 = getHitb_1
+    const.getHitb_2 = getHitb_2
+    const.getHitb_3 = getHitb_3
+    const.getHitc_1 = getHitc_1
+    const.getHitc_2 = getHitc_2
+    const.getHitc_3 = getHitc_3
+    const.getHitd_1 = getHitd_1
+    const.getHitd_2 = getHitd_2
+    const.getHitd_3 = getHitd_3
+    const.getHndshkaa = getHndshkaa
+    const.getHndshkba = getHndshkba
+    const.getHndshkca = getHndshkca
+    const.getHndshkcb = getHndshkcb
+    const.getHndshkda = getHndshkda
+    const.getHndshkea = getHndshkea
+    const.getHndshkfa = getHndshkfa
+    const.getHndshkfa_swt = getHndshkfa_swt
+    const.getHo_ass_slapped = getHo_ass_slapped
+    const.getHouse_wash_up = getHouse_wash_up
+    const.getIdle_armed = getIdle_armed
+    const.getIdle_chat = getIdle_chat
+    const.getIdle_chat_02 = getIdle_chat_02
+    const.getIdle_csaw = getIdle_csaw
+    const.getIdle_gang1 = getIdle_gang1
+    const.getIdle_hbhb = getIdle_hbhb
+    const.getIdle_rocket = getIdle_rocket
+    const.getIdle_stance = getIdle_stance
+    const.getIdle_taxi = getIdle_taxi
+    const.getIdle_tired = getIdle_tired
+    const.getIdlestance_fat = getIdlestance_fat
+    const.getIdlestance_old = getIdlestance_old
+    const.getInt_shop_pay = getInt_shop_pay
+    const.getInvite_no = getInvite_no
+    const.getInvite_yes = getInvite_yes
+    const.getJetpack_idle = getJetpack_idle
+    const.getJmp_wall1m_180 = getJmp_wall1m_180
+    const.getJog_femalea = getJog_femalea
+    const.getJog_malea = getJog_malea
+    const.getJump_glide = getJump_glide
+    const.getJump_land = getJump_land
+    const.getJump_launch = getJump_launch
+    const.getJump_launch_r = getJump_launch_r
+    const.getJump_roll = getJump_roll
+    const.getKart_drive = getKart_drive
+    const.getKart_getin_lhs = getKart_getin_lhs
+    const.getKart_getin_rhs = getKart_getin_rhs
+    const.getKart_getout_lhs = getKart_getout_lhs
+    const.getKart_getout_rhs = getKart_getout_rhs
+    const.getKart_l = getKart_l
+    const.getKart_lb = getKart_lb
+    const.getKart_r = getKart_r
+    const.getKat_throw_k = getKat_throw_k
+    const.getKat_throw_o = getKat_throw_o
+    const.getKat_throw_p = getKat_throw_p
+    const.getKd_left = getKd_left
+    const.getKd_right = getKd_right
+    const.getKill_knife_ped_damage = getKill_knife_ped_damage
+    const.getKill_knife_ped_die = getKill_knife_ped_die
+    const.getKill_knife_player = getKill_knife_player
+    const.getKill_partial = getKill_partial
+    const.getKissign_grlfrd_kiss_03 = getKissign_grlfrd_kiss_03
+    const.getKissing_bd_gf_wave = getKissing_bd_gf_wave
+    const.getKissing_playa_kiss_03 = getKissing_playa_kiss_03
+    const.getKnife_1 = getKnife_1
+    const.getKnife_2 = getKnife_2
+    const.getKnife_3 = getKnife_3
+    const.getKnife_4 = getKnife_4
+    const.getKnife_block = getKnife_block
+    const.getKnife_g = getKnife_g
+    const.getKnife_hit_1 = getKnife_hit_1
+    const.getKnife_hit_2 = getKnife_hit_2
+    const.getKnife_hit_3 = getKnife_hit_3
+    const.getKnife_idle = getKnife_idle
+    const.getKnife_part = getKnife_part
+    const.getKo_shot_face = getKo_shot_face
+    const.getKo_shot_front = getKo_shot_front
+    const.getKo_shot_stom = getKo_shot_stom
+    const.getKo_skid_back = getKo_skid_back
+    const.getKo_skid_front = getKo_skid_front
+    const.getKo_spin_l = getKo_spin_l
+    const.getKo_spin_r = getKo_spin_r
+    const.getLafin_player = getLafin_player
+    const.getLafin_sweet = getLafin_sweet
+    const.getLapdan_d_1 = getLapdan_d_1
+    const.getLapdan_d_2 = getLapdan_d_2
+    const.getLapdan_d_3 = getLapdan_d_3
+    const.getLapdan_p_1 = getLapdan_p_1
+    const.getLapdan_p_2 = getLapdan_p_2
+    const.getLapdan_p_3 = getLapdan_p_3
+    const.getLaugh_01 = getLaugh_01
+    const.getLay_bac_in = getLay_bac_in
+    const.getLay_bac_loop = getLay_bac_loop
+    const.getLay_bac_out = getLay_bac_out
+    const.getLeanidle = getLeanidle
+    const.getLeanin = getLeanin
+    const.getLeanout = getLeanout
+    const.getLhgsign1 = getLhgsign1
+    const.getLhgsign2 = getLhgsign2
+    const.getLhgsign3 = getLhgsign3
+    const.getLhgsign4 = getLhgsign4
+    const.getLhgsign5 = getLhgsign5
+    const.getLiftup = getLiftup
+    const.getLiftup05 = getLiftup05
+    const.getLiftup105 = getLiftup105
+    const.getLkaround_in = getLkaround_in
+    const.getLkaround_loop = getLkaround_loop
+    const.getLkaround_out = getLkaround_out
+    const.getLkup_in = getLkup_in
+    const.getLkup_loop = getLkup_loop
+    const.getLkup_out = getLkup_out
+    const.getLkup_point = getLkup_point
+    const.getLou_in = getLou_in
+    const.getLou_loop = getLou_loop
+    const.getLou_out = getLou_out
+    const.getLr_m_smklean_loop = getLr_m_smklean_loop
+    const.getLr_m_smkstnd_loop = getLr_m_smkstnd_loop
+    const.getLr_prtial_gngtlkb = getLr_prtial_gngtlkb
+    const.getLr_prtial_gngtlkc = getLr_prtial_gngtlkc
+    const.getLr_prtial_gngtlkd = getLr_prtial_gngtlkd
+    const.getLr_prtial_gngtlke = getLr_prtial_gngtlke
+    const.getLr_prtial_gngtlkf = getLr_prtial_gngtlkf
+    const.getLr_prtial_gngtlkg = getLr_prtial_gngtlkg
+    const.getLr_prtial_gngtlkh = getLr_prtial_gngtlkh
+    const.getLr_sit_relaxed = getLr_sit_relaxed
+    const.getLr_tap_hand = getLr_tap_hand
+    const.getLrgirl_bdbnce = getLrgirl_bdbnce
+    const.getLrgirl_hair = getLrgirl_hair
+    const.getLrgirl_hurry = getLrgirl_hurry
+    const.getLrgirl_idle_to_l0 = getLrgirl_idle_to_l0
+    const.getLrgirl_idleloop = getLrgirl_idleloop
+    const.getLrgirl_l0_bnce = getLrgirl_l0_bnce
+    const.getLrgirl_l0_loop = getLrgirl_l0_loop
+    const.getLrgirl_l0_to_l1 = getLrgirl_l0_to_l1
+    const.getLrgirl_l1_bnce = getLrgirl_l1_bnce
+    const.getLrgirl_l1_loop = getLrgirl_l1_loop
+    const.getLrgirl_l1_to_l2 = getLrgirl_l1_to_l2
+    const.getLrgirl_l12_to_l0 = getLrgirl_l12_to_l0
+    const.getLrgirl_l2_bnce = getLrgirl_l2_bnce
+    const.getLrgirl_l2_loop = getLrgirl_l2_loop
+    const.getLrgirl_l2_to_l3 = getLrgirl_l2_to_l3
+    const.getLrgirl_l3_bnce = getLrgirl_l3_bnce
+    const.getLrgirl_l3_loop = getLrgirl_l3_loop
+    const.getLrgirl_l3_to_l4 = getLrgirl_l3_to_l4
+    const.getLrgirl_l345_to_l1 = getLrgirl_l345_to_l1
+    const.getLrgirl_l4_bnce = getLrgirl_l4_bnce
+    const.getLrgirl_l4_loop = getLrgirl_l4_loop
+    const.getLrgirl_l4_to_l5 = getLrgirl_l4_to_l5
+    const.getLrgirl_l5_bnce = getLrgirl_l5_bnce
+    const.getLrgirl_l5_loop = getLrgirl_l5_loop
+    const.getM_smk_drag = getM_smk_drag
+    const.getM_smk_in = getM_smk_in
+    const.getM_smk_loop = getM_smk_loop
+    const.getM_smk_out = getM_smk_out
+    const.getM_smk_tap = getM_smk_tap
+    const.getM_smklean_loop = getM_smklean_loop
+    const.getM_smklean_loop_2 = getM_smklean_loop_2
+    const.getM_smkstnd_loop = getM_smkstnd_loop
+    const.getManwinb = getManwinb
+    const.getManwind = getManwind
+    const.getMd_bike_2_hang = getMd_bike_2_hang
+    const.getMd_bike_jmp_bl = getMd_bike_jmp_bl
+    const.getMd_bike_jmp_f = getMd_bike_jmp_f
+    const.getMd_bike_lnd_bl = getMd_bike_lnd_bl
+    const.getMd_bike_lnd_die_bl = getMd_bike_lnd_die_bl
+    const.getMd_bike_lnd_die_f = getMd_bike_lnd_die_f
+    const.getMd_bike_lnd_f = getMd_bike_lnd_f
+    const.getMd_bike_lnd_roll = getMd_bike_lnd_roll
+    const.getMd_bike_lnd_roll_f = getMd_bike_lnd_roll_f
+    const.getMd_bike_punch = getMd_bike_punch
+    const.getMd_bike_punch_f = getMd_bike_punch_f
+    const.getMd_bike_shot_f = getMd_bike_shot_f
+    const.getMd_hang_lnd_roll = getMd_hang_lnd_roll
+    const.getMd_hang_loop = getMd_hang_loop
+    const.getMrnf_loop = getMrnf_loop
+    const.getMrnm_loop = getMrnm_loop
+    const.getMscle_rckt_run = getMscle_rckt_run
+    const.getMscle_rckt_walkst = getMscle_rckt_walkst
+    const.getMscle_run_csaw = getMscle_run_csaw
+    const.getMsclewalkst_armed = getMsclewalkst_armed
+    const.getMsclewalkst_csaw = getMsclewalkst_csaw
+    const.getMtb_back = getMtb_back
+    const.getMtb_bunnyhop = getMtb_bunnyhop
+    const.getMtb_driveby_lhs = getMtb_driveby_lhs
+    const.getMtb_driveby_rhs = getMtb_driveby_rhs
+    const.getMtb_drivebyft = getMtb_drivebyft
+    const.getMtb_fwd = getMtb_fwd
+    const.getMtb_getoffback = getMtb_getoffback
+    const.getMtb_getofflhs = getMtb_getofflhs
+    const.getMtb_getoffrhs = getMtb_getoffrhs
+    const.getMtb_jumponl = getMtb_jumponl
+    const.getMtb_jumponr = getMtb_jumponr
+    const.getMtb_left = getMtb_left
+    const.getMtb_pedal = getMtb_pedal
+    const.getMtb_pushes = getMtb_pushes
+    const.getMtb_ride = getMtb_ride
+    const.getMtb_right = getMtb_right
+    const.getMtb_sprint = getMtb_sprint
+    const.getMtb_still = getMtb_still
+    const.getMuscleidle = getMuscleidle
+    const.getMuscleidle_armed = getMuscleidle_armed
+    const.getMuscleidle_csaw = getMuscleidle_csaw
+    const.getMuscleidle_rocket = getMuscleidle_rocket
+    const.getMusclerun = getMusclerun
+    const.getMusclerun_armed = getMusclerun_armed
+    const.getMusclesprint = getMusclesprint
+    const.getMusclewalk = getMusclewalk
+    const.getMusclewalk_armed = getMusclewalk_armed
+    const.getMusclewalk_csaw = getMusclewalk_csaw
+    const.getMusclewalk_rocket = getMusclewalk_rocket
+    const.getMusclewalkstart = getMusclewalkstart
+    const.getNevada_getin = getNevada_getin
+    const.getNevada_getout = getNevada_getout
+    const.getOff_sit_2idle_180 = getOff_sit_2idle_180
+    const.getOff_sit_bored_loop = getOff_sit_bored_loop
+    const.getOff_sit_crash = getOff_sit_crash
+    const.getOff_sit_drink = getOff_sit_drink
+    const.getOff_sit_idle_loop = getOff_sit_idle_loop
+    const.getOff_sit_in = getOff_sit_in
+    const.getOff_sit_read = getOff_sit_read
+    const.getOff_sit_type_loop = getOff_sit_type_loop
+    const.getOff_sit_watch = getOff_sit_watch
+    const.getOffice_Ff_dam_fwd = getOffice_Ff_dam_fwd
+    const.getPanic_cower = getPanic_cower
+    const.getPanic_hide = getPanic_hide
+    const.getPanic_in = getPanic_in
+    const.getPanic_loop = getPanic_loop
+    const.getPanic_out = getPanic_out
+    const.getPanic_point = getPanic_point
+    const.getPanic_shout = getPanic_shout
+    const.getPara_decel = getPara_decel
+    const.getPara_decel_o = getPara_decel_o
+    const.getPara_float = getPara_float
+    const.getPara_float_o = getPara_float_o
+    const.getPara_land = getPara_land
+    const.getPara_land_o = getPara_land_o
+    const.getPara_land_water = getPara_land_water
+    const.getPara_land_water_o = getPara_land_water_o
+    const.getPara_open = getPara_open
+    const.getPara_open_o = getPara_open_o
+    const.getPara_rip_land_o = getPara_rip_land_o
+    const.getPara_rip_loop_o = getPara_rip_loop_o
+    const.getPara_rip_o = getPara_rip_o
+    const.getPara_steerl = getPara_steerl
+    const.getPara_steerl_o = getPara_steerl_o
+    const.getPara_steerr = getPara_steerr
+    const.getPara_steerr_o = getPara_steerr_o
+    const.getParksit_m_idlea = getParksit_m_idlea
+    const.getParksit_m_idleb = getParksit_m_idleb
+    const.getParksit_m_idlec = getParksit_m_idlec
+    const.getParksit_m_in = getParksit_m_in
+    const.getParksit_m_loop = getParksit_m_loop
+    const.getParksit_m_out = getParksit_m_out
+    const.getParksit_w_idlea = getParksit_w_idlea
+    const.getParksit_w_idleb = getParksit_w_idleb
+    const.getParksit_w_idlec = getParksit_w_idlec
+    const.getParksit_w_in = getParksit_w_in
+    const.getParksit_w_loop = getParksit_w_loop
+    const.getParksit_w_out = getParksit_w_out
+    const.getPass_driveby_bwd = getPass_driveby_bwd
+    const.getPass_driveby_fwd = getPass_driveby_fwd
+    const.getPass_driveby_lhs = getPass_driveby_lhs
+    const.getPass_driveby_rhs = getPass_driveby_rhs
+    const.getPass_rifle_o = getPass_rifle_o
+    const.getPass_rifle_ped = getPass_rifle_ped
+    const.getPass_rifle_ply = getPass_rifle_ply
+    const.getPass_smoke_in_car = getPass_smoke_in_car
+    const.getPed_console_loop = getPed_console_loop
+    const.getPed_console_loose = getPed_console_loose
+    const.getPed_console_win = getPed_console_win
+    const.getPed_fall_skydive = getPed_fall_skydive
+    const.getPed_idle_csaw = getPed_idle_csaw
+    const.getPed_idle_tired = getPed_idle_tired
+    const.getPed_tap_hand = getPed_tap_hand
+    const.getPedals_fast = getPedals_fast
+    const.getPedals_med = getPedals_med
+    const.getPedals_slow = getPedals_slow
+    const.getPedals_still = getPedals_still
+    const.getPhone_in = getPhone_in
+    const.getPhone_out = getPhone_out
+    const.getPhone_talk = getPhone_talk
+    const.getPiccrch_in = getPiccrch_in
+    const.getPiccrch_out = getPiccrch_out
+    const.getPiccrch_take = getPiccrch_take
+    const.getPickup_box = getPickup_box
+    const.getPicstnd_in = getPicstnd_in
+    const.getPicstnd_out = getPicstnd_out
+    const.getPicstnd_take = getPicstnd_take
+    const.getPiss_in = getPiss_in
+    const.getPiss_loop = getPiss_loop
+    const.getPiss_out = getPiss_out
+    const.getPlane_align_lhs = getPlane_align_lhs
+    const.getPlane_close = getPlane_close
+    const.getPlane_door = getPlane_door
+    const.getPlane_exit = getPlane_exit
+    const.getPlane_getin = getPlane_getin
+    const.getPlane_getout = getPlane_getout
+    const.getPlane_hijack = getPlane_hijack
+    const.getPlane_open = getPlane_open
+    const.getPlaya_kiss_01 = getPlaya_kiss_01
+    const.getPlaya_kiss_02 = getPlaya_kiss_02
+    const.getPlaya_kiss_03 = getPlaya_kiss_03
+    const.getPlayer_01 = getPlayer_01
+    const.getPlayer_sneak = getPlayer_sneak
+    const.getPlayer_sneak_walkstart = getPlayer_sneak_walkstart
+    const.getPlc_drgbst_01 = getPlc_drgbst_01
+    const.getPlc_drgbst_02 = getPlc_drgbst_02
+    const.getPlunger_01 = getPlunger_01
+    const.getPly_cash = getPly_cash
+    const.getPlyr_drivebybwd = getPlyr_drivebybwd
+    const.getPlyr_drivebyfwd = getPlyr_drivebyfwd
+    const.getPlyr_drivebylhs = getPlyr_drivebylhs
+    const.getPlyr_drivebyrhs = getPlyr_drivebyrhs
+    const.getPlyr_hndshldr_01 = getPlyr_hndshldr_01
+    const.getPlyr_shkhead = getPlyr_shkhead
+    const.getPlyrlean_loop = getPlyrlean_loop
+    const.getPnm_argue1_a = getPnm_argue1_a
+    const.getPnm_argue1_b = getPnm_argue1_b
+    const.getPnm_argue2_a = getPnm_argue2_a
+    const.getPnm_argue2_b = getPnm_argue2_b
+    const.getPnm_loop_a = getPnm_loop_a
+    const.getPnm_loop_b = getPnm_loop_b
+    const.getPoint_in = getPoint_in
+    const.getPoint_loop = getPoint_loop
+    const.getPoint_out = getPoint_out
+    const.getPointup_in = getPointup_in
+    const.getPointup_loop = getPointup_loop
+    const.getPointup_out = getPointup_out
+    const.getPointup_shout = getPointup_shout
+    const.getPool_chalkcue = getPool_chalkcue
+    const.getPool_idle_stance = getPool_idle_stance
+    const.getPool_long_shot = getPool_long_shot
+    const.getPool_long_shot_o = getPool_long_shot_o
+    const.getPool_long_start = getPool_long_start
+    const.getPool_long_start_o = getPool_long_start_o
+    const.getPool_med_shot = getPool_med_shot
+    const.getPool_med_shot_o = getPool_med_shot_o
+    const.getPool_med_start = getPool_med_start
+    const.getPool_med_start_o = getPool_med_start_o
+    const.getPool_place_white = getPool_place_white
+    const.getPool_short_shot = getPool_short_shot
+    const.getPool_short_shot_o = getPool_short_shot_o
+    const.getPool_short_start = getPool_short_start
+    const.getPool_short_start_o = getPool_short_start_o
+    const.getPool_walk = getPool_walk
+    const.getPool_walk_start = getPool_walk_start
+    const.getPool_xlong_shot = getPool_xlong_shot
+    const.getPool_xlong_shot_o = getPool_xlong_shot_o
+    const.getPool_xlong_start = getPool_xlong_start
+    const.getPool_xlong_start_o = getPool_xlong_start_o
+    const.getPrst_loopa = getPrst_loopa
+    const.getPrtial_gngtlka = getPrtial_gngtlka
+    const.getPrtial_gngtlkb = getPrtial_gngtlkb
+    const.getPrtial_gngtlkc = getPrtial_gngtlkc
+    const.getPrtial_gngtlkd = getPrtial_gngtlkd
+    const.getPrtial_gngtlke = getPrtial_gngtlke
+    const.getPrtial_gngtlkf = getPrtial_gngtlkf
+    const.getPrtial_gngtlkg = getPrtial_gngtlkg
+    const.getPrtial_gngtlkh = getPrtial_gngtlkh
+    const.getPrtial_hndshk_01 = getPrtial_hndshk_01
+    const.getPrtial_hndshk_biz_01 = getPrtial_hndshk_biz_01
+    const.getPun_cash = getPun_cash
+    const.getPun_holler = getPun_holler
+    const.getPun_loop = getPun_loop
+    const.getPutdwn = getPutdwn
+    const.getPutdwn05 = getPutdwn05
+    const.getPutdwn105 = getPutdwn105
+    const.getPython_crouchfire = getPython_crouchfire
+    const.getPython_crouchreload = getPython_crouchreload
+    const.getPython_fire = getPython_fire
+    const.getPython_fire_poor = getPython_fire_poor
+    const.getPython_reload = getPython_reload
+    const.getQuad_back = getQuad_back
+    const.getQuad_driveby_ft = getQuad_driveby_ft
+    const.getQuad_driveby_lhs = getQuad_driveby_lhs
+    const.getQuad_driveby_rhs = getQuad_driveby_rhs
+    const.getQuad_fwd = getQuad_fwd
+    const.getQuad_getoff_b = getQuad_getoff_b
+    const.getQuad_getoff_lhs = getQuad_getoff_lhs
+    const.getQuad_getoff_rhs = getQuad_getoff_rhs
+    const.getQuad_geton_lhs = getQuad_geton_lhs
+    const.getQuad_geton_rhs = getQuad_geton_rhs
+    const.getQuad_hit = getQuad_hit
+    const.getQuad_kick = getQuad_kick
+    const.getQuad_left = getQuad_left
+    const.getQuad_pass_driveby_bwd = getQuad_pass_driveby_bwd
+    const.getQuad_pass_driveby_lhs = getQuad_pass_driveby_lhs
+    const.getQuad_pass_driveby_rhs = getQuad_pass_driveby_rhs
+    const.getQuad_passenger = getQuad_passenger
+    const.getQuad_pPass_driveby_fwd = getQuad_pPass_driveby_fwd
+    const.getQuad_reverse = getQuad_reverse
+    const.getQuad_ride = getQuad_ride
+    const.getQuad_right = getQuad_right
+    const.getRail_fall = getRail_fall
+    const.getRail_fall_crawl = getRail_fall_crawl
+    const.getRap_a_loop = getRap_a_loop
+    const.getRap_b_loop = getRap_b_loop
+    const.getRap_c_loop = getRap_c_loop
+    const.getRapping_rap_a_in = getRapping_rap_a_in
+    const.getRapping_rap_a_loop = getRapping_rap_a_loop
+    const.getRapping_rap_a_out = getRapping_rap_a_out
+    const.getRapping_rap_b_in = getRapping_rap_b_in
+    const.getRapping_rap_b_loop = getRapping_rap_b_loop
+    const.getRapping_rap_b_out = getRapping_rap_b_out
+    const.getRapping_rap_c_loop = getRapping_rap_c_loop
+    const.getRhgsign1 = getRhgsign1
+    const.getRhgsign2 = getRhgsign2
+    const.getRhgsign3 = getRhgsign3
+    const.getRhgsign4 = getRhgsign4
+    const.getRhgsign5 = getRhgsign5
+    const.getRifle_crouchfire = getRifle_crouchfire
+    const.getRifle_crouchload = getRifle_crouchload
+    const.getRifle_fire = getRifle_fire
+    const.getRifle_fire_poor = getRifle_fire_poor
+    const.getRifle_load = getRifle_load
+    const.getRiot_angry = getRiot_angry
+    const.getRiot_angry_b = getRiot_angry_b
+    const.getRiot_challenge = getRiot_challenge
+    const.getRiot_chant = getRiot_chant
+    const.getRiot_fuku = getRiot_fuku
+    const.getRiot_punches = getRiot_punches
+    const.getRiot_shout = getRiot_shout
+    const.getRoadcross = getRoadcross
+    const.getRoadcross_female = getRoadcross_female
+    const.getRoadcross_gang = getRoadcross_gang
+    const.getRoadcross_old = getRoadcross_old
+    const.getRob_2idle = getRob_2idle
+    const.getRob_loop = getRob_loop
+    const.getRob_loop_threat = getRob_loop_threat
+    const.getRob_shifty = getRob_shifty
+    const.getRob_stickup_in = getRob_stickup_in
+    const.getRocket_idle_rocket = getRocket_idle_rocket
+    const.getRocket_rocketfire = getRocket_rocketfire
+    const.getRocket_run_rocket = getRocket_run_rocket
+    const.getRocket_walk_rocket = getRocket_walk_rocket
+    const.getRocket_walk_start_rocket = getRocket_walk_start_rocket
+    const.getRoulette_bet = getRoulette_bet
+    const.getRoulette_in = getRoulette_in
+    const.getRoulette_loop = getRoulette_loop
+    const.getRoulette_lose = getRoulette_lose
+    const.getRoulette_out = getRoulette_out
+    const.getRoulette_win = getRoulette_win
+    const.getRun_1armed = getRun_1armed
+    const.getRun_armed = getRun_armed
+    const.getRun_civi = getRun_civi
+    const.getRun_csaw = getRun_csaw
+    const.getRun_dive = getRun_dive
+    const.getRun_fat = getRun_fat
+    const.getRun_fatold = getRun_fatold
+    const.getRun_gang1 = getRun_gang1
+    const.getRun_left = getRun_left
+    const.getRun_old = getRun_old
+    const.getRun_player = getRun_player
+    const.getRun_right = getRun_right
+    const.getRun_rocket = getRun_rocket
+    const.getRun_stop = getRun_stop
+    const.getRun_stopr = getRun_stopr
+    const.getRun_wuzi = getRun_wuzi
+    const.getRyd_beckon_01 = getRyd_beckon_01
+    const.getRyd_beckon_02 = getRyd_beckon_02
+    const.getRyd_beckon_03 = getRyd_beckon_03
+    const.getRyd_die_pt1 = getRyd_die_pt1
+    const.getRyd_die_pt2 = getRyd_die_pt2
+    const.getSawnoff_reload = getSawnoff_reload
+    const.getSbathe_f_lieb2sit = getSbathe_f_lieb2sit
+    const.getSbathe_f_out = getSbathe_f_out
+    const.getSc_ltor = getSc_ltor
+    const.getSc_rtol = getSc_rtol
+    const.getScdldlp = getScdldlp
+    const.getScdlulp = getScdlulp
+    const.getScdrdlp = getScdrdlp
+    const.getScdrulp = getScdrulp
+    const.getSclng_l = getSclng_l
+    const.getSclng_r = getSclng_r
+    const.getScmid_l = getScmid_l
+    const.getScmid_r = getScmid_r
+    const.getScratchballs_01 = getScratchballs_01
+    const.getScshrtl = getScshrtl
+    const.getScshrtr = getScshrtr
+    const.getSeat_down = getSeat_down
+    const.getSeat_idle = getSeat_idle
+    const.getSeat_lr = getSeat_lr
+    const.getSeat_talk_01 = getSeat_talk_01
+    const.getSeat_talk_02 = getSeat_talk_02
+    const.getSeat_up = getSeat_up
+    const.getSeat_watch = getSeat_watch
+    const.getSf_jumpwall = getSf_jumpwall
+    const.getShake_cara = getShake_cara
+    const.getShake_cark = getShake_cark
+    const.getShake_carsh = getShake_carsh
+    const.getShamal_align = getShamal_align
+    const.getShamal_getin_lhs = getShamal_getin_lhs
+    const.getShamal_getout_lhs = getShamal_getout_lhs
+    const.getShamal_open = getShamal_open
+    const.getShift = getShift
+    const.getShldr = getShldr
+    const.getShop_cashier = getShop_cashier
+    const.getShop_in = getShop_in
+    const.getShop_looka = getShop_looka
+    const.getShop_lookb = getShop_lookb
+    const.getShop_loop = getShop_loop
+    const.getShop_out = getShop_out
+    const.getShop_pay = getShop_pay
+    const.getShop_shelf = getShop_shelf
+    const.getShot_leftp = getShot_leftp
+    const.getShot_partial = getShot_partial
+    const.getShot_partial_b = getShot_partial_b
+    const.getShot_rightp = getShot_rightp
+    const.getShotgun_crouchfire = getShotgun_crouchfire
+    const.getShotgun_fire = getShotgun_fire
+    const.getShotgun_fire_poor = getShotgun_fire_poor
+    const.getShout_01 = getShout_01
+    const.getShout_02 = getShout_02
+    const.getShout_in = getShout_in
+    const.getShout_loop = getShout_loop
+    const.getShout_out = getShout_out
+    const.getShove_partial = getShove_partial
+    const.getShp_1h_lift = getShp_1h_lift
+    const.getShp_1h_lift_end = getShp_1h_lift_end
+    const.getShp_1h_ret = getShp_1h_ret
+    const.getShp_1h_ret_s = getShp_1h_ret_s
+    const.getShp_2h_lift = getShp_2h_lift
+    const.getShp_2h_lift_end = getShp_2h_lift_end
+    const.getShp_2h_ret = getShp_2h_ret
+    const.getShp_2h_ret_s = getShp_2h_ret_s
+    const.getShp_ar_lift = getShp_ar_lift
+    const.getShp_ar_lift_end = getShp_ar_lift_end
+    const.getShp_ar_ret = getShp_ar_ret
+    const.getShp_ar_ret_s = getShp_ar_ret_s
+    const.getShp_duck = getShp_duck
+    const.getShp_duck_aim = getShp_duck_aim
+    const.getShp_duck_fire = getShp_duck_fire
+    const.getShp_g_lift_in = getShp_g_lift_in
+    const.getShp_g_lift_out = getShp_g_lift_out
+    const.getShp_gun_aim = getShp_gun_aim
+    const.getShp_gun_duck = getShp_gun_duck
+    const.getShp_gun_fire = getShp_gun_fire
+    const.getShp_gun_grab = getShp_gun_grab
+    const.getShp_gun_threat = getShp_gun_threat
+    const.getShp_handsup_scr = getShp_handsup_scr
+    const.getShp_handsup_scr_2 = getShp_handsup_scr_2
+    const.getShp_jump_glide = getShp_jump_glide
+    const.getShp_jump_land = getShp_jump_land
+    const.getShp_jump_launch = getShp_jump_launch
+    const.getShp_rob_givecash = getShp_rob_givecash
+    const.getShp_rob_handsup = getShp_rob_handsup
+    const.getShp_rob_react = getShp_rob_react
+    const.getShp_serve_end = getShp_serve_end
+    const.getShp_serve_idle = getShp_serve_idle
+    const.getShp_serve_loop = getShp_serve_loop
+    const.getShp_serve_start = getShp_serve_start
+    const.getShp_thank = getShp_thank
+    const.getShp_tray_in = getShp_tray_in
+    const.getShp_tray_lift = getShp_tray_lift
+    const.getShp_tray_lift_in = getShp_tray_lift_in
+    const.getShp_tray_lift_loop = getShp_tray_lift_loop
+    const.getShp_tray_lift_out = getShp_tray_lift_out
+    const.getShp_tray_out = getShp_tray_out
+    const.getShp_tray_pose = getShp_tray_pose
+    const.getShp_tray_return = getShp_tray_return
+    const.getSilence_fire = getSilence_fire
+    const.getSilence_reload = getSilence_reload
+    const.getSilencecrouchfire = getSilencecrouchfire
+    const.getSit_relaxed = getSit_relaxed
+    const.getSitnwait_in_w = getSitnwait_in_w
+    const.getSitnwait_loop_w = getSitnwait_loop_w
+    const.getSitnwait_out_w = getSitnwait_out_w
+    const.getSkate_idle = getSkate_idle
+    const.getSkate_run = getSkate_run
+    const.getSkate_sprint = getSkate_sprint
+    const.getSlot_bet_01 = getSlot_bet_01
+    const.getSlot_bet_02 = getSlot_bet_02
+    const.getSlot_in = getSlot_in
+    const.getSlot_lose_out = getSlot_lose_out
+    const.getSlot_plyr = getSlot_plyr
+    const.getSlot_wait = getSlot_wait
+    const.getSlot_win_out = getSlot_win_out
+    const.getSmalplane_door = getSmalplane_door
+    const.getSmkcig_prtl = getSmkcig_prtl
+    const.getSmkcig_prtl_f = getSmkcig_prtl_f
+    const.getSmlplane_door = getSmlplane_door
+    const.getSmoke_01 = getSmoke_01
+    const.getSmoke_in_car = getSmoke_in_car
+    const.getSmoke_ryd = getSmoke_ryd
+    const.getSpraycan_fire = getSpraycan_fire
+    const.getSpraycan_fire_2 = getSpraycan_fire_2
+    const.getSpraycan_full = getSpraycan_full
+    const.getSprint_civi = getSprint_civi
+    const.getSprint_panic = getSprint_panic
+    const.getSprint_wuzi = getSprint_wuzi
+    const.getStepsit_in = getStepsit_in
+    const.getStepsit_loop = getStepsit_loop
+    const.getStepsit_out = getStepsit_out
+    const.getStr_a2b = getStr_a2b
+    const.getStr_b2a = getStr_b2a
+    const.getStr_b2c = getStr_b2c
+    const.getStr_c1 = getStr_c1
+    const.getStr_c2 = getStr_c2
+    const.getStr_c2b = getStr_c2b
+    const.getStr_loop_a = getStr_loop_a
+    const.getStr_loop_b = getStr_loop_b
+    const.getStr_loop_c = getStr_loop_c
+    const.getStretch = getStretch
+    const.getStrip_a = getStrip_a
+    const.getStrip_b = getStrip_b
+    const.getStrip_c = getStrip_c
+    const.getStrip_d = getStrip_d
+    const.getStrip_e = getStrip_e
+    const.getStrip_f = getStrip_f
+    const.getStrip_g = getStrip_g
+    const.getStrleg = getStrleg
+    const.getStruggle_cesar = getStruggle_cesar
+    const.getStruggle_driver = getStruggle_driver
+    const.getSwat_run = getSwat_run
+    const.getSweet_ass_slap = getSweet_ass_slap
+    const.getSweet_hndshldr_01 = getSweet_hndshldr_01
+    const.getSweet_injuredloop = getSweet_injuredloop
+    const.getSwim_breast = getSwim_breast
+    const.getSwim_crawl = getSwim_crawl
+    const.getSwim_dive_under = getSwim_dive_under
+    const.getSwim_glide = getSwim_glide
+    const.getSwim_jumpout = getSwim_jumpout
+    const.getSwim_tread = getSwim_tread
+    const.getSwim_tread_2 = getSwim_tread_2
+    const.getSwim_under = getSwim_under
+    const.getSword_1 = getSword_1
+    const.getSword_2 = getSword_2
+    const.getSword_3 = getSword_3
+    const.getSword_4 = getSword_4
+    const.getSword_block = getSword_block
+    const.getSword_hit_1 = getSword_hit_1
+    const.getSword_hit_2 = getSword_hit_2
+    const.getSword_hit_3 = getSword_hit_3
+    const.getSword_idle = getSword_idle
+    const.getSword_part = getSword_part
+    const.getSwt_breach_01 = getSwt_breach_01
+    const.getSwt_breach_02 = getSwt_breach_02
+    const.getSwt_breach_03 = getSwt_breach_03
+    const.getSwt_go = getSwt_go
+    const.getSwt_lkt = getSwt_lkt
+    const.getSwt_sty = getSwt_sty
+    const.getSwt_vent_01 = getSwt_vent_01
+    const.getSwt_vent_02 = getSwt_vent_02
+    const.getSwt_vnt_sht_die = getSwt_vnt_sht_die
+    const.getSwt_vnt_sht_in = getSwt_vnt_sht_in
+    const.getSwt_vnt_sht_loop = getSwt_vnt_sht_loop
+    const.getSwt_wllpk_l = getSwt_wllpk_l
+    const.getSwt_wllpk_l_2 = getSwt_wllpk_l_2
+    const.getSwt_wllpk_l_back = getSwt_wllpk_l_back
+    const.getSwt_wllpk_l_back_2 = getSwt_wllpk_l_back_2
+    const.getSwt_wllpk_r = getSwt_wllpk_r
+    const.getSwt_wllpk_r_2 = getSwt_wllpk_r_2
+    const.getSwt_wllpk_r_back = getSwt_wllpk_r_back
+    const.getSwt_wllpk_r_back_2 = getSwt_wllpk_r_back_2
+    const.getSwt_wllshoot_in_l = getSwt_wllshoot_in_l
+    const.getSwt_wllshoot_in_l_2 = getSwt_wllshoot_in_l_2
+    const.getSwt_wllshoot_in_r = getSwt_wllshoot_in_r
+    const.getSwt_wllshoot_in_r_2 = getSwt_wllshoot_in_r_2
+    const.getSwt_wllshoot_out_l = getSwt_wllshoot_out_l
+    const.getSwt_wllshoot_out_l_2 = getSwt_wllshoot_out_l_2
+    const.getSwt_wllshoot_out_r = getSwt_wllshoot_out_r
+    const.getSwt_wllshoot_out_r_2 = getSwt_wllshoot_out_r_2
+    const.getTai_chi_in = getTai_chi_in
+    const.getTai_chi_loop = getTai_chi_loop
+    const.getTai_chi_out = getTai_chi_out
+    const.getTank_align_lhs = getTank_align_lhs
+    const.getTank_close_lhs = getTank_close_lhs
+    const.getTank_doorlocked = getTank_doorlocked
+    const.getTank_getin_lhs = getTank_getin_lhs
+    const.getTank_getout_lhs = getTank_getout_lhs
+    const.getTank_open_lhs = getTank_open_lhs
+    const.getTap_hand = getTap_hand
+    const.getTap_handp = getTap_handp
+    const.getTat_arml_in_o = getTat_arml_in_o
+    const.getTat_arml_in_p = getTat_arml_in_p
+    const.getTat_arml_in_t = getTat_arml_in_t
+    const.getTat_arml_out_o = getTat_arml_out_o
+    const.getTat_arml_out_p = getTat_arml_out_p
+    const.getTat_arml_out_t = getTat_arml_out_t
+    const.getTat_arml_pose_o = getTat_arml_pose_o
+    const.getTat_arml_pose_p = getTat_arml_pose_p
+    const.getTat_arml_pose_t = getTat_arml_pose_t
+    const.getTat_armr_in_o = getTat_armr_in_o
+    const.getTat_armr_in_p = getTat_armr_in_p
+    const.getTat_armr_in_t = getTat_armr_in_t
+    const.getTat_armr_out_o = getTat_armr_out_o
+    const.getTat_armr_out_p = getTat_armr_out_p
+    const.getTat_armr_out_t = getTat_armr_out_t
+    const.getTat_armr_pose_o = getTat_armr_pose_o
+    const.getTat_armr_pose_p = getTat_armr_pose_p
+    const.getTat_armr_pose_t = getTat_armr_pose_t
+    const.getTat_back_in_o = getTat_back_in_o
+    const.getTat_back_in_p = getTat_back_in_p
+    const.getTat_back_in_t = getTat_back_in_t
+    const.getTat_back_out_o = getTat_back_out_o
+    const.getTat_back_out_p = getTat_back_out_p
+    const.getTat_back_out_t = getTat_back_out_t
+    const.getTat_back_pose_o = getTat_back_pose_o
+    const.getTat_back_pose_p = getTat_back_pose_p
+    const.getTat_back_pose_t = getTat_back_pose_t
+    const.getTat_back_sit_in_p = getTat_back_sit_in_p
+    const.getTat_back_sit_loop_p = getTat_back_sit_loop_p
+    const.getTat_back_sit_out_p = getTat_back_sit_out_p
+    const.getTat_bel_in_o = getTat_bel_in_o
+    const.getTat_bel_in_t = getTat_bel_in_t
+    const.getTat_bel_out_o = getTat_bel_out_o
+    const.getTat_bel_out_t = getTat_bel_out_t
+    const.getTat_bel_pose_o = getTat_bel_pose_o
+    const.getTat_bel_pose_t = getTat_bel_pose_t
+    const.getTat_che_in_o = getTat_che_in_o
+    const.getTat_che_in_p = getTat_che_in_p
+    const.getTat_che_in_t = getTat_che_in_t
+    const.getTat_che_out_o = getTat_che_out_o
+    const.getTat_che_out_p = getTat_che_out_p
+    const.getTat_che_out_t = getTat_che_out_t
+    const.getTat_che_pose_o = getTat_che_pose_o
+    const.getTat_che_pose_p = getTat_che_pose_p
+    const.getTat_che_pose_t = getTat_che_pose_t
+    const.getTat_drop_o = getTat_drop_o
+    const.getTat_idle_loop_o = getTat_idle_loop_o
+    const.getTat_idle_loop_t = getTat_idle_loop_t
+    const.getTat_sit_in_o = getTat_sit_in_o
+    const.getTat_sit_in_p = getTat_sit_in_p
+    const.getTat_sit_in_t = getTat_sit_in_t
+    const.getTat_sit_loop_o = getTat_sit_loop_o
+    const.getTat_sit_loop_p = getTat_sit_loop_p
+    const.getTat_sit_loop_t = getTat_sit_loop_t
+    const.getTat_sit_out_o = getTat_sit_out_o
+    const.getTat_sit_out_p = getTat_sit_out_p
+    const.getTat_sit_out_t = getTat_sit_out_t
+    const.getTec_crouchfire = getTec_crouchfire
+    const.getTec_crouchreload = getTec_crouchreload
+    const.getTec_fire = getTec_fire
+    const.getTec_reload = getTec_reload
+    const.getThrw_barl_thrw = getThrw_barl_thrw
+    const.getTime = getTime
+    const.getTran_gtup = getTran_gtup
+    const.getTran_hng = getTran_hng
+    const.getTran_ouch = getTran_ouch
+    const.getTran_stmb = getTran_stmb
+    const.getTruck_align_lhs = getTruck_align_lhs
+    const.getTruck_align_rhs = getTruck_align_rhs
+    const.getTruck_close_lhs = getTruck_close_lhs
+    const.getTruck_close_rhs = getTruck_close_rhs
+    const.getTruck_closedoor_lhs = getTruck_closedoor_lhs
+    const.getTruck_closedoor_rhs = getTruck_closedoor_rhs
+    const.getTruck_driver = getTruck_driver
+    const.getTruck_getin = getTruck_getin
+    const.getTruck_getin_lhs = getTruck_getin_lhs
+    const.getTruck_getin_rhs = getTruck_getin_rhs
+    const.getTruck_getout_lhs = getTruck_getout_lhs
+    const.getTruck_getout_rhs = getTruck_getout_rhs
+    const.getTruck_jackedlhs = getTruck_jackedlhs
+    const.getTruck_jackedrhs = getTruck_jackedrhs
+    const.getTruck_open_lhs = getTruck_open_lhs
+    const.getTruck_open_rhs = getTruck_open_rhs
+    const.getTruck_pullout_lhs = getTruck_pullout_lhs
+    const.getTruck_pullout_rhs = getTruck_pullout_rhs
+    const.getTruck_shuffle = getTruck_shuffle
+    const.getTurn_180 = getTurn_180
+    const.getTurn_l = getTurn_l
+    const.getTurn_r = getTurn_r
+    const.getTyd2car_bump = getTyd2car_bump
+    const.getTyd2car_high = getTyd2car_high
+    const.getTyd2car_low = getTyd2car_low
+    const.getTyd2car_med = getTyd2car_med
+    const.getTyd2car_turnl = getTyd2car_turnl
+    const.getTyd2car_turnr = getTyd2car_turnr
+    const.getUse_swipecard = getUse_swipecard
+    const.getUzi_crouchfire = getUzi_crouchfire
+    const.getUzi_crouchreload = getUzi_crouchreload
+    const.getUzi_fire = getUzi_fire
+    const.getUzi_fire_poor = getUzi_fire_poor
+    const.getUzi_reload = getUzi_reload
+    const.getVan_close_back_lhs = getVan_close_back_lhs
+    const.getVan_close_back_rhs = getVan_close_back_rhs
+    const.getVan_crate_l = getVan_crate_l
+    const.getVan_crate_r = getVan_crate_r
+    const.getVan_fall_l = getVan_fall_l
+    const.getVan_fall_r = getVan_fall_r
+    const.getVan_getin_back_lhs = getVan_getin_back_lhs
+    const.getVan_getin_back_rhs = getVan_getin_back_rhs
+    const.getVan_getout_back_lhs = getVan_getout_back_lhs
+    const.getVan_getout_back_rhs = getVan_getout_back_rhs
+    const.getVan_lean_l = getVan_lean_l
+    const.getVan_lean_r = getVan_lean_r
+    const.getVan_open_back_lhs = getVan_open_back_lhs
+    const.getVan_open_back_rhs = getVan_open_back_rhs
+    const.getVan_pickup_e = getVan_pickup_e
+    const.getVan_pickup_s = getVan_pickup_s
+    const.getVan_stand = getVan_stand
+    const.getVan_stand_crate = getVan_stand_crate
+    const.getVan_throw = getVan_throw
+    const.getVend_drink_p = getVend_drink_p
+    const.getVend_drink2_p = getVend_drink2_p
+    const.getVend_eat_p = getVend_eat_p
+    const.getVend_eat1_p = getVend_eat1_p
+    const.getVend_use = getVend_use
+    const.getVend_use_pt2 = getVend_use_pt2
+    const.getVortex_getout_lhs = getVortex_getout_lhs
+    const.getVortex_getout_rhs = getVortex_getout_rhs
+    const.getWalk_armed = getWalk_armed
+    const.getWalk_civi = getWalk_civi
+    const.getWalk_csaw = getWalk_csaw
+    const.getWalk_doorpartial = getWalk_doorpartial
+    const.getWalk_drunk = getWalk_drunk
+    const.getWalk_fat = getWalk_fat
+    const.getWalk_fatold = getWalk_fatold
+    const.getWalk_gang1 = getWalk_gang1
+    const.getWalk_gang2 = getWalk_gang2
+    const.getWalk_old = getWalk_old
+    const.getWalk_player = getWalk_player
+    const.getWalk_rocket = getWalk_rocket
+    const.getWalk_shuffle = getWalk_shuffle
+    const.getWalk_start = getWalk_start
+    const.getWalk_start_armed = getWalk_start_armed
+    const.getWalk_start_csaw = getWalk_start_csaw
+    const.getWalk_start_rocket = getWalk_start_rocket
+    const.getWalk_wuzi = getWalk_wuzi
+    const.getWalkstart_idle_01 = getWalkstart_idle_01
+    const.getWank_in = getWank_in
+    const.getWank_loop = getWank_loop
+    const.getWank_out = getWank_out
+    const.getWash_up = getWash_up
+    const.getWave_in = getWave_in
+    const.getWave_loop = getWave_loop
+    const.getWave_out = getWave_out
+    const.getWeapon_crouch = getWeapon_crouch
+    const.getWeapon_csaw = getWeapon_csaw
+    const.getWeapon_csawlo = getWeapon_csawlo
+    const.getWeapon_knifeidle = getWeapon_knifeidle
+    const.getWeapon_sniper = getWeapon_sniper
+    const.getWeapon_start_throw = getWeapon_start_throw
+    const.getWeapon_throw = getWeapon_throw
+    const.getWeapon_throwu = getWeapon_throwu
+    const.getWeapons_shp_tray_in = getWeapons_shp_tray_in
+    const.getWeapons_shp_tray_out = getWeapons_shp_tray_out
+    const.getWeapons_shp_tray_pose = getWeapons_shp_tray_pose
+    const.getWf_back = getWf_back
+    const.getWf_drivebyft = getWf_drivebyft
+    const.getWf_drivebylhs = getWf_drivebylhs
+    const.getWf_drivebyrhs = getWf_drivebyrhs
+    const.getWf_fwd = getWf_fwd
+    const.getWf_getoffback = getWf_getoffback
+    const.getWf_getofflhs = getWf_getofflhs
+    const.getWf_getoffrhs = getWf_getoffrhs
+    const.getWf_hit = getWf_hit
+    const.getWf_jumponl = getWf_jumponl
+    const.getWf_jumponr = getWf_jumponr
+    const.getWf_kick = getWf_kick
+    const.getWf_left = getWf_left
+    const.getWf_passenger = getWf_passenger
+    const.getWf_pushes = getWf_pushes
+    const.getWf_ride = getWf_ride
+    const.getWf_right = getWf_right
+    const.getWf_still = getWf_still
+    const.getWinwash_start = getWinwash_start
+    const.getWinwash_wash2beg = getWinwash_wash2beg
+    const.getWof = getWof
+    const.getWoman_idlestance = getWoman_idlestance
+    const.getWoman_run = getWoman_run
+    const.getWoman_runbusy = getWoman_runbusy
+    const.getWoman_runfatold = getWoman_runfatold
+    const.getWoman_runpanic = getWoman_runpanic
+    const.getWoman_runsexy = getWoman_runsexy
+    const.getWoman_walkbusy = getWoman_walkbusy
+    const.getWoman_walkfatold = getWoman_walkfatold
+    const.getWoman_walknorm = getWoman_walknorm
+    const.getWoman_walkold = getWoman_walkold
+    const.getWoman_walkpro = getWoman_walkpro
+    const.getWoman_walksexy = getWoman_walksexy
+    const.getWoman_walkshop = getWoman_walkshop
+    const.getWtchrace_cmon = getWtchrace_cmon
+    const.getWtchrace_in = getWtchrace_in
+    const.getWtchrace_loop = getWtchrace_loop
+    const.getWtchrace_lose = getWtchrace_lose
+    const.getWtchrace_out = getWtchrace_out
+    const.getWtchrace_win = getWtchrace_win
+    const.getWuzi_follow = getWuzi_follow
+    const.getWuzi_greet_plyr = getWuzi_greet_plyr
+    const.getWuzi_greet_wuzi = getWuzi_greet_wuzi
+    const.getWuzi_grnd_chk = getWuzi_grnd_chk
+    const.getWuzi_stand_loop = getWuzi_stand_loop
+    const.getWuzi_walk = getWuzi_walk
+    const.getXpressscratch = getXpressscratch
     class = {
       getThrw_barl_thrw = getThrw_barl_thrw,
       getStepsit_in = getStepsit_in,
@@ -6893,7 +8549,1730 @@ System.namespace("Slipe.Shared.Peds", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Abseil", 0x20E, class, getAbseil },
+            { "Anim", 0x6, System.String },
+            { "Arrestgun", 0x20E, class, getArrestgun },
+            { "Atm", 0x20E, class, getAtm },
+            { "Barcustom_get", 0x20E, class, getBarcustom_get },
+            { "Barcustom_loop", 0x20E, class, getBarcustom_loop },
+            { "Barcustom_order", 0x20E, class, getBarcustom_order },
+            { "Barman_idle", 0x20E, class, getBarman_idle },
+            { "Barserve_bottle", 0x20E, class, getBarserve_bottle },
+            { "Barserve_give", 0x20E, class, getBarserve_give },
+            { "Barserve_glass", 0x20E, class, getBarserve_glass },
+            { "Barserve_in", 0x20E, class, getBarserve_in },
+            { "Barserve_loop", 0x20E, class, getBarserve_loop },
+            { "Barserve_order", 0x20E, class, getBarserve_order },
+            { "Bat_1", 0x20E, class, getBat_1 },
+            { "Bat_2", 0x20E, class, getBat_2 },
+            { "Bat_3", 0x20E, class, getBat_3 },
+            { "Bat_4", 0x20E, class, getBat_4 },
+            { "Bat_block", 0x20E, class, getBat_block },
+            { "Bat_hit_1", 0x20E, class, getBat_hit_1 },
+            { "Bat_hit_2", 0x20E, class, getBat_hit_2 },
+            { "Bat_hit_3", 0x20E, class, getBat_hit_3 },
+            { "Bat_idle", 0x20E, class, getBat_idle },
+            { "Bat_m", 0x20E, class, getBat_m },
+            { "Bat_part", 0x20E, class, getBat_part },
+            { "Bather", 0x20E, class, getBather },
+            { "Batherdown", 0x20E, class, getBatherdown },
+            { "Batherup", 0x20E, class, getBatherup },
+            { "Bbalbat_idle_01", 0x20E, class, getBbalbat_idle_01 },
+            { "Bbalbat_idle_02", 0x20E, class, getBbalbat_idle_02 },
+            { "Bball_def_jump_shot", 0x20E, class, getBball_def_jump_shot },
+            { "Bball_def_loop", 0x20E, class, getBball_def_loop },
+            { "Bball_def_stepl", 0x20E, class, getBball_def_stepl },
+            { "Bball_def_stepr", 0x20E, class, getBball_def_stepr },
+            { "Bball_dnk", 0x20E, class, getBball_dnk },
+            { "Bball_dnk_gli", 0x20E, class, getBball_dnk_gli },
+            { "Bball_dnk_gli_o", 0x20E, class, getBball_dnk_gli_o },
+            { "Bball_dnk_lnch", 0x20E, class, getBball_dnk_lnch },
+            { "Bball_dnk_lnch_o", 0x20E, class, getBball_dnk_lnch_o },
+            { "Bball_dnk_lnd", 0x20E, class, getBball_dnk_lnd },
+            { "Bball_dnk_o", 0x20E, class, getBball_dnk_o },
+            { "Bball_idle", 0x20E, class, getBball_idle },
+            { "Bball_idle_o", 0x20E, class, getBball_idle_o },
+            { "Bball_idle2", 0x20E, class, getBball_idle2 },
+            { "Bball_idle2_o", 0x20E, class, getBball_idle2_o },
+            { "Bball_idleloop", 0x20E, class, getBball_idleloop },
+            { "Bball_idleloop_o", 0x20E, class, getBball_idleloop_o },
+            { "Bball_jump_cancel", 0x20E, class, getBball_jump_cancel },
+            { "Bball_jump_cancel_o", 0x20E, class, getBball_jump_cancel_o },
+            { "Bball_jump_end", 0x20E, class, getBball_jump_end },
+            { "Bball_jump_shot", 0x20E, class, getBball_jump_shot },
+            { "Bball_jump_shot_o", 0x20E, class, getBball_jump_shot_o },
+            { "Bball_net_dnk_o", 0x20E, class, getBball_net_dnk_o },
+            { "Bball_pickup", 0x20E, class, getBball_pickup },
+            { "Bball_pickup_o", 0x20E, class, getBball_pickup_o },
+            { "Bball_react_miss", 0x20E, class, getBball_react_miss },
+            { "Bball_react_score", 0x20E, class, getBball_react_score },
+            { "Bball_run", 0x20E, class, const.getBball_run },
+            { "Bball_run_o", 0x20E, class, const.getBball_run_o },
+            { "Bball_skidstop_l", 0x20E, class, const.getBball_skidstop_l },
+            { "Bball_skidstop_l_o", 0x20E, class, const.getBball_skidstop_l_o },
+            { "Bball_skidstop_r", 0x20E, class, const.getBball_skidstop_r },
+            { "Bball_skidstop_r_o", 0x20E, class, const.getBball_skidstop_r_o },
+            { "Bball_walk", 0x20E, class, const.getBball_walk },
+            { "Bball_walk_o", 0x20E, class, const.getBball_walk_o },
+            { "Bball_walk_start", 0x20E, class, const.getBball_walk_start },
+            { "Bball_walk_start_o", 0x20E, class, const.getBball_walk_start_o },
+            { "Bball_walkstop_l", 0x20E, class, const.getBball_walkstop_l },
+            { "Bball_walkstop_l_o", 0x20E, class, const.getBball_walkstop_l_o },
+            { "Bball_walkstop_r", 0x20E, class, const.getBball_walkstop_r },
+            { "Bball_walkstop_r_o", 0x20E, class, const.getBball_walkstop_r_o },
+            { "Bd_clap", 0x20E, class, const.getBd_clap },
+            { "Bd_clap1", 0x20E, class, const.getBd_clap1 },
+            { "Bd_fire1", 0x20E, class, const.getBd_fire1 },
+            { "Bd_fire2", 0x20E, class, const.getBd_fire2 },
+            { "Bd_fire3", 0x20E, class, const.getBd_fire3 },
+            { "Bd_gf_wave", 0x20E, class, const.getBd_gf_wave },
+            { "Bd_panic_01", 0x20E, class, const.getBd_panic_01 },
+            { "Bd_panic_02", 0x20E, class, const.getBd_panic_02 },
+            { "Bd_panic_03", 0x20E, class, const.getBd_panic_03 },
+            { "Bd_panic_04", 0x20E, class, const.getBd_panic_04 },
+            { "Bd_panic_loop", 0x20E, class, const.getBd_panic_loop },
+            { "Bed_in_l", 0x20E, class, const.getBed_in_l },
+            { "Bed_in_r", 0x20E, class, const.getBed_in_r },
+            { "Bed_loop_l", 0x20E, class, const.getBed_loop_l },
+            { "Bed_loop_r", 0x20E, class, const.getBed_loop_r },
+            { "Bed_out_l", 0x20E, class, const.getBed_out_l },
+            { "Bed_out_r", 0x20E, class, const.getBed_out_r },
+            { "Betslp_in", 0x20E, class, const.getBetslp_in },
+            { "Betslp_lkabt", 0x20E, class, const.getBetslp_lkabt },
+            { "Betslp_loop", 0x20E, class, const.getBetslp_loop },
+            { "Betslp_out", 0x20E, class, const.getBetslp_out },
+            { "Betslp_tnk", 0x20E, class, const.getBetslp_tnk },
+            { "Bf_getin_lhs", 0x20E, class, const.getBf_getin_lhs },
+            { "Bf_getin_rhs", 0x20E, class, const.getBf_getin_rhs },
+            { "Bf_getout_lhs", 0x20E, class, const.getBf_getout_lhs },
+            { "Bf_getout_rhs", 0x20E, class, const.getBf_getout_rhs },
+            { "Bike_elbowl", 0x20E, class, const.getBike_elbowl },
+            { "Bike_elbowr", 0x20E, class, const.getBike_elbowr },
+            { "Bike_fall_off", 0x20E, class, const.getBike_fall_off },
+            { "Bike_fallr", 0x20E, class, const.getBike_fallr },
+            { "Bike_pickupl", 0x20E, class, const.getBike_pickupl },
+            { "Bike_pickupr", 0x20E, class, const.getBike_pickupr },
+            { "Bike_pullupl", 0x20E, class, const.getBike_pullupl },
+            { "Bike_pullupr", 0x20E, class, const.getBike_pullupr },
+            { "Biked_back", 0x20E, class, const.getBiked_back },
+            { "Biked_drivebyft", 0x20E, class, const.getBiked_drivebyft },
+            { "Biked_drivebylhs", 0x20E, class, const.getBiked_drivebylhs },
+            { "Biked_drivebyrhs", 0x20E, class, const.getBiked_drivebyrhs },
+            { "Biked_fwd", 0x20E, class, const.getBiked_fwd },
+            { "Biked_getoffback", 0x20E, class, const.getBiked_getoffback },
+            { "Biked_getofflhs", 0x20E, class, const.getBiked_getofflhs },
+            { "Biked_getoffrhs", 0x20E, class, const.getBiked_getoffrhs },
+            { "Biked_hit", 0x20E, class, const.getBiked_hit },
+            { "Biked_jumponl", 0x20E, class, const.getBiked_jumponl },
+            { "Biked_jumponr", 0x20E, class, const.getBiked_jumponr },
+            { "Biked_kick", 0x20E, class, const.getBiked_kick },
+            { "Biked_left", 0x20E, class, const.getBiked_left },
+            { "Biked_passenger", 0x20E, class, const.getBiked_passenger },
+            { "Biked_pushes", 0x20E, class, const.getBiked_pushes },
+            { "Biked_ride", 0x20E, class, const.getBiked_ride },
+            { "Biked_right", 0x20E, class, const.getBiked_right },
+            { "Biked_shuffle", 0x20E, class, const.getBiked_shuffle },
+            { "Biked_still", 0x20E, class, const.getBiked_still },
+            { "Bikeh_back", 0x20E, class, const.getBikeh_back },
+            { "Bikeh_drivebyft", 0x20E, class, const.getBikeh_drivebyft },
+            { "Bikeh_drivebylhs", 0x20E, class, const.getBikeh_drivebylhs },
+            { "Bikeh_drivebyrhs", 0x20E, class, const.getBikeh_drivebyrhs },
+            { "Bikeh_fwd", 0x20E, class, const.getBikeh_fwd },
+            { "Bikeh_getoffback", 0x20E, class, const.getBikeh_getoffback },
+            { "Bikeh_getofflhs", 0x20E, class, const.getBikeh_getofflhs },
+            { "Bikeh_getoffrhs", 0x20E, class, const.getBikeh_getoffrhs },
+            { "Bikeh_hit", 0x20E, class, const.getBikeh_hit },
+            { "Bikeh_jumponl", 0x20E, class, const.getBikeh_jumponl },
+            { "Bikeh_jumponr", 0x20E, class, const.getBikeh_jumponr },
+            { "Bikeh_kick", 0x20E, class, const.getBikeh_kick },
+            { "Bikeh_left", 0x20E, class, const.getBikeh_left },
+            { "Bikeh_passenger", 0x20E, class, const.getBikeh_passenger },
+            { "Bikeh_pushes", 0x20E, class, const.getBikeh_pushes },
+            { "Bikeh_ride", 0x20E, class, const.getBikeh_ride },
+            { "Bikeh_right", 0x20E, class, const.getBikeh_right },
+            { "Bikeh_still", 0x20E, class, const.getBikeh_still },
+            { "Bikes_back", 0x20E, class, const.getBikes_back },
+            { "Bikes_drivebyft", 0x20E, class, const.getBikes_drivebyft },
+            { "Bikes_drivebylhs", 0x20E, class, const.getBikes_drivebylhs },
+            { "Bikes_drivebyrhs", 0x20E, class, const.getBikes_drivebyrhs },
+            { "Bikes_fwd", 0x20E, class, const.getBikes_fwd },
+            { "Bikes_getoffback", 0x20E, class, const.getBikes_getoffback },
+            { "Bikes_getofflhs", 0x20E, class, const.getBikes_getofflhs },
+            { "Bikes_getoffrhs", 0x20E, class, const.getBikes_getoffrhs },
+            { "Bikes_hit", 0x20E, class, const.getBikes_hit },
+            { "Bikes_jumponl", 0x20E, class, const.getBikes_jumponl },
+            { "Bikes_jumponr", 0x20E, class, const.getBikes_jumponr },
+            { "Bikes_kick", 0x20E, class, const.getBikes_kick },
+            { "Bikes_left", 0x20E, class, const.getBikes_left },
+            { "Bikes_passenger", 0x20E, class, const.getBikes_passenger },
+            { "Bikes_pushes", 0x20E, class, const.getBikes_pushes },
+            { "Bikes_ride", 0x20E, class, const.getBikes_ride },
+            { "Bikes_right", 0x20E, class, const.getBikes_right },
+            { "Bikes_snatch_l", 0x20E, class, const.getBikes_snatch_l },
+            { "Bikes_snatch_r", 0x20E, class, const.getBikes_snatch_r },
+            { "Bikes_still", 0x20E, class, const.getBikes_still },
+            { "Bikev_back", 0x20E, class, const.getBikev_back },
+            { "Bikev_drivebyft", 0x20E, class, const.getBikev_drivebyft },
+            { "Bikev_drivebylhs", 0x20E, class, const.getBikev_drivebylhs },
+            { "Bikev_drivebyrhs", 0x20E, class, const.getBikev_drivebyrhs },
+            { "Bikev_fwd", 0x20E, class, const.getBikev_fwd },
+            { "Bikev_getoffback", 0x20E, class, const.getBikev_getoffback },
+            { "Bikev_getofflhs", 0x20E, class, const.getBikev_getofflhs },
+            { "Bikev_getoffrhs", 0x20E, class, const.getBikev_getoffrhs },
+            { "Bikev_hit", 0x20E, class, const.getBikev_hit },
+            { "Bikev_jumponl", 0x20E, class, const.getBikev_jumponl },
+            { "Bikev_jumponr", 0x20E, class, const.getBikev_jumponr },
+            { "Bikev_kick", 0x20E, class, const.getBikev_kick },
+            { "Bikev_left", 0x20E, class, const.getBikev_left },
+            { "Bikev_passenger", 0x20E, class, const.getBikev_passenger },
+            { "Bikev_pushes", 0x20E, class, const.getBikev_pushes },
+            { "Bikev_ride", 0x20E, class, const.getBikev_ride },
+            { "Bikev_right", 0x20E, class, const.getBikev_right },
+            { "Bikev_still", 0x20E, class, const.getBikev_still },
+            { "Bitchslap", 0x20E, class, const.getBitchslap },
+            { "Bk_blnce_in", 0x20E, class, const.getBk_blnce_in },
+            { "Bk_blnce_out", 0x20E, class, const.getBk_blnce_out },
+            { "Bk_jmp", 0x20E, class, const.getBk_jmp },
+            { "Bk_rdy_in", 0x20E, class, const.getBk_rdy_in },
+            { "Bk_rdy_out", 0x20E, class, const.getBk_rdy_out },
+            { "Bmx_back", 0x20E, class, const.getBmx_back },
+            { "Bmx_bunnyhop", 0x20E, class, const.getBmx_bunnyhop },
+            { "Bmx_celebrate", 0x20E, class, const.getBmx_celebrate },
+            { "Bmx_comeon", 0x20E, class, const.getBmx_comeon },
+            { "Bmx_driveby_lhs", 0x20E, class, const.getBmx_driveby_lhs },
+            { "Bmx_driveby_rhs", 0x20E, class, const.getBmx_driveby_rhs },
+            { "Bmx_drivebyft", 0x20E, class, const.getBmx_drivebyft },
+            { "Bmx_fwd", 0x20E, class, const.getBmx_fwd },
+            { "Bmx_getoffback", 0x20E, class, const.getBmx_getoffback },
+            { "Bmx_getofflhs", 0x20E, class, const.getBmx_getofflhs },
+            { "Bmx_getoffrhs", 0x20E, class, const.getBmx_getoffrhs },
+            { "Bmx_idleloop_01", 0x20E, class, const.getBmx_idleloop_01 },
+            { "Bmx_idleloop_02", 0x20E, class, const.getBmx_idleloop_02 },
+            { "Bmx_jumponl", 0x20E, class, const.getBmx_jumponl },
+            { "Bmx_jumponr", 0x20E, class, const.getBmx_jumponr },
+            { "Bmx_left", 0x20E, class, const.getBmx_left },
+            { "Bmx_pedal", 0x20E, class, const.getBmx_pedal },
+            { "Bmx_pushes", 0x20E, class, const.getBmx_pushes },
+            { "Bmx_ride", 0x20E, class, const.getBmx_ride },
+            { "Bmx_right", 0x20E, class, const.getBmx_right },
+            { "Bmx_sprint", 0x20E, class, const.getBmx_sprint },
+            { "Bmx_still", 0x20E, class, const.getBmx_still },
+            { "Bmx_talkleft_in", 0x20E, class, const.getBmx_talkleft_in },
+            { "Bmx_talkleft_loop", 0x20E, class, const.getBmx_talkleft_loop },
+            { "Bmx_talkleft_out", 0x20E, class, const.getBmx_talkleft_out },
+            { "Bmx_talkright_in", 0x20E, class, const.getBmx_talkright_in },
+            { "Bmx_talkright_loop", 0x20E, class, const.getBmx_talkright_loop },
+            { "Bmx_talkright_out", 0x20E, class, const.getBmx_talkright_out },
+            { "Bng_wndw", 0x20E, class, const.getBng_wndw },
+            { "Bng_wndw_02", 0x20E, class, const.getBng_wndw_02 },
+            { "Bom_plant", 0x20E, class, const.getBom_plant },
+            { "Bom_plant_2idle", 0x20E, class, const.getBom_plant_2idle },
+            { "Bom_plant_crouch_in", 0x20E, class, const.getBom_plant_crouch_in },
+            { "Bom_plant_crouch_out", 0x20E, class, const.getBom_plant_crouch_out },
+            { "Bom_plant_in", 0x20E, class, const.getBom_plant_in },
+            { "Bom_plant_loop", 0x20E, class, const.getBom_plant_loop },
+            { "Bomber", 0x20E, class, const.getBomber },
+            { "Boxhipin", 0x20E, class, const.getBoxhipin },
+            { "Boxhipup", 0x20E, class, const.getBoxhipup },
+            { "Boxshdwn", 0x20E, class, const.getBoxshdwn },
+            { "Boxshup", 0x20E, class, const.getBoxshup },
+            { "Brb_beard_01", 0x20E, class, const.getBrb_beard_01 },
+            { "Brb_buy", 0x20E, class, const.getBrb_buy },
+            { "Brb_cut", 0x20E, class, const.getBrb_cut },
+            { "Brb_cut_in", 0x20E, class, const.getBrb_cut_in },
+            { "Brb_cut_out", 0x20E, class, const.getBrb_cut_out },
+            { "Brb_hair_01", 0x20E, class, const.getBrb_hair_01 },
+            { "Brb_hair_02", 0x20E, class, const.getBrb_hair_02 },
+            { "Brb_in", 0x20E, class, const.getBrb_in },
+            { "Brb_loop", 0x20E, class, const.getBrb_loop },
+            { "Brb_out", 0x20E, class, const.getBrb_out },
+            { "Brb_sit_in", 0x20E, class, const.getBrb_sit_in },
+            { "Brb_sit_loop", 0x20E, class, const.getBrb_sit_loop },
+            { "Brb_sit_out", 0x20E, class, const.getBrb_sit_out },
+            { "Buddy_crouchfire", 0x20E, class, const.getBuddy_crouchfire },
+            { "Buddy_crouchreload", 0x20E, class, const.getBuddy_crouchreload },
+            { "Buddy_fire", 0x20E, class, const.getBuddy_fire },
+            { "Buddy_fire_poor", 0x20E, class, const.getBuddy_fire_poor },
+            { "Buddy_reload", 0x20E, class, const.getBuddy_reload },
+            { "Bus_close", 0x20E, class, const.getBus_close },
+            { "Bus_getin_lhs", 0x20E, class, const.getBus_getin_lhs },
+            { "Bus_getin_rhs", 0x20E, class, const.getBus_getin_rhs },
+            { "Bus_getout_lhs", 0x20E, class, const.getBus_getout_lhs },
+            { "Bus_getout_rhs", 0x20E, class, const.getBus_getout_rhs },
+            { "Bus_jacked_lhs", 0x20E, class, const.getBus_jacked_lhs },
+            { "Bus_open", 0x20E, class, const.getBus_open },
+            { "Bus_open_rhs", 0x20E, class, const.getBus_open_rhs },
+            { "Bus_pullout_lhs", 0x20E, class, const.getBus_pullout_lhs },
+            { "Bxhipwlk", 0x20E, class, const.getBxhipwlk },
+            { "Bxhwlki", 0x20E, class, const.getBxhwlki },
+            { "Bxshwlk", 0x20E, class, const.getBxshwlk },
+            { "Bxshwlki", 0x20E, class, const.getBxshwlki },
+            { "Bxwlko", 0x20E, class, const.getBxwlko },
+            { "Camcrch_cmon", 0x20E, class, const.getCamcrch_cmon },
+            { "Camcrch_idleloop", 0x20E, class, const.getCamcrch_idleloop },
+            { "Camcrch_stay", 0x20E, class, const.getCamcrch_stay },
+            { "Camcrch_to_camstnd", 0x20E, class, const.getCamcrch_to_camstnd },
+            { "Camstnd_cmon", 0x20E, class, const.getCamstnd_cmon },
+            { "Camstnd_idleloop", 0x20E, class, const.getCamstnd_idleloop },
+            { "Camstnd_lkabt", 0x20E, class, const.getCamstnd_lkabt },
+            { "Camstnd_to_camcrch", 0x20E, class, const.getCamstnd_to_camcrch },
+            { "Car_align_lhs", 0x20E, class, const.getCar_align_lhs },
+            { "Car_align_rhs", 0x20E, class, const.getCar_align_rhs },
+            { "Car_alignhi_lhs", 0x20E, class, const.getCar_alignhi_lhs },
+            { "Car_alignhi_rhs", 0x20E, class, const.getCar_alignhi_rhs },
+            { "Car_close_lhs", 0x20E, class, const.getCar_close_lhs },
+            { "Car_close_rhs", 0x20E, class, const.getCar_close_rhs },
+            { "Car_closedoor_lhs", 0x20E, class, const.getCar_closedoor_lhs },
+            { "Car_closedoor_rhs", 0x20E, class, const.getCar_closedoor_rhs },
+            { "Car_closedoorl_lhs", 0x20E, class, const.getCar_closedoorl_lhs },
+            { "Car_closedoorl_rhs", 0x20E, class, const.getCar_closedoorl_rhs },
+            { "Car_crawloutrhs", 0x20E, class, const.getCar_crawloutrhs },
+            { "Car_dead_lhs", 0x20E, class, const.getCar_dead_lhs },
+            { "Car_dead_rhs", 0x20E, class, const.getCar_dead_rhs },
+            { "Car_doorlocked_lhs", 0x20E, class, const.getCar_doorlocked_lhs },
+            { "Car_doorlocked_rhs", 0x20E, class, const.getCar_doorlocked_rhs },
+            { "Car_fallout_lhs", 0x20E, class, const.getCar_fallout_lhs },
+            { "Car_fallout_rhs", 0x20E, class, const.getCar_fallout_rhs },
+            { "Car_getin_lhs", 0x20E, class, const.getCar_getin_lhs },
+            { "Car_getin_rhs", 0x20E, class, const.getCar_getin_rhs },
+            { "Car_getinl_lhs", 0x20E, class, const.getCar_getinl_lhs },
+            { "Car_getinl_rhs", 0x20E, class, const.getCar_getinl_rhs },
+            { "Car_getout_lhs", 0x20E, class, const.getCar_getout_lhs },
+            { "Car_getout_rhs", 0x20E, class, const.getCar_getout_rhs },
+            { "Car_getoutl_lhs", 0x20E, class, const.getCar_getoutl_lhs },
+            { "Car_getoutl_rhs", 0x20E, class, const.getCar_getoutl_rhs },
+            { "Car_hookertalk", 0x20E, class, const.getCar_hookertalk },
+            { "Car_jackedlhs", 0x20E, class, const.getCar_jackedlhs },
+            { "Car_jackedrhs", 0x20E, class, const.getCar_jackedrhs },
+            { "Car_jumpin_lhs", 0x20E, class, const.getCar_jumpin_lhs },
+            { "Car_jumpin_lhs_vrtx", 0x20E, class, const.getCar_jumpin_lhs_vrtx },
+            { "Car_jumpin_rhs", 0x20E, class, const.getCar_jumpin_rhs },
+            { "Car_lb", 0x20E, class, const.getCar_lb },
+            { "Car_lb_pro", 0x20E, class, const.getCar_lb_pro },
+            { "Car_lb_weak", 0x20E, class, const.getCar_lb_weak },
+            { "Car_ljackedlhs", 0x20E, class, const.getCar_ljackedlhs },
+            { "Car_ljackedrhs", 0x20E, class, const.getCar_ljackedrhs },
+            { "Car_lshuffle_rhs", 0x20E, class, const.getCar_lshuffle_rhs },
+            { "Car_lsit", 0x20E, class, const.getCar_lsit },
+            { "Car_open_lhs", 0x20E, class, const.getCar_open_lhs },
+            { "Car_open_rhs", 0x20E, class, const.getCar_open_rhs },
+            { "Car_pullout_lhs", 0x20E, class, const.getCar_pullout_lhs },
+            { "Car_pullout_rhs", 0x20E, class, const.getCar_pullout_rhs },
+            { "Car_pulloutl_lhs", 0x20E, class, const.getCar_pulloutl_lhs },
+            { "Car_pulloutl_rhs", 0x20E, class, const.getCar_pulloutl_rhs },
+            { "Car_qjacked", 0x20E, class, const.getCar_qjacked },
+            { "Car_rolldoor", 0x20E, class, const.getCar_rolldoor },
+            { "Car_rolldoorlo", 0x20E, class, const.getCar_rolldoorlo },
+            { "Car_rollout_lhs", 0x20E, class, const.getCar_rollout_lhs },
+            { "Car_rollout_rhs", 0x20E, class, const.getCar_rollout_rhs },
+            { "Car_sc1_bl", 0x20E, class, const.getCar_sc1_bl },
+            { "Car_sc1_br", 0x20E, class, const.getCar_sc1_br },
+            { "Car_sc1_fl", 0x20E, class, const.getCar_sc1_fl },
+            { "Car_sc1_fr", 0x20E, class, const.getCar_sc1_fr },
+            { "Car_sc2_fl", 0x20E, class, const.getCar_sc2_fl },
+            { "Car_sc3_br", 0x20E, class, const.getCar_sc3_br },
+            { "Car_sc3_fl", 0x20E, class, const.getCar_sc3_fl },
+            { "Car_sc3_fr", 0x20E, class, const.getCar_sc3_fr },
+            { "Car_sc4_bl", 0x20E, class, const.getCar_sc4_bl },
+            { "Car_sc4_br", 0x20E, class, const.getCar_sc4_br },
+            { "Car_sc4_fl", 0x20E, class, const.getCar_sc4_fl },
+            { "Car_sc4_fr", 0x20E, class, const.getCar_sc4_fr },
+            { "Car_shuffle_rhs", 0x20E, class, const.getCar_shuffle_rhs },
+            { "Car_sit", 0x20E, class, const.getCar_sit },
+            { "Car_sit_pro", 0x20E, class, const.getCar_sit_pro },
+            { "Car_sit_weak", 0x20E, class, const.getCar_sit_weak },
+            { "Car_sitp", 0x20E, class, const.getCar_sitp },
+            { "Car_sitplo", 0x20E, class, const.getCar_sitplo },
+            { "Car_talkm_in", 0x20E, class, const.getCar_talkm_in },
+            { "Car_talkm_loop", 0x20E, class, const.getCar_talkm_loop },
+            { "Car_talkm_out", 0x20E, class, const.getCar_talkm_out },
+            { "Car_tune_radio", 0x20E, class, const.getCar_tune_radio },
+            { "Cards_in", 0x20E, class, const.getCards_in },
+            { "Cards_loop", 0x20E, class, const.getCards_loop },
+            { "Cards_lose", 0x20E, class, const.getCards_lose },
+            { "Cards_out", 0x20E, class, const.getCards_out },
+            { "Cards_pick_01", 0x20E, class, const.getCards_pick_01 },
+            { "Cards_pick_02", 0x20E, class, const.getCards_pick_02 },
+            { "Cards_raise", 0x20E, class, const.getCards_raise },
+            { "Cards_win", 0x20E, class, const.getCards_win },
+            { "Carfone_in", 0x20E, class, const.getCarfone_in },
+            { "Carfone_loopa", 0x20E, class, const.getCarfone_loopa },
+            { "Carfone_loopa_to_b", 0x20E, class, const.getCarfone_loopa_to_b },
+            { "Carfone_loopb", 0x20E, class, const.getCarfone_loopb },
+            { "Carfone_loopb_to_a", 0x20E, class, const.getCarfone_loopb_to_a },
+            { "Carfone_out", 0x20E, class, const.getCarfone_out },
+            { "Carhit_hangon", 0x20E, class, const.getCarhit_hangon },
+            { "Carhit_tumble", 0x20E, class, const.getCarhit_tumble },
+            { "Cas_g2_gasko", 0x20E, class, const.getCas_g2_gasko },
+            { "Case_pickup", 0x20E, class, const.getCase_pickup },
+            { "Cat_safe_end", 0x20E, class, const.getCat_safe_end },
+            { "Cat_safe_open", 0x20E, class, const.getCat_safe_open },
+            { "Cat_safe_open_o", 0x20E, class, const.getCat_safe_open_o },
+            { "Cat_safe_rob", 0x20E, class, const.getCat_safe_rob },
+            { "Catch_box", 0x20E, class, const.getCatch_box },
+            { "Choppa_back", 0x20E, class, const.getChoppa_back },
+            { "Choppa_bunnyhop", 0x20E, class, const.getChoppa_bunnyhop },
+            { "Choppa_driveby_lhs", 0x20E, class, const.getChoppa_driveby_lhs },
+            { "Choppa_driveby_rhs", 0x20E, class, const.getChoppa_driveby_rhs },
+            { "Choppa_drivebyft", 0x20E, class, const.getChoppa_drivebyft },
+            { "Choppa_fwd", 0x20E, class, const.getChoppa_fwd },
+            { "Choppa_getoffback", 0x20E, class, const.getChoppa_getoffback },
+            { "Choppa_getofflhs", 0x20E, class, const.getChoppa_getofflhs },
+            { "Choppa_getoffrhs", 0x20E, class, const.getChoppa_getoffrhs },
+            { "Choppa_jumponl", 0x20E, class, const.getChoppa_jumponl },
+            { "Choppa_jumponr", 0x20E, class, const.getChoppa_jumponr },
+            { "Choppa_left", 0x20E, class, const.getChoppa_left },
+            { "Choppa_pedal", 0x20E, class, const.getChoppa_pedal },
+            { "Choppa_pushes", 0x20E, class, const.getChoppa_pushes },
+            { "Choppa_ride", 0x20E, class, const.getChoppa_ride },
+            { "Choppa_right", 0x20E, class, const.getChoppa_right },
+            { "Choppa_sprint", 0x20E, class, const.getChoppa_sprint },
+            { "Choppa_still", 0x20E, class, const.getChoppa_still },
+            { "Climb_idle", 0x20E, class, const.getClimb_idle },
+            { "Climb_jump", 0x20E, class, const.getClimb_jump },
+            { "Climb_jump_b", 0x20E, class, const.getClimb_jump_b },
+            { "Climb_jump2fall", 0x20E, class, const.getClimb_jump2fall },
+            { "Climb_pull", 0x20E, class, const.getClimb_pull },
+            { "Climb_stand", 0x20E, class, const.getClimb_stand },
+            { "Climb_stand_finish", 0x20E, class, const.getClimb_stand_finish },
+            { "Clo_buy", 0x20E, class, const.getClo_buy },
+            { "Clo_in", 0x20E, class, const.getClo_in },
+            { "Clo_out", 0x20E, class, const.getClo_out },
+            { "Clo_pose_hat", 0x20E, class, const.getClo_pose_hat },
+            { "Clo_pose_in", 0x20E, class, const.getClo_pose_in },
+            { "Clo_pose_in_o", 0x20E, class, const.getClo_pose_in_o },
+            { "Clo_pose_legs", 0x20E, class, const.getClo_pose_legs },
+            { "Clo_pose_loop", 0x20E, class, const.getClo_pose_loop },
+            { "Clo_pose_out", 0x20E, class, const.getClo_pose_out },
+            { "Clo_pose_out_o", 0x20E, class, const.getClo_pose_out_o },
+            { "Clo_pose_shoes", 0x20E, class, const.getClo_pose_shoes },
+            { "Clo_pose_torso", 0x20E, class, const.getClo_pose_torso },
+            { "Clo_pose_watch", 0x20E, class, const.getClo_pose_watch },
+            { "Coach_inl", 0x20E, class, const.getCoach_inl },
+            { "Coach_inr", 0x20E, class, const.getCoach_inr },
+            { "Coach_opnl", 0x20E, class, const.getCoach_opnl },
+            { "Coach_opnr", 0x20E, class, const.getCoach_opnr },
+            { "Coach_outl", 0x20E, class, const.getCoach_outl },
+            { "Coach_outr", 0x20E, class, const.getCoach_outr },
+            { "Colt45_crouchfire", 0x20E, class, const.getColt45_crouchfire },
+            { "Colt45_crouchreload", 0x20E, class, const.getColt45_crouchreload },
+            { "Colt45_fire", 0x20E, class, const.getColt45_fire },
+            { "Colt45_fire_2hands", 0x20E, class, const.getColt45_fire_2hands },
+            { "Colt45_reload", 0x20E, class, const.getColt45_reload },
+            { "Cop_dvby_b", 0x20E, class, const.getCop_dvby_b },
+            { "Cop_dvby_ft", 0x20E, class, const.getCop_dvby_ft },
+            { "Cop_dvby_l", 0x20E, class, const.getCop_dvby_l },
+            { "Cop_dvby_r", 0x20E, class, const.getCop_dvby_r },
+            { "Cop_getoutcar_lhs", 0x20E, class, const.getCop_getoutcar_lhs },
+            { "Cop_move_fwd", 0x20E, class, const.getCop_move_fwd },
+            { "Copbrowse_in", 0x20E, class, const.getCopbrowse_in },
+            { "Copbrowse_loop", 0x20E, class, const.getCopbrowse_loop },
+            { "Copbrowse_nod", 0x20E, class, const.getCopbrowse_nod },
+            { "Copbrowse_out", 0x20E, class, const.getCopbrowse_out },
+            { "Copbrowse_shake", 0x20E, class, const.getCopbrowse_shake },
+            { "Coplook_in", 0x20E, class, const.getCoplook_in },
+            { "Coplook_loop", 0x20E, class, const.getCoplook_loop },
+            { "Coplook_nod", 0x20E, class, const.getCoplook_nod },
+            { "Coplook_out", 0x20E, class, const.getCoplook_out },
+            { "Coplook_shake", 0x20E, class, const.getCoplook_shake },
+            { "Coplook_think", 0x20E, class, const.getCoplook_think },
+            { "Coplook_watch", 0x20E, class, const.getCoplook_watch },
+            { "Coptraf_away", 0x20E, class, const.getCoptraf_away },
+            { "Coptraf_come", 0x20E, class, const.getCoptraf_come },
+            { "Coptraf_left", 0x20E, class, const.getCoptraf_left },
+            { "Coptraf_stop", 0x20E, class, const.getCoptraf_stop },
+            { "Cover_dive_01", 0x20E, class, const.getCover_dive_01 },
+            { "Cover_dive_02", 0x20E, class, const.getCover_dive_02 },
+            { "Cower", 0x20E, class, const.getCower },
+            { "Cpr", 0x20E, class, const.getCpr },
+            { "Crckdeth1", 0x20E, class, const.getCrckdeth1 },
+            { "Crckdeth2", 0x20E, class, const.getCrckdeth2 },
+            { "Crckdeth3", 0x20E, class, const.getCrckdeth3 },
+            { "Crckdeth4", 0x20E, class, const.getCrckdeth4 },
+            { "Crckidle1", 0x20E, class, const.getCrckidle1 },
+            { "Crckidle2", 0x20E, class, const.getCrckidle2 },
+            { "Crckidle3", 0x20E, class, const.getCrckidle3 },
+            { "Crckidle4", 0x20E, class, const.getCrckidle4 },
+            { "Crib_console_loop", 0x20E, class, const.getCrib_console_loop },
+            { "Crib_use_switch", 0x20E, class, const.getCrib_use_switch },
+            { "Crm_drgbst_01", 0x20E, class, const.getCrm_drgbst_01 },
+            { "Crouch_roll_l", 0x20E, class, const.getCrouch_roll_l },
+            { "Crouch_roll_r", 0x20E, class, const.getCrouch_roll_r },
+            { "Crouchreload", 0x20E, class, const.getCrouchreload },
+            { "Crry_prtial", 0x20E, class, const.getCrry_prtial },
+            { "Crush_jump", 0x20E, class, const.getCrush_jump },
+            { "Crushed", 0x20E, class, const.getCrushed },
+            { "Cs_dead_guy", 0x20E, class, const.getCs_dead_guy },
+            { "Cs_plyr_pt1", 0x20E, class, const.getCs_plyr_pt1 },
+            { "Cs_plyr_pt2", 0x20E, class, const.getCs_plyr_pt2 },
+            { "Cs_wuzi_pt1", 0x20E, class, const.getCs_wuzi_pt1 },
+            { "Cs_wuzi_pt2", 0x20E, class, const.getCs_wuzi_pt2 },
+            { "Csaw_1", 0x20E, class, const.getCsaw_1 },
+            { "Csaw_2", 0x20E, class, const.getCsaw_2 },
+            { "Csaw_3", 0x20E, class, const.getCsaw_3 },
+            { "Csaw_g", 0x20E, class, const.getCsaw_g },
+            { "Csaw_hit_1", 0x20E, class, const.getCsaw_hit_1 },
+            { "Csaw_hit_2", 0x20E, class, const.getCsaw_hit_2 },
+            { "Csaw_hit_3", 0x20E, class, const.getCsaw_hit_3 },
+            { "Csaw_part", 0x20E, class, const.getCsaw_part },
+            { "Dam_arml_frmbk", 0x20E, class, const.getDam_arml_frmbk },
+            { "Dam_arml_frmft", 0x20E, class, const.getDam_arml_frmft },
+            { "Dam_arml_frmlt", 0x20E, class, const.getDam_arml_frmlt },
+            { "Dam_armr_frmbk", 0x20E, class, const.getDam_armr_frmbk },
+            { "Dam_armr_frmft", 0x20E, class, const.getDam_armr_frmft },
+            { "Dam_armr_frmrt", 0x20E, class, const.getDam_armr_frmrt },
+            { "Dam_dive_loop", 0x20E, class, const.getDam_dive_loop },
+            { "Dam_land", 0x20E, class, const.getDam_land },
+            { "Dam_launch", 0x20E, class, const.getDam_launch },
+            { "Dam_legl_frmbk", 0x20E, class, const.getDam_legl_frmbk },
+            { "Dam_legl_frmft", 0x20E, class, const.getDam_legl_frmft },
+            { "Dam_legl_frmlt", 0x20E, class, const.getDam_legl_frmlt },
+            { "Dam_legr_frmbk", 0x20E, class, const.getDam_legr_frmbk },
+            { "Dam_legr_frmft", 0x20E, class, const.getDam_legr_frmft },
+            { "Dam_legr_frmrt", 0x20E, class, const.getDam_legr_frmrt },
+            { "Dam_stomach_frmbk", 0x20E, class, const.getDam_stomach_frmbk },
+            { "Dam_stomach_frmft", 0x20E, class, const.getDam_stomach_frmft },
+            { "Dam_stomach_frmlt", 0x20E, class, const.getDam_stomach_frmlt },
+            { "Dam_stomach_frmrt", 0x20E, class, const.getDam_stomach_frmrt },
+            { "Dan_down_a", 0x20E, class, const.getDan_down_a },
+            { "Dan_left_a", 0x20E, class, const.getDan_left_a },
+            { "Dan_loop_a", 0x20E, class, const.getDan_loop_a },
+            { "Dan_right_a", 0x20E, class, const.getDan_right_a },
+            { "Dan_up_a", 0x20E, class, const.getDan_up_a },
+            { "Dance_loop", 0x20E, class, const.getDance_loop },
+            { "Dealer_deal", 0x20E, class, const.getDealer_deal },
+            { "Dealer_idle", 0x20E, class, const.getDealer_idle },
+            { "Dealer_idle_01", 0x20E, class, const.getDealer_idle_01 },
+            { "Dealer_idle_02", 0x20E, class, const.getDealer_idle_02 },
+            { "Dealer_idle_03", 0x20E, class, const.getDealer_idle_03 },
+            { "Dealone", 0x20E, class, const.getDealone },
+            { "Dildo_1", 0x20E, class, const.getDildo_1 },
+            { "Dildo_2", 0x20E, class, const.getDildo_2 },
+            { "Dildo_3", 0x20E, class, const.getDildo_3 },
+            { "Dildo_block", 0x20E, class, const.getDildo_block },
+            { "Dildo_g", 0x20E, class, const.getDildo_g },
+            { "Dildo_hit_1", 0x20E, class, const.getDildo_hit_1 },
+            { "Dildo_hit_2", 0x20E, class, const.getDildo_hit_2 },
+            { "Dildo_hit_3", 0x20E, class, const.getDildo_hit_3 },
+            { "Dildo_idle", 0x20E, class, const.getDildo_idle },
+            { "Dnce_m_a", 0x20E, class, const.getDnce_m_a },
+            { "Dnce_m_b", 0x20E, class, const.getDnce_m_b },
+            { "Dnce_m_c", 0x20E, class, const.getDnce_m_c },
+            { "Dnce_m_d", 0x20E, class, const.getDnce_m_d },
+            { "Dnce_m_e", 0x20E, class, const.getDnce_m_e },
+            { "Dnk_stndf_loop", 0x20E, class, const.getDnk_stndf_loop },
+            { "Dnk_stndm_loop", 0x20E, class, const.getDnk_stndm_loop },
+            { "Donutdrop", 0x20E, class, const.getDonutdrop },
+            { "Door_jet", 0x20E, class, const.getDoor_jet },
+            { "Door_kick", 0x20E, class, const.getDoor_kick },
+            { "Door_lhinge_o", 0x20E, class, const.getDoor_lhinge_o },
+            { "Door_rhinge_o", 0x20E, class, const.getDoor_rhinge_o },
+            { "Doubleguns_crouchfire", 0x20E, class, const.getDoubleguns_crouchfire },
+            { "Dozer_align_lhs", 0x20E, class, const.getDozer_align_lhs },
+            { "Dozer_align_rhs", 0x20E, class, const.getDozer_align_rhs },
+            { "Dozer_getin_lhs", 0x20E, class, const.getDozer_getin_lhs },
+            { "Dozer_getin_rhs", 0x20E, class, const.getDozer_getin_rhs },
+            { "Dozer_getout_lhs", 0x20E, class, const.getDozer_getout_lhs },
+            { "Dozer_getout_rhs", 0x20E, class, const.getDozer_getout_rhs },
+            { "Dozer_jacked_lhs", 0x20E, class, const.getDozer_jacked_lhs },
+            { "Dozer_jacked_rhs", 0x20E, class, const.getDozer_jacked_rhs },
+            { "Dozer_pullout_lhs", 0x20E, class, const.getDozer_pullout_lhs },
+            { "Dozer_pullout_rhs", 0x20E, class, const.getDozer_pullout_rhs },
+            { "Drive_boat", 0x20E, class, const.getDrive_boat },
+            { "Drive_boat_back", 0x20E, class, const.getDrive_boat_back },
+            { "Drive_boat_l", 0x20E, class, const.getDrive_boat_l },
+            { "Drive_boat_r", 0x20E, class, const.getDrive_boat_r },
+            { "Drive_l", 0x20E, class, const.getDrive_l },
+            { "Drive_l_pro", 0x20E, class, const.getDrive_l_pro },
+            { "Drive_l_pro_slow", 0x20E, class, const.getDrive_l_pro_slow },
+            { "Drive_l_slow", 0x20E, class, const.getDrive_l_slow },
+            { "Drive_l_weak", 0x20E, class, const.getDrive_l_weak },
+            { "Drive_l_weak_slow", 0x20E, class, const.getDrive_l_weak_slow },
+            { "Drive_lo_l", 0x20E, class, const.getDrive_lo_l },
+            { "Drive_lo_r", 0x20E, class, const.getDrive_lo_r },
+            { "Drive_r", 0x20E, class, const.getDrive_r },
+            { "Drive_r_pro", 0x20E, class, const.getDrive_r_pro },
+            { "Drive_r_pro_slow", 0x20E, class, const.getDrive_r_pro_slow },
+            { "Drive_r_slow", 0x20E, class, const.getDrive_r_slow },
+            { "Drive_r_weak", 0x20E, class, const.getDrive_r_weak },
+            { "Drive_r_weak_slow", 0x20E, class, const.getDrive_r_weak_slow },
+            { "Drive_truck", 0x20E, class, const.getDrive_truck },
+            { "Drive_truck_back", 0x20E, class, const.getDrive_truck_back },
+            { "Drive_truck_l", 0x20E, class, const.getDrive_truck_l },
+            { "Drive_truck_r", 0x20E, class, const.getDrive_truck_r },
+            { "Driveby_l", 0x20E, class, const.getDriveby_l },
+            { "Driveby_r", 0x20E, class, const.getDriveby_r },
+            { "Drivebyl_l", 0x20E, class, const.getDrivebyl_l },
+            { "Drivebyl_r", 0x20E, class, const.getDrivebyl_r },
+            { "Drnkbr_prtl", 0x20E, class, const.getDrnkbr_prtl },
+            { "Drnkbr_prtl_f", 0x20E, class, const.getDrnkbr_prtl_f },
+            { "Drown", 0x20E, class, const.getDrown },
+            { "Drugs_buy", 0x20E, class, const.getDrugs_buy },
+            { "Duck_cower", 0x20E, class, const.getDuck_cower },
+            { "Eat_burger", 0x20E, class, const.getEat_burger },
+            { "Eat_chicken", 0x20E, class, const.getEat_chicken },
+            { "Eat_pizza", 0x20E, class, const.getEat_pizza },
+            { "Eat_vomit_p", 0x20E, class, const.getEat_vomit_p },
+            { "Eat_vomit_sk", 0x20E, class, const.getEat_vomit_sk },
+            { "End_sc1_ply", 0x20E, class, const.getEnd_sc1_ply },
+            { "End_sc1_ryd", 0x20E, class, const.getEnd_sc1_ryd },
+            { "End_sc1_smo", 0x20E, class, const.getEnd_sc1_smo },
+            { "End_sc1_swe", 0x20E, class, const.getEnd_sc1_swe },
+            { "End_sc2_ply", 0x20E, class, const.getEnd_sc2_ply },
+            { "End_sc2_ryd", 0x20E, class, const.getEnd_sc2_ryd },
+            { "End_sc2_smo", 0x20E, class, const.getEnd_sc2_smo },
+            { "End_sc2_swe", 0x20E, class, const.getEnd_sc2_swe },
+            { "Endchat_01", 0x20E, class, const.getEndchat_01 },
+            { "Endchat_02", 0x20E, class, const.getEndchat_02 },
+            { "Endchat_03", 0x20E, class, const.getEndchat_03 },
+            { "Ev_dive", 0x20E, class, const.getEv_dive },
+            { "Ev_step", 0x20E, class, const.getEv_step },
+            { "F_smklean_loop", 0x20E, class, const.getF_smklean_loop },
+            { "F_smklean_loop_2", 0x20E, class, const.getF_smklean_loop_2 },
+            { "Facanger", 0x20E, class, const.getFacanger },
+            { "Facgum", 0x20E, class, const.getFacgum },
+            { "Facsurp", 0x20E, class, const.getFacsurp },
+            { "Facsurpm", 0x20E, class, const.getFacsurpm },
+            { "Factalk", 0x20E, class, const.getFactalk },
+            { "Facurios", 0x20E, class, const.getFacurios },
+            { "Fall_back", 0x20E, class, const.getFall_back },
+            { "Fall_collapse", 0x20E, class, const.getFall_collapse },
+            { "Fall_fall", 0x20E, class, const.getFall_fall },
+            { "Fall_front", 0x20E, class, const.getFall_front },
+            { "Fall_glide", 0x20E, class, const.getFall_glide },
+            { "Fall_land", 0x20E, class, const.getFall_land },
+            { "Fall_skydive", 0x20E, class, const.getFall_skydive },
+            { "Fall_skydive_accel", 0x20E, class, const.getFall_skydive_accel },
+            { "Fall_skydive_die", 0x20E, class, const.getFall_skydive_die },
+            { "Fall_skydive_l", 0x20E, class, const.getFall_skydive_l },
+            { "Fall_skydive_r", 0x20E, class, const.getFall_skydive_r },
+            { "Fatidle", 0x20E, class, const.getFatidle },
+            { "Fatidle_armed", 0x20E, class, const.getFatidle_armed },
+            { "Fatidle_csaw", 0x20E, class, const.getFatidle_csaw },
+            { "Fatidle_rocket", 0x20E, class, const.getFatidle_rocket },
+            { "Fatrun", 0x20E, class, const.getFatrun },
+            { "Fatrun_armed", 0x20E, class, const.getFatrun_armed },
+            { "Fatrun_csaw", 0x20E, class, const.getFatrun_csaw },
+            { "Fatrun_rocket", 0x20E, class, const.getFatrun_rocket },
+            { "Fatsprint", 0x20E, class, const.getFatsprint },
+            { "Fatwalk", 0x20E, class, const.getFatwalk },
+            { "Fatwalk_armed", 0x20E, class, const.getFatwalk_armed },
+            { "Fatwalk_csaw", 0x20E, class, const.getFatwalk_csaw },
+            { "Fatwalk_rocket", 0x20E, class, const.getFatwalk_rocket },
+            { "Fatwalkst_armed", 0x20E, class, const.getFatwalkst_armed },
+            { "Fatwalkst_rocket", 0x20E, class, const.getFatwalkst_rocket },
+            { "Fatwalkstart", 0x20E, class, const.getFatwalkstart },
+            { "Fatwalkstart_csaw", 0x20E, class, const.getFatwalkstart_csaw },
+            { "Fen_choppa_l1", 0x20E, class, const.getFen_choppa_l1 },
+            { "Fen_choppa_l2", 0x20E, class, const.getFen_choppa_l2 },
+            { "Fen_choppa_l3", 0x20E, class, const.getFen_choppa_l3 },
+            { "Fen_choppa_r1", 0x20E, class, const.getFen_choppa_r1 },
+            { "Fen_choppa_r2", 0x20E, class, const.getFen_choppa_r2 },
+            { "Fen_choppa_r3", 0x20E, class, const.getFen_choppa_r3 },
+            { "Ff_dam_bkw", 0x20E, class, const.getFf_dam_bkw },
+            { "Ff_dam_fwd", 0x20E, class, const.getFf_dam_fwd },
+            { "Ff_dam_left", 0x20E, class, const.getFf_dam_left },
+            { "Ff_dam_right", 0x20E, class, const.getFf_dam_right },
+            { "Ff_die_bkw", 0x20E, class, const.getFf_die_bkw },
+            { "Ff_die_fwd", 0x20E, class, const.getFf_die_fwd },
+            { "Ff_die_left", 0x20E, class, const.getFf_die_left },
+            { "Ff_die_right", 0x20E, class, const.getFf_die_right },
+            { "Ff_sit_eat1", 0x20E, class, const.getFf_sit_eat1 },
+            { "Ff_sit_eat2", 0x20E, class, const.getFf_sit_eat2 },
+            { "Ff_sit_eat3", 0x20E, class, const.getFf_sit_eat3 },
+            { "Ff_sit_in", 0x20E, class, const.getFf_sit_in },
+            { "Ff_sit_in_l", 0x20E, class, const.getFf_sit_in_l },
+            { "Ff_sit_in_r", 0x20E, class, const.getFf_sit_in_r },
+            { "Ff_sit_look", 0x20E, class, const.getFf_sit_look },
+            { "Ff_sit_loop", 0x20E, class, const.getFf_sit_loop },
+            { "Ff_sit_out_180", 0x20E, class, const.getFf_sit_out_180 },
+            { "Ff_sit_out_l_180", 0x20E, class, const.getFf_sit_out_l_180 },
+            { "Ff_sit_out_r_180", 0x20E, class, const.getFf_sit_out_r_180 },
+            { "Fight2idle", 0x20E, class, const.getFight2idle },
+            { "Fighta_1", 0x20E, class, const.getFighta_1 },
+            { "Fighta_2", 0x20E, class, const.getFighta_2 },
+            { "Fighta_3", 0x20E, class, const.getFighta_3 },
+            { "Fighta_block", 0x20E, class, const.getFighta_block },
+            { "Fighta_g", 0x20E, class, const.getFighta_g },
+            { "Fighta_m", 0x20E, class, const.getFighta_m },
+            { "Fightb_1", 0x20E, class, const.getFightb_1 },
+            { "Fightb_2", 0x20E, class, const.getFightb_2 },
+            { "Fightb_3", 0x20E, class, const.getFightb_3 },
+            { "Fightb_block", 0x20E, class, const.getFightb_block },
+            { "Fightb_g", 0x20E, class, const.getFightb_g },
+            { "Fightb_idle", 0x20E, class, const.getFightb_idle },
+            { "Fightb_m", 0x20E, class, const.getFightb_m },
+            { "Fightc_1", 0x20E, class, const.getFightc_1 },
+            { "Fightc_2", 0x20E, class, const.getFightc_2 },
+            { "Fightc_3", 0x20E, class, const.getFightc_3 },
+            { "Fightc_block", 0x20E, class, const.getFightc_block },
+            { "Fightc_blocking", 0x20E, class, const.getFightc_blocking },
+            { "Fightc_g", 0x20E, class, const.getFightc_g },
+            { "Fightc_idle", 0x20E, class, const.getFightc_idle },
+            { "Fightc_m", 0x20E, class, const.getFightc_m },
+            { "Fightc_spar", 0x20E, class, const.getFightc_spar },
+            { "Fightd_1", 0x20E, class, const.getFightd_1 },
+            { "Fightd_2", 0x20E, class, const.getFightd_2 },
+            { "Fightd_3", 0x20E, class, const.getFightd_3 },
+            { "Fightd_block", 0x20E, class, const.getFightd_block },
+            { "Fightd_g", 0x20E, class, const.getFightd_g },
+            { "Fightd_idle", 0x20E, class, const.getFightd_idle },
+            { "Fightd_m", 0x20E, class, const.getFightd_m },
+            { "Fightidle", 0x20E, class, const.getFightidle },
+            { "Fightkick", 0x20E, class, const.getFightkick },
+            { "Fightkick_b", 0x20E, class, const.getFightkick_b },
+            { "Fightsh_bwd", 0x20E, class, const.getFightsh_bwd },
+            { "Fightsh_fwd", 0x20E, class, const.getFightsh_fwd },
+            { "Fightsh_left", 0x20E, class, const.getFightsh_left },
+            { "Fightsh_right", 0x20E, class, const.getFightsh_right },
+            { "Fightshb", 0x20E, class, const.getFightshb },
+            { "Fightshf", 0x20E, class, const.getFightshf },
+            { "Fin_climb_in", 0x20E, class, const.getFin_climb_in },
+            { "Fin_cop1_climbout", 0x20E, class, const.getFin_cop1_climbout },
+            { "Fin_cop1_climbout2", 0x20E, class, const.getFin_cop1_climbout2 },
+            { "Fin_cop1_fall", 0x20E, class, const.getFin_cop1_fall },
+            { "Fin_cop1_loop", 0x20E, class, const.getFin_cop1_loop },
+            { "Fin_cop1_shot", 0x20E, class, const.getFin_cop1_shot },
+            { "Fin_cop1_stomp", 0x20E, class, const.getFin_cop1_stomp },
+            { "Fin_cop1_swing", 0x20E, class, const.getFin_cop1_swing },
+            { "Fin_cop2_climbout", 0x20E, class, const.getFin_cop2_climbout },
+            { "Fin_hang_l", 0x20E, class, const.getFin_hang_l },
+            { "Fin_hang_loop", 0x20E, class, const.getFin_hang_loop },
+            { "Fin_hang_r", 0x20E, class, const.getFin_hang_r },
+            { "Fin_hang_slip", 0x20E, class, const.getFin_hang_slip },
+            { "Fin_jump_on", 0x20E, class, const.getFin_jump_on },
+            { "Fin_land_car", 0x20E, class, const.getFin_land_car },
+            { "Fin_land_die", 0x20E, class, const.getFin_land_die },
+            { "Fin_legsup", 0x20E, class, const.getFin_legsup },
+            { "Fin_legsup_l", 0x20E, class, const.getFin_legsup_l },
+            { "Fin_legsup_loop", 0x20E, class, const.getFin_legsup_loop },
+            { "Fin_legsup_r", 0x20E, class, const.getFin_legsup_r },
+            { "Fin_let_go", 0x20E, class, const.getFin_let_go },
+            { "Fin_switch_p", 0x20E, class, const.getFin_switch_p },
+            { "Fin_switch_s", 0x20E, class, const.getFin_switch_s },
+            { "Fin2_cop1_loop", 0x20E, class, const.getFin2_cop1_loop },
+            { "Fixn_car_loop", 0x20E, class, const.getFixn_car_loop },
+            { "Fixn_car_out", 0x20E, class, const.getFixn_car_out },
+            { "Flag_drop", 0x20E, class, const.getFlag_drop },
+            { "Flame_fire", 0x20E, class, const.getFlame_fire },
+            { "Flee_lkaround_01", 0x20E, class, const.getFlee_lkaround_01 },
+            { "Floor_hit", 0x20E, class, const.getFloor_hit },
+            { "Floor_hit_f", 0x20E, class, const.getFloor_hit_f },
+            { "Flower_attack", 0x20E, class, const.getFlower_attack },
+            { "Flower_attack_m", 0x20E, class, const.getFlower_attack_m },
+            { "Flower_hit", 0x20E, class, const.getFlower_hit },
+            { "Fucku", 0x20E, class, const.getFucku },
+            { "Gang_dealer_deal", 0x20E, class, const.getGang_dealer_deal },
+            { "Gang_dealer_idle", 0x20E, class, const.getGang_dealer_idle },
+            { "Gang_drivebylhs", 0x20E, class, const.getGang_drivebylhs },
+            { "Gang_drivebylhs_bwd", 0x20E, class, const.getGang_drivebylhs_bwd },
+            { "Gang_drivebylhs_fwd", 0x20E, class, const.getGang_drivebylhs_fwd },
+            { "Gang_drivebyrhs", 0x20E, class, const.getGang_drivebyrhs },
+            { "Gang_drivebyrhs_bwd", 0x20E, class, const.getGang_drivebyrhs_bwd },
+            { "Gang_drivebyrhs_fwd", 0x20E, class, const.getGang_drivebyrhs_fwd },
+            { "Gang_drivebytop_lhs", 0x20E, class, const.getGang_drivebytop_lhs },
+            { "Gang_drivebytop_rhs", 0x20E, class, const.getGang_drivebytop_rhs },
+            { "Gang_drugs_buy", 0x20E, class, const.getGang_drugs_buy },
+            { "Gang_gunstand", 0x20E, class, const.getGang_gunstand },
+            { "Gas_cwr", 0x20E, class, const.getGas_cwr },
+            { "Gdb_car_ply", 0x20E, class, const.getGdb_car_ply },
+            { "Gdb_car_ryd", 0x20E, class, const.getGdb_car_ryd },
+            { "Gdb_car_smo", 0x20E, class, const.getGdb_car_smo },
+            { "Gdb_car_swe", 0x20E, class, const.getGdb_car_swe },
+            { "Gdb_car2_ply", 0x20E, class, const.getGdb_car2_ply },
+            { "Gdb_car2_smo", 0x20E, class, const.getGdb_car2_smo },
+            { "Gdb_car2_swe", 0x20E, class, const.getGdb_car2_swe },
+            { "Getup", 0x20E, class, const.getGetup },
+            { "Getup_front", 0x20E, class, const.getGetup_front },
+            { "Gf_carargue_01", 0x20E, class, const.getGf_carargue_01 },
+            { "Gf_carargue_02", 0x20E, class, const.getGf_carargue_02 },
+            { "Gf_carspot", 0x20E, class, const.getGf_carspot },
+            { "Gf_streetargue_01", 0x20E, class, const.getGf_streetargue_01 },
+            { "Gf_streetargue_02", 0x20E, class, const.getGf_streetargue_02 },
+            { "Gfwave2", 0x20E, class, const.getGfwave2 },
+            { "Gift_get", 0x20E, class, const.getGift_get },
+            { "Gift_give", 0x20E, class, const.getGift_give },
+            { "Girl_01", 0x20E, class, const.getGirl_01 },
+            { "Girl_02", 0x20E, class, const.getGirl_02 },
+            { "Gnstwall_injurd", 0x20E, class, const.getGnstwall_injurd },
+            { "Goggles_put_on", 0x20E, class, const.getGoggles_put_on },
+            { "Grab_l", 0x20E, class, const.getGrab_l },
+            { "Grab_r", 0x20E, class, const.getGrab_r },
+            { "Graffiti_chkout", 0x20E, class, const.getGraffiti_chkout },
+            { "Grlfrd_kiss_01", 0x20E, class, const.getGrlfrd_kiss_01 },
+            { "Grlfrd_kiss_02", 0x20E, class, const.getGrlfrd_kiss_02 },
+            { "Grlfrd_kiss_03", 0x20E, class, const.getGrlfrd_kiss_03 },
+            { "Group", 0x6, System.String },
+            { "Gsign1", 0x20E, class, const.getGsign1 },
+            { "Gsign1lh", 0x20E, class, const.getGsign1lh },
+            { "Gsign2", 0x20E, class, const.getGsign2 },
+            { "Gsign2lh", 0x20E, class, const.getGsign2lh },
+            { "Gsign3", 0x20E, class, const.getGsign3 },
+            { "Gsign3lh", 0x20E, class, const.getGsign3lh },
+            { "Gsign4", 0x20E, class, const.getGsign4 },
+            { "Gsign4lh", 0x20E, class, const.getGsign4lh },
+            { "Gsign5", 0x20E, class, const.getGsign5 },
+            { "Gsign5lh", 0x20E, class, const.getGsign5lh },
+            { "Gum_eat", 0x20E, class, const.getGum_eat },
+            { "Gun_2_idle", 0x20E, class, const.getGun_2_idle },
+            { "Gun_butt", 0x20E, class, const.getGun_butt },
+            { "Gun_butt_crouch", 0x20E, class, const.getGun_butt_crouch },
+            { "Gun_stand", 0x20E, class, const.getGun_stand },
+            { "Guncrouchbwd", 0x20E, class, const.getGuncrouchbwd },
+            { "Guncrouchfwd", 0x20E, class, const.getGuncrouchfwd },
+            { "Gunmove_bwd", 0x20E, class, const.getGunmove_bwd },
+            { "Gunmove_fwd", 0x20E, class, const.getGunmove_fwd },
+            { "Gunmove_l", 0x20E, class, const.getGunmove_l },
+            { "Gunmove_r", 0x20E, class, const.getGunmove_r },
+            { "Gym_barbell", 0x20E, class, const.getGym_barbell },
+            { "Gym_bike_celebrate", 0x20E, class, const.getGym_bike_celebrate },
+            { "Gym_bike_fast", 0x20E, class, const.getGym_bike_fast },
+            { "Gym_bike_faster", 0x20E, class, const.getGym_bike_faster },
+            { "Gym_bike_getoff", 0x20E, class, const.getGym_bike_getoff },
+            { "Gym_bike_geton", 0x20E, class, const.getGym_bike_geton },
+            { "Gym_bike_pedal", 0x20E, class, const.getGym_bike_pedal },
+            { "Gym_bike_slow", 0x20E, class, const.getGym_bike_slow },
+            { "Gym_bike_still", 0x20E, class, const.getGym_bike_still },
+            { "Gym_bp_celebrate", 0x20E, class, const.getGym_bp_celebrate },
+            { "Gym_bp_down", 0x20E, class, const.getGym_bp_down },
+            { "Gym_bp_getoff", 0x20E, class, const.getGym_bp_getoff },
+            { "Gym_bp_geton", 0x20E, class, const.getGym_bp_geton },
+            { "Gym_bp_up_a", 0x20E, class, const.getGym_bp_up_a },
+            { "Gym_bp_up_b", 0x20E, class, const.getGym_bp_up_b },
+            { "Gym_bp_up_smooth", 0x20E, class, const.getGym_bp_up_smooth },
+            { "Gym_free_a", 0x20E, class, const.getGym_free_a },
+            { "Gym_free_b", 0x20E, class, const.getGym_free_b },
+            { "Gym_free_celebrate", 0x20E, class, const.getGym_free_celebrate },
+            { "Gym_free_down", 0x20E, class, const.getGym_free_down },
+            { "Gym_free_loop", 0x20E, class, const.getGym_free_loop },
+            { "Gym_free_pickup", 0x20E, class, const.getGym_free_pickup },
+            { "Gym_free_putdown", 0x20E, class, const.getGym_free_putdown },
+            { "Gym_free_up_smooth", 0x20E, class, const.getGym_free_up_smooth },
+            { "Gym_jog_falloff", 0x20E, class, const.getGym_jog_falloff },
+            { "Gym_shadowbox", 0x20E, class, const.getGym_shadowbox },
+            { "Gym_tread_celebrate", 0x20E, class, const.getGym_tread_celebrate },
+            { "Gym_tread_falloff", 0x20E, class, const.getGym_tread_falloff },
+            { "Gym_tread_getoff", 0x20E, class, const.getGym_tread_getoff },
+            { "Gym_tread_geton", 0x20E, class, const.getGym_tread_geton },
+            { "Gym_tread_jog", 0x20E, class, const.getGym_tread_jog },
+            { "Gym_tread_sprint", 0x20E, class, const.getGym_tread_sprint },
+            { "Gym_tread_tired", 0x20E, class, const.getGym_tread_tired },
+            { "Gym_tread_walk", 0x20E, class, const.getGym_tread_walk },
+            { "Gym_walk_falloff", 0x20E, class, const.getGym_walk_falloff },
+            { "Gymshadowbox", 0x20E, class, const.getGymshadowbox },
+            { "Handscower", 0x20E, class, const.getHandscower },
+            { "Handsup", 0x20E, class, const.getHandsup },
+            { "Hangon_stun_loop", 0x20E, class, const.getHangon_stun_loop },
+            { "Hangon_stun_turn", 0x20E, class, const.getHangon_stun_turn },
+            { "Hiker_pose", 0x20E, class, const.getHiker_pose },
+            { "Hiker_pose_l", 0x20E, class, const.getHiker_pose_l },
+            { "Hit_back", 0x20E, class, const.getHit_back },
+            { "Hit_behind", 0x20E, class, const.getHit_behind },
+            { "Hit_fightkick", 0x20E, class, const.getHit_fightkick },
+            { "Hit_fightkick_b", 0x20E, class, const.getHit_fightkick_b },
+            { "Hit_front", 0x20E, class, const.getHit_front },
+            { "Hit_gun_butt", 0x20E, class, const.getHit_gun_butt },
+            { "Hit_l", 0x20E, class, const.getHit_l },
+            { "Hit_r", 0x20E, class, const.getHit_r },
+            { "Hit_walk", 0x20E, class, const.getHit_walk },
+            { "Hit_wall", 0x20E, class, const.getHit_wall },
+            { "Hita_1", 0x20E, class, const.getHita_1 },
+            { "Hita_2", 0x20E, class, const.getHita_2 },
+            { "Hita_3", 0x20E, class, const.getHita_3 },
+            { "Hitb_1", 0x20E, class, const.getHitb_1 },
+            { "Hitb_2", 0x20E, class, const.getHitb_2 },
+            { "Hitb_3", 0x20E, class, const.getHitb_3 },
+            { "Hitc_1", 0x20E, class, const.getHitc_1 },
+            { "Hitc_2", 0x20E, class, const.getHitc_2 },
+            { "Hitc_3", 0x20E, class, const.getHitc_3 },
+            { "Hitd_1", 0x20E, class, const.getHitd_1 },
+            { "Hitd_2", 0x20E, class, const.getHitd_2 },
+            { "Hitd_3", 0x20E, class, const.getHitd_3 },
+            { "Hndshkaa", 0x20E, class, const.getHndshkaa },
+            { "Hndshkba", 0x20E, class, const.getHndshkba },
+            { "Hndshkca", 0x20E, class, const.getHndshkca },
+            { "Hndshkcb", 0x20E, class, const.getHndshkcb },
+            { "Hndshkda", 0x20E, class, const.getHndshkda },
+            { "Hndshkea", 0x20E, class, const.getHndshkea },
+            { "Hndshkfa", 0x20E, class, const.getHndshkfa },
+            { "Hndshkfa_swt", 0x20E, class, const.getHndshkfa_swt },
+            { "Ho_ass_slapped", 0x20E, class, const.getHo_ass_slapped },
+            { "House_wash_up", 0x20E, class, const.getHouse_wash_up },
+            { "Idle_armed", 0x20E, class, const.getIdle_armed },
+            { "Idle_chat", 0x20E, class, const.getIdle_chat },
+            { "Idle_chat_02", 0x20E, class, const.getIdle_chat_02 },
+            { "Idle_csaw", 0x20E, class, const.getIdle_csaw },
+            { "Idle_gang1", 0x20E, class, const.getIdle_gang1 },
+            { "Idle_hbhb", 0x20E, class, const.getIdle_hbhb },
+            { "Idle_rocket", 0x20E, class, const.getIdle_rocket },
+            { "Idle_stance", 0x20E, class, const.getIdle_stance },
+            { "Idle_taxi", 0x20E, class, const.getIdle_taxi },
+            { "Idle_tired", 0x20E, class, const.getIdle_tired },
+            { "Idlestance_fat", 0x20E, class, const.getIdlestance_fat },
+            { "Idlestance_old", 0x20E, class, const.getIdlestance_old },
+            { "Int_shop_pay", 0x20E, class, const.getInt_shop_pay },
+            { "Invite_no", 0x20E, class, const.getInvite_no },
+            { "Invite_yes", 0x20E, class, const.getInvite_yes },
+            { "Jetpack_idle", 0x20E, class, const.getJetpack_idle },
+            { "Jmp_wall1m_180", 0x20E, class, const.getJmp_wall1m_180 },
+            { "Jog_femalea", 0x20E, class, const.getJog_femalea },
+            { "Jog_malea", 0x20E, class, const.getJog_malea },
+            { "Jump_glide", 0x20E, class, const.getJump_glide },
+            { "Jump_land", 0x20E, class, const.getJump_land },
+            { "Jump_launch", 0x20E, class, const.getJump_launch },
+            { "Jump_launch_r", 0x20E, class, const.getJump_launch_r },
+            { "Jump_roll", 0x20E, class, const.getJump_roll },
+            { "Kart_drive", 0x20E, class, const.getKart_drive },
+            { "Kart_getin_lhs", 0x20E, class, const.getKart_getin_lhs },
+            { "Kart_getin_rhs", 0x20E, class, const.getKart_getin_rhs },
+            { "Kart_getout_lhs", 0x20E, class, const.getKart_getout_lhs },
+            { "Kart_getout_rhs", 0x20E, class, const.getKart_getout_rhs },
+            { "Kart_l", 0x20E, class, const.getKart_l },
+            { "Kart_lb", 0x20E, class, const.getKart_lb },
+            { "Kart_r", 0x20E, class, const.getKart_r },
+            { "Kat_throw_k", 0x20E, class, const.getKat_throw_k },
+            { "Kat_throw_o", 0x20E, class, const.getKat_throw_o },
+            { "Kat_throw_p", 0x20E, class, const.getKat_throw_p },
+            { "Kd_left", 0x20E, class, const.getKd_left },
+            { "Kd_right", 0x20E, class, const.getKd_right },
+            { "Kill_knife_ped_damage", 0x20E, class, const.getKill_knife_ped_damage },
+            { "Kill_knife_ped_die", 0x20E, class, const.getKill_knife_ped_die },
+            { "Kill_knife_player", 0x20E, class, const.getKill_knife_player },
+            { "Kill_partial", 0x20E, class, const.getKill_partial },
+            { "Kissign_grlfrd_kiss_03", 0x20E, class, const.getKissign_grlfrd_kiss_03 },
+            { "Kissing_bd_gf_wave", 0x20E, class, const.getKissing_bd_gf_wave },
+            { "Kissing_playa_kiss_03", 0x20E, class, const.getKissing_playa_kiss_03 },
+            { "Knife_1", 0x20E, class, const.getKnife_1 },
+            { "Knife_2", 0x20E, class, const.getKnife_2 },
+            { "Knife_3", 0x20E, class, const.getKnife_3 },
+            { "Knife_4", 0x20E, class, const.getKnife_4 },
+            { "Knife_block", 0x20E, class, const.getKnife_block },
+            { "Knife_g", 0x20E, class, const.getKnife_g },
+            { "Knife_hit_1", 0x20E, class, const.getKnife_hit_1 },
+            { "Knife_hit_2", 0x20E, class, const.getKnife_hit_2 },
+            { "Knife_hit_3", 0x20E, class, const.getKnife_hit_3 },
+            { "Knife_idle", 0x20E, class, const.getKnife_idle },
+            { "Knife_part", 0x20E, class, const.getKnife_part },
+            { "Ko_shot_face", 0x20E, class, const.getKo_shot_face },
+            { "Ko_shot_front", 0x20E, class, const.getKo_shot_front },
+            { "Ko_shot_stom", 0x20E, class, const.getKo_shot_stom },
+            { "Ko_skid_back", 0x20E, class, const.getKo_skid_back },
+            { "Ko_skid_front", 0x20E, class, const.getKo_skid_front },
+            { "Ko_spin_l", 0x20E, class, const.getKo_spin_l },
+            { "Ko_spin_r", 0x20E, class, const.getKo_spin_r },
+            { "Lafin_player", 0x20E, class, const.getLafin_player },
+            { "Lafin_sweet", 0x20E, class, const.getLafin_sweet },
+            { "Lapdan_d_1", 0x20E, class, const.getLapdan_d_1 },
+            { "Lapdan_d_2", 0x20E, class, const.getLapdan_d_2 },
+            { "Lapdan_d_3", 0x20E, class, const.getLapdan_d_3 },
+            { "Lapdan_p_1", 0x20E, class, const.getLapdan_p_1 },
+            { "Lapdan_p_2", 0x20E, class, const.getLapdan_p_2 },
+            { "Lapdan_p_3", 0x20E, class, const.getLapdan_p_3 },
+            { "Laugh_01", 0x20E, class, const.getLaugh_01 },
+            { "Lay_bac_in", 0x20E, class, const.getLay_bac_in },
+            { "Lay_bac_loop", 0x20E, class, const.getLay_bac_loop },
+            { "Lay_bac_out", 0x20E, class, const.getLay_bac_out },
+            { "Leanidle", 0x20E, class, const.getLeanidle },
+            { "Leanin", 0x20E, class, const.getLeanin },
+            { "Leanout", 0x20E, class, const.getLeanout },
+            { "Lhgsign1", 0x20E, class, const.getLhgsign1 },
+            { "Lhgsign2", 0x20E, class, const.getLhgsign2 },
+            { "Lhgsign3", 0x20E, class, const.getLhgsign3 },
+            { "Lhgsign4", 0x20E, class, const.getLhgsign4 },
+            { "Lhgsign5", 0x20E, class, const.getLhgsign5 },
+            { "Liftup", 0x20E, class, const.getLiftup },
+            { "Liftup05", 0x20E, class, const.getLiftup05 },
+            { "Liftup105", 0x20E, class, const.getLiftup105 },
+            { "Lkaround_in", 0x20E, class, const.getLkaround_in },
+            { "Lkaround_loop", 0x20E, class, const.getLkaround_loop },
+            { "Lkaround_out", 0x20E, class, const.getLkaround_out },
+            { "Lkup_in", 0x20E, class, const.getLkup_in },
+            { "Lkup_loop", 0x20E, class, const.getLkup_loop },
+            { "Lkup_out", 0x20E, class, const.getLkup_out },
+            { "Lkup_point", 0x20E, class, const.getLkup_point },
+            { "Lou_in", 0x20E, class, const.getLou_in },
+            { "Lou_loop", 0x20E, class, const.getLou_loop },
+            { "Lou_out", 0x20E, class, const.getLou_out },
+            { "Lr_m_smklean_loop", 0x20E, class, const.getLr_m_smklean_loop },
+            { "Lr_m_smkstnd_loop", 0x20E, class, const.getLr_m_smkstnd_loop },
+            { "Lr_prtial_gngtlkb", 0x20E, class, const.getLr_prtial_gngtlkb },
+            { "Lr_prtial_gngtlkc", 0x20E, class, const.getLr_prtial_gngtlkc },
+            { "Lr_prtial_gngtlkd", 0x20E, class, const.getLr_prtial_gngtlkd },
+            { "Lr_prtial_gngtlke", 0x20E, class, const.getLr_prtial_gngtlke },
+            { "Lr_prtial_gngtlkf", 0x20E, class, const.getLr_prtial_gngtlkf },
+            { "Lr_prtial_gngtlkg", 0x20E, class, const.getLr_prtial_gngtlkg },
+            { "Lr_prtial_gngtlkh", 0x20E, class, const.getLr_prtial_gngtlkh },
+            { "Lr_sit_relaxed", 0x20E, class, const.getLr_sit_relaxed },
+            { "Lr_tap_hand", 0x20E, class, const.getLr_tap_hand },
+            { "Lrgirl_bdbnce", 0x20E, class, const.getLrgirl_bdbnce },
+            { "Lrgirl_hair", 0x20E, class, const.getLrgirl_hair },
+            { "Lrgirl_hurry", 0x20E, class, const.getLrgirl_hurry },
+            { "Lrgirl_idle_to_l0", 0x20E, class, const.getLrgirl_idle_to_l0 },
+            { "Lrgirl_idleloop", 0x20E, class, const.getLrgirl_idleloop },
+            { "Lrgirl_l0_bnce", 0x20E, class, const.getLrgirl_l0_bnce },
+            { "Lrgirl_l0_loop", 0x20E, class, const.getLrgirl_l0_loop },
+            { "Lrgirl_l0_to_l1", 0x20E, class, const.getLrgirl_l0_to_l1 },
+            { "Lrgirl_l1_bnce", 0x20E, class, const.getLrgirl_l1_bnce },
+            { "Lrgirl_l1_loop", 0x20E, class, const.getLrgirl_l1_loop },
+            { "Lrgirl_l1_to_l2", 0x20E, class, const.getLrgirl_l1_to_l2 },
+            { "Lrgirl_l12_to_l0", 0x20E, class, const.getLrgirl_l12_to_l0 },
+            { "Lrgirl_l2_bnce", 0x20E, class, const.getLrgirl_l2_bnce },
+            { "Lrgirl_l2_loop", 0x20E, class, const.getLrgirl_l2_loop },
+            { "Lrgirl_l2_to_l3", 0x20E, class, const.getLrgirl_l2_to_l3 },
+            { "Lrgirl_l3_bnce", 0x20E, class, const.getLrgirl_l3_bnce },
+            { "Lrgirl_l3_loop", 0x20E, class, const.getLrgirl_l3_loop },
+            { "Lrgirl_l3_to_l4", 0x20E, class, const.getLrgirl_l3_to_l4 },
+            { "Lrgirl_l345_to_l1", 0x20E, class, const.getLrgirl_l345_to_l1 },
+            { "Lrgirl_l4_bnce", 0x20E, class, const.getLrgirl_l4_bnce },
+            { "Lrgirl_l4_loop", 0x20E, class, const.getLrgirl_l4_loop },
+            { "Lrgirl_l4_to_l5", 0x20E, class, const.getLrgirl_l4_to_l5 },
+            { "Lrgirl_l5_bnce", 0x20E, class, const.getLrgirl_l5_bnce },
+            { "Lrgirl_l5_loop", 0x20E, class, const.getLrgirl_l5_loop },
+            { "M_smk_drag", 0x20E, class, const.getM_smk_drag },
+            { "M_smk_in", 0x20E, class, const.getM_smk_in },
+            { "M_smk_loop", 0x20E, class, const.getM_smk_loop },
+            { "M_smk_out", 0x20E, class, const.getM_smk_out },
+            { "M_smk_tap", 0x20E, class, const.getM_smk_tap },
+            { "M_smklean_loop", 0x20E, class, const.getM_smklean_loop },
+            { "M_smklean_loop_2", 0x20E, class, const.getM_smklean_loop_2 },
+            { "M_smkstnd_loop", 0x20E, class, const.getM_smkstnd_loop },
+            { "Manwinb", 0x20E, class, const.getManwinb },
+            { "Manwind", 0x20E, class, const.getManwind },
+            { "Md_bike_2_hang", 0x20E, class, const.getMd_bike_2_hang },
+            { "Md_bike_jmp_bl", 0x20E, class, const.getMd_bike_jmp_bl },
+            { "Md_bike_jmp_f", 0x20E, class, const.getMd_bike_jmp_f },
+            { "Md_bike_lnd_bl", 0x20E, class, const.getMd_bike_lnd_bl },
+            { "Md_bike_lnd_die_bl", 0x20E, class, const.getMd_bike_lnd_die_bl },
+            { "Md_bike_lnd_die_f", 0x20E, class, const.getMd_bike_lnd_die_f },
+            { "Md_bike_lnd_f", 0x20E, class, const.getMd_bike_lnd_f },
+            { "Md_bike_lnd_roll", 0x20E, class, const.getMd_bike_lnd_roll },
+            { "Md_bike_lnd_roll_f", 0x20E, class, const.getMd_bike_lnd_roll_f },
+            { "Md_bike_punch", 0x20E, class, const.getMd_bike_punch },
+            { "Md_bike_punch_f", 0x20E, class, const.getMd_bike_punch_f },
+            { "Md_bike_shot_f", 0x20E, class, const.getMd_bike_shot_f },
+            { "Md_hang_lnd_roll", 0x20E, class, const.getMd_hang_lnd_roll },
+            { "Md_hang_loop", 0x20E, class, const.getMd_hang_loop },
+            { "Mrnf_loop", 0x20E, class, const.getMrnf_loop },
+            { "Mrnm_loop", 0x20E, class, const.getMrnm_loop },
+            { "Mscle_rckt_run", 0x20E, class, const.getMscle_rckt_run },
+            { "Mscle_rckt_walkst", 0x20E, class, const.getMscle_rckt_walkst },
+            { "Mscle_run_csaw", 0x20E, class, const.getMscle_run_csaw },
+            { "Msclewalkst_armed", 0x20E, class, const.getMsclewalkst_armed },
+            { "Msclewalkst_csaw", 0x20E, class, const.getMsclewalkst_csaw },
+            { "Mtb_back", 0x20E, class, const.getMtb_back },
+            { "Mtb_bunnyhop", 0x20E, class, const.getMtb_bunnyhop },
+            { "Mtb_driveby_lhs", 0x20E, class, const.getMtb_driveby_lhs },
+            { "Mtb_driveby_rhs", 0x20E, class, const.getMtb_driveby_rhs },
+            { "Mtb_drivebyft", 0x20E, class, const.getMtb_drivebyft },
+            { "Mtb_fwd", 0x20E, class, const.getMtb_fwd },
+            { "Mtb_getoffback", 0x20E, class, const.getMtb_getoffback },
+            { "Mtb_getofflhs", 0x20E, class, const.getMtb_getofflhs },
+            { "Mtb_getoffrhs", 0x20E, class, const.getMtb_getoffrhs },
+            { "Mtb_jumponl", 0x20E, class, const.getMtb_jumponl },
+            { "Mtb_jumponr", 0x20E, class, const.getMtb_jumponr },
+            { "Mtb_left", 0x20E, class, const.getMtb_left },
+            { "Mtb_pedal", 0x20E, class, const.getMtb_pedal },
+            { "Mtb_pushes", 0x20E, class, const.getMtb_pushes },
+            { "Mtb_ride", 0x20E, class, const.getMtb_ride },
+            { "Mtb_right", 0x20E, class, const.getMtb_right },
+            { "Mtb_sprint", 0x20E, class, const.getMtb_sprint },
+            { "Mtb_still", 0x20E, class, const.getMtb_still },
+            { "Muscleidle", 0x20E, class, const.getMuscleidle },
+            { "Muscleidle_armed", 0x20E, class, const.getMuscleidle_armed },
+            { "Muscleidle_csaw", 0x20E, class, const.getMuscleidle_csaw },
+            { "Muscleidle_rocket", 0x20E, class, const.getMuscleidle_rocket },
+            { "Musclerun", 0x20E, class, const.getMusclerun },
+            { "Musclerun_armed", 0x20E, class, const.getMusclerun_armed },
+            { "Musclesprint", 0x20E, class, const.getMusclesprint },
+            { "Musclewalk", 0x20E, class, const.getMusclewalk },
+            { "Musclewalk_armed", 0x20E, class, const.getMusclewalk_armed },
+            { "Musclewalk_csaw", 0x20E, class, const.getMusclewalk_csaw },
+            { "Musclewalk_rocket", 0x20E, class, const.getMusclewalk_rocket },
+            { "Musclewalkstart", 0x20E, class, const.getMusclewalkstart },
+            { "Nevada_getin", 0x20E, class, const.getNevada_getin },
+            { "Nevada_getout", 0x20E, class, const.getNevada_getout },
+            { "Off_sit_2idle_180", 0x20E, class, const.getOff_sit_2idle_180 },
+            { "Off_sit_bored_loop", 0x20E, class, const.getOff_sit_bored_loop },
+            { "Off_sit_crash", 0x20E, class, const.getOff_sit_crash },
+            { "Off_sit_drink", 0x20E, class, const.getOff_sit_drink },
+            { "Off_sit_idle_loop", 0x20E, class, const.getOff_sit_idle_loop },
+            { "Off_sit_in", 0x20E, class, const.getOff_sit_in },
+            { "Off_sit_read", 0x20E, class, const.getOff_sit_read },
+            { "Off_sit_type_loop", 0x20E, class, const.getOff_sit_type_loop },
+            { "Off_sit_watch", 0x20E, class, const.getOff_sit_watch },
+            { "Office_Ff_dam_fwd", 0x20E, class, const.getOffice_Ff_dam_fwd },
+            { "Panic_cower", 0x20E, class, const.getPanic_cower },
+            { "Panic_hide", 0x20E, class, const.getPanic_hide },
+            { "Panic_in", 0x20E, class, const.getPanic_in },
+            { "Panic_loop", 0x20E, class, const.getPanic_loop },
+            { "Panic_out", 0x20E, class, const.getPanic_out },
+            { "Panic_point", 0x20E, class, const.getPanic_point },
+            { "Panic_shout", 0x20E, class, const.getPanic_shout },
+            { "Para_decel", 0x20E, class, const.getPara_decel },
+            { "Para_decel_o", 0x20E, class, const.getPara_decel_o },
+            { "Para_float", 0x20E, class, const.getPara_float },
+            { "Para_float_o", 0x20E, class, const.getPara_float_o },
+            { "Para_land", 0x20E, class, const.getPara_land },
+            { "Para_land_o", 0x20E, class, const.getPara_land_o },
+            { "Para_land_water", 0x20E, class, const.getPara_land_water },
+            { "Para_land_water_o", 0x20E, class, const.getPara_land_water_o },
+            { "Para_open", 0x20E, class, const.getPara_open },
+            { "Para_open_o", 0x20E, class, const.getPara_open_o },
+            { "Para_rip_land_o", 0x20E, class, const.getPara_rip_land_o },
+            { "Para_rip_loop_o", 0x20E, class, const.getPara_rip_loop_o },
+            { "Para_rip_o", 0x20E, class, const.getPara_rip_o },
+            { "Para_steerl", 0x20E, class, const.getPara_steerl },
+            { "Para_steerl_o", 0x20E, class, const.getPara_steerl_o },
+            { "Para_steerr", 0x20E, class, const.getPara_steerr },
+            { "Para_steerr_o", 0x20E, class, const.getPara_steerr_o },
+            { "Parksit_m_idlea", 0x20E, class, const.getParksit_m_idlea },
+            { "Parksit_m_idleb", 0x20E, class, const.getParksit_m_idleb },
+            { "Parksit_m_idlec", 0x20E, class, const.getParksit_m_idlec },
+            { "Parksit_m_in", 0x20E, class, const.getParksit_m_in },
+            { "Parksit_m_loop", 0x20E, class, const.getParksit_m_loop },
+            { "Parksit_m_out", 0x20E, class, const.getParksit_m_out },
+            { "Parksit_w_idlea", 0x20E, class, const.getParksit_w_idlea },
+            { "Parksit_w_idleb", 0x20E, class, const.getParksit_w_idleb },
+            { "Parksit_w_idlec", 0x20E, class, const.getParksit_w_idlec },
+            { "Parksit_w_in", 0x20E, class, const.getParksit_w_in },
+            { "Parksit_w_loop", 0x20E, class, const.getParksit_w_loop },
+            { "Parksit_w_out", 0x20E, class, const.getParksit_w_out },
+            { "Pass_driveby_bwd", 0x20E, class, const.getPass_driveby_bwd },
+            { "Pass_driveby_fwd", 0x20E, class, const.getPass_driveby_fwd },
+            { "Pass_driveby_lhs", 0x20E, class, const.getPass_driveby_lhs },
+            { "Pass_driveby_rhs", 0x20E, class, const.getPass_driveby_rhs },
+            { "Pass_rifle_o", 0x20E, class, const.getPass_rifle_o },
+            { "Pass_rifle_ped", 0x20E, class, const.getPass_rifle_ped },
+            { "Pass_rifle_ply", 0x20E, class, const.getPass_rifle_ply },
+            { "Pass_smoke_in_car", 0x20E, class, const.getPass_smoke_in_car },
+            { "Ped_console_loop", 0x20E, class, const.getPed_console_loop },
+            { "Ped_console_loose", 0x20E, class, const.getPed_console_loose },
+            { "Ped_console_win", 0x20E, class, const.getPed_console_win },
+            { "Ped_fall_skydive", 0x20E, class, const.getPed_fall_skydive },
+            { "Ped_idle_csaw", 0x20E, class, const.getPed_idle_csaw },
+            { "Ped_idle_tired", 0x20E, class, const.getPed_idle_tired },
+            { "Ped_tap_hand", 0x20E, class, const.getPed_tap_hand },
+            { "Pedals_fast", 0x20E, class, const.getPedals_fast },
+            { "Pedals_med", 0x20E, class, const.getPedals_med },
+            { "Pedals_slow", 0x20E, class, const.getPedals_slow },
+            { "Pedals_still", 0x20E, class, const.getPedals_still },
+            { "Phone_in", 0x20E, class, const.getPhone_in },
+            { "Phone_out", 0x20E, class, const.getPhone_out },
+            { "Phone_talk", 0x20E, class, const.getPhone_talk },
+            { "Piccrch_in", 0x20E, class, const.getPiccrch_in },
+            { "Piccrch_out", 0x20E, class, const.getPiccrch_out },
+            { "Piccrch_take", 0x20E, class, const.getPiccrch_take },
+            { "Pickup_box", 0x20E, class, const.getPickup_box },
+            { "Picstnd_in", 0x20E, class, const.getPicstnd_in },
+            { "Picstnd_out", 0x20E, class, const.getPicstnd_out },
+            { "Picstnd_take", 0x20E, class, const.getPicstnd_take },
+            { "Piss_in", 0x20E, class, const.getPiss_in },
+            { "Piss_loop", 0x20E, class, const.getPiss_loop },
+            { "Piss_out", 0x20E, class, const.getPiss_out },
+            { "Plane_align_lhs", 0x20E, class, const.getPlane_align_lhs },
+            { "Plane_close", 0x20E, class, const.getPlane_close },
+            { "Plane_door", 0x20E, class, const.getPlane_door },
+            { "Plane_exit", 0x20E, class, const.getPlane_exit },
+            { "Plane_getin", 0x20E, class, const.getPlane_getin },
+            { "Plane_getout", 0x20E, class, const.getPlane_getout },
+            { "Plane_hijack", 0x20E, class, const.getPlane_hijack },
+            { "Plane_open", 0x20E, class, const.getPlane_open },
+            { "Playa_kiss_01", 0x20E, class, const.getPlaya_kiss_01 },
+            { "Playa_kiss_02", 0x20E, class, const.getPlaya_kiss_02 },
+            { "Playa_kiss_03", 0x20E, class, const.getPlaya_kiss_03 },
+            { "Player_01", 0x20E, class, const.getPlayer_01 },
+            { "Player_sneak", 0x20E, class, const.getPlayer_sneak },
+            { "Player_sneak_walkstart", 0x20E, class, const.getPlayer_sneak_walkstart },
+            { "Plc_drgbst_01", 0x20E, class, const.getPlc_drgbst_01 },
+            { "Plc_drgbst_02", 0x20E, class, const.getPlc_drgbst_02 },
+            { "Plunger_01", 0x20E, class, const.getPlunger_01 },
+            { "Ply_cash", 0x20E, class, const.getPly_cash },
+            { "Plyr_drivebybwd", 0x20E, class, const.getPlyr_drivebybwd },
+            { "Plyr_drivebyfwd", 0x20E, class, const.getPlyr_drivebyfwd },
+            { "Plyr_drivebylhs", 0x20E, class, const.getPlyr_drivebylhs },
+            { "Plyr_drivebyrhs", 0x20E, class, const.getPlyr_drivebyrhs },
+            { "Plyr_hndshldr_01", 0x20E, class, const.getPlyr_hndshldr_01 },
+            { "Plyr_shkhead", 0x20E, class, const.getPlyr_shkhead },
+            { "Plyrlean_loop", 0x20E, class, const.getPlyrlean_loop },
+            { "Pnm_argue1_a", 0x20E, class, const.getPnm_argue1_a },
+            { "Pnm_argue1_b", 0x20E, class, const.getPnm_argue1_b },
+            { "Pnm_argue2_a", 0x20E, class, const.getPnm_argue2_a },
+            { "Pnm_argue2_b", 0x20E, class, const.getPnm_argue2_b },
+            { "Pnm_loop_a", 0x20E, class, const.getPnm_loop_a },
+            { "Pnm_loop_b", 0x20E, class, const.getPnm_loop_b },
+            { "Point_in", 0x20E, class, const.getPoint_in },
+            { "Point_loop", 0x20E, class, const.getPoint_loop },
+            { "Point_out", 0x20E, class, const.getPoint_out },
+            { "Pointup_in", 0x20E, class, const.getPointup_in },
+            { "Pointup_loop", 0x20E, class, const.getPointup_loop },
+            { "Pointup_out", 0x20E, class, const.getPointup_out },
+            { "Pointup_shout", 0x20E, class, const.getPointup_shout },
+            { "Pool_chalkcue", 0x20E, class, const.getPool_chalkcue },
+            { "Pool_idle_stance", 0x20E, class, const.getPool_idle_stance },
+            { "Pool_long_shot", 0x20E, class, const.getPool_long_shot },
+            { "Pool_long_shot_o", 0x20E, class, const.getPool_long_shot_o },
+            { "Pool_long_start", 0x20E, class, const.getPool_long_start },
+            { "Pool_long_start_o", 0x20E, class, const.getPool_long_start_o },
+            { "Pool_med_shot", 0x20E, class, const.getPool_med_shot },
+            { "Pool_med_shot_o", 0x20E, class, const.getPool_med_shot_o },
+            { "Pool_med_start", 0x20E, class, const.getPool_med_start },
+            { "Pool_med_start_o", 0x20E, class, const.getPool_med_start_o },
+            { "Pool_place_white", 0x20E, class, const.getPool_place_white },
+            { "Pool_short_shot", 0x20E, class, const.getPool_short_shot },
+            { "Pool_short_shot_o", 0x20E, class, const.getPool_short_shot_o },
+            { "Pool_short_start", 0x20E, class, const.getPool_short_start },
+            { "Pool_short_start_o", 0x20E, class, const.getPool_short_start_o },
+            { "Pool_walk", 0x20E, class, const.getPool_walk },
+            { "Pool_walk_start", 0x20E, class, const.getPool_walk_start },
+            { "Pool_xlong_shot", 0x20E, class, const.getPool_xlong_shot },
+            { "Pool_xlong_shot_o", 0x20E, class, const.getPool_xlong_shot_o },
+            { "Pool_xlong_start", 0x20E, class, const.getPool_xlong_start },
+            { "Pool_xlong_start_o", 0x20E, class, const.getPool_xlong_start_o },
+            { "Prst_loopa", 0x20E, class, const.getPrst_loopa },
+            { "Prtial_gngtlka", 0x20E, class, const.getPrtial_gngtlka },
+            { "Prtial_gngtlkb", 0x20E, class, const.getPrtial_gngtlkb },
+            { "Prtial_gngtlkc", 0x20E, class, const.getPrtial_gngtlkc },
+            { "Prtial_gngtlkd", 0x20E, class, const.getPrtial_gngtlkd },
+            { "Prtial_gngtlke", 0x20E, class, const.getPrtial_gngtlke },
+            { "Prtial_gngtlkf", 0x20E, class, const.getPrtial_gngtlkf },
+            { "Prtial_gngtlkg", 0x20E, class, const.getPrtial_gngtlkg },
+            { "Prtial_gngtlkh", 0x20E, class, const.getPrtial_gngtlkh },
+            { "Prtial_hndshk_01", 0x20E, class, const.getPrtial_hndshk_01 },
+            { "Prtial_hndshk_biz_01", 0x20E, class, const.getPrtial_hndshk_biz_01 },
+            { "Pun_cash", 0x20E, class, const.getPun_cash },
+            { "Pun_holler", 0x20E, class, const.getPun_holler },
+            { "Pun_loop", 0x20E, class, const.getPun_loop },
+            { "Putdwn", 0x20E, class, const.getPutdwn },
+            { "Putdwn05", 0x20E, class, const.getPutdwn05 },
+            { "Putdwn105", 0x20E, class, const.getPutdwn105 },
+            { "Python_crouchfire", 0x20E, class, const.getPython_crouchfire },
+            { "Python_crouchreload", 0x20E, class, const.getPython_crouchreload },
+            { "Python_fire", 0x20E, class, const.getPython_fire },
+            { "Python_fire_poor", 0x20E, class, const.getPython_fire_poor },
+            { "Python_reload", 0x20E, class, const.getPython_reload },
+            { "Quad_back", 0x20E, class, const.getQuad_back },
+            { "Quad_driveby_ft", 0x20E, class, const.getQuad_driveby_ft },
+            { "Quad_driveby_lhs", 0x20E, class, const.getQuad_driveby_lhs },
+            { "Quad_driveby_rhs", 0x20E, class, const.getQuad_driveby_rhs },
+            { "Quad_fwd", 0x20E, class, const.getQuad_fwd },
+            { "Quad_getoff_b", 0x20E, class, const.getQuad_getoff_b },
+            { "Quad_getoff_lhs", 0x20E, class, const.getQuad_getoff_lhs },
+            { "Quad_getoff_rhs", 0x20E, class, const.getQuad_getoff_rhs },
+            { "Quad_geton_lhs", 0x20E, class, const.getQuad_geton_lhs },
+            { "Quad_geton_rhs", 0x20E, class, const.getQuad_geton_rhs },
+            { "Quad_hit", 0x20E, class, const.getQuad_hit },
+            { "Quad_kick", 0x20E, class, const.getQuad_kick },
+            { "Quad_left", 0x20E, class, const.getQuad_left },
+            { "Quad_pass_driveby_bwd", 0x20E, class, const.getQuad_pass_driveby_bwd },
+            { "Quad_pass_driveby_lhs", 0x20E, class, const.getQuad_pass_driveby_lhs },
+            { "Quad_pass_driveby_rhs", 0x20E, class, const.getQuad_pass_driveby_rhs },
+            { "Quad_passenger", 0x20E, class, const.getQuad_passenger },
+            { "Quad_pPass_driveby_fwd", 0x20E, class, const.getQuad_pPass_driveby_fwd },
+            { "Quad_reverse", 0x20E, class, const.getQuad_reverse },
+            { "Quad_ride", 0x20E, class, const.getQuad_ride },
+            { "Quad_right", 0x20E, class, const.getQuad_right },
+            { "Rail_fall", 0x20E, class, const.getRail_fall },
+            { "Rail_fall_crawl", 0x20E, class, const.getRail_fall_crawl },
+            { "Rap_a_loop", 0x20E, class, const.getRap_a_loop },
+            { "Rap_b_loop", 0x20E, class, const.getRap_b_loop },
+            { "Rap_c_loop", 0x20E, class, const.getRap_c_loop },
+            { "Rapping_rap_a_in", 0x20E, class, const.getRapping_rap_a_in },
+            { "Rapping_rap_a_loop", 0x20E, class, const.getRapping_rap_a_loop },
+            { "Rapping_rap_a_out", 0x20E, class, const.getRapping_rap_a_out },
+            { "Rapping_rap_b_in", 0x20E, class, const.getRapping_rap_b_in },
+            { "Rapping_rap_b_loop", 0x20E, class, const.getRapping_rap_b_loop },
+            { "Rapping_rap_b_out", 0x20E, class, const.getRapping_rap_b_out },
+            { "Rapping_rap_c_loop", 0x20E, class, const.getRapping_rap_c_loop },
+            { "Rhgsign1", 0x20E, class, const.getRhgsign1 },
+            { "Rhgsign2", 0x20E, class, const.getRhgsign2 },
+            { "Rhgsign3", 0x20E, class, const.getRhgsign3 },
+            { "Rhgsign4", 0x20E, class, const.getRhgsign4 },
+            { "Rhgsign5", 0x20E, class, const.getRhgsign5 },
+            { "Rifle_crouchfire", 0x20E, class, const.getRifle_crouchfire },
+            { "Rifle_crouchload", 0x20E, class, const.getRifle_crouchload },
+            { "Rifle_fire", 0x20E, class, const.getRifle_fire },
+            { "Rifle_fire_poor", 0x20E, class, const.getRifle_fire_poor },
+            { "Rifle_load", 0x20E, class, const.getRifle_load },
+            { "Riot_angry", 0x20E, class, const.getRiot_angry },
+            { "Riot_angry_b", 0x20E, class, const.getRiot_angry_b },
+            { "Riot_challenge", 0x20E, class, const.getRiot_challenge },
+            { "Riot_chant", 0x20E, class, const.getRiot_chant },
+            { "Riot_fuku", 0x20E, class, const.getRiot_fuku },
+            { "Riot_punches", 0x20E, class, const.getRiot_punches },
+            { "Riot_shout", 0x20E, class, const.getRiot_shout },
+            { "Roadcross", 0x20E, class, const.getRoadcross },
+            { "Roadcross_female", 0x20E, class, const.getRoadcross_female },
+            { "Roadcross_gang", 0x20E, class, const.getRoadcross_gang },
+            { "Roadcross_old", 0x20E, class, const.getRoadcross_old },
+            { "Rob_2idle", 0x20E, class, const.getRob_2idle },
+            { "Rob_loop", 0x20E, class, const.getRob_loop },
+            { "Rob_loop_threat", 0x20E, class, const.getRob_loop_threat },
+            { "Rob_shifty", 0x20E, class, const.getRob_shifty },
+            { "Rob_stickup_in", 0x20E, class, const.getRob_stickup_in },
+            { "Rocket_idle_rocket", 0x20E, class, const.getRocket_idle_rocket },
+            { "Rocket_rocketfire", 0x20E, class, const.getRocket_rocketfire },
+            { "Rocket_run_rocket", 0x20E, class, const.getRocket_run_rocket },
+            { "Rocket_walk_rocket", 0x20E, class, const.getRocket_walk_rocket },
+            { "Rocket_walk_start_rocket", 0x20E, class, const.getRocket_walk_start_rocket },
+            { "Roulette_bet", 0x20E, class, const.getRoulette_bet },
+            { "Roulette_in", 0x20E, class, const.getRoulette_in },
+            { "Roulette_loop", 0x20E, class, const.getRoulette_loop },
+            { "Roulette_lose", 0x20E, class, const.getRoulette_lose },
+            { "Roulette_out", 0x20E, class, const.getRoulette_out },
+            { "Roulette_win", 0x20E, class, const.getRoulette_win },
+            { "Run_1armed", 0x20E, class, const.getRun_1armed },
+            { "Run_armed", 0x20E, class, const.getRun_armed },
+            { "Run_civi", 0x20E, class, const.getRun_civi },
+            { "Run_csaw", 0x20E, class, const.getRun_csaw },
+            { "Run_dive", 0x20E, class, const.getRun_dive },
+            { "Run_fat", 0x20E, class, const.getRun_fat },
+            { "Run_fatold", 0x20E, class, const.getRun_fatold },
+            { "Run_gang1", 0x20E, class, const.getRun_gang1 },
+            { "Run_left", 0x20E, class, const.getRun_left },
+            { "Run_old", 0x20E, class, const.getRun_old },
+            { "Run_player", 0x20E, class, const.getRun_player },
+            { "Run_right", 0x20E, class, const.getRun_right },
+            { "Run_rocket", 0x20E, class, const.getRun_rocket },
+            { "Run_stop", 0x20E, class, const.getRun_stop },
+            { "Run_stopr", 0x20E, class, const.getRun_stopr },
+            { "Run_wuzi", 0x20E, class, const.getRun_wuzi },
+            { "Ryd_beckon_01", 0x20E, class, const.getRyd_beckon_01 },
+            { "Ryd_beckon_02", 0x20E, class, const.getRyd_beckon_02 },
+            { "Ryd_beckon_03", 0x20E, class, const.getRyd_beckon_03 },
+            { "Ryd_die_pt1", 0x20E, class, const.getRyd_die_pt1 },
+            { "Ryd_die_pt2", 0x20E, class, const.getRyd_die_pt2 },
+            { "Sawnoff_reload", 0x20E, class, const.getSawnoff_reload },
+            { "Sbathe_f_lieb2sit", 0x20E, class, const.getSbathe_f_lieb2sit },
+            { "Sbathe_f_out", 0x20E, class, const.getSbathe_f_out },
+            { "Sc_ltor", 0x20E, class, const.getSc_ltor },
+            { "Sc_rtol", 0x20E, class, const.getSc_rtol },
+            { "Scdldlp", 0x20E, class, const.getScdldlp },
+            { "Scdlulp", 0x20E, class, const.getScdlulp },
+            { "Scdrdlp", 0x20E, class, const.getScdrdlp },
+            { "Scdrulp", 0x20E, class, const.getScdrulp },
+            { "Sclng_l", 0x20E, class, const.getSclng_l },
+            { "Sclng_r", 0x20E, class, const.getSclng_r },
+            { "Scmid_l", 0x20E, class, const.getScmid_l },
+            { "Scmid_r", 0x20E, class, const.getScmid_r },
+            { "Scratchballs_01", 0x20E, class, const.getScratchballs_01 },
+            { "Scshrtl", 0x20E, class, const.getScshrtl },
+            { "Scshrtr", 0x20E, class, const.getScshrtr },
+            { "Seat_down", 0x20E, class, const.getSeat_down },
+            { "Seat_idle", 0x20E, class, const.getSeat_idle },
+            { "Seat_lr", 0x20E, class, const.getSeat_lr },
+            { "Seat_talk_01", 0x20E, class, const.getSeat_talk_01 },
+            { "Seat_talk_02", 0x20E, class, const.getSeat_talk_02 },
+            { "Seat_up", 0x20E, class, const.getSeat_up },
+            { "Seat_watch", 0x20E, class, const.getSeat_watch },
+            { "Sf_jumpwall", 0x20E, class, const.getSf_jumpwall },
+            { "Shake_cara", 0x20E, class, const.getShake_cara },
+            { "Shake_cark", 0x20E, class, const.getShake_cark },
+            { "Shake_carsh", 0x20E, class, const.getShake_carsh },
+            { "Shamal_align", 0x20E, class, const.getShamal_align },
+            { "Shamal_getin_lhs", 0x20E, class, const.getShamal_getin_lhs },
+            { "Shamal_getout_lhs", 0x20E, class, const.getShamal_getout_lhs },
+            { "Shamal_open", 0x20E, class, const.getShamal_open },
+            { "Shift", 0x20E, class, const.getShift },
+            { "Shldr", 0x20E, class, const.getShldr },
+            { "Shop_cashier", 0x20E, class, const.getShop_cashier },
+            { "Shop_in", 0x20E, class, const.getShop_in },
+            { "Shop_looka", 0x20E, class, const.getShop_looka },
+            { "Shop_lookb", 0x20E, class, const.getShop_lookb },
+            { "Shop_loop", 0x20E, class, const.getShop_loop },
+            { "Shop_out", 0x20E, class, const.getShop_out },
+            { "Shop_pay", 0x20E, class, const.getShop_pay },
+            { "Shop_shelf", 0x20E, class, const.getShop_shelf },
+            { "Shot_leftp", 0x20E, class, const.getShot_leftp },
+            { "Shot_partial", 0x20E, class, const.getShot_partial },
+            { "Shot_partial_b", 0x20E, class, const.getShot_partial_b },
+            { "Shot_rightp", 0x20E, class, const.getShot_rightp },
+            { "Shotgun_crouchfire", 0x20E, class, const.getShotgun_crouchfire },
+            { "Shotgun_fire", 0x20E, class, const.getShotgun_fire },
+            { "Shotgun_fire_poor", 0x20E, class, const.getShotgun_fire_poor },
+            { "Shout_01", 0x20E, class, const.getShout_01 },
+            { "Shout_02", 0x20E, class, const.getShout_02 },
+            { "Shout_in", 0x20E, class, const.getShout_in },
+            { "Shout_loop", 0x20E, class, const.getShout_loop },
+            { "Shout_out", 0x20E, class, const.getShout_out },
+            { "Shove_partial", 0x20E, class, const.getShove_partial },
+            { "Shp_1h_lift", 0x20E, class, const.getShp_1h_lift },
+            { "Shp_1h_lift_end", 0x20E, class, const.getShp_1h_lift_end },
+            { "Shp_1h_ret", 0x20E, class, const.getShp_1h_ret },
+            { "Shp_1h_ret_s", 0x20E, class, const.getShp_1h_ret_s },
+            { "Shp_2h_lift", 0x20E, class, const.getShp_2h_lift },
+            { "Shp_2h_lift_end", 0x20E, class, const.getShp_2h_lift_end },
+            { "Shp_2h_ret", 0x20E, class, const.getShp_2h_ret },
+            { "Shp_2h_ret_s", 0x20E, class, const.getShp_2h_ret_s },
+            { "Shp_ar_lift", 0x20E, class, const.getShp_ar_lift },
+            { "Shp_ar_lift_end", 0x20E, class, const.getShp_ar_lift_end },
+            { "Shp_ar_ret", 0x20E, class, const.getShp_ar_ret },
+            { "Shp_ar_ret_s", 0x20E, class, const.getShp_ar_ret_s },
+            { "Shp_duck", 0x20E, class, const.getShp_duck },
+            { "Shp_duck_aim", 0x20E, class, const.getShp_duck_aim },
+            { "Shp_duck_fire", 0x20E, class, const.getShp_duck_fire },
+            { "Shp_g_lift_in", 0x20E, class, const.getShp_g_lift_in },
+            { "Shp_g_lift_out", 0x20E, class, const.getShp_g_lift_out },
+            { "Shp_gun_aim", 0x20E, class, const.getShp_gun_aim },
+            { "Shp_gun_duck", 0x20E, class, const.getShp_gun_duck },
+            { "Shp_gun_fire", 0x20E, class, const.getShp_gun_fire },
+            { "Shp_gun_grab", 0x20E, class, const.getShp_gun_grab },
+            { "Shp_gun_threat", 0x20E, class, const.getShp_gun_threat },
+            { "Shp_handsup_scr", 0x20E, class, const.getShp_handsup_scr },
+            { "Shp_handsup_scr_2", 0x20E, class, const.getShp_handsup_scr_2 },
+            { "Shp_jump_glide", 0x20E, class, const.getShp_jump_glide },
+            { "Shp_jump_land", 0x20E, class, const.getShp_jump_land },
+            { "Shp_jump_launch", 0x20E, class, const.getShp_jump_launch },
+            { "Shp_rob_givecash", 0x20E, class, const.getShp_rob_givecash },
+            { "Shp_rob_handsup", 0x20E, class, const.getShp_rob_handsup },
+            { "Shp_rob_react", 0x20E, class, const.getShp_rob_react },
+            { "Shp_serve_end", 0x20E, class, const.getShp_serve_end },
+            { "Shp_serve_idle", 0x20E, class, const.getShp_serve_idle },
+            { "Shp_serve_loop", 0x20E, class, const.getShp_serve_loop },
+            { "Shp_serve_start", 0x20E, class, const.getShp_serve_start },
+            { "Shp_thank", 0x20E, class, const.getShp_thank },
+            { "Shp_tray_in", 0x20E, class, const.getShp_tray_in },
+            { "Shp_tray_lift", 0x20E, class, const.getShp_tray_lift },
+            { "Shp_tray_lift_in", 0x20E, class, const.getShp_tray_lift_in },
+            { "Shp_tray_lift_loop", 0x20E, class, const.getShp_tray_lift_loop },
+            { "Shp_tray_lift_out", 0x20E, class, const.getShp_tray_lift_out },
+            { "Shp_tray_out", 0x20E, class, const.getShp_tray_out },
+            { "Shp_tray_pose", 0x20E, class, const.getShp_tray_pose },
+            { "Shp_tray_return", 0x20E, class, const.getShp_tray_return },
+            { "Silence_fire", 0x20E, class, const.getSilence_fire },
+            { "Silence_reload", 0x20E, class, const.getSilence_reload },
+            { "Silencecrouchfire", 0x20E, class, const.getSilencecrouchfire },
+            { "Sit_relaxed", 0x20E, class, const.getSit_relaxed },
+            { "Sitnwait_in_w", 0x20E, class, const.getSitnwait_in_w },
+            { "Sitnwait_loop_w", 0x20E, class, const.getSitnwait_loop_w },
+            { "Sitnwait_out_w", 0x20E, class, const.getSitnwait_out_w },
+            { "Skate_idle", 0x20E, class, const.getSkate_idle },
+            { "Skate_run", 0x20E, class, const.getSkate_run },
+            { "Skate_sprint", 0x20E, class, const.getSkate_sprint },
+            { "Slot_bet_01", 0x20E, class, const.getSlot_bet_01 },
+            { "Slot_bet_02", 0x20E, class, const.getSlot_bet_02 },
+            { "Slot_in", 0x20E, class, const.getSlot_in },
+            { "Slot_lose_out", 0x20E, class, const.getSlot_lose_out },
+            { "Slot_plyr", 0x20E, class, const.getSlot_plyr },
+            { "Slot_wait", 0x20E, class, const.getSlot_wait },
+            { "Slot_win_out", 0x20E, class, const.getSlot_win_out },
+            { "Smalplane_door", 0x20E, class, const.getSmalplane_door },
+            { "Smkcig_prtl", 0x20E, class, const.getSmkcig_prtl },
+            { "Smkcig_prtl_f", 0x20E, class, const.getSmkcig_prtl_f },
+            { "Smlplane_door", 0x20E, class, const.getSmlplane_door },
+            { "Smoke_01", 0x20E, class, const.getSmoke_01 },
+            { "Smoke_in_car", 0x20E, class, const.getSmoke_in_car },
+            { "Smoke_ryd", 0x20E, class, const.getSmoke_ryd },
+            { "Spraycan_fire", 0x20E, class, const.getSpraycan_fire },
+            { "Spraycan_fire_2", 0x20E, class, const.getSpraycan_fire_2 },
+            { "Spraycan_full", 0x20E, class, const.getSpraycan_full },
+            { "Sprint_civi", 0x20E, class, const.getSprint_civi },
+            { "Sprint_panic", 0x20E, class, const.getSprint_panic },
+            { "Sprint_wuzi", 0x20E, class, const.getSprint_wuzi },
+            { "Stepsit_in", 0x20E, class, const.getStepsit_in },
+            { "Stepsit_loop", 0x20E, class, const.getStepsit_loop },
+            { "Stepsit_out", 0x20E, class, const.getStepsit_out },
+            { "Str_a2b", 0x20E, class, const.getStr_a2b },
+            { "Str_b2a", 0x20E, class, const.getStr_b2a },
+            { "Str_b2c", 0x20E, class, const.getStr_b2c },
+            { "Str_c1", 0x20E, class, const.getStr_c1 },
+            { "Str_c2", 0x20E, class, const.getStr_c2 },
+            { "Str_c2b", 0x20E, class, const.getStr_c2b },
+            { "Str_loop_a", 0x20E, class, const.getStr_loop_a },
+            { "Str_loop_b", 0x20E, class, const.getStr_loop_b },
+            { "Str_loop_c", 0x20E, class, const.getStr_loop_c },
+            { "Stretch", 0x20E, class, const.getStretch },
+            { "Strip_a", 0x20E, class, const.getStrip_a },
+            { "Strip_b", 0x20E, class, const.getStrip_b },
+            { "Strip_c", 0x20E, class, const.getStrip_c },
+            { "Strip_d", 0x20E, class, const.getStrip_d },
+            { "Strip_e", 0x20E, class, const.getStrip_e },
+            { "Strip_f", 0x20E, class, const.getStrip_f },
+            { "Strip_g", 0x20E, class, const.getStrip_g },
+            { "Strleg", 0x20E, class, const.getStrleg },
+            { "Struggle_cesar", 0x20E, class, const.getStruggle_cesar },
+            { "Struggle_driver", 0x20E, class, const.getStruggle_driver },
+            { "Swat_run", 0x20E, class, const.getSwat_run },
+            { "Sweet_ass_slap", 0x20E, class, const.getSweet_ass_slap },
+            { "Sweet_hndshldr_01", 0x20E, class, const.getSweet_hndshldr_01 },
+            { "Sweet_injuredloop", 0x20E, class, const.getSweet_injuredloop },
+            { "Swim_breast", 0x20E, class, const.getSwim_breast },
+            { "Swim_crawl", 0x20E, class, const.getSwim_crawl },
+            { "Swim_dive_under", 0x20E, class, const.getSwim_dive_under },
+            { "Swim_glide", 0x20E, class, const.getSwim_glide },
+            { "Swim_jumpout", 0x20E, class, const.getSwim_jumpout },
+            { "Swim_tread", 0x20E, class, const.getSwim_tread },
+            { "Swim_tread_2", 0x20E, class, const.getSwim_tread_2 },
+            { "Swim_under", 0x20E, class, const.getSwim_under },
+            { "Sword_1", 0x20E, class, const.getSword_1 },
+            { "Sword_2", 0x20E, class, const.getSword_2 },
+            { "Sword_3", 0x20E, class, const.getSword_3 },
+            { "Sword_4", 0x20E, class, const.getSword_4 },
+            { "Sword_block", 0x20E, class, const.getSword_block },
+            { "Sword_hit_1", 0x20E, class, const.getSword_hit_1 },
+            { "Sword_hit_2", 0x20E, class, const.getSword_hit_2 },
+            { "Sword_hit_3", 0x20E, class, const.getSword_hit_3 },
+            { "Sword_idle", 0x20E, class, const.getSword_idle },
+            { "Sword_part", 0x20E, class, const.getSword_part },
+            { "Swt_breach_01", 0x20E, class, const.getSwt_breach_01 },
+            { "Swt_breach_02", 0x20E, class, const.getSwt_breach_02 },
+            { "Swt_breach_03", 0x20E, class, const.getSwt_breach_03 },
+            { "Swt_go", 0x20E, class, const.getSwt_go },
+            { "Swt_lkt", 0x20E, class, const.getSwt_lkt },
+            { "Swt_sty", 0x20E, class, const.getSwt_sty },
+            { "Swt_vent_01", 0x20E, class, const.getSwt_vent_01 },
+            { "Swt_vent_02", 0x20E, class, const.getSwt_vent_02 },
+            { "Swt_vnt_sht_die", 0x20E, class, const.getSwt_vnt_sht_die },
+            { "Swt_vnt_sht_in", 0x20E, class, const.getSwt_vnt_sht_in },
+            { "Swt_vnt_sht_loop", 0x20E, class, const.getSwt_vnt_sht_loop },
+            { "Swt_wllpk_l", 0x20E, class, const.getSwt_wllpk_l },
+            { "Swt_wllpk_l_2", 0x20E, class, const.getSwt_wllpk_l_2 },
+            { "Swt_wllpk_l_back", 0x20E, class, const.getSwt_wllpk_l_back },
+            { "Swt_wllpk_l_back_2", 0x20E, class, const.getSwt_wllpk_l_back_2 },
+            { "Swt_wllpk_r", 0x20E, class, const.getSwt_wllpk_r },
+            { "Swt_wllpk_r_2", 0x20E, class, const.getSwt_wllpk_r_2 },
+            { "Swt_wllpk_r_back", 0x20E, class, const.getSwt_wllpk_r_back },
+            { "Swt_wllpk_r_back_2", 0x20E, class, const.getSwt_wllpk_r_back_2 },
+            { "Swt_wllshoot_in_l", 0x20E, class, const.getSwt_wllshoot_in_l },
+            { "Swt_wllshoot_in_l_2", 0x20E, class, const.getSwt_wllshoot_in_l_2 },
+            { "Swt_wllshoot_in_r", 0x20E, class, const.getSwt_wllshoot_in_r },
+            { "Swt_wllshoot_in_r_2", 0x20E, class, const.getSwt_wllshoot_in_r_2 },
+            { "Swt_wllshoot_out_l", 0x20E, class, const.getSwt_wllshoot_out_l },
+            { "Swt_wllshoot_out_l_2", 0x20E, class, const.getSwt_wllshoot_out_l_2 },
+            { "Swt_wllshoot_out_r", 0x20E, class, const.getSwt_wllshoot_out_r },
+            { "Swt_wllshoot_out_r_2", 0x20E, class, const.getSwt_wllshoot_out_r_2 },
+            { "Tai_chi_in", 0x20E, class, const.getTai_chi_in },
+            { "Tai_chi_loop", 0x20E, class, const.getTai_chi_loop },
+            { "Tai_chi_out", 0x20E, class, const.getTai_chi_out },
+            { "Tank_align_lhs", 0x20E, class, const.getTank_align_lhs },
+            { "Tank_close_lhs", 0x20E, class, const.getTank_close_lhs },
+            { "Tank_doorlocked", 0x20E, class, const.getTank_doorlocked },
+            { "Tank_getin_lhs", 0x20E, class, const.getTank_getin_lhs },
+            { "Tank_getout_lhs", 0x20E, class, const.getTank_getout_lhs },
+            { "Tank_open_lhs", 0x20E, class, const.getTank_open_lhs },
+            { "Tap_hand", 0x20E, class, const.getTap_hand },
+            { "Tap_handp", 0x20E, class, const.getTap_handp },
+            { "Tat_arml_in_o", 0x20E, class, const.getTat_arml_in_o },
+            { "Tat_arml_in_p", 0x20E, class, const.getTat_arml_in_p },
+            { "Tat_arml_in_t", 0x20E, class, const.getTat_arml_in_t },
+            { "Tat_arml_out_o", 0x20E, class, const.getTat_arml_out_o },
+            { "Tat_arml_out_p", 0x20E, class, const.getTat_arml_out_p },
+            { "Tat_arml_out_t", 0x20E, class, const.getTat_arml_out_t },
+            { "Tat_arml_pose_o", 0x20E, class, const.getTat_arml_pose_o },
+            { "Tat_arml_pose_p", 0x20E, class, const.getTat_arml_pose_p },
+            { "Tat_arml_pose_t", 0x20E, class, const.getTat_arml_pose_t },
+            { "Tat_armr_in_o", 0x20E, class, const.getTat_armr_in_o },
+            { "Tat_armr_in_p", 0x20E, class, const.getTat_armr_in_p },
+            { "Tat_armr_in_t", 0x20E, class, const.getTat_armr_in_t },
+            { "Tat_armr_out_o", 0x20E, class, const.getTat_armr_out_o },
+            { "Tat_armr_out_p", 0x20E, class, const.getTat_armr_out_p },
+            { "Tat_armr_out_t", 0x20E, class, const.getTat_armr_out_t },
+            { "Tat_armr_pose_o", 0x20E, class, const.getTat_armr_pose_o },
+            { "Tat_armr_pose_p", 0x20E, class, const.getTat_armr_pose_p },
+            { "Tat_armr_pose_t", 0x20E, class, const.getTat_armr_pose_t },
+            { "Tat_back_in_o", 0x20E, class, const.getTat_back_in_o },
+            { "Tat_back_in_p", 0x20E, class, const.getTat_back_in_p },
+            { "Tat_back_in_t", 0x20E, class, const.getTat_back_in_t },
+            { "Tat_back_out_o", 0x20E, class, const.getTat_back_out_o },
+            { "Tat_back_out_p", 0x20E, class, const.getTat_back_out_p },
+            { "Tat_back_out_t", 0x20E, class, const.getTat_back_out_t },
+            { "Tat_back_pose_o", 0x20E, class, const.getTat_back_pose_o },
+            { "Tat_back_pose_p", 0x20E, class, const.getTat_back_pose_p },
+            { "Tat_back_pose_t", 0x20E, class, const.getTat_back_pose_t },
+            { "Tat_back_sit_in_p", 0x20E, class, const.getTat_back_sit_in_p },
+            { "Tat_back_sit_loop_p", 0x20E, class, const.getTat_back_sit_loop_p },
+            { "Tat_back_sit_out_p", 0x20E, class, const.getTat_back_sit_out_p },
+            { "Tat_bel_in_o", 0x20E, class, const.getTat_bel_in_o },
+            { "Tat_bel_in_t", 0x20E, class, const.getTat_bel_in_t },
+            { "Tat_bel_out_o", 0x20E, class, const.getTat_bel_out_o },
+            { "Tat_bel_out_t", 0x20E, class, const.getTat_bel_out_t },
+            { "Tat_bel_pose_o", 0x20E, class, const.getTat_bel_pose_o },
+            { "Tat_bel_pose_t", 0x20E, class, const.getTat_bel_pose_t },
+            { "Tat_che_in_o", 0x20E, class, const.getTat_che_in_o },
+            { "Tat_che_in_p", 0x20E, class, const.getTat_che_in_p },
+            { "Tat_che_in_t", 0x20E, class, const.getTat_che_in_t },
+            { "Tat_che_out_o", 0x20E, class, const.getTat_che_out_o },
+            { "Tat_che_out_p", 0x20E, class, const.getTat_che_out_p },
+            { "Tat_che_out_t", 0x20E, class, const.getTat_che_out_t },
+            { "Tat_che_pose_o", 0x20E, class, const.getTat_che_pose_o },
+            { "Tat_che_pose_p", 0x20E, class, const.getTat_che_pose_p },
+            { "Tat_che_pose_t", 0x20E, class, const.getTat_che_pose_t },
+            { "Tat_drop_o", 0x20E, class, const.getTat_drop_o },
+            { "Tat_idle_loop_o", 0x20E, class, const.getTat_idle_loop_o },
+            { "Tat_idle_loop_t", 0x20E, class, const.getTat_idle_loop_t },
+            { "Tat_sit_in_o", 0x20E, class, const.getTat_sit_in_o },
+            { "Tat_sit_in_p", 0x20E, class, const.getTat_sit_in_p },
+            { "Tat_sit_in_t", 0x20E, class, const.getTat_sit_in_t },
+            { "Tat_sit_loop_o", 0x20E, class, const.getTat_sit_loop_o },
+            { "Tat_sit_loop_p", 0x20E, class, const.getTat_sit_loop_p },
+            { "Tat_sit_loop_t", 0x20E, class, const.getTat_sit_loop_t },
+            { "Tat_sit_out_o", 0x20E, class, const.getTat_sit_out_o },
+            { "Tat_sit_out_p", 0x20E, class, const.getTat_sit_out_p },
+            { "Tat_sit_out_t", 0x20E, class, const.getTat_sit_out_t },
+            { "Tec_crouchfire", 0x20E, class, const.getTec_crouchfire },
+            { "Tec_crouchreload", 0x20E, class, const.getTec_crouchreload },
+            { "Tec_fire", 0x20E, class, const.getTec_fire },
+            { "Tec_reload", 0x20E, class, const.getTec_reload },
+            { "Thrw_barl_thrw", 0x20E, class, const.getThrw_barl_thrw },
+            { "Time", 0x20E, class, const.getTime },
+            { "Tran_gtup", 0x20E, class, const.getTran_gtup },
+            { "Tran_hng", 0x20E, class, const.getTran_hng },
+            { "Tran_ouch", 0x20E, class, const.getTran_ouch },
+            { "Tran_stmb", 0x20E, class, const.getTran_stmb },
+            { "Truck_align_lhs", 0x20E, class, const.getTruck_align_lhs },
+            { "Truck_align_rhs", 0x20E, class, const.getTruck_align_rhs },
+            { "Truck_close_lhs", 0x20E, class, const.getTruck_close_lhs },
+            { "Truck_close_rhs", 0x20E, class, const.getTruck_close_rhs },
+            { "Truck_closedoor_lhs", 0x20E, class, const.getTruck_closedoor_lhs },
+            { "Truck_closedoor_rhs", 0x20E, class, const.getTruck_closedoor_rhs },
+            { "Truck_driver", 0x20E, class, const.getTruck_driver },
+            { "Truck_getin", 0x20E, class, const.getTruck_getin },
+            { "Truck_getin_lhs", 0x20E, class, const.getTruck_getin_lhs },
+            { "Truck_getin_rhs", 0x20E, class, const.getTruck_getin_rhs },
+            { "Truck_getout_lhs", 0x20E, class, const.getTruck_getout_lhs },
+            { "Truck_getout_rhs", 0x20E, class, const.getTruck_getout_rhs },
+            { "Truck_jackedlhs", 0x20E, class, const.getTruck_jackedlhs },
+            { "Truck_jackedrhs", 0x20E, class, const.getTruck_jackedrhs },
+            { "Truck_open_lhs", 0x20E, class, const.getTruck_open_lhs },
+            { "Truck_open_rhs", 0x20E, class, const.getTruck_open_rhs },
+            { "Truck_pullout_lhs", 0x20E, class, const.getTruck_pullout_lhs },
+            { "Truck_pullout_rhs", 0x20E, class, const.getTruck_pullout_rhs },
+            { "Truck_shuffle", 0x20E, class, const.getTruck_shuffle },
+            { "Turn_180", 0x20E, class, const.getTurn_180 },
+            { "Turn_l", 0x20E, class, const.getTurn_l },
+            { "Turn_r", 0x20E, class, const.getTurn_r },
+            { "Tyd2car_bump", 0x20E, class, const.getTyd2car_bump },
+            { "Tyd2car_high", 0x20E, class, const.getTyd2car_high },
+            { "Tyd2car_low", 0x20E, class, const.getTyd2car_low },
+            { "Tyd2car_med", 0x20E, class, const.getTyd2car_med },
+            { "Tyd2car_turnl", 0x20E, class, const.getTyd2car_turnl },
+            { "Tyd2car_turnr", 0x20E, class, const.getTyd2car_turnr },
+            { "Use_swipecard", 0x20E, class, const.getUse_swipecard },
+            { "Uzi_crouchfire", 0x20E, class, const.getUzi_crouchfire },
+            { "Uzi_crouchreload", 0x20E, class, const.getUzi_crouchreload },
+            { "Uzi_fire", 0x20E, class, const.getUzi_fire },
+            { "Uzi_fire_poor", 0x20E, class, const.getUzi_fire_poor },
+            { "Uzi_reload", 0x20E, class, const.getUzi_reload },
+            { "Van_close_back_lhs", 0x20E, class, const.getVan_close_back_lhs },
+            { "Van_close_back_rhs", 0x20E, class, const.getVan_close_back_rhs },
+            { "Van_crate_l", 0x20E, class, const.getVan_crate_l },
+            { "Van_crate_r", 0x20E, class, const.getVan_crate_r },
+            { "Van_fall_l", 0x20E, class, const.getVan_fall_l },
+            { "Van_fall_r", 0x20E, class, const.getVan_fall_r },
+            { "Van_getin_back_lhs", 0x20E, class, const.getVan_getin_back_lhs },
+            { "Van_getin_back_rhs", 0x20E, class, const.getVan_getin_back_rhs },
+            { "Van_getout_back_lhs", 0x20E, class, const.getVan_getout_back_lhs },
+            { "Van_getout_back_rhs", 0x20E, class, const.getVan_getout_back_rhs },
+            { "Van_lean_l", 0x20E, class, const.getVan_lean_l },
+            { "Van_lean_r", 0x20E, class, const.getVan_lean_r },
+            { "Van_open_back_lhs", 0x20E, class, const.getVan_open_back_lhs },
+            { "Van_open_back_rhs", 0x20E, class, const.getVan_open_back_rhs },
+            { "Van_pickup_e", 0x20E, class, const.getVan_pickup_e },
+            { "Van_pickup_s", 0x20E, class, const.getVan_pickup_s },
+            { "Van_stand", 0x20E, class, const.getVan_stand },
+            { "Van_stand_crate", 0x20E, class, const.getVan_stand_crate },
+            { "Van_throw", 0x20E, class, const.getVan_throw },
+            { "Vend_drink_p", 0x20E, class, const.getVend_drink_p },
+            { "Vend_drink2_p", 0x20E, class, const.getVend_drink2_p },
+            { "Vend_eat_p", 0x20E, class, const.getVend_eat_p },
+            { "Vend_eat1_p", 0x20E, class, const.getVend_eat1_p },
+            { "Vend_use", 0x20E, class, const.getVend_use },
+            { "Vend_use_pt2", 0x20E, class, const.getVend_use_pt2 },
+            { "Vortex_getout_lhs", 0x20E, class, const.getVortex_getout_lhs },
+            { "Vortex_getout_rhs", 0x20E, class, const.getVortex_getout_rhs },
+            { "Walk_armed", 0x20E, class, const.getWalk_armed },
+            { "Walk_civi", 0x20E, class, const.getWalk_civi },
+            { "Walk_csaw", 0x20E, class, const.getWalk_csaw },
+            { "Walk_doorpartial", 0x20E, class, const.getWalk_doorpartial },
+            { "Walk_drunk", 0x20E, class, const.getWalk_drunk },
+            { "Walk_fat", 0x20E, class, const.getWalk_fat },
+            { "Walk_fatold", 0x20E, class, const.getWalk_fatold },
+            { "Walk_gang1", 0x20E, class, const.getWalk_gang1 },
+            { "Walk_gang2", 0x20E, class, const.getWalk_gang2 },
+            { "Walk_old", 0x20E, class, const.getWalk_old },
+            { "Walk_player", 0x20E, class, const.getWalk_player },
+            { "Walk_rocket", 0x20E, class, const.getWalk_rocket },
+            { "Walk_shuffle", 0x20E, class, const.getWalk_shuffle },
+            { "Walk_start", 0x20E, class, const.getWalk_start },
+            { "Walk_start_armed", 0x20E, class, const.getWalk_start_armed },
+            { "Walk_start_csaw", 0x20E, class, const.getWalk_start_csaw },
+            { "Walk_start_rocket", 0x20E, class, const.getWalk_start_rocket },
+            { "Walk_wuzi", 0x20E, class, const.getWalk_wuzi },
+            { "Walkstart_idle_01", 0x20E, class, const.getWalkstart_idle_01 },
+            { "Wank_in", 0x20E, class, const.getWank_in },
+            { "Wank_loop", 0x20E, class, const.getWank_loop },
+            { "Wank_out", 0x20E, class, const.getWank_out },
+            { "Wash_up", 0x20E, class, const.getWash_up },
+            { "Wave_in", 0x20E, class, const.getWave_in },
+            { "Wave_loop", 0x20E, class, const.getWave_loop },
+            { "Wave_out", 0x20E, class, const.getWave_out },
+            { "Weapon_crouch", 0x20E, class, const.getWeapon_crouch },
+            { "Weapon_csaw", 0x20E, class, const.getWeapon_csaw },
+            { "Weapon_csawlo", 0x20E, class, const.getWeapon_csawlo },
+            { "Weapon_knifeidle", 0x20E, class, const.getWeapon_knifeidle },
+            { "Weapon_sniper", 0x20E, class, const.getWeapon_sniper },
+            { "Weapon_start_throw", 0x20E, class, const.getWeapon_start_throw },
+            { "Weapon_throw", 0x20E, class, const.getWeapon_throw },
+            { "Weapon_throwu", 0x20E, class, const.getWeapon_throwu },
+            { "Weapons_shp_tray_in", 0x20E, class, const.getWeapons_shp_tray_in },
+            { "Weapons_shp_tray_out", 0x20E, class, const.getWeapons_shp_tray_out },
+            { "Weapons_shp_tray_pose", 0x20E, class, const.getWeapons_shp_tray_pose },
+            { "Wf_back", 0x20E, class, const.getWf_back },
+            { "Wf_drivebyft", 0x20E, class, const.getWf_drivebyft },
+            { "Wf_drivebylhs", 0x20E, class, const.getWf_drivebylhs },
+            { "Wf_drivebyrhs", 0x20E, class, const.getWf_drivebyrhs },
+            { "Wf_fwd", 0x20E, class, const.getWf_fwd },
+            { "Wf_getoffback", 0x20E, class, const.getWf_getoffback },
+            { "Wf_getofflhs", 0x20E, class, const.getWf_getofflhs },
+            { "Wf_getoffrhs", 0x20E, class, const.getWf_getoffrhs },
+            { "Wf_hit", 0x20E, class, const.getWf_hit },
+            { "Wf_jumponl", 0x20E, class, const.getWf_jumponl },
+            { "Wf_jumponr", 0x20E, class, const.getWf_jumponr },
+            { "Wf_kick", 0x20E, class, const.getWf_kick },
+            { "Wf_left", 0x20E, class, const.getWf_left },
+            { "Wf_passenger", 0x20E, class, const.getWf_passenger },
+            { "Wf_pushes", 0x20E, class, const.getWf_pushes },
+            { "Wf_ride", 0x20E, class, const.getWf_ride },
+            { "Wf_right", 0x20E, class, const.getWf_right },
+            { "Wf_still", 0x20E, class, const.getWf_still },
+            { "Winwash_start", 0x20E, class, const.getWinwash_start },
+            { "Winwash_wash2beg", 0x20E, class, const.getWinwash_wash2beg },
+            { "Wof", 0x20E, class, const.getWof },
+            { "Woman_idlestance", 0x20E, class, const.getWoman_idlestance },
+            { "Woman_run", 0x20E, class, const.getWoman_run },
+            { "Woman_runbusy", 0x20E, class, const.getWoman_runbusy },
+            { "Woman_runfatold", 0x20E, class, const.getWoman_runfatold },
+            { "Woman_runpanic", 0x20E, class, const.getWoman_runpanic },
+            { "Woman_runsexy", 0x20E, class, const.getWoman_runsexy },
+            { "Woman_walkbusy", 0x20E, class, const.getWoman_walkbusy },
+            { "Woman_walkfatold", 0x20E, class, const.getWoman_walkfatold },
+            { "Woman_walknorm", 0x20E, class, const.getWoman_walknorm },
+            { "Woman_walkold", 0x20E, class, const.getWoman_walkold },
+            { "Woman_walkpro", 0x20E, class, const.getWoman_walkpro },
+            { "Woman_walksexy", 0x20E, class, const.getWoman_walksexy },
+            { "Woman_walkshop", 0x20E, class, const.getWoman_walkshop },
+            { "Wtchrace_cmon", 0x20E, class, const.getWtchrace_cmon },
+            { "Wtchrace_in", 0x20E, class, const.getWtchrace_in },
+            { "Wtchrace_loop", 0x20E, class, const.getWtchrace_loop },
+            { "Wtchrace_lose", 0x20E, class, const.getWtchrace_lose },
+            { "Wtchrace_out", 0x20E, class, const.getWtchrace_out },
+            { "Wtchrace_win", 0x20E, class, const.getWtchrace_win },
+            { "Wuzi_follow", 0x20E, class, const.getWuzi_follow },
+            { "Wuzi_greet_plyr", 0x20E, class, const.getWuzi_greet_plyr },
+            { "Wuzi_greet_wuzi", 0x20E, class, const.getWuzi_greet_wuzi },
+            { "Wuzi_grnd_chk", 0x20E, class, const.getWuzi_grnd_chk },
+            { "Wuzi_stand_loop", 0x20E, class, const.getWuzi_stand_loop },
+            { "Wuzi_walk", 0x20E, class, const.getWuzi_walk },
+            { "Xpressscratch", 0x20E, class, const.getXpressscratch }
+          },
+          methods = {
+            { ".ctor", 0x206, __ctor2__, System.String, System.String }
+          }
+        }
+      end
     }
     return class
   end)

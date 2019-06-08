@@ -17,7 +17,17 @@ System.namespace("Slipe.Server.IO", function (namespace)
     end
     return {
       WriteLine = WriteLine,
-      WriteLine1 = WriteLine1
+      WriteLine1 = WriteLine1,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x4, nil },
+            { "WriteLine", 0x206, WriteLine, System.String, out.Slipe.Server.Peds.Player },
+            { "WriteLine", 0x106, WriteLine1, System.String }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

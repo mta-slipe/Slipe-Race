@@ -9,13 +9,16 @@ System.namespace("Slipe.Shared.GameWorld", function (namespace)
   -- Struct to define different heat haze properties in the GTA world
   -- </summary>
   namespace.struct("HeatHaze", function (namespace)
-    local FromRaw, class, __ctor1__, __ctor2__
+    local FromRaw, class, internal, __ctor1__, __ctor2__
+    internal = function (this)
+      this.ScanSize = System.default(SystemNumerics.Vector2)
+      this.RenderSize = System.default(SystemNumerics.Vector2)
+    end
     -- <summary>
     -- Create a heat haze struct
     -- </summary>
     __ctor1__ = function (this, intensity, randomShift, speedMin, speedMax, scanSize, renderSize, showInside)
-      this.ScanSize = System.default(SystemNumerics.Vector2)
-      this.RenderSize = System.default(SystemNumerics.Vector2)
+      internal(this)
       if intensity == nil then
         return
       end
@@ -49,7 +52,25 @@ System.namespace("Slipe.Shared.GameWorld", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Intensity", 0x6, System.Int32 },
+            { "RandomShift", 0x6, System.Int32 },
+            { "RenderSize", 0x6, System.Numerics.Vector2 },
+            { "ScanSize", 0x6, System.Numerics.Vector2 },
+            { "ShowInside", 0x6, System.Boolean },
+            { "SpeedMax", 0x6, System.Int32 },
+            { "SpeedMin", 0x6, System.Int32 }
+          },
+          methods = {
+            { ".ctor", 0x706, __ctor1__, System.Int32, System.Int32, System.Int32, System.Int32, System.Numerics.Vector2, System.Numerics.Vector2, System.Boolean },
+            { ".ctor", 0x406, __ctor2__, System.Int32, System.Int32, System.Int32, System.Int32 },
+            { "FromRaw", 0x18E, FromRaw, System.Tuple, class }
+          }
+        }
+      end
     }
     return class
   end)

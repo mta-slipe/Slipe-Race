@@ -146,7 +146,44 @@ System.namespace("Slipe.Shared.Helpers", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Amplitude", 0x6, System.Single },
+            { "CosineCurve", 0x20E, class, getCosineCurve },
+            { "InBack", 0x20E, class, getInBack },
+            { "InBounce", 0x20E, class, getInBounce },
+            { "InElastic", 0x20E, class, getInElastic },
+            { "InOutBack", 0x20E, class, getInOutBack },
+            { "InOutBounce", 0x20E, class, getInOutBounce },
+            { "InOutElastic", 0x20E, class, getInOutElastic },
+            { "InOutQuad", 0x20E, class, getInOutQuad },
+            { "InQuad", 0x20E, class, getInQuad },
+            { "Linear", 0x20E, class, getLinear },
+            { "Name", 0x6, System.String },
+            { "OutBack", 0x20E, class, getOutBack },
+            { "OutBounce", 0x20E, class, getOutBounce },
+            { "OutElastic", 0x20E, class, getOutElastic },
+            { "OutInBack", 0x20E, class, getOutInBack },
+            { "OutInBounce", 0x20E, class, getOutInBounce },
+            { "OutInElastic", 0x20E, class, getOutInElastic },
+            { "OutInQuad", 0x20E, class, getOutInQuad },
+            { "OutQuad", 0x20E, class, getOutQuad },
+            { "Overshoot", 0x6, System.Single },
+            { "Period", 0x6, System.Single },
+            { "SineCurve", 0x20E, class, getSineCurve }
+          },
+          methods = {
+            { ".ctor", 0x101, __ctor1__, System.String },
+            { ".ctor", 0x406, __ctor2__, class, System.Single, System.Single, System.Single },
+            { "Interpolate", 0x186, Interpolate, System.Single, System.Single },
+            { "InterpolateVector", 0x386, InterpolateVector, System.Numerics.Vector3, System.Numerics.Vector3, System.Single, System.Numerics.Vector3 },
+            { "InterpolateVector", 0x386, InterpolateVector1, System.Numerics.Vector2, System.Numerics.Vector2, System.Single, System.Numerics.Vector2 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

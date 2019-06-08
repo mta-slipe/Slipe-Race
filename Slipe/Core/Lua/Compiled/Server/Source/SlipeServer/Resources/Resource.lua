@@ -252,7 +252,57 @@ System.namespace("Slipe.Server.Resources", function (namespace)
         __ctor1__,
         __ctor2__,
         __ctor3__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "resources", 0x9, System.Dictionary(System.Object, out.Slipe.Server.Resources.Resource) },
+            { "thisResource", 0x9, class }
+          },
+          properties = {
+            { "ACLRequests", 0x206, System.Array(out.Slipe.Server.Acl.AclRequest), getACLRequests },
+            { "All", 0x20E, System.Array(out.Slipe.Server.Resources.Resource), getAll },
+            { "IsArchived", 0x206, System.Boolean, getIsArchived },
+            { "LastStartTime", 0x206, System.DateTime, getLastStartTime },
+            { "LoadFailureReason", 0x206, System.String, getLoadFailureReason },
+            { "LoadTime", 0x206, System.DateTime, getLoadTime },
+            { "OrganizationalPath", 0x206, System.String, getOrganizationalPath },
+            { "This", 0x20E, class, getThis }
+          },
+          methods = {
+            { ".ctor", 0x104, __ctor1__, out.Slipe.MtaDefinitions.MtaResource },
+            { ".ctor", 0x103, __ctor2__, System.String },
+            { ".ctor", 0x206, __ctor3__, System.String, System.String },
+            { "AddConfig", 0x286, AddConfig, System.String, System.String, System.Xml.XmlNode },
+            { "AddMap", 0x286, AddMap, System.String, System.Int32, System.Xml.XmlNode },
+            { "CastMultiple", 0x18C, CastMultiple, System.Array(out.Slipe.MtaDefinitions.MtaResource), System.Array(out.Slipe.Server.Resources.Resource) },
+            { "CopyFrom", 0x38E, CopyFrom, class, System.String, System.String, class },
+            { "Delete", 0x86, Delete, System.Boolean },
+            { "Get", 0x18C, Get1, out.Slipe.MtaDefinitions.MtaResource, class },
+            { "Get", 0x18E, Get, System.String, class },
+            { "GetInfo", 0x186, GetInfo, System.String, System.String },
+            { "HandlePreStart", 0x4, HandlePreStart },
+            { "HandleStart", 0x4, HandleStart },
+            { "HandleStop", 0x104, HandleStop, System.Boolean },
+            { "MapRoot", 0x186, MapRoot, System.String, out.Slipe.Shared.Elements.Element },
+            { "Refresh", 0x86, Refresh, System.Boolean },
+            { "RefreshAll", 0x8E, RefreshAll, System.Boolean },
+            { "RemoveFile", 0x186, RemoveFile, System.String, System.Boolean },
+            { "Rename", 0x286, Rename, System.String, System.String, System.Boolean },
+            { "Restart", 0x886, Restart, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean },
+            { "SetInfo", 0x286, SetInfo, System.String, System.String, System.Boolean },
+            { "Start", 0x986, Start, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean },
+            { "Stop", 0x86, Stop, System.Boolean },
+            { "UpdateACLRequest", 0x386, UpdateACLRequest, System.String, System.Boolean, System.String, System.Boolean }
+          },
+          events = {
+            { "OnPreStart", 0x6, System.Delegate },
+            { "OnStart", 0x6, System.Delegate },
+            { "OnStop", 0x6, System.Delegate(System.Boolean, System.Void) }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

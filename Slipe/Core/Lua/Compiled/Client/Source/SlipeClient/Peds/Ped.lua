@@ -18,7 +18,7 @@ System.namespace("Slipe.Client.Peds", function (namespace)
     local getCanBeKnockedOffBike, setCanBeKnockedOffBike, getCameraRotation, setCameraRotation, getMoveState, getOxygenLevel, setOxygenLevel, getSimplestTask, 
     getPedVoice, setPedVoice, getTargetStart, getTargetEnd, getTargetCollision, getWeaponMuzzlePosition, getIsReloadingWeapon, setFootBloodEnabled, 
     getAnimation, setAnimation, GetAnalogControlState, GetControlState, SetAnalogControlState, SetControlState, GetBonePosition, GiveWeapon, 
-    IsDoingTask, AimAt, AimAt1, LookAt, LookAt1, __ctor1__, __ctor2__
+    IsDoingTask, AimAt, AimAt1, LookAt, LookAt1, class, __ctor1__, __ctor2__
     __ctor1__ = function (this, element)
       SlipeSharedPeds.SharedPed.__ctor__(this, element)
     end
@@ -155,7 +155,7 @@ System.namespace("Slipe.Client.Peds", function (namespace)
     LookAt1 = function (this, lookAt, time, blend)
       return SlipeMtaDefinitions.MtaClient.SetPedLookAt(this.element, 0, 0, 0, time, blend, lookAt:getMTAElement())
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Shared.Peds.SharedPed
@@ -196,9 +196,48 @@ System.namespace("Slipe.Client.Peds", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Animation", 0x106, out.Slipe.Shared.Peds.Animation, getAnimation, setAnimation },
+            { "CameraRotation", 0x106, System.Single, getCameraRotation, setCameraRotation },
+            { "CanBeKnockedOffBike", 0x106, System.Boolean, getCanBeKnockedOffBike, setCanBeKnockedOffBike },
+            { "FootBloodEnabled", 0x306, System.Boolean, setFootBloodEnabled },
+            { "IsReloadingWeapon", 0x206, System.Boolean, getIsReloadingWeapon },
+            { "MoveState", 0x206, System.Int32, getMoveState },
+            { "OxygenLevel", 0x106, System.Single, getOxygenLevel, setOxygenLevel },
+            { "PedVoice", 0x106, out.Slipe.Client.Peds.PedVoice, getPedVoice, setPedVoice },
+            { "SimplestTask", 0x206, System.Int32, getSimplestTask },
+            { "TargetCollision", 0x206, System.Numerics.Vector3, getTargetCollision },
+            { "TargetEnd", 0x206, System.Numerics.Vector3, getTargetEnd },
+            { "TargetStart", 0x206, System.Numerics.Vector3, getTargetStart },
+            { "WeaponMuzzlePosition", 0x206, System.Numerics.Vector3, getWeaponMuzzlePosition }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x306, __ctor2__, System.Int32, System.Numerics.Vector3, System.Single },
+            { "AimAt", 0x186, AimAt, System.Numerics.Vector3, System.Boolean },
+            { "AimAt", 0x186, AimAt1, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean },
+            { "GetAnalogControlState", 0x186, GetAnalogControlState, System.Int32, System.Single },
+            { "GetBonePosition", 0x186, GetBonePosition, System.Int32, System.Numerics.Vector3 },
+            { "GetControlState", 0x186, GetControlState, System.Int32, System.Boolean },
+            { "GiveWeapon", 0x386, GiveWeapon, out.Slipe.Shared.Weapons.SharedWeaponModel, System.Int32, System.Boolean, System.Boolean },
+            { "IsDoingTask", 0x186, IsDoingTask, System.Int32, System.Boolean },
+            { "LookAt", 0x386, LookAt, System.Numerics.Vector3, System.Int32, System.Int32, System.Boolean },
+            { "LookAt", 0x386, LookAt1, out.Slipe.Shared.Elements.PhysicalElement, System.Int32, System.Int32, System.Boolean },
+            { "SetAnalogControlState", 0x286, SetAnalogControlState, System.Int32, System.Single, System.Boolean },
+            { "SetControlState", 0x286, SetControlState, System.Int32, System.Boolean, System.Boolean }
+          },
+          events = {
+            { "OnDamage", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnDamageEventArgs, System.Void) },
+            { "OnHeliKilled", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnHeliKilledEventArgs, System.Void) },
+            { "OnWasted", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnWastedEventArgs, System.Void) },
+            { "OnWeaponFire", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnWeaponFireEventArgs, System.Void) },
+            { "OnStep", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnStepEventArgs, System.Void) },
+            { "OnExplosion", 0x6, System.Delegate(class, out.Slipe.Client.Elements.Events.OnExplosionEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 2 --[[ElementType.Ped]]) }
         }
       end
     }
+    return class
   end)
 end)

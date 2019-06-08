@@ -105,7 +105,8 @@ System.define("Slipe.MtaDefinitions.MtaServer", {
 	TriggerClientEvent = triggerClientEvent,
 	AddCommandHandler = function(command, callback, ...) addCommandHandler(command, function(source, command, ...) callback(source, command, System.arrayFromTable({...}, 'System.String')) end, ...) end,
 	BindKey = bindKey,
-	GetControlState = getControlState,
+	-- Removed because of deprecation
+	-- GetControlState = getControlState,
 	GetFunctionsBoundToKey = function(...) local results = {getFunctionsBoundToKey(...)} if results[1] == false then System.throw(Slipe.MtaDefinitions.MtaException()) return end return unpack(results) end,
 	IsControlEnabled = isControlEnabled,
 	GetKeyBoundToFunction = function(...) local results = {getKeyBoundToFunction(...)} if results[1] == false then System.throw(Slipe.MtaDefinitions.MtaException()) return end return unpack(results) end,
@@ -239,6 +240,7 @@ System.define("Slipe.MtaDefinitions.MtaServer", {
 	GetNetworkStats = function(...) local results = {getNetworkStats(...)} if results[1] == false then System.throw(Slipe.MtaDefinitions.MtaException()) return end return unpack(results) end,
 	GetServerConfigSetting = function(...) local results = {getServerConfigSetting(...)} if results[1] == false then System.throw(Slipe.MtaDefinitions.MtaException()) return end return unpack(results) end,
 	SetServerConfigSetting = setServerConfigSetting,
+	CreateVehicle = function(...) local results = {createVehicle(...)} if results[1] == false then System.throw(Slipe.MtaDefinitions.MtaException()) return end return unpack(results) end,
 	BlowVehicle = blowVehicle,
 	AddVehicleSirens = addVehicleSirens,
 	GetModelHandling = function(...) local results = {getModelHandling(...)} if results[1] == false then System.throw(Slipe.MtaDefinitions.MtaException()) return end return unpack(results) end,

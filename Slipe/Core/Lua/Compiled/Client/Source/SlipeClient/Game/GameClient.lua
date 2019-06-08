@@ -2,13 +2,11 @@
 local System = System
 local SlipeClientGame
 local SlipeClientIO
-local SlipeClientRendering
 local SlipeMtaDefinitions
 local SlipeSharedHelpers
 System.import(function (out)
   SlipeClientGame = Slipe.Client.Game
   SlipeClientIO = Slipe.Client.IO
-  SlipeClientRendering = Slipe.Client.Rendering
   SlipeMtaDefinitions = Slipe.MtaDefinitions
   SlipeSharedHelpers = Slipe.Shared.Helpers
 end)
@@ -17,16 +15,9 @@ System.namespace("Slipe.Client.Game", function (namespace)
   -- Static class that handles calls to functions related to the client
   -- </summary>
   namespace.class("GameClient", function (namespace)
-    local getRenderer, getInput, getEngine, console, getConsole, debug, getDebug, getIsVoiceEnabled, 
-    getGuiInputEnabled, setGuiInputEnabled, getInputMode, setInputMode, getIsMainMenuActive, getIsMtaWindowActive, getIsTransferBoxActive, getTickCount, 
-    version, getVersion, getLocalization, getIsTrayNotificationEnabled, CreateTrayNotification, SetClipboard, SetWindowFlashing, HandleUpdate, 
-    HandleMinimize, HandleNetworkInteruption, HandleRestore, HandleStart, HandleStop, class
-    getRenderer = function ()
-      return SlipeClientRendering.Renderer.getInstance()
-    end
-    getInput = function ()
-      return SlipeClientIO.Input.getInstance()
-    end
+    local getEngine, console, getConsole, debug, getDebug, getIsVoiceEnabled, getGuiInputEnabled, setGuiInputEnabled, 
+    getInputMode, setInputMode, getIsMainMenuActive, getIsMtaWindowActive, getIsTransferBoxActive, getTickCount, version, getVersion, 
+    getLocalization, getIsTrayNotificationEnabled, CreateTrayNotification, SetClipboard, SetWindowFlashing
     getEngine = function ()
       return SlipeClientGame.Engine.getInstance()
     end
@@ -100,45 +91,7 @@ System.namespace("Slipe.Client.Game", function (namespace)
     SetWindowFlashing = function (shouldFlash, count)
       return SlipeMtaDefinitions.MtaClient.SetWindowFlashing(shouldFlash, count)
     end
-    HandleUpdate = function (timeSlice)
-      local default = class.OnUpdate
-      if default ~= nil then
-        default(timeSlice)
-      end
-    end
-    HandleMinimize = function ()
-      local default = class.OnMinimize
-      if default ~= nil then
-        default()
-      end
-    end
-    HandleNetworkInteruption = function (status, ticksSinceInteruptionStarted)
-      local default = class.OnNetworkInteruption
-      if default ~= nil then
-        default(status, ticksSinceInteruptionStarted)
-      end
-    end
-    HandleRestore = function (didClearRenderTargets)
-      local default = class.OnRestore
-      if default ~= nil then
-        default(didClearRenderTargets)
-      end
-    end
-    HandleStart = function (resource)
-      local default = class.OnStart
-      if default ~= nil then
-        default(resource)
-      end
-    end
-    HandleStop = function (resource)
-      local default = class.OnStop
-      if default ~= nil then
-        default(resource)
-      end
-    end
-    class = {
-      getRenderer = getRenderer,
-      getInput = getInput,
+    return {
       getEngine = getEngine,
       getConsole = getConsole,
       getDebug = getDebug,
@@ -157,13 +110,45 @@ System.namespace("Slipe.Client.Game", function (namespace)
       CreateTrayNotification = CreateTrayNotification,
       SetClipboard = SetClipboard,
       SetWindowFlashing = SetWindowFlashing,
-      HandleUpdate = HandleUpdate,
-      HandleMinimize = HandleMinimize,
-      HandleNetworkInteruption = HandleNetworkInteruption,
-      HandleRestore = HandleRestore,
-      HandleStart = HandleStart,
-      HandleStop = HandleStop
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Console", 0x20E, out.Slipe.Client.IO.MtaConsole, getConsole },
+            { "Debug", 0x20E, out.Slipe.Client.IO.MtaDebug, getDebug },
+            { "Engine", 0x20E, out.Slipe.Client.Game.Engine, getEngine },
+            { "GuiInputEnabled", 0x10E, System.Boolean, getGuiInputEnabled, setGuiInputEnabled },
+            { "InputMode", 0x10E, System.Int32, getInputMode, setInputMode },
+            { "IsMainMenuActive", 0x20E, System.Boolean, getIsMainMenuActive },
+            { "IsMtaWindowActive", 0x20E, System.Boolean, getIsMtaWindowActive },
+            { "IsTransferBoxActive", 0x20E, System.Boolean, getIsTransferBoxActive },
+            { "IsTrayNotificationEnabled", 0x20E, System.Boolean, getIsTrayNotificationEnabled },
+            { "IsVoiceEnabled", 0x20E, System.Boolean, getIsVoiceEnabled },
+            { "Localization", 0x20E, System.Tuple, getLocalization },
+            { "TickCount", 0x20E, System.Int32, getTickCount },
+            { "Version", 0x20E, out.Slipe.Shared.Helpers.SystemVersion, getVersion }
+          },
+          fields = {
+            { "console", 0x9, out.Slipe.Client.IO.MtaConsole },
+            { "debug", 0x9, out.Slipe.Client.IO.MtaDebug },
+            { "version", 0x9, out.Slipe.Shared.Helpers.SystemVersion }
+          },
+          methods = {
+            { "CreateTrayNotification", 0x30E, CreateTrayNotification, System.String, System.Int32, System.Boolean },
+            { "SetClipboard", 0x18E, SetClipboard, System.String, System.Boolean },
+            { "SetWindowFlashing", 0x28E, SetWindowFlashing, System.Boolean, System.Int32, System.Boolean }
+          },
+          events = {
+            { "OnFileDownloadComplete", 0xE, System.Delegate(out.Slipe.Client.Elements.ResourceRootElement, out.Slipe.Client.Game.Events.OnFileDownloadCompleteEventArgs, System.Void) },
+            { "OnStart", 0xE, System.Delegate(out.Slipe.Client.Elements.ResourceRootElement, out.Slipe.Client.Game.Events.OnStartEventArgs, System.Void) },
+            { "OnStop", 0xE, System.Delegate(out.Slipe.Client.Elements.ResourceRootElement, out.Slipe.Client.Game.Events.OnStopEventArgs, System.Void) },
+            { "OnUpdate", 0xE, System.Delegate(out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Game.Events.OnUpdateEventArgs, System.Void) },
+            { "OnMinimize", 0xE, System.Delegate(out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Game.Events.OnMinimizeEventArgs, System.Void) },
+            { "OnNetworkInteruption", 0xE, System.Delegate(out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Game.Events.OnNetworkInteruptionEventArgs, System.Void) },
+            { "OnRestore", 0xE, System.Delegate(out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Game.Events.OnRestoreEventArgs, System.Void) }
+          },
+          class = { 0xE }
+        }
+      end
     }
-    return class
   end)
 end)

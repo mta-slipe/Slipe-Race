@@ -10,12 +10,22 @@ System.namespace("Slipe.Shared.Exceptions", function (namespace)
       System.Exception.__ctor__(this, message)
     end
     return {
-      __inherits__ = function (out)
+      __inherits__ = function (out, this)
+        local base = System.Exception
+        this.__tostring = base.__tostring
         return {
-          System.Exception
+          base
         }
       end,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x106, nil, System.String }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

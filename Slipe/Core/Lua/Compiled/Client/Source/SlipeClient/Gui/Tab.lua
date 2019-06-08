@@ -13,7 +13,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
   -- Represents a Cegui tab (use with tab panel)
   -- </summary>
   namespace.class("Tab", function (namespace)
-    local Delete, __ctor1__, __ctor2__
+    local Delete, class, __ctor1__, __ctor2__
     __ctor1__ = function (this, element)
       SlipeClientGui.GuiElement.__ctor__(this, element)
       this.parentPanel = SlipeSharedElements.ElementManager.getInstance():GetElement(SlipeMtaDefinitions.MtaShared.GetElementParent(element), SlipeClientGui.TabPanel)
@@ -30,7 +30,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     Delete = function (this)
       return SlipeMtaDefinitions.MtaClient.GuiDeleteTab(this.element, this.parentPanel:getMTAElement())
     end
-    return {
+    class = {
       __inherits__ = function (out)
         return {
           out.Slipe.Client.Gui.GuiElement
@@ -43,9 +43,21 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          fields = {
+            { "parentPanel", 0x1, out.Slipe.Client.Gui.TabPanel }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x206, __ctor2__, System.String, out.Slipe.Client.Gui.TabPanel },
+            { "Delete", 0x86, Delete, System.Boolean }
+          },
+          events = {
+            { "OnOpen", 0x6, System.Delegate(class, out.Slipe.Client.Gui.Events.OnOpenEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 25 --[[ElementType.GuiTab]]) }
         }
       end
     }
+    return class
   end)
 end)

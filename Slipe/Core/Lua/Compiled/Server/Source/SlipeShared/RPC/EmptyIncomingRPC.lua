@@ -7,6 +7,14 @@ System.namespace("Slipe.Shared.Rpc", function (namespace)
         return {
           out.Slipe.Shared.Rpc.IRpc
         }
+      end,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x106, nil, System.Object }
+          },
+          class = { 0x6 }
+        }
       end
     }
   end)

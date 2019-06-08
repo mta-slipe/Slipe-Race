@@ -511,6 +511,103 @@ System.namespace("Slipe.Shared.Utilities", function (namespace)
     getWhite = function ()
       return System.new(class, 4, 255, 255, 255)
     end
+    --too many upvalues (limit is 60)
+    local const = {}
+    const.getLightCoral = getLightCoral
+    const.getLightCyan = getLightCyan
+    const.getLightGoldenRodYellow = getLightGoldenRodYellow
+    const.getLightGray = getLightGray
+    const.getLightGreen = getLightGreen
+    const.getLightPink = getLightPink
+    const.getLightSalmon = getLightSalmon
+    const.getLightSeaGreen = getLightSeaGreen
+    const.getLightSkyBlue = getLightSkyBlue
+    const.getLightSlateGray = getLightSlateGray
+    const.getLightSteelBlue = getLightSteelBlue
+    const.getLightYellow = getLightYellow
+    const.getLime = getLime
+    const.getLimeGreen = getLimeGreen
+    const.getLinen = getLinen
+    const.getMagenta = getMagenta
+    const.getMaroon = getMaroon
+    const.getMediumAquaMarine = getMediumAquaMarine
+    const.getMediumBlue = getMediumBlue
+    const.getMediumOrchid = getMediumOrchid
+    const.getMediumPurple = getMediumPurple
+    const.getMediumSeaGreen = getMediumSeaGreen
+    const.getMediumSlateBlue = getMediumSlateBlue
+    const.getMediumSpringGreen = getMediumSpringGreen
+    const.getMediumTurquoise = getMediumTurquoise
+    const.getMediumVioletRed = getMediumVioletRed
+    const.getMidnightBlue = getMidnightBlue
+    const.getMintCream = getMintCream
+    const.getMistyRose = getMistyRose
+    const.getMoccasin = getMoccasin
+    const.getNavajoWhite = getNavajoWhite
+    const.getNavy = getNavy
+    const.getOldLace = getOldLace
+    const.getOlive = getOlive
+    const.getOliveDrab = getOliveDrab
+    const.getOrange = getOrange
+    const.getOrangeRed = getOrangeRed
+    const.getOrchid = getOrchid
+    const.getPaleGoldenRod = getPaleGoldenRod
+    const.getPaleGreen = getPaleGreen
+    const.getPaleTurquoise = getPaleTurquoise
+    const.getPaleVioletRed = getPaleVioletRed
+    const.getPapayaWhip = getPapayaWhip
+    const.getPeachPu = getPeachPu
+    const.getPeru = getPeru
+    const.getPink = getPink
+    const.getPlum = getPlum
+    const.getPowderBlue = getPowderBlue
+    const.getPurple = getPurple
+    const.getR = getR
+    const.setR = setR
+    const.getRed = getRed
+    const.getrkBlue = getrkBlue
+    const.getrkCyan = getrkCyan
+    const.getrkGoldenRod = getrkGoldenRod
+    const.getrkGray = getrkGray
+    const.getrkGreen = getrkGreen
+    const.getrkKhaki = getrkKhaki
+    const.getrkMagenta = getrkMagenta
+    const.getrkOliveGreen = getrkOliveGreen
+    const.getrkOrange = getrkOrange
+    const.getrkOrchid = getrkOrchid
+    const.getrkRed = getrkRed
+    const.getrkSalmon = getrkSalmon
+    const.getrkSeaGreen = getrkSeaGreen
+    const.getrkSlateBlue = getrkSlateBlue
+    const.getrkSlateGray = getrkSlateGray
+    const.getrkTurquoise = getrkTurquoise
+    const.getrkViolet = getrkViolet
+    const.getRosyBrown = getRosyBrown
+    const.getRoyalBlue = getRoyalBlue
+    const.getSaddleBrown = getSaddleBrown
+    const.getSalmon = getSalmon
+    const.getSandyBrown = getSandyBrown
+    const.getSeaGreen = getSeaGreen
+    const.getSeaShell = getSeaShell
+    const.getSienna = getSienna
+    const.getSilver = getSilver
+    const.getSkyBlue = getSkyBlue
+    const.getSlateBlue = getSlateBlue
+    const.getSlateGray = getSlateGray
+    const.getSnow = getSnow
+    const.getSpringGreen = getSpringGreen
+    const.getSteelBlue = getSteelBlue
+    const.getTan = getTan
+    const.getTeal = getTeal
+    const.getThistle = getThistle
+    const.getTomato = getTomato
+    const.getTurquoise = getTurquoise
+    const.getViolet = getViolet
+    const.getWheat = getWheat
+    const.getWhite = getWhite
+    const.getWhiteSmoke = getWhiteSmoke
+    const.getYellow = getYellow
+    const.getYellowGreen = getYellowGreen
     class = {
       r = 0,
       getR = getR,
@@ -671,7 +768,170 @@ System.namespace("Slipe.Shared.Utilities", function (namespace)
         __ctor2__,
         __ctor3__,
         __ctor4__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "a", 0x1, System.Int32 },
+            { "b", 0x1, System.Int32 },
+            { "g", 0x1, System.Int32 },
+            { "r", 0x1, System.Int32 }
+          },
+          properties = {
+            { "A", 0x106, System.Int32, getA, setA },
+            { "AliceBlue", 0x20E, class, getAliceBlue },
+            { "AntiqueWhite", 0x20E, class, getAntiqueWhite },
+            { "Aqua", 0x20E, class, getAqua },
+            { "AquaMarine", 0x20E, class, getAquaMarine },
+            { "Azure", 0x20E, class, getAzure },
+            { "B", 0x106, System.Int32, getB, setB },
+            { "Beige", 0x20E, class, getBeige },
+            { "Bisque", 0x20E, class, getBisque },
+            { "Black", 0x20E, class, getBlack },
+            { "Blanchelmond", 0x20E, class, getBlanchelmond },
+            { "Blue", 0x20E, class, getBlue },
+            { "BlueViolet", 0x20E, class, getBlueViolet },
+            { "Brown", 0x20E, class, getBrown },
+            { "BurlyWood", 0x20E, class, getBurlyWood },
+            { "CadetBlue", 0x20E, class, getCadetBlue },
+            { "ChartReuse", 0x20E, class, getChartReuse },
+            { "Chocolate", 0x20E, class, getChocolate },
+            { "Coral", 0x20E, class, getCoral },
+            { "CornFlowerBlue", 0x20E, class, getCornFlowerBlue },
+            { "CornSilk", 0x20E, class, getCornSilk },
+            { "Crimson", 0x20E, class, getCrimson },
+            { "Cyan", 0x20E, class, getCyan },
+            { "DeepPink", 0x20E, class, getDeepPink },
+            { "DeepSkyBlue", 0x20E, class, getDeepSkyBlue },
+            { "DimGray", 0x20E, class, getDimGray },
+            { "DodgerBlue", 0x20E, class, getDodgerBlue },
+            { "Firebrick", 0x20E, class, getFirebrick },
+            { "FloralWhite", 0x20E, class, getFloralWhite },
+            { "ForestGreen", 0x20E, class, getForestGreen },
+            { "G", 0x106, System.Int32, getG, setG },
+            { "Gainsboro", 0x20E, class, getGainsboro },
+            { "GhostWhite", 0x20E, class, getGhostWhite },
+            { "Gold", 0x20E, class, getGold },
+            { "GoldenRod", 0x20E, class, getGoldenRod },
+            { "Gray", 0x20E, class, getGray },
+            { "Green", 0x20E, class, getGreen },
+            { "GreenYellow", 0x20E, class, getGreenYellow },
+            { "Hex", 0x206, System.Int32, getHex },
+            { "Honeydew", 0x20E, class, getHoneydew },
+            { "HotPink", 0x20E, class, getHotPink },
+            { "IndianRed", 0x20E, class, getIndianRed },
+            { "Indigo", 0x20E, class, getIndigo },
+            { "Ivory", 0x20E, class, getIvory },
+            { "Khaki", 0x20E, class, getKhaki },
+            { "Lavender", 0x20E, class, getLavender },
+            { "LavenderBlush", 0x20E, class, getLavenderBlush },
+            { "LawnGreen", 0x20E, class, getLawnGreen },
+            { "LemonChion", 0x20E, class, getLemonChion },
+            { "LightBlue", 0x20E, class, getLightBlue },
+            { "LightCoral", 0x20E, class, const.getLightCoral },
+            { "LightCyan", 0x20E, class, const.getLightCyan },
+            { "LightGoldenRodYellow", 0x20E, class, const.getLightGoldenRodYellow },
+            { "LightGray", 0x20E, class, const.getLightGray },
+            { "LightGreen", 0x20E, class, const.getLightGreen },
+            { "LightPink", 0x20E, class, const.getLightPink },
+            { "LightSalmon", 0x20E, class, const.getLightSalmon },
+            { "LightSeaGreen", 0x20E, class, const.getLightSeaGreen },
+            { "LightSkyBlue", 0x20E, class, const.getLightSkyBlue },
+            { "LightSlateGray", 0x20E, class, const.getLightSlateGray },
+            { "LightSteelBlue", 0x20E, class, const.getLightSteelBlue },
+            { "LightYellow", 0x20E, class, const.getLightYellow },
+            { "Lime", 0x20E, class, const.getLime },
+            { "LimeGreen", 0x20E, class, const.getLimeGreen },
+            { "Linen", 0x20E, class, const.getLinen },
+            { "Magenta", 0x20E, class, const.getMagenta },
+            { "Maroon", 0x20E, class, const.getMaroon },
+            { "MediumAquaMarine", 0x20E, class, const.getMediumAquaMarine },
+            { "MediumBlue", 0x20E, class, const.getMediumBlue },
+            { "MediumOrchid", 0x20E, class, const.getMediumOrchid },
+            { "MediumPurple", 0x20E, class, const.getMediumPurple },
+            { "MediumSeaGreen", 0x20E, class, const.getMediumSeaGreen },
+            { "MediumSlateBlue", 0x20E, class, const.getMediumSlateBlue },
+            { "MediumSpringGreen", 0x20E, class, const.getMediumSpringGreen },
+            { "MediumTurquoise", 0x20E, class, const.getMediumTurquoise },
+            { "MediumVioletRed", 0x20E, class, const.getMediumVioletRed },
+            { "MidnightBlue", 0x20E, class, const.getMidnightBlue },
+            { "MintCream", 0x20E, class, const.getMintCream },
+            { "MistyRose", 0x20E, class, const.getMistyRose },
+            { "Moccasin", 0x20E, class, const.getMoccasin },
+            { "NavajoWhite", 0x20E, class, const.getNavajoWhite },
+            { "Navy", 0x20E, class, const.getNavy },
+            { "OldLace", 0x20E, class, const.getOldLace },
+            { "Olive", 0x20E, class, const.getOlive },
+            { "OliveDrab", 0x20E, class, const.getOliveDrab },
+            { "Orange", 0x20E, class, const.getOrange },
+            { "OrangeRed", 0x20E, class, const.getOrangeRed },
+            { "Orchid", 0x20E, class, const.getOrchid },
+            { "PaleGoldenRod", 0x20E, class, const.getPaleGoldenRod },
+            { "PaleGreen", 0x20E, class, const.getPaleGreen },
+            { "PaleTurquoise", 0x20E, class, const.getPaleTurquoise },
+            { "PaleVioletRed", 0x20E, class, const.getPaleVioletRed },
+            { "PapayaWhip", 0x20E, class, const.getPapayaWhip },
+            { "PeachPu", 0x20E, class, const.getPeachPu },
+            { "Peru", 0x20E, class, const.getPeru },
+            { "Pink", 0x20E, class, const.getPink },
+            { "Plum", 0x20E, class, const.getPlum },
+            { "PowderBlue", 0x20E, class, const.getPowderBlue },
+            { "Purple", 0x20E, class, const.getPurple },
+            { "R", 0x106, System.Int32, const.getR, const.setR },
+            { "Red", 0x20E, class, const.getRed },
+            { "rkBlue", 0x20E, class, const.getrkBlue },
+            { "rkCyan", 0x20E, class, const.getrkCyan },
+            { "rkGoldenRod", 0x20E, class, const.getrkGoldenRod },
+            { "rkGray", 0x20E, class, const.getrkGray },
+            { "rkGreen", 0x20E, class, const.getrkGreen },
+            { "rkKhaki", 0x20E, class, const.getrkKhaki },
+            { "rkMagenta", 0x20E, class, const.getrkMagenta },
+            { "rkOliveGreen", 0x20E, class, const.getrkOliveGreen },
+            { "rkOrange", 0x20E, class, const.getrkOrange },
+            { "rkOrchid", 0x20E, class, const.getrkOrchid },
+            { "rkRed", 0x20E, class, const.getrkRed },
+            { "rkSalmon", 0x20E, class, const.getrkSalmon },
+            { "rkSeaGreen", 0x20E, class, const.getrkSeaGreen },
+            { "rkSlateBlue", 0x20E, class, const.getrkSlateBlue },
+            { "rkSlateGray", 0x20E, class, const.getrkSlateGray },
+            { "rkTurquoise", 0x20E, class, const.getrkTurquoise },
+            { "rkViolet", 0x20E, class, const.getrkViolet },
+            { "RosyBrown", 0x20E, class, const.getRosyBrown },
+            { "RoyalBlue", 0x20E, class, const.getRoyalBlue },
+            { "SaddleBrown", 0x20E, class, const.getSaddleBrown },
+            { "Salmon", 0x20E, class, const.getSalmon },
+            { "SandyBrown", 0x20E, class, const.getSandyBrown },
+            { "SeaGreen", 0x20E, class, const.getSeaGreen },
+            { "SeaShell", 0x20E, class, const.getSeaShell },
+            { "Sienna", 0x20E, class, const.getSienna },
+            { "Silver", 0x20E, class, const.getSilver },
+            { "SkyBlue", 0x20E, class, const.getSkyBlue },
+            { "SlateBlue", 0x20E, class, const.getSlateBlue },
+            { "SlateGray", 0x20E, class, const.getSlateGray },
+            { "Snow", 0x20E, class, const.getSnow },
+            { "SpringGreen", 0x20E, class, const.getSpringGreen },
+            { "SteelBlue", 0x20E, class, const.getSteelBlue },
+            { "Tan", 0x20E, class, const.getTan },
+            { "Teal", 0x20E, class, const.getTeal },
+            { "Thistle", 0x20E, class, const.getThistle },
+            { "Tomato", 0x20E, class, const.getTomato },
+            { "Turquoise", 0x20E, class, const.getTurquoise },
+            { "Violet", 0x20E, class, const.getViolet },
+            { "Wheat", 0x20E, class, const.getWheat },
+            { "White", 0x20E, class, const.getWhite },
+            { "WhiteSmoke", 0x20E, class, const.getWhiteSmoke },
+            { "Yellow", 0x20E, class, const.getYellow },
+            { "YellowGreen", 0x20E, class, const.getYellowGreen }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, System.Int32 },
+            { ".ctor", 0x106, __ctor2__, System.UInt32 },
+            { ".ctor", 0x406, __ctor3__, System.Byte, System.Byte, System.Byte, System.Byte },
+            { ".ctor", 0x306, __ctor4__, System.Byte, System.Byte, System.Byte }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

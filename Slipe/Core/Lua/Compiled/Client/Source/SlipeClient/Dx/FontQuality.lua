@@ -12,7 +12,7 @@ System.namespace("Slipe.Client.Enums", function (namespace)
       NonAntiAliased = 3,
       AntiAliased = 4,
       ClearType = 5,
-      ClearType_Neutral = 6
+      ClearType_Natural = 6
     }
   end)
 end)

@@ -29,7 +29,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     -- <summary>
     -- Draw the line
     -- </summary>
-    Draw = function (this)
+    Draw = function (this, source, eventArgs)
       return SlipeMtaDefinitions.MtaClient.DxDrawLine(System.ToInt32(this:getPosition().X), System.ToInt32(this:getPosition().Y), System.ToInt32(this.End.X), System.ToInt32(this.End.Y), this.Color:getHex(), this.Width, this.PostGUI)
     end
     return {
@@ -41,7 +41,20 @@ System.namespace("Slipe.Client.Dx", function (namespace)
       end,
       Width = 0,
       Draw = Draw,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "End", 0x6, System.Numerics.Vector2 },
+            { "Width", 0x6, System.Single }
+          },
+          methods = {
+            { ".ctor", 0x506, nil, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color, System.Single, System.Boolean },
+            { "Draw", 0x286, Draw, out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Rendering.Events.OnRenderEventArgs, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

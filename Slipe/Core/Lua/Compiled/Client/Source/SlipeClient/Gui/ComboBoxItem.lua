@@ -27,7 +27,22 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       ID = 0,
       getContent = getContent,
       setContent = setContent,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "comboBox", 0x1, out.Slipe.Client.Gui.ComboBox }
+          },
+          properties = {
+            { "Content", 0x106, System.String, getContent, setContent },
+            { "ID", 0x6, System.Int32 }
+          },
+          methods = {
+            { ".ctor", 0x206, nil, System.String, out.Slipe.Client.Gui.ComboBox }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

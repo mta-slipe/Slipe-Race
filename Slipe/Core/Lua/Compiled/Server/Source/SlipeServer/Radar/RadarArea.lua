@@ -38,6 +38,11 @@ System.namespace("Slipe.Server.Radar", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x406, __ctor2__, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color, out.Slipe.Shared.Elements.Element },
+            { ".ctor", 0x206, __ctor3__, System.Numerics.Vector2, System.Numerics.Vector2 }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 9 --[[ElementType.RadarArea]]) }
         }
       end

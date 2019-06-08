@@ -46,14 +46,14 @@ System.namespace("Slipe.Client.Dx", function (namespace)
       this:AttachTo(attachedTo, offset:__clone__())
     end
     getStartPosition = function (this)
-      this:Update(0)
+      this:Update()
       return this.startPos:__clone__()
     end
     setStartPosition = function (this, value)
       this.startPos = value:__clone__()
     end
     getEndPosition = function (this)
-      this:Update(0)
+      this:Update()
       return this.endPos:__clone__()
     end
     setEndPosition = function (this, value)
@@ -62,13 +62,13 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     -- <summary>
     -- Draw this line
     -- </summary>
-    Draw = function (this)
+    Draw = function (this, source, eventArgs)
       if this.Visible then
         return SlipeMtaDefinitions.MtaClient.DxDrawLine3D(getStartPosition(this).X, getStartPosition(this).Y, getStartPosition(this).Z, getEndPosition(this).X, getEndPosition(this).Y, getEndPosition(this).Z, this.Color:getHex(), this.Width, this.PostGUI)
       end
       return false
     end
-    Update = function (this, timeSlice)
+    Update = function (this, source, eventArgs)
       if this:getIsAttached() then
         this.startPos = SystemNumerics.Vector3.op_Addition(this:getToAttached():getPosition(), this.Offset:getTranslation())
         this.endPos = SystemNumerics.Vector3.Transform(this.relativeEndPosition, SystemNumerics.Matrix4x4.op_Multiply(this:getToAttached():getMatrix(), this.Offset))
@@ -94,7 +94,32 @@ System.namespace("Slipe.Client.Dx", function (namespace)
         __ctor1__,
         __ctor2__,
         __ctor3__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "endPos", 0x3, System.Numerics.Vector3 },
+            { "relativeEndPosition", 0x3, System.Numerics.Vector3 },
+            { "startPos", 0x3, System.Numerics.Vector3 }
+          },
+          properties = {
+            { "Color", 0x6, out.Slipe.Shared.Utilities.Color },
+            { "EndPosition", 0x106, System.Numerics.Vector3, getEndPosition, setEndPosition },
+            { "PostGUI", 0x6, System.Boolean },
+            { "StartPosition", 0x106, System.Numerics.Vector3, getStartPosition, setStartPosition },
+            { "Visible", 0x6, System.Boolean },
+            { "Width", 0x6, System.Single }
+          },
+          methods = {
+            { ".ctor", 0x506, __ctor1__, System.Numerics.Vector3, System.Numerics.Vector3, out.Slipe.Shared.Utilities.Color, System.Single, System.Boolean },
+            { ".ctor", 0x206, __ctor2__, System.Numerics.Vector3, System.Numerics.Vector3 },
+            { ".ctor", 0x306, __ctor3__, out.Slipe.Shared.Elements.PhysicalElement, System.Numerics.Vector3, System.Numerics.Matrix4x4 },
+            { "Draw", 0x286, Draw, out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Rendering.Events.OnRenderEventArgs, System.Boolean },
+            { "Update", 0x203, Update, out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Game.Events.OnUpdateEventArgs }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

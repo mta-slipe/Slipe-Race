@@ -54,7 +54,29 @@ System.namespace("Slipe.Client.Game", function (namespace)
       GetModelTextureNames1 = GetModelTextureNames1,
       GetVisibleTextureNames = GetVisibleTextureNames,
       SetAsynchronousLoading = SetAsynchronousLoading,
-      ReplaceAnimation = ReplaceAnimation
+      ReplaceAnimation = ReplaceAnimation,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "instance", 0xB, class }
+          },
+          properties = {
+            { "Instance", 0x20E, class, getInstance }
+          },
+          methods = {
+            { "GetModelIDFromName", 0x186, GetModelIDFromName, System.String, System.Int32 },
+            { "GetModelLODDistance", 0x186, GetModelLODDistance, System.Int32, System.Single },
+            { "GetModelNameFromId", 0x186, GetModelNameFromId, System.Int32, System.String },
+            { "GetModelTextureNames", 0x186, GetModelTextureNames, System.Int32, System.Array(System.String) },
+            { "GetModelTextureNames", 0x186, GetModelTextureNames1, System.String, System.Array(System.String) },
+            { "GetVisibleTextureNames", 0x286, GetVisibleTextureNames, System.String, System.String, System.Array(System.String) },
+            { "ReplaceAnimation", 0x586, ReplaceAnimation, out.Slipe.Client.Peds.Ped, System.String, System.String, System.String, System.String, System.Boolean },
+            { "SetAsynchronousLoading", 0x286, SetAsynchronousLoading, System.Boolean, System.Boolean, System.Boolean },
+            { "SetModelLODDistance", 0x286, SetModelLODDistance, System.Int32, System.Single, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

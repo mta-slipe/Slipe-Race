@@ -39,7 +39,20 @@ System.namespace("Slipe.Client.Assets", function (namespace)
       end,
       Load = Load,
       ApplyTo = ApplyTo,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "col", 0x1, out.Slipe.MtaDefinitions.MtaElement }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, System.String },
+            { "ApplyTo", 0x106, ApplyTo, System.Int32 },
+            { "Load", 0x6, Load }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

@@ -2,44 +2,65 @@
 local System = System
 local SlipeMtaDefinitions
 local SlipeSharedVehicles
+local ArrayInt32
 System.import(function (out)
   SlipeMtaDefinitions = Slipe.MtaDefinitions
   SlipeSharedVehicles = Slipe.Shared.Vehicles
+  ArrayInt32 = System.Array(System.Int32)
 end)
 System.namespace("Slipe.Shared.Vehicles", function (namespace)
   -- <summary>
   -- Class representation of different vehicle models
   -- </summary>
   namespace.class("SharedVehicleModel", function (namespace)
-    local getID, getName, getOriginalHandling, FromName, class, __ctor__
-    __ctor__ = function (this, id)
-      this.id = id
+    local getName, getOriginalHandling, static, __ctor__
+    static = function (this)
+      this.boatModels = ArrayInt32(472, 473, 493, 595, 484, 430, 453, 452, 446, 454)
+      this.planeModels = ArrayInt32(592, 577, 511, 512, 593, 520, 553, 476, 519, 460, 513, 464)
+      this.helicopterModels = ArrayInt32(548, 425, 417, 487, 488, 497, 563, 447, 469, 501, 465)
+      this.trailerModels = ArrayInt32(606, 607, 608, 610, 611, 584, 435, 450, 591)
+      this.trainModels = ArrayInt32(537, 590, 569, 538, 570, 449)
+      this.turretedModels = ArrayInt32(432, 601, 407)
+      this.taxiModels = ArrayInt32(438, 420)
     end
-    getID = function (this)
-      return this.id
+    __ctor__ = function (this, id)
+      this.Id = id
     end
     getName = function (this)
-      return SlipeMtaDefinitions.MtaShared.GetVehicleNameFromModel(this.id)
+      return SlipeMtaDefinitions.MtaShared.GetVehicleNameFromModel(this.Id)
     end
     getOriginalHandling = function (this)
-      local d = SlipeMtaDefinitions.MtaShared.GetDictionaryFromTable(SlipeMtaDefinitions.MtaShared.GetOriginalHandling(this.id), "System.String", "dynamic")
+      local d = SlipeMtaDefinitions.MtaShared.GetDictionaryFromTable(SlipeMtaDefinitions.MtaShared.GetOriginalHandling(this.Id), "System.String", "dynamic")
       return System.new(SlipeSharedVehicles.Handling, 3, d)
     end
-    -- <summary>
-    -- Get a vehicle model from the model name as a string
-    -- </summary>
-    FromName = function (name)
-      local id = SlipeMtaDefinitions.MtaShared.GetVehicleModelFromName(name)
-      return class(id)
-    end
-    class = {
-      id = 0,
-      getID = getID,
+    return {
+      Id = 0,
       getName = getName,
       getOriginalHandling = getOriginalHandling,
-      FromName = FromName,
-      __ctor__ = __ctor__
+      static = static,
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "boatModels", 0xB, System.Array(System.Int32) },
+            { "helicopterModels", 0xB, System.Array(System.Int32) },
+            { "planeModels", 0xB, System.Array(System.Int32) },
+            { "taxiModels", 0xB, System.Array(System.Int32) },
+            { "trailerModels", 0xB, System.Array(System.Int32) },
+            { "trainModels", 0xB, System.Array(System.Int32) },
+            { "turretedModels", 0xB, System.Array(System.Int32) }
+          },
+          properties = {
+            { "Id", 0x6, System.Int32 },
+            { "Name", 0x206, System.String, getName },
+            { "OriginalHandling", 0x206, out.Slipe.Shared.Vehicles.Handling, getOriginalHandling }
+          },
+          methods = {
+            { ".ctor", 0x103, nil, System.Int32 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
-    return class
   end)
 end)

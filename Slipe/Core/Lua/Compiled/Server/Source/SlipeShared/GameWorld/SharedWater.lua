@@ -61,7 +61,22 @@ System.namespace("Slipe.Shared.GameWorld", function (namespace)
         __ctor1__,
         __ctor2__,
         __ctor3__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Level", 0x306, System.Single, setLevel }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x506, __ctor2__, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3, System.Boolean },
+            { ".ctor", 0x406, __ctor3__, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3, System.Boolean },
+            { "GetVertexPosition", 0x186, GetVertexPosition, System.Int32, System.Numerics.Vector3 },
+            { "SetVertexPosition", 0x286, SetVertexPosition, System.Int32, System.Numerics.Vector3, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

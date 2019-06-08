@@ -56,7 +56,23 @@ System.namespace("Slipe.Server.Displays", function (namespace)
       AddObservers = AddObservers,
       RemoveObserver = RemoveObserver,
       Destroy = Destroy,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "DisplayElement", 0x6, out.Slipe.MtaDefinitions.MtaElement },
+            { "Observers", 0x206, System.Array(out.Slipe.Server.Peds.Player), getObservers }
+          },
+          methods = {
+            { ".ctor", 0x6, nil },
+            { "AddObserver", 0x106, AddObserver, out.Slipe.Server.Peds.Player },
+            { "AddObservers", 0x106, AddObservers, System.Array(out.Slipe.Server.Peds.Player) },
+            { "Destroy", 0x86, Destroy, System.Boolean },
+            { "RemoveObserver", 0x186, RemoveObserver, out.Slipe.Server.Peds.Player, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

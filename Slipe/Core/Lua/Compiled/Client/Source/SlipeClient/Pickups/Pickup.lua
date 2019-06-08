@@ -61,6 +61,14 @@ System.namespace("Slipe.Client.Pickups", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x506, __ctor2__, System.Numerics.Vector3, System.Int32, System.Int32, System.Int32, System.Int32 },
+            { ".ctor", 0x406, __ctor3__, System.Numerics.Vector3, System.Int32, System.Int32, System.Int32 },
+            { ".ctor", 0x306, __ctor4__, System.Numerics.Vector3, out.Slipe.Shared.Weapons.SharedWeaponModel, System.Int32 },
+            { ".ctor", 0x206, __ctor5__, System.Numerics.Vector3, System.Int32 },
+            { ".ctor", 0x206, __ctor6__, System.Numerics.Vector3, System.Int32 }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 5 --[[ElementType.Pickup]]) }
         }
       end

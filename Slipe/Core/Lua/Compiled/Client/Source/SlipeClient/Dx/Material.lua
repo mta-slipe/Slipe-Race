@@ -26,7 +26,20 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     return {
       getMaterialElement = getMaterialElement,
       getMaterialSize = getMaterialSize,
-      getVolumeSize = getVolumeSize
+      getVolumeSize = getVolumeSize,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "materialElement", 0x3, out.Slipe.MtaDefinitions.MtaElement }
+          },
+          properties = {
+            { "MaterialElement", 0x206, out.Slipe.MtaDefinitions.MtaElement, getMaterialElement },
+            { "MaterialSize", 0x206, System.Numerics.Vector2, getMaterialSize },
+            { "VolumeSize", 0x206, System.Numerics.Vector3, getVolumeSize }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

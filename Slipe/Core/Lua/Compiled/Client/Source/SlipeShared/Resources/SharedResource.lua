@@ -56,7 +56,24 @@ System.namespace("Slipe.Shared.Resources", function (namespace)
       getState = getState,
       getExportedFunctions = getExportedFunctions,
       Config = Config,
-      Invoke = Invoke
+      Invoke = Invoke,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "DynamicRoot", 0x206, out.Slipe.Shared.Elements.Element, getDynamicRoot },
+            { "ExportedFunctions", 0x206, System.Array(System.String), getExportedFunctions },
+            { "MtaResource", 0x3, out.Slipe.MtaDefinitions.MtaResource },
+            { "Name", 0x206, System.String, getName },
+            { "Root", 0x206, out.Slipe.Shared.Elements.Element, getRoot },
+            { "State", 0x206, System.String, getState }
+          },
+          methods = {
+            { "Config", 0x186, Config, System.String, System.Xml.XmlNode },
+            { "Invoke", 0x286, Invoke, System.String, System.Array(System.Object), System.Object }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

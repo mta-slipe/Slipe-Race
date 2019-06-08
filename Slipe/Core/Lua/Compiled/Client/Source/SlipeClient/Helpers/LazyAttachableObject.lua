@@ -69,7 +69,29 @@ System.namespace("Slipe.Client.Helpers", function (namespace)
       Detach = Detach,
       OnAttach = OnAttach,
       OnDetach = OnDetach,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "toAttached", 0x3, out.Slipe.Shared.Elements.PhysicalElement }
+          },
+          properties = {
+            { "IsAttached", 0x206, System.Boolean, getIsAttached },
+            { "Offset", 0x6, System.Numerics.Matrix4x4 },
+            { "ToAttached", 0x206, out.Slipe.Shared.Elements.PhysicalElement, getToAttached }
+          },
+          methods = {
+            { "AttachTo", 0x206, AttachTo, out.Slipe.Shared.Elements.PhysicalElement, System.Numerics.Matrix4x4 },
+            { "AttachTo", 0x306, AttachTo1, out.Slipe.Shared.Elements.PhysicalElement, System.Numerics.Vector3, System.Numerics.Vector3 },
+            { "AttachTo", 0x306, AttachTo2, out.Slipe.Shared.Elements.PhysicalElement, System.Numerics.Vector3, System.Numerics.Quaternion },
+            { "AttachTo", 0x106, AttachTo3, out.Slipe.Shared.Elements.PhysicalElement },
+            { "Detach", 0x6, Detach },
+            { "OnAttach", 0x3, OnAttach },
+            { "OnDetach", 0x3, OnDetach }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

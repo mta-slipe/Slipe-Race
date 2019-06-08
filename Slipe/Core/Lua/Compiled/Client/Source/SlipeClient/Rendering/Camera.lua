@@ -197,7 +197,41 @@ System.namespace("Slipe.Client", function (namespace)
       GetCameraClip = GetCameraClip,
       GetScreenFromWorldPosition = GetScreenFromWorldPosition,
       GetWorldFromScreenPosition = GetWorldFromScreenPosition,
-      IsLineOfSightClear = IsLineOfSightClear
+      IsLineOfSightClear = IsLineOfSightClear,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "instance", 0x9, class }
+          },
+          properties = {
+            { "Instance", 0x20E, class, getInstance },
+            { "Interior", 0x106, System.Int32, getInterior, setInterior },
+            { "NearClipDistance", 0x106, System.Single, getNearClipDistance, setNearClipDistance },
+            { "ShakeLevel", 0x106, System.Byte, getShakeLevel, setShakeLevel },
+            { "Target", 0x106, out.Slipe.Shared.Elements.PhysicalElement, getTarget, setTarget },
+            { "ViewMode", 0x106, System.Int32, getViewMode, setViewMode }
+          },
+          methods = {
+            { ".ctor", 0x6, nil },
+            { "Fade", 0x386, Fade, System.Int32, out.Slipe.Shared.Utilities.Color, System.Int32, System.Boolean },
+            { "Fade", 0x186, Fade1, System.Int32, System.Boolean },
+            { "GetCameraClip", 0x86, GetCameraClip, System.Tuple },
+            { "GetCameraMatrix", 0x86, GetCameraMatrix, System.Numerics.Matrix4x4 },
+            { "GetFieldOfView", 0x186, GetFieldOfView, System.Int32, System.Single },
+            { "GetFullCameraMatrix", 0x86, GetFullCameraMatrix, System.Tuple },
+            { "GetGoggleEffect", 0x86, GetGoggleEffect, System.String },
+            { "GetScreenFromWorldPosition", 0x386, GetScreenFromWorldPosition, System.Numerics.Vector3, System.Single, System.Boolean, System.Numerics.Vector2 },
+            { "GetWorldFromScreenPosition", 0x286, GetWorldFromScreenPosition, System.Numerics.Vector2, System.Single, System.Numerics.Vector3 },
+            { "IsLineOfSightClear", 0xA86, IsLineOfSightClear, System.Numerics.Vector3, System.Numerics.Vector3, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, System.Boolean, out.Slipe.Shared.Elements.PhysicalElement, System.Boolean },
+            { "SetCameraClip", 0x286, SetCameraClip, System.Boolean, System.Boolean, System.Boolean },
+            { "SetFieldOfView", 0x286, SetFieldOfView, System.Int32, System.Single, System.Boolean },
+            { "SetGoggleEffect", 0x286, SetGoggleEffect, System.Int32, System.Boolean, System.Boolean },
+            { "SetMatrix", 0x386, SetMatrix, System.Numerics.Matrix4x4, System.Single, System.Single, System.Boolean },
+            { "SetMatrix", 0x486, SetMatrix1, System.Numerics.Vector3, System.Numerics.Vector3, System.Single, System.Single, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

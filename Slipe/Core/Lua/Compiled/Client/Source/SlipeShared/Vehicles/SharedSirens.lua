@@ -84,7 +84,33 @@ System.namespace("Slipe.Shared.Vehicles", function (namespace)
       setOn = setOn,
       getAll = getAll,
       UpdateParams = UpdateParams,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "checkLOS", 0x3, System.Boolean },
+            { "silent", 0x3, System.Boolean },
+            { "type", 0x3, System.Int32 },
+            { "useRandomiser", 0x3, System.Boolean },
+            { "vehicle", 0x3, out.Slipe.Shared.Vehicles.SharedVehicle },
+            { "visibleFromAllDirection", 0x3, System.Boolean }
+          },
+          properties = {
+            { "All", 0x206, System.Array(out.Slipe.Shared.Vehicles.Siren), getAll },
+            { "CheckLineOfSight", 0x206, System.Boolean, getCheckLineOfSight },
+            { "On", 0x106, System.Boolean, getOn, setOn },
+            { "Silent", 0x206, System.Boolean, getSilent },
+            { "Type", 0x206, System.Int32, getType },
+            { "UseRandomiser", 0x206, System.Boolean, getUseRandomiser },
+            { "VisibleFromAllDirections", 0x206, System.Boolean, getVisibleFromAllDirections }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.Shared.Vehicles.SharedVehicle },
+            { "UpdateParams", 0x3, UpdateParams }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

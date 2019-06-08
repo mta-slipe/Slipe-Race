@@ -8,7 +8,13 @@ System.import(function (out)
 end)
 System.namespace("Slipe.Server.GameWorld", function (namespace)
   namespace.class("World", function (namespace)
-    local getInstance1, GetGarage1, class
+    local getInstance1, GetGarage1, class, __ctor__
+    -- <summary>
+    -- Instantiate a new world
+    -- </summary>
+    __ctor__ = function (this)
+      SlipeSharedGameWorld.SharedWorld.__ctor__(this)
+    end
     getInstance1 = function ()
       if SlipeSharedGameWorld.SharedWorld.instance == nil then
         SlipeSharedGameWorld.SharedWorld.instance = class()
@@ -28,7 +34,20 @@ System.namespace("Slipe.Server.GameWorld", function (namespace)
         }
       end,
       getInstance1 = getInstance1,
-      GetGarage1 = GetGarage1
+      GetGarage1 = GetGarage1,
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Instance", 0x20E, class, getInstance1 }
+          },
+          methods = {
+            { ".ctor", 0x6, nil },
+            { "GetGarage", 0x186, GetGarage1, System.Int32, out.Slipe.Server.GameWorld.Garage }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

@@ -9,7 +9,8 @@ System.namespace("Slipe.Client.Browsers", function (namespace)
   -- Class to wrap different types of javascript variables
   -- </summary>
   namespace.class("JavascriptVariable", function (namespace)
-    local ToString, __ctor1__, __ctor2__, __ctor3__, __ctor4__, __ctor5__, __ctor6__
+    local ToString, op_Implicit, op_Implicit1, op_Implicit2, op_Implicit3, class, __ctor1__, __ctor2__, 
+    __ctor3__, __ctor4__, __ctor5__, __ctor6__
     -- <summary>
     -- An empty js variable
     -- </summary>
@@ -51,8 +52,24 @@ System.namespace("Slipe.Client.Browsers", function (namespace)
     ToString = function (this)
       return this.stringRepresentation
     end
-    return {
+    op_Implicit = function (value)
+      return System.new(class, 2, value)
+    end
+    op_Implicit1 = function (value)
+      return System.new(class, 3, value)
+    end
+    op_Implicit2 = function (value)
+      return System.new(class, 4, value)
+    end
+    op_Implicit3 = function (value)
+      return System.new(class, 5, value)
+    end
+    class = {
       ToString = ToString,
+      op_Implicit = op_Implicit,
+      op_Implicit1 = op_Implicit1,
+      op_Implicit2 = op_Implicit2,
+      op_Implicit3 = op_Implicit3,
       __ctor__ = {
         __ctor1__,
         __ctor2__,
@@ -60,7 +77,25 @@ System.namespace("Slipe.Client.Browsers", function (namespace)
         __ctor4__,
         __ctor5__,
         __ctor6__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "stringRepresentation", 0x1, System.String }
+          },
+          methods = {
+            { ".ctor", 0x6, __ctor1__ },
+            { ".ctor", 0x106, __ctor2__, System.String },
+            { ".ctor", 0x106, __ctor3__, System.Boolean },
+            { ".ctor", 0x106, __ctor4__, System.Int32 },
+            { ".ctor", 0x106, __ctor5__, System.Single },
+            { ".ctor", 0x106, __ctor6__, System.Object },
+            { "ToString", 0x86, ToString, System.String }
+          },
+          class = { 0x6 }
+        }
+      end
     }
+    return class
   end)
 end)

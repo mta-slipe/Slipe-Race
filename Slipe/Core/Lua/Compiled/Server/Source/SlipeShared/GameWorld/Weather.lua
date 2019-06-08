@@ -45,7 +45,23 @@ System.namespace("Slipe.Shared.GameWorld", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "_from", 0x1, System.Int32 },
+            { "_to", 0x1, System.Int32 }
+          },
+          properties = {
+            { "Current", 0x106, System.Int32, getCurrent, setCurrent },
+            { "TransitionTo", 0x106, System.Int32, getTransitionTo, setTransitionTo }
+          },
+          methods = {
+            { ".ctor", 0x206, __ctor1__, System.Int32, System.Int32 },
+            { ".ctor", 0x106, __ctor2__, System.Int32 }
+          }
+        }
+      end
     }
   end)
 end)

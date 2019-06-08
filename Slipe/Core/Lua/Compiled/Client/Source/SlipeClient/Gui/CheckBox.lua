@@ -45,6 +45,13 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "Selected", 0x106, System.Boolean, getSelected, setSelected }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x606, __ctor2__, System.Numerics.Vector2, System.Numerics.Vector2, System.String, System.Boolean, System.Boolean, out.Slipe.Client.Gui.GuiElement }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 14 --[[ElementType.GuiCheckBox]]) }
         }
       end

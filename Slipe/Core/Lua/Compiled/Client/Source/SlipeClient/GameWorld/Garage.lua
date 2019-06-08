@@ -38,7 +38,20 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
       getBoundingBox = getBoundingBox,
       getPosition = getPosition,
       getSize = getSize,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "BoundingBox", 0x206, System.Numerics.Vector4, getBoundingBox },
+            { "Position", 0x206, System.Numerics.Vector3, getPosition },
+            { "Size", 0x206, System.Numerics.Vector3, getSize }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, System.Int32 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

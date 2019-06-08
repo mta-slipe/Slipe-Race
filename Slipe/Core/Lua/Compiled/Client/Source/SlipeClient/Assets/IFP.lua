@@ -25,7 +25,19 @@ System.namespace("Slipe.Client.Assets", function (namespace)
         }
       end,
       Load = Load,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "ifp", 0x1, out.Slipe.MtaDefinitions.MtaElement }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, System.String },
+            { "Load", 0x106, Load, System.String }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

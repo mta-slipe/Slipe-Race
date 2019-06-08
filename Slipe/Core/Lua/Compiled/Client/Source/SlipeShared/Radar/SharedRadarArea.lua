@@ -86,7 +86,24 @@ System.namespace("Slipe.Shared.Radar", function (namespace)
         __ctor1__,
         __ctor2__,
         __ctor3__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Color", 0x106, out.Slipe.Shared.Utilities.Color, getColor, setColor },
+            { "Flashing", 0x106, System.Boolean, getFlashing, setFlashing },
+            { "Size", 0x106, System.Numerics.Vector2, getSize, setSize }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x406, __ctor2__, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color, out.Slipe.Shared.Elements.Element },
+            { ".ctor", 0x206, __ctor3__, System.Numerics.Vector2, System.Numerics.Vector2 },
+            { "IsInside", 0x186, IsInside, System.Numerics.Vector2, System.Boolean },
+            { "IsInside", 0x186, IsInside1, System.Numerics.Vector3, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

@@ -287,6 +287,17 @@ System.namespace("Slipe.Shared.GameWorld", function (namespace)
     ResetWaterLevel = function (this)
       return SlipeMtaDefinitions.MtaShared.ResetWaterLevel()
     end
+    --too many upvalues (limit is 60)
+    local const = {}
+    const.setTrafficLightState = setTrafficLightState
+    const.getWaterColor = getWaterColor
+    const.setWaterColor = setWaterColor
+    const.getWaveHeight = getWaveHeight
+    const.setWaveHeight = setWaveHeight
+    const.getWeather = getWeather
+    const.setWeather = setWeather
+    const.getWindVelocity = getWindVelocity
+    const.setWindVelocity = setWindVelocity
     class = {
       getInstance = getInstance,
       getLockedTrafficLights = getLockedTrafficLights,
@@ -352,7 +363,62 @@ System.namespace("Slipe.Shared.GameWorld", function (namespace)
       RestoreAllWorldModels = RestoreAllWorldModels,
       ResetWaterColor = ResetWaterColor,
       SetWaterLevel = SetWaterLevel,
-      ResetWaterLevel = ResetWaterLevel
+      ResetWaterLevel = ResetWaterLevel,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "instance", 0xB, class }
+          },
+          properties = {
+            { "AircraftMaxHeight", 0x106, System.Single, getAircraftMaxHeight, setAircraftMaxHeight },
+            { "AircraftMaxVelocity", 0x106, System.Single, getAircraftMaxVelocity, setAircraftMaxVelocity },
+            { "CloudsEnabled", 0x106, System.Boolean, getCloudsEnabled, setCloudsEnabled },
+            { "FarClipDistance", 0x106, System.Single, getFarClipDistance, setFarClipDistance },
+            { "FogDistance", 0x106, System.Single, getFogDistance, setFogDistance },
+            { "GameSpeed", 0x106, System.Single, getGameSpeed, setGameSpeed },
+            { "Gravity", 0x106, System.Single, getGravity, setGravity },
+            { "HeatHaze", 0x106, out.Slipe.Shared.GameWorld.HeatHaze, getHeatHaze, setHeatHaze },
+            { "Instance", 0x20E, class, getInstance },
+            { "InteriorSounds", 0x306, System.Boolean, setInteriorSounds },
+            { "JetpackMaxHeight", 0x106, System.Single, getJetpackMaxHeight, setJetpackMaxHeight },
+            { "LockedTrafficLights", 0x106, System.Boolean, getLockedTrafficLights, setLockedTrafficLights },
+            { "MinuteDuration", 0x106, System.Int32, getMinuteDuration, setMinuteDuration },
+            { "Moonsize", 0x106, System.Int32, getMoonsize, setMoonsize },
+            { "OcclusionsEnabled", 0x106, System.Boolean, getOcclusionsEnabled, setOcclusionsEnabled },
+            { "RainLevel", 0x106, System.Single, getRainLevel, setRainLevel },
+            { "SkyGradient", 0x106, System.Tuple, getSkyGradient, setSkyGradient },
+            { "SunColor", 0x106, System.Tuple, getSunColor, setSunColor },
+            { "SunSize", 0x106, System.Int32, getSunSize, setSunSize },
+            { "Time", 0x106, out.Slipe.Shared.GameWorld.GameTime, getTime, setTime },
+            { "TrafficLightState", 0x106, System.Int32, getTrafficLightState, const.setTrafficLightState },
+            { "WaterColor", 0x106, out.Slipe.Shared.Utilities.Color, const.getWaterColor, const.setWaterColor },
+            { "WaveHeight", 0x106, System.Single, const.getWaveHeight, const.setWaveHeight },
+            { "Weather", 0x106, out.Slipe.Shared.GameWorld.Weather, const.getWeather, const.setWeather },
+            { "WindVelocity", 0x106, System.Numerics.Vector3, const.getWindVelocity, const.setWindVelocity }
+          },
+          methods = {
+            { ".ctor", 0x6, nil },
+            { "GetGarage", 0x186, GetGarage, System.Int32, out.Slipe.Shared.GameWorld.SharedGarage },
+            { "GetZoneName", 0x286, GetZoneName, System.Numerics.Vector3, System.Boolean, System.String },
+            { "RemoveWorldModel", 0x486, RemoveWorldModel, System.Int32, System.Single, System.Numerics.Vector3, System.Int32, System.Boolean },
+            { "ResetFarClipDistance", 0x86, ResetFarClipDistance, System.Boolean },
+            { "ResetFogDistance", 0x86, ResetFogDistance, System.Boolean },
+            { "ResetHeatHaze", 0x86, ResetHeatHaze, System.Boolean },
+            { "ResetMoonSize", 0x86, ResetMoonSize, System.Boolean },
+            { "ResetRainLevel", 0x86, ResetRainLevel, System.Boolean },
+            { "ResetSkyGradient", 0x86, ResetSkyGradient, System.Boolean },
+            { "ResetSunColor", 0x86, ResetSunColor, System.Boolean },
+            { "ResetSunSize", 0x86, ResetSunSize, System.Boolean },
+            { "ResetWaterColor", 0x86, ResetWaterColor, System.Boolean },
+            { "ResetWaterLevel", 0x86, ResetWaterLevel, System.Boolean },
+            { "ResetWindVelocity", 0x86, ResetWindVelocity, System.Boolean },
+            { "RestoreAllWorldModels", 0x86, RestoreAllWorldModels, System.Boolean },
+            { "RestoreWorldModel", 0x486, RestoreWorldModel, System.Int32, System.Single, System.Numerics.Vector3, System.Int32, System.Boolean },
+            { "SetWaterLevel", 0x386, SetWaterLevel, System.Single, System.Boolean, System.Boolean, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

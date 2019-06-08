@@ -65,7 +65,22 @@ System.namespace("Slipe.Shared.Radar", function (namespace)
       setSize = setSize,
       getVisibleDistance = getVisibleDistance,
       setVisibleDistance = setVisibleDistance,
-      __ctor__ = __ctor__
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Color", 0x106, out.Slipe.Shared.Utilities.Color, getColor, setColor },
+            { "Icon", 0x106, System.Int32, getIcon, setIcon },
+            { "Ordering", 0x106, System.Int32, getOrdering, setOrdering },
+            { "Size", 0x106, System.Int32, getSize, setSize },
+            { "VisibleDistance", 0x106, System.Single, getVisibleDistance, setVisibleDistance }
+          },
+          methods = {
+            { ".ctor", 0x106, nil, out.Slipe.MtaDefinitions.MtaElement }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

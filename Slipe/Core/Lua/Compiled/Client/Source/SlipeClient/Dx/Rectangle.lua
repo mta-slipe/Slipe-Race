@@ -37,7 +37,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     -- <summary>
     -- Draw this rectangle
     -- </summary>
-    Draw = function (this)
+    Draw = function (this, source, eventArgs)
       return SlipeMtaDefinitions.MtaClient.DxDrawRectangle(this:getPosition().X, this:getPosition().Y, this.Dimensions.X, this.Dimensions.Y, this.Color:getHex(), this.PostGUI, this.SubPixelPositioning)
     end
     return {
@@ -52,7 +52,21 @@ System.namespace("Slipe.Client.Dx", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Dimensions", 0x6, System.Numerics.Vector2 },
+            { "SubPixelPositioning", 0x6, System.Boolean }
+          },
+          methods = {
+            { ".ctor", 0x506, __ctor1__, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color, System.Boolean, System.Boolean },
+            { ".ctor", 0x206, __ctor2__, System.Numerics.Vector2, System.Numerics.Vector2 },
+            { "Draw", 0x286, Draw, out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Rendering.Events.OnRenderEventArgs, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

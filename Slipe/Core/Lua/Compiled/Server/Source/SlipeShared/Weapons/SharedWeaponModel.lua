@@ -229,7 +229,66 @@ System.namespace("Slipe.Shared.Weapons", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "Ak47", 0x20E, class, getAk47 },
+            { "Bat", 0x20E, class, getBat },
+            { "Bomb", 0x20E, class, getBomb },
+            { "Brassknuckle", 0x20E, class, getBrassknuckle },
+            { "Camera", 0x20E, class, getCamera },
+            { "Cane", 0x20E, class, getCane },
+            { "Chainsaw", 0x20E, class, getChainsaw },
+            { "Colt45", 0x20E, class, getColt45 },
+            { "CombatShotgun", 0x20E, class, getCombatShotgun },
+            { "Deagle", 0x20E, class, getDeagle },
+            { "Dildo1", 0x20E, class, getDildo1 },
+            { "Dildo2", 0x20E, class, getDildo2 },
+            { "FireExtinguisher", 0x20E, class, getFireExtinguisher },
+            { "Fist", 0x20E, class, getFist },
+            { "Flamethrower", 0x20E, class, getFlamethrower },
+            { "Flower", 0x20E, class, getFlower },
+            { "Golfclub", 0x20E, class, getGolfclub },
+            { "Grenade", 0x20E, class, getGrenade },
+            { "ID", 0x6, System.Int32 },
+            { "Infrared", 0x20E, class, getInfrared },
+            { "Katana", 0x20E, class, getKatana },
+            { "Knife", 0x20E, class, getKnife },
+            { "M4", 0x20E, class, getM4 },
+            { "Minigun", 0x20E, class, getMinigun },
+            { "Molotov", 0x20E, class, getMolotov },
+            { "Mp5", 0x20E, class, getMp5 },
+            { "Name", 0x206, System.String, getName },
+            { "Nightstick", 0x20E, class, getNightstick },
+            { "Nightvision", 0x20E, class, getNightvision },
+            { "Parachute", 0x20E, class, getParachute },
+            { "Poolstick", 0x20E, class, getPoolstick },
+            { "Rifle", 0x20E, class, getRifle },
+            { "RocketLauncer", 0x20E, class, getRocketLauncer },
+            { "RocketLauncherHs", 0x20E, class, getRocketLauncherHs },
+            { "Satchel", 0x20E, class, getSatchel },
+            { "Sawedoff", 0x20E, class, getSawedoff },
+            { "Shotgun", 0x20E, class, getShotgun },
+            { "Shovel", 0x20E, class, getShovel },
+            { "Silenced", 0x20E, class, getSilenced },
+            { "Slot", 0x206, System.Int32, getSlot },
+            { "Sniper", 0x20E, class, getSniper },
+            { "Spraycan", 0x20E, class, getSpraycan },
+            { "Teargas", 0x20E, class, getTeargas },
+            { "Tec9", 0x20E, class, getTec9 },
+            { "Uzi", 0x20E, class, getUzi },
+            { "Vibrator", 0x20E, class, getVibrator }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, System.Int32 },
+            { ".ctor", 0x106, __ctor2__, System.String },
+            { "GetOriginalProperty", 0x286, GetOriginalProperty, System.Int32, System.Int32, System.Int32 },
+            { "GetProperty", 0x286, GetProperty, System.Int32, System.Int32, System.Int32 }
+          },
+          class = { 0x6 }
+        }
+      end
     }
     return class
   end)

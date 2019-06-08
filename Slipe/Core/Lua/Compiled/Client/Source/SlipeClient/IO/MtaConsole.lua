@@ -15,7 +15,19 @@ System.namespace("Slipe.Client.IO", function (namespace)
     end
     return {
       getActive = getActive,
-      WriteLine = WriteLine
+      WriteLine = WriteLine,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x4, nil },
+            { "WriteLine", 0x106, WriteLine, System.String }
+          },
+          properties = {
+            { "Active", 0x206, System.Boolean, getActive }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

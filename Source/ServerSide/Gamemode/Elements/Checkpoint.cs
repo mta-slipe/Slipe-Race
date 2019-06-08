@@ -3,6 +3,8 @@ using Slipe.Server.Elements;
 using Slipe.Server.Markers;
 using Slipe.Server.Radar;
 using Slipe.Server.Vehicles;
+using Slipe.Shared.Markers.Events;
+using Slipe.Shared.Markers;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
@@ -10,7 +12,7 @@ using System.Text;
 
 namespace ServerSide.GameMode.Elements
 {
-    class Checkpoint: Marker
+    public class Checkpoint: Marker
     {
         private Blip blip;
         private Checkpoint next;
@@ -41,14 +43,14 @@ namespace ServerSide.GameMode.Elements
             this.blip.SetVisibleTo(Root, false);
         }
 
-        private void HandleHit(Slipe.Shared.Elements.PhysicalElement hitElement, bool matchingDimension)
+        private void HandleHit(SharedMarker source, OnHitEventArgs eventArgs)
         {
-            if (! (hitElement is Vehicle))
+            if (! (eventArgs.Element is Vehicle))
             {
                 return;
             }
 
-            Vehicle vehicle = (Vehicle)hitElement;
+            Vehicle vehicle = (Vehicle)eventArgs.Element;
             try
             {
                 if (vehicle.Controler == null)

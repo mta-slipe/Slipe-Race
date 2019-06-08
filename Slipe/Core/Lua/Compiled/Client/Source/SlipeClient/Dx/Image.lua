@@ -89,7 +89,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
       this.material = value
       this.usePath = false
     end
-    Draw = function (this)
+    Draw = function (this, source, eventArgs)
       if this.usePath then
         return SlipeMtaDefinitions.MtaClient.DxDrawImage(this:getPosition().X, this:getPosition().Y, this.Dimensions.X, this.Dimensions.Y, getFilePath(this), this.Rotation, this.RotationCenter.X, this.RotationCenter.Y, this.Color:getHex())
       else
@@ -121,7 +121,33 @@ System.namespace("Slipe.Client.Dx", function (namespace)
         __ctor4__,
         __ctor5__,
         __ctor6__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "filePath", 0x3, System.String },
+            { "material", 0x3, out.Slipe.Client.Dx.Material },
+            { "usePath", 0x3, System.Boolean }
+          },
+          properties = {
+            { "Dimensions", 0x6, System.Numerics.Vector2 },
+            { "FilePath", 0x106, System.String, getFilePath, setFilePath },
+            { "Material", 0x106, out.Slipe.Client.Dx.Material, getMaterial, setMaterial },
+            { "Rotation", 0x6, System.Single },
+            { "RotationCenter", 0x6, System.Numerics.Vector2 }
+          },
+          methods = {
+            { ".ctor", 0x706, __ctor1__, System.Numerics.Vector2, System.Numerics.Vector2, System.String, System.Single, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color, System.Boolean },
+            { ".ctor", 0x506, __ctor2__, System.Numerics.Vector2, System.Numerics.Vector2, System.String, System.Single, System.Numerics.Vector2 },
+            { ".ctor", 0x406, __ctor3__, System.Numerics.Vector2, System.Numerics.Vector2, System.String, System.Single },
+            { ".ctor", 0x706, __ctor4__, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Client.Dx.Material, System.Single, System.Numerics.Vector2, out.Slipe.Shared.Utilities.Color, System.Boolean },
+            { ".ctor", 0x506, __ctor5__, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Client.Dx.Material, System.Single, System.Numerics.Vector2 },
+            { ".ctor", 0x406, __ctor6__, System.Numerics.Vector2, System.Numerics.Vector2, out.Slipe.Client.Dx.Material, System.Single },
+            { "Draw", 0x286, Draw, out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Rendering.Events.OnRenderEventArgs, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)

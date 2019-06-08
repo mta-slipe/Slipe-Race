@@ -18,7 +18,7 @@ System.namespace("Slipe.Client.Browsers", function (namespace)
     local getSettings, getCanNavigateBack, getCanNavigateForward, getTitle, getUrl, getIsLoading, getIsFocused, setVolume, 
     setRenderingPaused, setDevTools, ReloadPage, LoadUrl, Focus, GetProperty, InjectMouseDown, InjectMouseUp, 
     InjectMouseMove, InjectMouseWheel, Resize, ExecuteJavascript, ExecuteJavascript1, IsDomainBlocked, RequestDomains, RequestDomain, 
-    HandleDomainRequest, HandleWhiteListChange, class, __ctor1__, __ctor2__
+    HandleDomainRequest, class, __ctor1__, __ctor2__
     __ctor1__ = function (this, element)
       SlipeSharedElements.Element.__ctor__[2](this, element)
     end
@@ -170,12 +170,6 @@ System.namespace("Slipe.Client.Browsers", function (namespace)
         end
       end
     end
-    HandleWhiteListChange = function (changedDomains)
-      local default = class.OnWhiteListChange
-      if default ~= nil then
-        default(changedDomains)
-      end
-    end
     class = {
       __inherits__ = function (out)
         return {
@@ -207,13 +201,58 @@ System.namespace("Slipe.Client.Browsers", function (namespace)
       RequestDomains = RequestDomains,
       RequestDomain = RequestDomain,
       HandleDomainRequest = HandleDomainRequest,
-      HandleWhiteListChange = HandleWhiteListChange,
       __ctor__ = {
         __ctor1__,
         __ctor2__
       },
       __metadata__ = function (out)
         return {
+          properties = {
+            { "CanNavigateBack", 0x206, System.Boolean, getCanNavigateBack },
+            { "CanNavigateForward", 0x206, System.Boolean, getCanNavigateForward },
+            { "DevTools", 0x306, System.Boolean, setDevTools },
+            { "IsFocused", 0x206, System.Boolean, getIsFocused },
+            { "IsLoading", 0x206, System.Boolean, getIsLoading },
+            { "RenderingPaused", 0x306, System.Boolean, setRenderingPaused },
+            { "Settings", 0x20E, System.Object, getSettings },
+            { "Title", 0x206, System.String, getTitle },
+            { "Url", 0x206, System.String, getUrl },
+            { "Volume", 0x306, System.Single, setVolume }
+          },
+          methods = {
+            { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },
+            { ".ctor", 0x406, __ctor2__, System.Int32, System.Int32, System.Boolean, System.Boolean },
+            { "ExecuteJavascript", 0x286, ExecuteJavascript1, System.String, System.IEnumerable_1(out.Slipe.Client.Browsers.JavascriptVariable), System.Boolean },
+            { "ExecuteJavascript", 0x186, ExecuteJavascript, System.String, System.Boolean },
+            { "Focus", 0x86, Focus, System.Boolean },
+            { "GetProperty", 0x186, GetProperty, System.String, System.Object },
+            { "HandleDomainRequest", 0x20E, HandleDomainRequest, System.Boolean, System.Array(System.String) },
+            { "InjectMouseDown", 0x186, InjectMouseDown, System.Int32, System.Boolean },
+            { "InjectMouseMove", 0x186, InjectMouseMove, System.Numerics.Vector2, System.Boolean },
+            { "InjectMouseUp", 0x186, InjectMouseUp, System.Int32, System.Boolean },
+            { "InjectMouseWheel", 0x286, InjectMouseWheel, System.Int32, System.Int32, System.Boolean },
+            { "IsDomainBlocked", 0x28E, IsDomainBlocked, System.String, System.Boolean, System.Boolean },
+            { "LoadUrl", 0x386, LoadUrl, System.String, System.String, System.Boolean, System.Boolean },
+            { "ReloadPage", 0x86, ReloadPage, System.Boolean },
+            { "RequestDomain", 0x28E, RequestDomain, System.String, System.Boolean, System.Boolean },
+            { "RequestDomains", 0x28E, RequestDomains, System.Array(System.String), System.Boolean, System.Boolean },
+            { "Resize", 0x186, Resize, System.Numerics.Vector2, System.Boolean }
+          },
+          events = {
+            { "OnDomainRequestAccepted", 0xE, System.Delegate(System.String, System.Void) },
+            { "OnDomainRequestDenied", 0xE, System.Delegate(System.String, System.Void) },
+            { "OnCreated", 0x6, System.Delegate(class, out.Slipe.Client.Browsers.Events.OnCreatedEventArgs, System.Void) },
+            { "OnCursorChange", 0x6, System.Delegate(class, out.Slipe.Client.Browsers.Events.OnCursorChangeEventArgs, System.Void) },
+            { "OnDocumentReady", 0x6, System.Delegate(class, out.Slipe.Client.Browsers.Events.OnDocumentReadEventArgs, System.Void) },
+            { "OnInputFocusChange", 0x6, System.Delegate(class, out.Slipe.Client.Browsers.Events.OnInputFocusChangeEventArgs, System.Void) },
+            { "OnLoadFail", 0x6, System.Delegate(class, out.Slipe.Client.Browsers.Events.OnLoadFailEventArgs, System.Void) },
+            { "OnLoadStart", 0x6, System.Delegate(class, out.Slipe.Client.Browsers.Events.OnLoadStartEventArgs, System.Void) },
+            { "OnNavigate", 0x6, System.Delegate(class, out.Slipe.Client.Browsers.Events.OnNavigateEventArgs, System.Void) },
+            { "OnPopup", 0x6, System.Delegate(class, out.Slipe.Client.Browsers.Events.OnPopupEventArgs, System.Void) },
+            { "OnResourceBlocked", 0x6, System.Delegate(class, out.Slipe.Client.Browsers.Events.OnResourceBlockedEventArgs, System.Void) },
+            { "OnTooltip", 0x6, System.Delegate(class, out.Slipe.Client.Browsers.Events.OnTooltipEventArgs, System.Void) },
+            { "OnWhiteListChange", 0xE, System.Delegate(out.Slipe.Client.Elements.RootElement, out.Slipe.Client.Browsers.Events.OnWhiteListChangeEventArgs, System.Void) }
+          },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 31 --[[ElementType.Browser]]) }
         }
       end

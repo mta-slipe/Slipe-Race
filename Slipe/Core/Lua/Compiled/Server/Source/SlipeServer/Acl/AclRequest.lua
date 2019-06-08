@@ -35,7 +35,22 @@ System.namespace("Slipe.Server.Acl", function (namespace)
       __ctor__ = {
         __ctor1__,
         __ctor2__
-      }
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "Access", 0x6, System.Boolean },
+            { "Date", 0x6, System.String },
+            { "Name", 0x6, System.String },
+            { "Pending", 0x6, System.Boolean },
+            { "Who", 0x6, System.String }
+          },
+          methods = {
+            { ".ctor", 0x506, __ctor1__, System.String, System.Boolean, System.Boolean, System.String, System.String },
+            { ".ctor", 0x106, __ctor2__, System.Object }
+          }
+        }
+      end
     }
   end)
 end)

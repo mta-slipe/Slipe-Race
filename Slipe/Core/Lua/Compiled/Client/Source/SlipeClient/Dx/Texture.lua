@@ -15,18 +15,21 @@ System.namespace("Slipe.Client.Dx", function (namespace)
   -- Drawable texture
   -- </summary>
   namespace.class("Texture", function (namespace)
-    local GetPixels, GetPixels1, SetEdge, SetEdge1, SetPixels, __ctor1__, __ctor2__
+    local GetPixels, GetPixels1, SetEdge, SetEdge1, SetPixels, __ctor1__, __ctor2__, __ctor3__
+    __ctor1__ = function (this)
+      SlipeClientDx.Material.__ctor__(this)
+    end
     -- <summary>
     -- Create a texture element from a file or raw image string
     -- </summary>
-    __ctor1__ = function (this, filePathOrPixels, textureFormat, mipmaps, textureEdge)
+    __ctor2__ = function (this, filePathOrPixels, textureFormat, mipmaps, textureEdge)
       SlipeClientDx.Material.__ctor__(this)
       this.materialElement = SlipeMtaDefinitions.MtaClient.DxCreateTexture(filePathOrPixels, textureFormat:ToEnumString(SlipeClientDx.TextureFormat):ToLower(), mipmaps, textureEdge:ToEnumString(SlipeClientDx.TextureEdge):ToLower())
     end
     -- <summary>
     -- Create an empty texture
     -- </summary>
-    __ctor2__ = function (this, dimensions, textureFormat, textureEdge, textureType, depth)
+    __ctor3__ = function (this, dimensions, textureFormat, textureEdge, textureType, depth)
       SlipeClientDx.Material.__ctor__(this)
       local textureTypeString = "cube"
       if textureType == 0 --[[TextureType.TwoDimensional]] then
@@ -81,8 +84,24 @@ System.namespace("Slipe.Client.Dx", function (namespace)
       SetPixels = SetPixels,
       __ctor__ = {
         __ctor1__,
-        __ctor2__
-      }
+        __ctor2__,
+        __ctor3__
+      },
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x3, __ctor1__ },
+            { ".ctor", 0x406, __ctor2__, System.String, System.Int32, System.Boolean, System.Int32 },
+            { ".ctor", 0x506, __ctor3__, System.Numerics.Vector2, System.Int32, System.Int32, System.Int32, System.Int32 },
+            { "GetPixels", 0x386, GetPixels, System.Numerics.Vector2, System.Numerics.Vector2, System.Int32, out.Slipe.Client.Dx.TexturePixels },
+            { "GetPixels", 0x186, GetPixels1, System.Int32, out.Slipe.Client.Dx.TexturePixels },
+            { "SetEdge", 0x286, SetEdge, System.Int32, out.Slipe.Shared.Utilities.Color, System.Boolean },
+            { "SetEdge", 0x186, SetEdge1, System.Int32, System.Boolean },
+            { "SetPixels", 0x486, SetPixels, out.Slipe.Client.Dx.TexturePixels, System.Numerics.Vector2, System.Numerics.Vector2, System.Int32, System.Boolean }
+          },
+          class = { 0x6 }
+        }
+      end
     }
   end)
 end)
