@@ -13,7 +13,7 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
   -- Represents vehicles with a turret (firetrucks, rhino etc)
   -- </summary>
   namespace.class("TurretedVehicle", function (namespace)
-    local getTurretPosition, setTurretPosition, op_Explicit, class, __ctor1__, __ctor2__, __ctor3__
+    local getTurretPosition, setTurretPosition, op_Explicit1, class, __ctor1__, __ctor2__, __ctor3__
     __ctor1__ = function (this, element)
       SlipeClientVehicles.BaseVehicle.__ctor__[1](this, element)
     end
@@ -36,7 +36,7 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
     setTurretPosition = function (this, value)
       SlipeMtaDefinitions.MtaShared.SetVehicleTurretPosition(this.element, value.X, value.Y)
     end
-    op_Explicit = function (vehicle)
+    op_Explicit1 = function (vehicle)
       if System.is(SlipeClientVehicles.VehicleModel.FromId(vehicle:getModel()), SlipeClientVehicles.TurretedModel) then
         return class(vehicle:getMTAElement())
       end
@@ -51,7 +51,7 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
       end,
       getTurretPosition = getTurretPosition,
       setTurretPosition = setTurretPosition,
-      op_Explicit = op_Explicit,
+      op_Explicit1 = op_Explicit1,
       __ctor__ = {
         __ctor1__,
         __ctor2__,

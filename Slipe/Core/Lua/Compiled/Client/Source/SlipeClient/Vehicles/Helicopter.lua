@@ -13,7 +13,7 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
   -- Represents helicopter vehicles
   -- </summary>
   namespace.class("Helicopter", function (namespace)
-    local getRotorSpeed, setRotorSpeed, getBladeCollisionsEnabeled, setBladeCollisionsEnabeled, op_Explicit, class, __ctor1__, __ctor2__, 
+    local getRotorSpeed, setRotorSpeed, getBladeCollisionsEnabeled, setBladeCollisionsEnabeled, op_Explicit1, class, __ctor1__, __ctor2__, 
     __ctor3__
     __ctor1__ = function (this, element)
       SlipeClientVehicles.BaseVehicle.__ctor__[1](this, element)
@@ -42,7 +42,7 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
     setBladeCollisionsEnabeled = function (this, value)
       SlipeMtaDefinitions.MtaClient.SetHeliBladeCollisionsEnabled(this.element, value)
     end
-    op_Explicit = function (vehicle)
+    op_Explicit1 = function (vehicle)
       if System.is(SlipeClientVehicles.VehicleModel.FromId(vehicle:getModel()), SlipeClientVehicles.HelicopterModel) then
         return class(vehicle:getMTAElement())
       end
@@ -59,7 +59,7 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
       setRotorSpeed = setRotorSpeed,
       getBladeCollisionsEnabeled = getBladeCollisionsEnabeled,
       setBladeCollisionsEnabeled = setBladeCollisionsEnabeled,
-      op_Explicit = op_Explicit,
+      op_Explicit1 = op_Explicit1,
       __ctor__ = {
         __ctor1__,
         __ctor2__,

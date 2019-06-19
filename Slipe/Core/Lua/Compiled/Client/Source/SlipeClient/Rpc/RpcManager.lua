@@ -12,7 +12,7 @@ System.import(function (out)
 end)
 System.namespace("Slipe.Client.Rpc", function (namespace)
   namespace.class("RpcManager", function (namespace)
-    local instance, getInstance, RegisterRPC, TriggerRPC, class, __ctor__
+    local instance, getInstance, RegisterRPC, TriggerRPC, TriggerLatentRPC, class, __ctor__
     __ctor__ = function (this)
       this.RegisteredRPCs = DictStringDelegate()
 
@@ -45,10 +45,17 @@ System.namespace("Slipe.Client.Rpc", function (namespace)
     TriggerRPC = function (this, key, argument)
       SlipeMtaDefinitions.MtaClient.TriggerServerEvent(key, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
     end
+    -- <summary>
+    -- Trigger an RPC with limited bandwidth
+    -- </summary>
+    TriggerLatentRPC = function (this, key, bandwidth, argument, persists)
+      SlipeMtaDefinitions.MtaClient.TriggerLatentServerEvent(key, bandwidth, persists, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
+    end
     class = {
       getInstance = getInstance,
       RegisterRPC = RegisterRPC,
       TriggerRPC = TriggerRPC,
+      TriggerLatentRPC = TriggerLatentRPC,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -62,6 +69,7 @@ System.namespace("Slipe.Client.Rpc", function (namespace)
           methods = {
             { ".ctor", 0x1, nil },
             { "RegisterRPC", 0x10206, RegisterRPC, function (CallbackType) return System.String, System.Delegate(CallbackType, System.Void) end },
+            { "TriggerLatentRPC", 0x406, TriggerLatentRPC, System.String, System.Int32, System.Object, System.Boolean },
             { "TriggerRPC", 0x206, TriggerRPC, System.String, System.Object }
           },
           class = { 0x6 }

@@ -7,7 +7,7 @@ end)
 System.namespace("Slipe.Client.Game", function (namespace)
   namespace.class("Engine", function (namespace)
     local getInstance, GetModelIDFromName, GetModelNameFromId, GetModelLODDistance, SetModelLODDistance, GetModelTextureNames, GetModelTextureNames1, GetVisibleTextureNames, 
-    SetAsynchronousLoading, ReplaceAnimation, class
+    SetAsynchronousLoading, ReplaceAnimation, RestoreAnimation, class
     getInstance = function ()
       class.instance = class.instance or class()
       return class.instance
@@ -44,6 +44,9 @@ System.namespace("Slipe.Client.Game", function (namespace)
     ReplaceAnimation = function (this, ped, internalBlock, internalAnim, customBlock, customAnim)
       return SlipeMtaDefinitions.MtaClient.EngineReplaceAnimation(ped:getMTAElement(), internalBlock, internalAnim, customBlock, customAnim)
     end
+    RestoreAnimation = function (this, ped, internalBlock, internalAnim)
+      return SlipeMtaDefinitions.MtaClient.EngineRestoreAnimation(ped:getMTAElement(), internalBlock, internalAnim)
+    end
     class = {
       getInstance = getInstance,
       GetModelIDFromName = GetModelIDFromName,
@@ -55,6 +58,7 @@ System.namespace("Slipe.Client.Game", function (namespace)
       GetVisibleTextureNames = GetVisibleTextureNames,
       SetAsynchronousLoading = SetAsynchronousLoading,
       ReplaceAnimation = ReplaceAnimation,
+      RestoreAnimation = RestoreAnimation,
       __metadata__ = function (out)
         return {
           fields = {
@@ -71,6 +75,7 @@ System.namespace("Slipe.Client.Game", function (namespace)
             { "GetModelTextureNames", 0x186, GetModelTextureNames1, System.String, System.Array(System.String) },
             { "GetVisibleTextureNames", 0x286, GetVisibleTextureNames, System.String, System.String, System.Array(System.String) },
             { "ReplaceAnimation", 0x586, ReplaceAnimation, out.Slipe.Client.Peds.Ped, System.String, System.String, System.String, System.String, System.Boolean },
+            { "RestoreAnimation", 0x386, RestoreAnimation, out.Slipe.Client.Peds.Ped, System.String, System.String, System.Boolean },
             { "SetAsynchronousLoading", 0x286, SetAsynchronousLoading, System.Boolean, System.Boolean, System.Boolean },
             { "SetModelLODDistance", 0x286, SetModelLODDistance, System.Int32, System.Single, System.Boolean }
           },

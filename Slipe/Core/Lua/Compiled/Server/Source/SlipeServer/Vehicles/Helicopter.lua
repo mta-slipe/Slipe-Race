@@ -11,7 +11,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
   -- Represents helicopter vehicles
   -- </summary>
   namespace.class("Helicopter", function (namespace)
-    local op_Explicit, class, __ctor1__, __ctor2__, __ctor3__
+    local op_Explicit1, class, __ctor1__, __ctor2__, __ctor3__
     __ctor1__ = function (this, element)
       SlipeServerVehicles.BaseVehicle.__ctor__[1](this, element)
     end
@@ -27,7 +27,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
     __ctor3__ = function (this, model, position, rotation, numberplate, variant1, variant2)
       SlipeServerVehicles.BaseVehicle.__ctor__[2](this, model, position:__clone__(), rotation:__clone__(), numberplate, variant1, variant2)
     end
-    op_Explicit = function (vehicle)
+    op_Explicit1 = function (vehicle)
       if System.is(SlipeServerVehicles.VehicleModel.FromId(vehicle:getModel()), SlipeServerVehicles.HelicopterModel) then
         return class(vehicle:getMTAElement())
       end
@@ -40,7 +40,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
           out.Slipe.Server.Vehicles.BaseVehicle
         }
       end,
-      op_Explicit = op_Explicit,
+      op_Explicit1 = op_Explicit1,
       __ctor__ = {
         __ctor1__,
         __ctor2__,

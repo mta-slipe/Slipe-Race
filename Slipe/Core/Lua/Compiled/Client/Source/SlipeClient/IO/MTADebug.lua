@@ -6,9 +6,12 @@ System.import(function (out)
 end)
 System.namespace("Slipe.Client.IO", function (namespace)
   namespace.class("MtaDebug", function (namespace)
-    local getActive
+    local getActive, setActive
     getActive = function ()
       return SlipeMtaDefinitions.MtaClient.IsDebugViewActive()
+    end
+    setActive = function (value)
+      SlipeMtaDefinitions.MtaClient.SetDebugViewActive(value)
     end
     return {
       __inherits__ = function (out)
@@ -17,10 +20,11 @@ System.namespace("Slipe.Client.IO", function (namespace)
         }
       end,
       getActive = getActive,
+      setActive = setActive,
       __metadata__ = function (out)
         return {
           properties = {
-            { "Active", 0x20E, System.Boolean, getActive }
+            { "Active", 0x10E, System.Boolean, getActive, setActive }
           },
           events = {
             { "OnMessage", 0xE, System.Delegate(out.Slipe.Client.Elements.RootElement, out.Slipe.Client.IO.Events.OnDebugMessageEventArgs, System.Void) }

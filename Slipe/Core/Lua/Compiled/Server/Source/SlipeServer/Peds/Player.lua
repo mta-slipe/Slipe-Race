@@ -31,7 +31,7 @@ System.namespace("Slipe.Server.Peds", function (namespace)
     getMuted, setMuted, getAll, getAlive, getDead, getRandom, getCount, IsDisplayObserver, 
     Login, LogOut, Spawn, SetAnnounceValue, GetAnnounceValue, GiveMoney, Redirect, ResendACInfo, 
     ResendModInfo, SetHudComponentVisible, SetVoiceBroadCastTo, SetVoiceIgnoreFrom, TakeMoney, TakeScreenShot, PlaySoundFrontEnd, DetonateSatchels, 
-    GetFromName, class, __ctor__
+    Kick, Kick1, GetFromName, class, __ctor__
     __ctor__ = function (this, mtaElement)
       SlipeServerPeds.Ped.__ctor__[1](this, mtaElement)
       this.Camera = SlipeServerRendering.Camera(this)
@@ -264,6 +264,22 @@ System.namespace("Slipe.Server.Peds", function (namespace)
       return SlipeMtaDefinitions.MtaServer.DetonateSatchels(this.element)
     end
     -- <summary>
+    -- Kicks a player from the server
+    -- </summary>
+    -- <param name="responsiblePlayer"></param>
+    -- <returns></returns>
+    Kick = function (this, reason, responsiblePlayer)
+      return SlipeMtaDefinitions.MtaServer.KickPlayer(this:getMTAElement(), responsiblePlayer:getMTAElement(), reason)
+    end
+    -- <summary>
+    -- Kicks a player from the server
+    -- </summary>
+    -- <param name="responsiblePlayer"></param>
+    -- <returns></returns>
+    Kick1 = function (this, reason, responsiblePlayer)
+      return SlipeMtaDefinitions.MtaServer.KickPlayer(this:getMTAElement(), responsiblePlayer, reason)
+    end
+    -- <summary>
     -- Retrieves a player class instance from a specified player name
     -- </summary>
     GetFromName = function (name)
@@ -334,6 +350,8 @@ System.namespace("Slipe.Server.Peds", function (namespace)
       TakeScreenShot = TakeScreenShot,
       PlaySoundFrontEnd = PlaySoundFrontEnd,
       DetonateSatchels = DetonateSatchels,
+      Kick = Kick,
+      Kick1 = Kick1,
       GetFromName = GetFromName,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
@@ -369,6 +387,8 @@ System.namespace("Slipe.Server.Peds", function (namespace)
             { "GetFromName", 0x18E, GetFromName, System.String, class },
             { "GiveMoney", 0x186, GiveMoney, System.Int32, System.Boolean },
             { "IsDisplayObserver", 0x186, IsDisplayObserver, out.Slipe.Server.Displays.Display, System.Boolean },
+            { "Kick", 0x286, Kick1, System.String, System.String, System.Boolean },
+            { "Kick", 0x286, Kick, System.String, class, System.Boolean },
             { "Login", 0x286, Login, out.Slipe.Server.Accounts.Account, System.String, System.Boolean },
             { "LogOut", 0x86, LogOut, System.Boolean },
             { "PlaySoundFrontEnd", 0x186, PlaySoundFrontEnd, System.Int32, System.Boolean },

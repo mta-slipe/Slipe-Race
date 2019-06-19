@@ -74,6 +74,8 @@ namespace ClientSide.HUD
 
             Vector2 topleft = this.screenDimensions - (fullDimensions + margin);
 
+            long localTime = this.times[Player.Local];
+
             for (int i = 0; i < players.Length; i++)
             {
                 Player player = players[i];
@@ -82,9 +84,9 @@ namespace ClientSide.HUD
                     item = new LeaderboardItem(player);
                     playerItems[player] = item;
                 }
-                item.Position = topleft + i * (itemDimensions + padding);
+                item.Position = topleft + i * ((itemDimensions * new Vector2(0, 1)) + padding);
                 item.Dimensions = itemDimensions;
-                item.Time = this.times[player] - this.times[Player.Local];
+                item.Time = this.times[player] - localTime;
                 item.Draw(null, null);
             }
 

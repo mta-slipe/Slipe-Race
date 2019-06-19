@@ -1,7 +1,8 @@
-﻿using ServerSide.GameMode.Elements;
+﻿using ServerSide.Gamemode.Elements;
 using ServerSide.RPCs;
 using Slipe.Server.Elements;
 using Slipe.Server.Events;
+using Slipe.Server.Game;
 using Slipe.Server.IO;
 using Slipe.Server.Peds;
 using Slipe.Server.Rpc;
@@ -21,13 +22,15 @@ namespace ServerSide.GameMode
 {
     class Race
     {
-        private Vector3[] startPositions;
+        private Spawnpoint[] spawnpoints;
         private int finishedCount;
         private int disqualifiedCount;
         private bool hasStarted;
 
         private List<RacePlayer> racers;
         private List<Checkpoint> checkpoints;
+
+        private int startTicks;
 
         private bool InProgress
         {
@@ -44,9 +47,9 @@ namespace ServerSide.GameMode
             }
         }
 
-        public Race(Vector3[] startPositions)
+        public Race(Spawnpoint[] spawnpoints)
         {
-            this.startPositions = startPositions;
+            this.spawnpoints = spawnpoints;
             this.hasStarted = false;
             this.racers = new List<RacePlayer>();
             this.checkpoints = new List<Checkpoint>();
@@ -56,9 +59,9 @@ namespace ServerSide.GameMode
 
         public void AddRacer(RacePlayer racer)
         {
-            if (startPositions.Length <= racers.Count)
+            if (spawnpoints.Length <= racers.Count)
             {
-                ChatBox.WriteLine(string.Format("There are only {0} positions available for this race!", this.startPositions.Length), racer, 0xff0000);
+                ChatBox.WriteLine(string.Format("There are only {0} positions available for this race!", this.spawnpoints.Length), racer, 0xff0000);
             }
             racers.Add(racer);
             racer.OnQuit += HandleQuit;
@@ -91,7 +94,7 @@ namespace ServerSide.GameMode
 
         }
 
-        public void Start(VehicleModel model = null)
+        public void Start()
         {
             if (racers.Count == 0)
             {
@@ -107,7 +110,7 @@ namespace ServerSide.GameMode
                 start.SetRaceVisibility(player, true, true);
             }
 
-            SpawnVehicles(model ?? VehicleModel.Cars.Alpha);
+            SpawnVehicles();
 
             System.Timers.Timer timer = new System.Timers.Timer(500);
             timer.AutoReset = false;
@@ -120,15 +123,17 @@ namespace ServerSide.GameMode
             this.hasStarted = true;
         }
 
-        private void SpawnVehicles(VehicleModel model)
+        private void SpawnVehicles()
         {
             for (int i = 0; i < racers.Count; i++)
             {
                 RacePlayer player = racers[i];
-                Vehicle vehicle = new Vehicle(model, startPositions[i]);
+                Spawnpoint spawnpoint = spawnpoints[i];
+
+                Vehicle vehicle = new Vehicle(VehicleModel.FromId(spawnpoint.VehicleModel), spawnpoint.Position);
                 player.Vehicle = vehicle;
 
-                vehicle.FaceElement(checkpoints[0]);
+                vehicle.FaceElement(checkpoints.FirstOrDefault());
                 vehicle.OnExplode += (BaseVehicle source, OnExplodeEventArgs eventArgs) =>
                 {
                     DisqualifyPlayer(player);
@@ -147,11 +152,13 @@ namespace ServerSide.GameMode
                 player.WarpIntoVehicle();
                 player.Camera.Fade(CameraFade.In);
             }
+
+            startTicks = GameServer.TickCount;
         }
 
         public void HandleCheckpointHit(Checkpoint checkpoint, RacePlayer player)
         {
-            player.CheckpointTimes[checkpoint] = DateTime.Now.Ticks;
+            player.HitCheckpoint(checkpoint);
             UpdateLeaderboards();
             if (checkpoint.IsFinish)
             {
@@ -169,25 +176,23 @@ namespace ServerSide.GameMode
         {
             long[] times = new long[this.racers.Count];
             List<RacePlayer> sortRacers = new List<RacePlayer>(this.racers);
-            
+
             sortRacers.Sort((RacePlayer a, RacePlayer b) =>
             {
-                return (int)(a.CheckpointTimes.Count * a.CheckpointTimes.Max((kvPair) => kvPair.Value) - b.CheckpointTimes.Count * a.CheckpointTimes.Max((kvPair) => kvPair.Value));
+                return (int)(a.CheckpointScore - b.CheckpointScore);
             });
 
             RacePlayer[] players = sortRacers.ToArray();
-            for (int i = 0; i < sortRacers.Count; i++)
+            for (int i = 0; i < players.Length; i++)
             {
-                if (sortRacers[i].CheckpointTimes.Count == 0)
-                {
-                    times[i] = DateTime.Now.Ticks;
-                } else
-                {
-                    times[i] = sortRacers[i].CheckpointTimes.Max(kvPair => kvPair.Value);
-                }
-            }
-            LeaderboardRPC rpc = new LeaderboardRPC(players, times);
+                RacePlayer player = players[i];
 
+                times[i] = player.LastCheckpointHit == null ?
+                    startTicks :
+                    player.CheckpointTimes[player.LastCheckpointHit];
+            }
+
+            LeaderboardRPC rpc = new LeaderboardRPC(players, times);
             foreach(RacePlayer player in this.racers)
             {
                 RpcManager.Instance.TriggerRPC(player, "SlipeRace.UpdateLeaderboard", rpc);

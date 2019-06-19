@@ -148,6 +148,9 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
       if account == nil then
         return nil
       end
+      if accounts == nil then
+        accounts = DictObjectAccount()
+      end
       if not accounts:ContainsKey(account) then
         return class(account)
       end

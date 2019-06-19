@@ -4,7 +4,7 @@ using System.Text;
 using Slipe.MtaDefinitions;
 using Slipe.Shared.Elements;
 using Slipe.Server.Peds;
-using ServerSide.GameMode.Elements;
+using ServerSide.Gamemode.Elements;
 using Slipe.Shared.RPC;
 
 namespace ServerSide.RPCs

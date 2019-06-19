@@ -13,7 +13,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
   -- Planes as a special type of vehicle
   -- </summary>
   namespace.class("Plane", function (namespace)
-    local getLandingGearDown, setLandingGearDown, op_Explicit, class, __ctor1__, __ctor2__, __ctor3__
+    local getLandingGearDown, setLandingGearDown, op_Explicit1, class, __ctor1__, __ctor2__, __ctor3__
     __ctor1__ = function (this, element)
       SlipeServerVehicles.BaseVehicle.__ctor__[1](this, element)
     end
@@ -35,7 +35,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
     setLandingGearDown = function (this, value)
       SlipeMtaDefinitions.MtaShared.SetVehicleLandingGearDown(this.element, value)
     end
-    op_Explicit = function (vehicle)
+    op_Explicit1 = function (vehicle)
       if System.is(SlipeServerVehicles.VehicleModel.FromId(vehicle:getModel()), SlipeServerVehicles.PlaneModel) then
         return class(vehicle:getMTAElement())
       end
@@ -50,7 +50,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
       end,
       getLandingGearDown = getLandingGearDown,
       setLandingGearDown = setLandingGearDown,
-      op_Explicit = op_Explicit,
+      op_Explicit1 = op_Explicit1,
       __ctor__ = {
         __ctor1__,
         __ctor2__,

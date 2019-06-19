@@ -13,7 +13,7 @@ System.namespace("Slipe.Client.Assets", function (namespace)
   -- A single mod, consisting of a .txd and optionally a .dff and .col
   -- </summary>
   namespace.class("Mod", function (namespace)
-    local ApplyTo, OnFileDownload, ApplyFiles, __ctor1__, __ctor2__
+    local ApplyTo, OnFileDownload, ApplyFiles, Restore, __ctor1__, __ctor2__
     -- <summary>
     -- Creates a new Mod using TXD, DFF and COL instances
     -- </summary>
@@ -97,9 +97,18 @@ System.namespace("Slipe.Client.Assets", function (namespace)
         this.col:ApplyTo(model)
       end
     end
+    Restore = function (this, model)
+      if this.dff ~= nil then
+        SlipeClientAssets.Dff.Restore(model)
+      end
+      if this.col ~= nil then
+        SlipeClientAssets.Col.Restore(model)
+      end
+    end
     return {
       state = 0,
       ApplyTo = ApplyTo,
+      Restore = Restore,
       __ctor__ = {
         __ctor1__,
         __ctor2__
@@ -118,7 +127,8 @@ System.namespace("Slipe.Client.Assets", function (namespace)
             { ".ctor", 0x306, __ctor2__, System.String, System.String, System.String },
             { "ApplyFiles", 0x101, ApplyFiles, System.Int32 },
             { "ApplyTo", 0x106, ApplyTo, System.Int32 },
-            { "OnFileDownload", 0x1, OnFileDownload }
+            { "OnFileDownload", 0x1, OnFileDownload },
+            { "Restore", 0x106, Restore, System.Int32 }
           },
           class = { 0x6 }
         }

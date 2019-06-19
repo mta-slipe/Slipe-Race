@@ -107,7 +107,7 @@ local function parseIntWithException(s, min, max)
 end
 
 local SByte = define("System.SByte", {
-  Parse = function (s)
+  Parse = function (this, s)
     return parseIntWithException(s, -128, 127)
   end,
   TryParse = function (s)
@@ -117,7 +117,7 @@ local SByte = define("System.SByte", {
 setmetatable(SByte, Int)
 
 local Byte = define("System.Byte", {
-  Parse = function (s)
+  Parse = function (this, s)
     return parseIntWithException(s, 0, 255)
   end,
   TryParse = function (s)
@@ -127,7 +127,7 @@ local Byte = define("System.Byte", {
 setmetatable(Byte, Int)
 
 local Int16 = define("System.Int16", {
-  Parse = function (s)
+  Parse = function (this, s)
     return parseIntWithException(s, -32768, 32767)
   end,
   TryParse = function (s)
@@ -137,7 +137,7 @@ local Int16 = define("System.Int16", {
 setmetatable(Int16, Int)
 
 local UInt16 = define("System.UInt16", {
-  Parse = function (s)
+  Parse = function (this, s)
     return parseIntWithException(s, 0, 65535)
   end,
   TryParse = function (s)
@@ -147,7 +147,7 @@ local UInt16 = define("System.UInt16", {
 setmetatable(UInt16, Int)
 
 local Int32 = define("System.Int32", {
-  Parse = function (s)
+  Parse = function (this, s)
     return parseIntWithException(s, -2147483648, 2147483647)
   end,
   TryParse = function (s)
@@ -157,7 +157,7 @@ local Int32 = define("System.Int32", {
 setmetatable(Int32, Int)
 
 local UInt32 = define("System.UInt32", {
-  Parse = function (s)
+  Parse = function (this, s)
     return parseIntWithException(s, 0, 4294967295)
   end,
   TryParse = function (s)
@@ -167,7 +167,7 @@ local UInt32 = define("System.UInt32", {
 setmetatable(UInt32, Int)
 
 local Int64 = define("System.Int64", {
-  Parse = function (s)
+  Parse = function (this, s)
     return parseIntWithException(s, -9223372036854775808, 9223372036854775807)
   end,
   TryParse = function (s)
@@ -177,7 +177,9 @@ local Int64 = define("System.Int64", {
 setmetatable(Int64, Int)
 
 local UInt64 = define("System.UInt64", {
-  Parse = function (s)
+  Parse = function (this, s)
+    print(this)
+    print(s)
     return parseIntWithException(s, 0, 18446744073709551615.0)
   end,
   TryParse = function (s)
@@ -302,7 +304,7 @@ local function parseDoubleWithException(s)
 end
 
 local Single = define("System.Single", {
-  Parse = function (s)
+  Parse = function (this, s)
     local v = parseDoubleWithException(s)
     if v < -3.40282347E+38 or v > 3.40282347E+38 then
       throw(OverflowException())

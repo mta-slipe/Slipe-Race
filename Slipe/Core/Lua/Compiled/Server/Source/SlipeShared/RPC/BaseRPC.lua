@@ -2,18 +2,29 @@
 local System = System
 local SlipeMtaDefinitions
 local SlipeSharedElements
+local ArrayMtaElement
 System.import(function (out)
   SlipeMtaDefinitions = Slipe.MtaDefinitions
   SlipeSharedElements = Slipe.Shared.Elements
+  ArrayMtaElement = System.Array(SlipeMtaDefinitions.MtaElement)
 end)
 System.namespace("Slipe.Shared.RPC", function (namespace)
   namespace.class("BaseRPC", function (namespace)
-    local GetArray, GetElementArray, GetElement
+    local GetArray, CreateElementArray, GetElementArray, GetElement
     GetArray = function (this, table, T)
       return SlipeMtaDefinitions.MtaShared.GetArrayFromTable(table, "", T)
     end
+    CreateElementArray = function (this, elements)
+      local mtaElements = ArrayMtaElement:new(#elements)
+
+      for i = 0, #elements - 1 do
+        mtaElements:set(i, elements:get(i):getMTAElement())
+      end
+
+      return mtaElements
+    end
     GetElementArray = function (this, table, T)
-      local mtaElements = SlipeMtaDefinitions.MtaShared.GetArrayFromTable(table, "", System.Object)
+      local mtaElements = SlipeMtaDefinitions.MtaShared.GetArrayFromTable(table, "", SlipeMtaDefinitions.MtaElement)
 
       local elements = System.Array(T):new(#mtaElements)
       for i = 0, #mtaElements - 1 do
@@ -26,11 +37,13 @@ System.namespace("Slipe.Shared.RPC", function (namespace)
     end
     return {
       GetArray = GetArray,
+      CreateElementArray = CreateElementArray,
       GetElementArray = GetElementArray,
       GetElement = GetElement,
       __metadata__ = function (out)
         return {
           methods = {
+            { "CreateElementArray", 0x186, CreateElementArray, System.Array(out.Slipe.Shared.Elements.Element), System.Array(out.Slipe.MtaDefinitions.MtaElement) },
             { "GetArray", 0x10186, GetArray, function (T) return System.Object, System.Array(T) end },
             { "GetElement", 0x10186, GetElement, function (T) return System.Object, T end },
             { "GetElementArray", 0x10186, GetElementArray, function (T) return System.Object, System.Array(T) end }

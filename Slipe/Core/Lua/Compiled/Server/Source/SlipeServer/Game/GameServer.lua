@@ -17,8 +17,8 @@ System.namespace("Slipe.Server.Game", function (namespace)
   namespace.class("GameServer", function (namespace)
     local getPassword, setPassword, getMaxPlayers, setMaxPlayers, getFPSLimit, setFPSLimit, getPort, getHTTPPort, 
     getName, getIsVoiceEnabled, config, getConfig, getTickCount, version, getVersion, console, 
-    getConsole, debug, getDebug, log, getLog, getFpsLimit, setFpsLimit, SetGlitchEnabled, 
-    IsGlitchEnabled, Shutdown
+    getConsole, debug, getDebug, log, getLog, announcement, getAnnouncement, getFpsLimit, 
+    setFpsLimit, SetGlitchEnabled, IsGlitchEnabled, Shutdown
     getPassword = function ()
       return SlipeMtaDefinitions.MtaServer.GetServerPassword()
     end
@@ -82,6 +82,12 @@ System.namespace("Slipe.Server.Game", function (namespace)
       end
       return log
     end
+    getAnnouncement = function ()
+      if announcement == nil then
+        announcement = SlipeServerGame.Announcement()
+      end
+      return announcement
+    end
     getFpsLimit = function ()
       return SlipeMtaDefinitions.MtaShared.GetFPSLimit()
     end
@@ -123,6 +129,7 @@ System.namespace("Slipe.Server.Game", function (namespace)
       getConsole = getConsole,
       getDebug = getDebug,
       getLog = getLog,
+      getAnnouncement = getAnnouncement,
       getFpsLimit = getFpsLimit,
       setFpsLimit = setFpsLimit,
       SetGlitchEnabled = SetGlitchEnabled,
@@ -131,6 +138,7 @@ System.namespace("Slipe.Server.Game", function (namespace)
       __metadata__ = function (out)
         return {
           properties = {
+            { "Announcement", 0x20E, out.Slipe.Server.Game.Announcement, getAnnouncement },
             { "Config", 0x20E, out.Slipe.Server.Game.Config, getConfig },
             { "Console", 0x20E, out.Slipe.Server.IO.MtaConsole, getConsole },
             { "Debug", 0x20E, out.Slipe.Server.IO.MtaDebug, getDebug },
@@ -147,6 +155,7 @@ System.namespace("Slipe.Server.Game", function (namespace)
             { "Version", 0x20E, out.Slipe.Shared.Helpers.SystemVersion, getVersion }
           },
           fields = {
+            { "announcement", 0x9, out.Slipe.Server.Game.Announcement },
             { "config", 0x9, out.Slipe.Server.Game.Config },
             { "console", 0x9, out.Slipe.Server.IO.MtaConsole },
             { "debug", 0x9, out.Slipe.Server.IO.MtaDebug },

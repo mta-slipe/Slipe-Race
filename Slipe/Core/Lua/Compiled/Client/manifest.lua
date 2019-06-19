@@ -71,6 +71,7 @@ return function (out)
     load("Source.SlipeClient.GameWorld.AmbientSound")
     load("Source.SlipeClient.GameWorld.Events.OnBreakEventArgs")
     load("Source.SlipeClient.GameWorld.Events.OnDamageEventArgs")
+    load("Source.SlipeClient.GameWorld.Fire")
     load("Source.SlipeClient.GameWorld.Garage")
     load("Source.SlipeClient.GameWorld.SwatRope")
     load("Source.SlipeClient.GameWorld.Water")
@@ -265,6 +266,7 @@ return function (out)
     load("Source.SlipeShared.Helpers.EasingFunction")
     load("Source.SlipeShared.Helpers.NumericHelper")
     load("Source.SlipeShared.Helpers.Version")
+    load("Source.SlipeShared.IO.KeyEnum")
     load("Source.SlipeShared.IO.MouseEnum")
     load("Source.SlipeShared.IO.SharedMTADebug")
     load("Source.SlipeShared.Markers.Events.OnHitEventArgs")
@@ -399,6 +401,7 @@ return function (out)
     "Slipe.Client.GameWorld.AmbientSound",
     "Slipe.Client.GameWorld.Events.OnBreakEventArgs",
     "Slipe.Client.GameWorld.Events.OnDamageEventArgs",
+    "Slipe.Client.GameWorld.Fire",
     "Slipe.Client.GameWorld.Garage",
     "Slipe.Client.GameWorld.SwatRope",
     "Slipe.Client.GameWorld.Water",
@@ -598,6 +601,7 @@ return function (out)
     "Slipe.Shared.Helpers.EasingFunction",
     "Slipe.Shared.Helpers.NumericHelper",
     "Slipe.Shared.Helpers.SystemVersion",
+    "Slipe.Shared.IO.KeyState",
     "Slipe.Shared.IO.MouseButton",
     "Slipe.Shared.IO.MouseButtonState",
     "Slipe.Shared.Markers.Events.OnHitEventArgs",

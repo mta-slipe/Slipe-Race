@@ -12,8 +12,8 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
   -- </summary>
   namespace.class("Element", function (namespace)
     local getRoot, getMTAElement, getType, getID, setID, getChildCount, getParent, setParent, 
-    getCallPropagationEnabled, setCallPropagationEnabled, Destroy, GetChild, GetChildren, GetByID, ListenForEvent, HandleEvent, 
-    class, __ctor1__, __ctor2__, __ctor3__
+    getCallPropagationEnabled, setCallPropagationEnabled, SetData, GetData, GetData1, Destroy, GetChild, GetChildren, 
+    GetByID, op_Explicit, ListenForEvent, HandleEvent, class, __ctor1__, __ctor2__, __ctor3__
     __ctor1__ = function (this)
     end
     -- <summary>
@@ -60,6 +60,31 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
       SlipeMtaDefinitions.MtaShared.SetElementCallPropagationEnabled(this.element, value)
     end
     -- <summary>
+    -- Sets element data
+    -- </summary>
+    -- <param name="value"></param>
+    -- <param name="synchronised"></param>
+    SetData = function (this, key, value, synchronize)
+      SlipeMtaDefinitions.MtaShared.SetElementData(getMTAElement(this), key, value, synchronize)
+    end
+    -- <summary>
+    -- Gets element data
+    -- </summary>
+    -- <param name="inherit"></param>
+    -- <returns></returns>
+    GetData = function (this, key, inherit)
+      return SlipeMtaDefinitions.MtaShared.GetElementData(getMTAElement(this), key, inherit)
+    end
+    -- <summary>
+    -- Gets element data
+    -- </summary>
+    -- <param name="key"></param>
+    -- <param name="inherit"></param>
+    -- <returns></returns>
+    GetData1 = function (this, key, inherit, T)
+      return System.cast(T, GetData(this, key, inherit))
+    end
+    -- <summary>
     -- Desetroys the element
     -- </summary>
     Destroy = function (this)
@@ -85,6 +110,12 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
       return SlipeSharedElements.ElementManager.getInstance():GetElement1(SlipeMtaDefinitions.MtaShared.GetElementByID(id, index))
     end
     -- <summary>
+    -- gets Slipe Element from Mta element
+    -- </summary>
+    op_Explicit = function (mtaElement)
+      return SlipeSharedElements.ElementManager.getInstance():GetElement1(mtaElement)
+    end
+    -- <summary>
     -- Adds an eventhandler to this element
     -- </summary>
     ListenForEvent = function (this, eventName, propagated, priorty)
@@ -103,10 +134,14 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
       setParent = setParent,
       getCallPropagationEnabled = getCallPropagationEnabled,
       setCallPropagationEnabled = setCallPropagationEnabled,
+      SetData = SetData,
+      GetData = GetData,
+      GetData1 = GetData1,
       Destroy = Destroy,
       GetChild = GetChild,
       GetChildren = GetChildren,
       GetByID = GetByID,
+      op_Explicit = op_Explicit,
       ListenForEvent = ListenForEvent,
       HandleEvent = HandleEvent,
       __ctor__ = {
@@ -136,8 +171,11 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
             { "GetByID", 0x28E, GetByID, System.String, System.Int32, class },
             { "GetChild", 0x186, GetChild, System.Int32, class },
             { "GetChildren", 0x186, GetChildren, System.String, System.Array(out.Slipe.Shared.Elements.Element) },
+            { "GetData", 0x286, GetData, System.String, System.Boolean, System.Object },
+            { "GetData", 0x10286, GetData1, function (T) return System.String, System.Boolean, System.Object end },
             { "HandleEvent", 0xA06, HandleEvent, System.String, out.Slipe.MtaDefinitions.MtaElement, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object },
-            { "ListenForEvent", 0x306, ListenForEvent, System.String, System.Boolean, System.String }
+            { "ListenForEvent", 0x306, ListenForEvent, System.String, System.Boolean, System.String },
+            { "SetData", 0x306, SetData, System.String, System.Object, System.Boolean }
           },
           events = {
             { "OnDestroy", 0x6, System.Delegate(class, out.Slipe.Shared.Elements.Events.OnDestroyEventArgs, System.Void) }

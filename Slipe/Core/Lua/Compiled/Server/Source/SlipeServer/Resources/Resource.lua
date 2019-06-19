@@ -270,7 +270,7 @@ System.namespace("Slipe.Server.Resources", function (namespace)
             { "This", 0x20E, class, getThis }
           },
           methods = {
-            { ".ctor", 0x104, __ctor1__, out.Slipe.MtaDefinitions.MtaResource },
+            { ".ctor", 0x103, __ctor1__, out.Slipe.MtaDefinitions.MtaResource },
             { ".ctor", 0x103, __ctor2__, System.String },
             { ".ctor", 0x206, __ctor3__, System.String, System.String },
             { "AddConfig", 0x286, AddConfig, System.String, System.String, System.Xml.XmlNode },

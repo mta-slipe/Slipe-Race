@@ -79,6 +79,7 @@ EqualityComparer = define("System.EqualityComparer", function (T)
     end
   }
 end)
+System.EqualityComparer_1 = EqualityComparer
 
 local function compare(this, a, b)
   return compareObj(a, b)

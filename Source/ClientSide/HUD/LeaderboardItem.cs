@@ -28,7 +28,7 @@ namespace ClientSide.HUD
 
             this.backgroundDrawable = new Rectangle(Vector2.Zero, Vector2.Zero, new Color(255, 255, 255, 100), false, false);
             this.nameDrawable = new Text(Player.Name, Vector2.Zero, Vector2.Zero, Color.Black, new Vector2(2, 2), StandardFont.Default, HorizontalAlign.Left, VerticalAlign.Center, 0, Vector2.Zero, true, false, false, false);
-            this.timeDrawable = new Text("", Vector2.Zero, Vector2.Zero, Color.White, new Vector2(2, 2), StandardFont.Default, HorizontalAlign.Left, VerticalAlign.Center, 0, Vector2.Zero, true, false, false, false);
+            this.timeDrawable = new Text("", Vector2.Zero, Vector2.Zero, Color.White, new Vector2(2, 2), StandardFont.Default, HorizontalAlign.Right, VerticalAlign.Center, 0, Vector2.Zero, true, false, false, false);
         }
 
         private void UpdateDrawables()
@@ -41,9 +41,9 @@ namespace ClientSide.HUD
             nameDrawable.Content = Player.Name;
 
             timeDrawable.Position = nameDrawable.BottomRight - new Vector2(0, 40);
-            timeDrawable.BottomRight = timeDrawable.Position + backgroundDrawable.Dimensions;
+            timeDrawable.BottomRight = backgroundDrawable.Position + backgroundDrawable.Dimensions;
             timeDrawable.Color = Time > 0 ? Color.Red : Color.Green;
-            timeDrawable.Content = (Time > 0 ? "+" : "-") + Time.ToString();
+            timeDrawable.Content = (Time > 0 ? "+" : "") + Time.ToString();
         }
 
         public bool Draw(RootElement source, OnRenderEventArgs eventArgs)

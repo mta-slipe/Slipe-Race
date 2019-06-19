@@ -1,6 +1,8 @@
-﻿using ServerSide.GameMode.Elements;
+﻿using ServerSide.Gamemode;
+using ServerSide.Gamemode.Elements;
 using Slipe.Server.IO;
 using Slipe.Server.Peds;
+using Slipe.Server.Vehicles;
 using Slipe.Shared.Elements;
 using System;
 using System.Collections.Generic;
@@ -20,23 +22,24 @@ namespace ServerSide.GameMode
             players = new List<RacePlayer>();
 
             Player.OnJoin += HandlePlayerJoin;
-            foreach (RacePlayer player in ElementManager.Instance.GetByType<RacePlayer>(Element.Root))
+            foreach (RacePlayer player in ElementManager.Instance.GetByType<RacePlayer>())
             {
                 HandlePlayerJoin(player);
             }
 
             Timer timer = new Timer()
             {
-                Interval = 5000,
+                Interval = 1250,
                 AutoReset = false
             };
-            timer.Elapsed += (object sender, ElapsedEventArgs e) => StartDemoRace();
+            //timer.Elapsed += (object sender, ElapsedEventArgs e) => StartDemoRace();
+            timer.Elapsed += (object sender, ElapsedEventArgs e) => StartRace("race-suburbanspeedway");
             timer.Start();            
         }
 
         private void HandlePlayerJoin(Player source, Slipe.Server.Peds.Events.OnJoinEventArgs eventArgs)
         {
-            ChatBox.WriteLine(string.Format("Welcome to Slipe racing {0}!", source.Name), 0x00AA00);
+            ChatBox.WriteLine(string.Format("Welcome to Slipe racing {0}!", source.Name), source, 0x00AA00);
             HandlePlayerJoin((RacePlayer)source);
         }
 
@@ -52,13 +55,42 @@ namespace ServerSide.GameMode
             players.Remove((RacePlayer)source);
         }
 
+        private void StartRace(string mapName)
+        {
+            RaceMap map = new RaceMap(mapName);
+            map.Start();
+
+            this.race = map.GetRace();
+            for (int i = players.Count - 1; i >= 0; i--)
+            {
+                AddPlayerToRace(players[i], race);
+            }
+            StartRace(race);
+        }
+
+
         private void StartDemoRace()
         {
-            race = new Race(new Vector3[]{
-                new Vector3(0, 4, 3),
-                new Vector3(0, 0, 3),
-                new Vector3(0, -4, 3),
-            });
+            race = new Race(
+                new Spawnpoint[] {
+                    new Spawnpoint(new Vector3(0, 4, 3))
+                    {
+                        VehicleModel = VehicleModel.Cars.Alpha.Id,
+                        Rotation = 0
+                    },
+                    new Spawnpoint(new Vector3(0, 0, 3))
+                    {
+                        VehicleModel = VehicleModel.Cars.Alpha.Id,
+                        Rotation = 0
+                    },
+                    new Spawnpoint(new Vector3(0, -4, 3))
+                    {
+                        VehicleModel = VehicleModel.Cars.Alpha.Id,
+                        Rotation = 0
+                    },
+                }
+            );
+
             race.AddCheckpoint(new Checkpoint(new Vector3(25, 0, 3)));
             race.AddCheckpoint(new Checkpoint(new Vector3(25, 25, 3)));
             race.AddCheckpoint(new Checkpoint(new Vector3(0, 25, 3)));

@@ -26,6 +26,7 @@ return function (out)
     load("Source.SlipeServer.Elements.RootElement")
     load("Source.SlipeServer.Events.Event")
     load("Source.SlipeServer.Explosions.Explosion")
+    load("Source.SlipeServer.Game.Announcement")
     load("Source.SlipeServer.Game.BandwidthReduction")
     load("Source.SlipeServer.Game.Config")
     load("Source.SlipeServer.Game.Events.OnPlayerConnectEventArgs")
@@ -35,6 +36,7 @@ return function (out)
     load("Source.SlipeServer.Game.Events.OnStopEventArgs")
     load("Source.SlipeServer.Game.GameServer")
     load("Source.SlipeServer.Game.Glitch")
+    load("Source.SlipeServer.Game.Settings")
     load("Source.SlipeServer.Game.Team")
     load("Source.SlipeServer.GameWorld.Garage")
     load("Source.SlipeServer.GameWorld.Water")
@@ -44,6 +46,7 @@ return function (out)
     load("Source.SlipeServer.IO.CommandHandler")
     load("Source.SlipeServer.IO.Events.OnChatMessageEventArgs")
     load("Source.SlipeServer.IO.Events.OnDebugMessageEventArgs")
+    load("Source.SlipeServer.IO.Input")
     load("Source.SlipeServer.IO.MTAConsole")
     load("Source.SlipeServer.IO.MTADebug")
     load("Source.SlipeServer.IO.ServerLog")
@@ -158,6 +161,7 @@ return function (out)
     load("Source.SlipeShared.Helpers.EasingFunction")
     load("Source.SlipeShared.Helpers.NumericHelper")
     load("Source.SlipeShared.Helpers.Version")
+    load("Source.SlipeShared.IO.KeyEnum")
     load("Source.SlipeShared.IO.MouseEnum")
     load("Source.SlipeShared.IO.SharedMTADebug")
     load("Source.SlipeShared.Markers.Events.OnHitEventArgs")
@@ -241,6 +245,7 @@ return function (out)
     "Slipe.Server.Elements.RootElement",
     "Slipe.Server.Events.Event",
     "Slipe.Server.Explosions.Explosion",
+    "Slipe.Server.Game.Announcement",
     "Slipe.Server.Game.BandwidthReduction",
     "Slipe.Server.Game.Config",
     "Slipe.Server.Game.Events.OnPlayerConnectEventArgs",
@@ -250,6 +255,7 @@ return function (out)
     "Slipe.Server.Game.Events.OnStopEventArgs",
     "Slipe.Server.Game.GameServer",
     "Slipe.Server.Game.Glitch",
+    "Slipe.Server.Game.Settings",
     "Slipe.Server.Game.Team",
     "Slipe.Server.GameWorld.Garage",
     "Slipe.Server.GameWorld.Water",
@@ -259,6 +265,7 @@ return function (out)
     "Slipe.Server.IO.CommandHandler",
     "Slipe.Server.IO.Events.OnChatMessageEventArgs",
     "Slipe.Server.IO.Events.OnDebugMessageEventArgs",
+    "Slipe.Server.IO.Input",
     "Slipe.Server.IO.MtaConsole",
     "Slipe.Server.IO.MtaDebug",
     "Slipe.Server.IO.ServerLog",
@@ -379,6 +386,7 @@ return function (out)
     "Slipe.Shared.Helpers.EasingFunction",
     "Slipe.Shared.Helpers.NumericHelper",
     "Slipe.Shared.Helpers.SystemVersion",
+    "Slipe.Shared.IO.KeyState",
     "Slipe.Shared.IO.MouseButton",
     "Slipe.Shared.IO.MouseButtonState",
     "Slipe.Shared.Markers.Events.OnHitEventArgs",

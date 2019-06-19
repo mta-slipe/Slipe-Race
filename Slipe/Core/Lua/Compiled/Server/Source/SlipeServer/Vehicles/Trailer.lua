@@ -15,7 +15,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
   -- Represents a towable trailer
   -- </summary>
   namespace.class("Trailer", function (namespace)
-    local getTowingVehicle, setTowingVehicle, op_Explicit, AttachTo4, class, __ctor1__, __ctor2__, __ctor3__
+    local getTowingVehicle, setTowingVehicle, op_Explicit1, AttachTo4, class, __ctor1__, __ctor2__, __ctor3__
     __ctor1__ = function (this, element)
       SlipeServerVehicles.BaseVehicle.__ctor__[1](this, element)
     end
@@ -37,7 +37,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
     setTowingVehicle = function (this, value)
       AttachTo4(this, value)
     end
-    op_Explicit = function (vehicle)
+    op_Explicit1 = function (vehicle)
       if System.is(SlipeServerVehicles.VehicleModel.FromId(vehicle:getModel()), SlipeServerVehicles.TrailerModel) then
         return class(vehicle:getMTAElement())
       end
@@ -58,7 +58,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
       end,
       getTowingVehicle = getTowingVehicle,
       setTowingVehicle = setTowingVehicle,
-      op_Explicit = op_Explicit,
+      op_Explicit1 = op_Explicit1,
       AttachTo4 = AttachTo4,
       __ctor__ = {
         __ctor1__,

@@ -14,7 +14,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
   -- </summary>
   namespace.class("Train", function (namespace)
     local getDirectionClockwise, setDirectionClockwise, getTrackPosition, setTrackPosition, getSpeed, setSpeed, getDerailable, setDerailable, 
-    getDerailed, setDerailed, op_Explicit, class, __ctor1__, __ctor2__, __ctor3__
+    getDerailed, setDerailed, op_Explicit1, class, __ctor1__, __ctor2__, __ctor3__
     __ctor1__ = function (this, element)
       SlipeServerVehicles.BaseVehicle.__ctor__[1](this, element)
     end
@@ -60,7 +60,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
     setDerailed = function (this, value)
       SlipeMtaDefinitions.MtaShared.SetTrainDerailable(this.element, value)
     end
-    op_Explicit = function (vehicle)
+    op_Explicit1 = function (vehicle)
       if System.is(SlipeServerVehicles.VehicleModel.FromId(vehicle:getModel()), SlipeServerVehicles.TrainModel) then
         return class(vehicle:getMTAElement())
       end
@@ -83,7 +83,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
       setDerailable = setDerailable,
       getDerailed = getDerailed,
       setDerailed = setDerailed,
-      op_Explicit = op_Explicit,
+      op_Explicit1 = op_Explicit1,
       __ctor__ = {
         __ctor1__,
         __ctor2__,

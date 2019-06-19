@@ -8,7 +8,7 @@ System.import(function (out)
 end)
 System.namespace("Slipe.Server.Weapons", function (namespace)
   namespace.class("WeaponModel", function (namespace)
-    local getJetPackEnabled, setJetPackEnabled, __ctor1__, __ctor2__
+    local getJetPackEnabled, setJetPackEnabled, SetProperty, SetProperty1, __ctor1__, __ctor2__
     -- <summary>
     -- Get a weapon model from the weapon name
     -- </summary>
@@ -27,6 +27,24 @@ System.namespace("Slipe.Server.Weapons", function (namespace)
     setJetPackEnabled = function (this, value)
       SlipeMtaDefinitions.MtaServer.SetJetpackWeaponEnabled(this:getName(), value)
     end
+    -- <summary>
+    -- Sets the value of a property of this mode
+    -- </summary>
+    -- <param name="property"></param>
+    -- <param name="value"></param>
+    -- <returns></returns>
+    SetProperty = function (this, skill, property, value)
+      return SlipeMtaDefinitions.MtaShared.SetWeaponProperty(this.ID, skill:ToEnumString(SlipeSharedWeapons.WeaponSkill):ToLower(), property:ToEnumString(SlipeSharedWeapons.WeaponProperty):ToLower(), value)
+    end
+    -- <summary>
+    -- Sets the value of a property of this mode
+    -- </summary>
+    -- <param name="property"></param>
+    -- <param name="value"></param>
+    -- <returns></returns>
+    SetProperty1 = function (this, skill, property, value)
+      return SlipeMtaDefinitions.MtaShared.SetWeaponProperty(this.ID, skill:ToEnumString(SlipeSharedWeapons.WeaponSkill):ToLower(), property:ToEnumString(SlipeSharedWeapons.WeaponProperty):ToLower(), value)
+    end
     return {
       __inherits__ = function (out)
         return {
@@ -35,6 +53,8 @@ System.namespace("Slipe.Server.Weapons", function (namespace)
       end,
       getJetPackEnabled = getJetPackEnabled,
       setJetPackEnabled = setJetPackEnabled,
+      SetProperty = SetProperty,
+      SetProperty1 = SetProperty1,
       __ctor__ = {
         __ctor1__,
         __ctor2__
@@ -46,7 +66,9 @@ System.namespace("Slipe.Server.Weapons", function (namespace)
           },
           methods = {
             { ".ctor", 0x106, __ctor1__, System.String },
-            { ".ctor", 0x106, __ctor2__, System.Int32 }
+            { ".ctor", 0x106, __ctor2__, System.Int32 },
+            { "SetProperty", 0x386, SetProperty, System.Int32, System.Int32, System.Single, System.Boolean },
+            { "SetProperty", 0x386, SetProperty1, System.Int32, System.Int32, System.Int32, System.Boolean }
           },
           class = { 0x6 }
         }

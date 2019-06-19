@@ -17,7 +17,8 @@ System.namespace("Slipe.Server.Rpc", function (namespace)
   -- Manager class that handles RPC's between server and clients
   -- </summary>
   namespace.class("RpcManager", function (namespace)
-    local instance, getInstance, RegisterRPC, TriggerRPC, TriggerRPC1, class, __ctor__
+    local instance, getInstance, RegisterRPC, TriggerRPC, TriggerRPC1, TriggerLatentRPC, TriggerLatentRPC1, class, 
+    __ctor__
     __ctor__ = function (this)
       this.RegisteredRPCs = DictStringDelegate()
 
@@ -56,11 +57,25 @@ System.namespace("Slipe.Server.Rpc", function (namespace)
     TriggerRPC1 = function (this, key, argument)
       SlipeMtaDefinitions.MtaServer.TriggerClientEvent(SlipeSharedElements.Element.getRoot():getMTAElement(), key, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
     end
+    -- <summary>
+    -- Trigger an RPC with limited bandwidth
+    -- </summary>
+    TriggerLatentRPC = function (this, target, key, bandwidth, argument, persists)
+      SlipeMtaDefinitions.MtaServer.TriggerLatentClientEvent(target:getMTAElement(), key, bandwidth, persists, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
+    end
+    -- <summary>
+    -- Trigger an RPC with limited bandwidth
+    -- </summary>
+    TriggerLatentRPC1 = function (this, key, bandwidth, argument, persists)
+      SlipeMtaDefinitions.MtaServer.TriggerLatentClientEvent(SlipeSharedElements.Element.getRoot():getMTAElement(), key, bandwidth, persists, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
+    end
     class = {
       getInstance = getInstance,
       RegisterRPC = RegisterRPC,
       TriggerRPC = TriggerRPC,
       TriggerRPC1 = TriggerRPC1,
+      TriggerLatentRPC = TriggerLatentRPC,
+      TriggerLatentRPC1 = TriggerLatentRPC1,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -74,6 +89,8 @@ System.namespace("Slipe.Server.Rpc", function (namespace)
           methods = {
             { ".ctor", 0x1, nil },
             { "RegisterRPC", 0x10206, RegisterRPC, function (CallbackType) return System.String, System.Delegate(out.Slipe.Server.Peds.Player, CallbackType, System.Void) end },
+            { "TriggerLatentRPC", 0x506, TriggerLatentRPC, out.Slipe.Server.Peds.Player, System.String, System.Int32, System.Object, System.Boolean },
+            { "TriggerLatentRPC", 0x406, TriggerLatentRPC1, System.String, System.Int32, System.Object, System.Boolean },
             { "TriggerRPC", 0x306, TriggerRPC, out.Slipe.Server.Peds.Player, System.String, System.Object },
             { "TriggerRPC", 0x206, TriggerRPC1, System.String, System.Object }
           },

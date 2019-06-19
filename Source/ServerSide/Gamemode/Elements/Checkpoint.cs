@@ -9,8 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
+using Slipe.Shared.Elements;
 
-namespace ServerSide.GameMode.Elements
+namespace ServerSide.Gamemode.Elements
 {
     public class Checkpoint: Marker
     {
