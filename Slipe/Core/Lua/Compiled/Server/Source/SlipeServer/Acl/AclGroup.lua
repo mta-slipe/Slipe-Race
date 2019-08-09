@@ -73,7 +73,7 @@ System.namespace("Slipe.Server.Acl", function (namespace)
     -- Add a new object to this group
     -- </summary>
     AddObject = function (this, obj)
-      return SlipeMtaDefinitions.MtaServer.AclGroupAddObject(this.group, obj:getACLIdentifier())
+      return SlipeMtaDefinitions.MtaServer.AclGroupAddObject(this.group, obj:getAclIdentifier())
     end
     -- <summary>
     -- Remove an ACL entry from this group
@@ -85,7 +85,7 @@ System.namespace("Slipe.Server.Acl", function (namespace)
     -- Remove an ACL object form this group
     -- </summary>
     RemoveObject = function (this, obj)
-      return SlipeMtaDefinitions.MtaServer.AclGroupRemoveObject(this.group, obj:getACLIdentifier())
+      return SlipeMtaDefinitions.MtaServer.AclGroupRemoveObject(this.group, obj:getAclIdentifier())
     end
     -- <summary>
     -- Delete this ACL group

@@ -30,7 +30,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     -- </summary>
     Update = function (this, source, eventArgs)
       if this:getIsAttached() then
-        this.pos = SlipeClientRendering.Renderer.ScreenFromWorldPosition(SystemNumerics.Vector3.op_Addition(this:getToAttached():getPosition(), this.Offset:getTranslation()), 0, true)
+        this.pos = SlipeClientRendering.Renderer.ScreenFromWorldPosition(SystemNumerics.Vector3.op_Addition(this:getToAttached():getPosition(), this.Offset:__clone__():getTranslation()), 0, true)
       end
     end
     return {

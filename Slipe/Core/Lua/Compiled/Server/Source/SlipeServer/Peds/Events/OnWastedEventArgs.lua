@@ -9,7 +9,12 @@ System.namespace("Slipe.Server.Peds.Events", function (namespace)
     local __ctor__
     __ctor__ = function (this, remainingAmmo, killer, damageType, bodyPart, stealth)
       this.RemainingAmmo = System.cast(System.Int32, remainingAmmo)
-      this.Killer = SlipeSharedElements.ElementManager.getInstance():GetElement(killer, SlipeSharedElements.PhysicalElement)
+
+      if killer == false then
+        this.Killer = nil
+      else
+        this.Killer = SlipeSharedElements.ElementManager.getInstance():GetElement(killer, SlipeSharedElements.PhysicalElement)
+      end
       this.DamageType = System.cast(System.Int32, damageType)
       this.BodyPart = System.cast(System.Int32, bodyPart)
       this.IsStealthKill = System.cast(System.Boolean, stealth)
@@ -30,7 +35,7 @@ System.namespace("Slipe.Server.Peds.Events", function (namespace)
             { "RemainingAmmo", 0x6, System.Int32 }
           },
           methods = {
-            { ".ctor", 0x504, nil, System.Object, out.Slipe.MtaDefinitions.MtaElement, System.Object, System.Object, System.Object }
+            { ".ctor", 0x504, nil, System.Object, System.Object, System.Object, System.Object, System.Object }
           },
           class = { 0x6 }
         }

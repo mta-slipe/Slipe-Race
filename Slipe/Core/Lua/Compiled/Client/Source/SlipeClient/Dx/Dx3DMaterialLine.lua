@@ -41,7 +41,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     -- Draw this material line
     -- </summary>
     Draw = function (this, source, eventArgs)
-      if SystemNumerics.Vector3.op_Equality(this.FaceToward, SystemNumerics.Vector3.getZero()) then
+      if SystemNumerics.Vector3.op_Equality(this.FaceToward:__clone__(), SystemNumerics.Vector3.getZero()) then
         local default = this.Material
         if default ~= nil then
           default = default:getMaterialElement()
@@ -52,7 +52,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
         if default ~= nil then
           default = default:getMaterialElement()
         end
-        return SlipeMtaDefinitions.MtaClient.DxDrawMaterialLine3D(this:getStartPosition().X, this:getStartPosition().Y, this:getStartPosition().Z, this:getEndPosition().X, this:getEndPosition().Y, this:getEndPosition().Z, default, this.Width, this.Color:getHex(), this.PostGUI, this.FaceToward.X, this.FaceToward.Y, this.FaceToward.Z)
+        return SlipeMtaDefinitions.MtaClient.DxDrawMaterialLine3D(this:getStartPosition().X, this:getStartPosition().Y, this:getStartPosition().Z, this:getEndPosition().X, this:getEndPosition().Y, this:getEndPosition().Z, default, this.Width, this.Color:getHex(), this.PostGUI, this.FaceToward:__clone__().X, this.FaceToward:__clone__().Y, this.FaceToward:__clone__().Z)
       end
     end
     return {

@@ -82,7 +82,7 @@ System.namespace("Slipe.Shared.GameWorld", function (namespace)
       return SlipeSharedGameWorld.HeatHaze.FromRaw(SlipeMtaDefinitions.MtaShared.GetHeatHaze())
     end
     setHeatHaze = function (this, value)
-      SlipeMtaDefinitions.MtaShared.SetHeatHaze(value.Intensity, value.RandomShift, value.SpeedMin, value.SpeedMax, System.ToInt32(value.ScanSize.X), System.ToInt32(value.ScanSize.Y), System.ToInt32(value.RenderSize.X), System.ToInt32(value.RenderSize.Y), value.ShowInside)
+      SlipeMtaDefinitions.MtaShared.SetHeatHaze(value.Intensity, value.RandomShift, value.SpeedMin, value.SpeedMax, System.ToInt32(value.ScanSize:__clone__().X), System.ToInt32(value.ScanSize:__clone__().Y), System.ToInt32(value.RenderSize:__clone__().X), System.ToInt32(value.RenderSize:__clone__().Y), value.ShowInside)
     end
     getJetpackMaxHeight = function (this)
       return SlipeMtaDefinitions.MtaShared.GetJetpackMaxHeight()

@@ -113,7 +113,7 @@ System.namespace("Slipe.Shared.Vehicles", function (namespace)
       local d = System.cast(DictInt32Int32, SlipeMtaDefinitions.MtaShared.GetDictionaryFromTable(SlipeMtaDefinitions.MtaShared.GetVehicleUpgrades(this.element), "System.Int32", "System.Int32"))
       local r = DictInt32Int32()
       for _, upgrade in System.each(d) do
-        r:Add(upgrade.Key, upgrade.Value)
+        r:AddKeyValue(upgrade.Key, upgrade.Value)
       end
       return r
     end

@@ -107,7 +107,7 @@ local function parseIntWithException(s, min, max)
 end
 
 local SByte = define("System.SByte", {
-  Parse = function (this, s)
+  Parse = function (s)
     return parseIntWithException(s, -128, 127)
   end,
   TryParse = function (s)
@@ -117,7 +117,7 @@ local SByte = define("System.SByte", {
 setmetatable(SByte, Int)
 
 local Byte = define("System.Byte", {
-  Parse = function (this, s)
+  Parse = function (s)
     return parseIntWithException(s, 0, 255)
   end,
   TryParse = function (s)
@@ -127,7 +127,7 @@ local Byte = define("System.Byte", {
 setmetatable(Byte, Int)
 
 local Int16 = define("System.Int16", {
-  Parse = function (this, s)
+  Parse = function (s)
     return parseIntWithException(s, -32768, 32767)
   end,
   TryParse = function (s)
@@ -137,7 +137,7 @@ local Int16 = define("System.Int16", {
 setmetatable(Int16, Int)
 
 local UInt16 = define("System.UInt16", {
-  Parse = function (this, s)
+  Parse = function (s)
     return parseIntWithException(s, 0, 65535)
   end,
   TryParse = function (s)
@@ -147,7 +147,7 @@ local UInt16 = define("System.UInt16", {
 setmetatable(UInt16, Int)
 
 local Int32 = define("System.Int32", {
-  Parse = function (this, s)
+  Parse = function (s)
     return parseIntWithException(s, -2147483648, 2147483647)
   end,
   TryParse = function (s)
@@ -157,7 +157,7 @@ local Int32 = define("System.Int32", {
 setmetatable(Int32, Int)
 
 local UInt32 = define("System.UInt32", {
-  Parse = function (this, s)
+  Parse = function (s)
     return parseIntWithException(s, 0, 4294967295)
   end,
   TryParse = function (s)
@@ -167,7 +167,7 @@ local UInt32 = define("System.UInt32", {
 setmetatable(UInt32, Int)
 
 local Int64 = define("System.Int64", {
-  Parse = function (this, s)
+  Parse = function (s)
     return parseIntWithException(s, -9223372036854775808, 9223372036854775807)
   end,
   TryParse = function (s)
@@ -177,13 +177,11 @@ local Int64 = define("System.Int64", {
 setmetatable(Int64, Int)
 
 local UInt64 = define("System.UInt64", {
-  Parse = function (this, s)
-    print(this)
-    print(s)
+  Parse = function (s)
     return parseIntWithException(s, 0, 18446744073709551615.0)
   end,
   TryParse = function (s)
-    return tryParseInt(s, 0, 18446744073709551615)
+    return tryParseInt(s, 0, 18446744073709551615.0)
   end
 })
 setmetatable(UInt64, Int)
@@ -214,16 +212,40 @@ local function equalsDouble(this, v)
   return isNaN(this) and isNaN(v)
 end
 
+local function hexForamt(x, n)
+  return n == "" and "%" .. x or "%0" .. n .. x
+end
+
+local function floatForamt(x, n)
+  return n == "" and "%.f" or "%." .. n .. 'f'
+end
+
+local function integerFormat(x, n)
+  return n == "" and "%d" or "%0" .. n .. 'd'
+end
+
+local function exponentialFormat(x, n)
+  return n == "" and "%" .. x or "%." .. n .. x
+end
+
+local formats = {
+  ['x'] = hexForamt,
+  ['X'] = hexForamt,
+  ['f'] = floatForamt,
+  ['F'] = floatForamt,
+  ['d'] = integerFormat,
+  ['D'] = integerFormat,
+  ['e'] = exponentialFormat,
+  ['E'] = exponentialFormat
+}
+
 local function toStringWithFormat(this, format)
   if #format ~= 0 then
-    local i, j, x, n = format:find("^%s*([xXdDfF])(%d?)%s*$")
+    local i, j, x, n = format:find("^%s*([xXdDfFeE])(%d?)%s*$")
     if i then
-      if x == 'x' or x == 'X' then
-        format = n == "" and "%" .. x or "%0" .. n .. x
-      elseif x == 'f' or x == 'F' then
-        format = n == "" and "%.f" or "%." .. n .. 'f'
-      else
-        format = n == "" and "%d" or "%0" .. n .. 'd'
+      local f = formats[x]
+      if f then
+        format = f(x, n)
       end
       return format:format(this)
     end
@@ -304,7 +326,7 @@ local function parseDoubleWithException(s)
 end
 
 local Single = define("System.Single", {
-  Parse = function (this, s)
+  Parse = function (s)
     local v = parseDoubleWithException(s)
     if v < -3.40282347E+38 or v > 3.40282347E+38 then
       throw(OverflowException())

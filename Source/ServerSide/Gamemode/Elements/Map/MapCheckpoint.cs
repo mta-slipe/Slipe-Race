@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
 
-namespace ServerSide.Gamemode.Elements
+namespace ServerSide.Gamemode.Elements.Map
 {
     [DefaultElementClass("checkpoint")]
     public class MapCheckpoint: Element

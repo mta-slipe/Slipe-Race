@@ -44,7 +44,7 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
       for _, entry in System.each(elements) do
         local p = SlipeSharedElements.ElementManager.getInstance():GetElement(entry.Value, SlipeClientPeds.Player)
         local s = entry.Key
-        dictionary:Add(s, p)
+        dictionary:AddKeyValue(s, p)
       end
       return dictionary
     end

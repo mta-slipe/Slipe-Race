@@ -30,7 +30,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     -- Draw the line
     -- </summary>
     Draw = function (this, source, eventArgs)
-      return SlipeMtaDefinitions.MtaClient.DxDrawLine(System.ToInt32(this:getPosition().X), System.ToInt32(this:getPosition().Y), System.ToInt32(this.End.X), System.ToInt32(this.End.Y), this.Color:getHex(), this.Width, this.PostGUI)
+      return SlipeMtaDefinitions.MtaClient.DxDrawLine(System.ToInt32(this:getPosition().X), System.ToInt32(this:getPosition().Y), System.ToInt32(this.End:__clone__().X), System.ToInt32(this.End:__clone__().Y), this.Color:getHex(), this.Width, this.PostGUI)
     end
     return {
       __inherits__ = function (out)

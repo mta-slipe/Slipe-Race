@@ -12,8 +12,9 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
   -- </summary>
   namespace.class("Element", function (namespace)
     local getRoot, getMTAElement, getType, getID, setID, getChildCount, getParent, setParent, 
-    getCallPropagationEnabled, setCallPropagationEnabled, SetData, GetData, GetData1, Destroy, GetChild, GetChildren, 
-    GetByID, op_Explicit, ListenForEvent, HandleEvent, class, __ctor1__, __ctor2__, __ctor3__
+    getCallPropagationEnabled, setCallPropagationEnabled, SetData, GetData, TryGetData, GetData1, Destroy, GetChild, 
+    GetChildren, GetByID, op_Explicit, ListenForEvent, HandleEvent, class, __ctor1__, __ctor2__, 
+    __ctor3__
     __ctor1__ = function (this)
     end
     -- <summary>
@@ -76,6 +77,24 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
       return SlipeMtaDefinitions.MtaShared.GetElementData(getMTAElement(this), key, inherit)
     end
     -- <summary>
+    -- This function tries to retrieve the data value and returns true if this was succesful
+    -- </summary>
+    -- <param name="data">The string to which to write the data to</param>
+    -- <param name="inherit"></param>
+    -- <returns>True if the data was succesfully retrieved, false otherwise</returns>
+    TryGetData = function (this, key, data, inherit)
+      local default, extern = System.try(function ()
+        data = SlipeMtaDefinitions.MtaShared.GetElementData(getMTAElement(this), key, inherit)
+        return true, true
+      end, function (default)
+        data = ""
+        return true, false
+      end)
+      if default then
+        return extern, data
+      end
+    end
+    -- <summary>
     -- Gets element data
     -- </summary>
     -- <param name="key"></param>
@@ -136,6 +155,7 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
       setCallPropagationEnabled = setCallPropagationEnabled,
       SetData = SetData,
       GetData = GetData,
+      TryGetData = TryGetData,
       GetData1 = GetData1,
       Destroy = Destroy,
       GetChild = GetChild,
@@ -172,10 +192,11 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
             { "GetChild", 0x186, GetChild, System.Int32, class },
             { "GetChildren", 0x186, GetChildren, System.String, System.Array(out.Slipe.Shared.Elements.Element) },
             { "GetData", 0x286, GetData, System.String, System.Boolean, System.Object },
-            { "GetData", 0x10286, GetData1, function (T) return System.String, System.Boolean, System.Object end },
+            { "GetData", 0x10286, GetData1, function (T) return System.String, System.Boolean, T end },
             { "HandleEvent", 0xA06, HandleEvent, System.String, out.Slipe.MtaDefinitions.MtaElement, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object },
             { "ListenForEvent", 0x306, ListenForEvent, System.String, System.Boolean, System.String },
-            { "SetData", 0x306, SetData, System.String, System.Object, System.Boolean }
+            { "SetData", 0x306, SetData, System.String, System.Object, System.Boolean },
+            { "TryGetData", 0x386, TryGetData, System.String, System.Object, System.Boolean, System.Boolean }
           },
           events = {
             { "OnDestroy", 0x6, System.Delegate(class, out.Slipe.Shared.Elements.Events.OnDestroyEventArgs, System.Void) }

@@ -25,7 +25,7 @@ System.namespace("Slipe.Shared.Peds", function (namespace)
     getTotalAmmo, IsClothesSlotTattoo, AddClothes, AddClothes1, AddClothes2, GetClothesModel, GetClothesTexture, RemoveClothes, 
     GetWeaponInSlot, GetAmmoInClip, GetTotalAmmo, SetAnimation, ResetAnimation, SetAnimationProgress, SetAnimationSpeed, GedStat, 
     SetStat, Kill, Kill1, Kill2, RemoveFromVehicle, WarpIntoVehicle, WarpIntoVehicle1, FaceElement, 
-    class, __ctor__
+    IsValidSkin, class, __ctor__
     __ctor__ = function (this, element)
       SlipeSharedElements.PhysicalElement.__ctor__(this, element)
     end
@@ -293,6 +293,14 @@ System.namespace("Slipe.Shared.Peds", function (namespace)
     FaceElement = function (this, target)
       this:setRotation(SlipeSharedHelpers.NumericHelper.RotationBetweenPositions(target:getPosition(), this:getPosition()))
     end
+    -- <summary>
+    -- Get if a skin id is valid
+    -- </summary>
+    -- <returns></returns>
+    IsValidSkin = function (model)
+      local models = SlipeMtaDefinitions.MtaShared.GetListFromTable(SlipeMtaDefinitions.MtaShared.GetValidPedModels(), "System.Int32")
+      return models:Contains(model)
+    end
     class = {
       __inherits__ = function (out)
         return {
@@ -347,6 +355,7 @@ System.namespace("Slipe.Shared.Peds", function (namespace)
       WarpIntoVehicle = WarpIntoVehicle,
       WarpIntoVehicle1 = WarpIntoVehicle1,
       FaceElement = FaceElement,
+      IsValidSkin = IsValidSkin,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -374,9 +383,9 @@ System.namespace("Slipe.Shared.Peds", function (namespace)
           },
           methods = {
             { ".ctor", 0x106, nil, out.Slipe.MtaDefinitions.MtaElement },
-            { "AddClothes", 0x286, AddClothes2, System.Int32, System.Int32, System.Boolean },
             { "AddClothes", 0x386, AddClothes, System.Int32, System.Int32, System.Int32, System.Boolean },
             { "AddClothes", 0x286, AddClothes1, System.Int32, System.Int32, System.Boolean },
+            { "AddClothes", 0x286, AddClothes2, System.Int32, System.Int32, System.Boolean },
             { "FaceElement", 0x106, FaceElement, out.Slipe.Shared.Elements.PhysicalElement },
             { "GedStat", 0x186, GedStat, System.Int32, System.Single },
             { "GetAmmoInClip", 0x186, GetAmmoInClip, System.Int32, System.Int32 },
@@ -385,9 +394,10 @@ System.namespace("Slipe.Shared.Peds", function (namespace)
             { "GetTotalAmmo", 0x186, GetTotalAmmo, System.Int32, System.Int32 },
             { "GetWeaponInSlot", 0x186, GetWeaponInSlot, System.Int32, out.Slipe.Shared.Weapons.SharedWeaponModel },
             { "IsClothesSlotTattoo", 0x183, IsClothesSlotTattoo, System.Int32, System.Boolean },
-            { "Kill", 0x86, Kill2, System.Boolean },
-            { "Kill", 0x186, Kill1, class, System.Boolean },
+            { "IsValidSkin", 0x18E, IsValidSkin, System.Int32, System.Boolean },
             { "Kill", 0x486, Kill, class, out.Slipe.Shared.Weapons.SharedWeaponModel, System.Int32, System.Boolean, System.Boolean },
+            { "Kill", 0x186, Kill1, class, System.Boolean },
+            { "Kill", 0x86, Kill2, System.Boolean },
             { "RemoveClothes", 0x186, RemoveClothes, System.Int32, System.Boolean },
             { "RemoveFromVehicle", 0x86, RemoveFromVehicle, System.Boolean },
             { "ResetAnimation", 0x86, ResetAnimation, System.Boolean },
@@ -395,8 +405,8 @@ System.namespace("Slipe.Shared.Peds", function (namespace)
             { "SetAnimationProgress", 0x286, SetAnimationProgress, out.Slipe.Shared.Peds.Animation, System.Single, System.Boolean },
             { "SetAnimationSpeed", 0x286, SetAnimationSpeed, out.Slipe.Shared.Peds.Animation, System.Single, System.Boolean },
             { "SetStat", 0x286, SetStat, System.Int32, System.Single, System.Boolean },
-            { "WarpIntoVehicle", 0x186, WarpIntoVehicle1, out.Slipe.Shared.Vehicles.SharedVehicle, System.Boolean },
-            { "WarpIntoVehicle", 0x286, WarpIntoVehicle, out.Slipe.Shared.Vehicles.SharedVehicle, System.Int32, System.Boolean }
+            { "WarpIntoVehicle", 0x286, WarpIntoVehicle, out.Slipe.Shared.Vehicles.SharedVehicle, System.Int32, System.Boolean },
+            { "WarpIntoVehicle", 0x186, WarpIntoVehicle1, out.Slipe.Shared.Vehicles.SharedVehicle, System.Boolean }
           },
           class = { 0x6 }
         }

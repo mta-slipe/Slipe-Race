@@ -38,7 +38,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     -- Draw this rectangle
     -- </summary>
     Draw = function (this, source, eventArgs)
-      return SlipeMtaDefinitions.MtaClient.DxDrawRectangle(this:getPosition().X, this:getPosition().Y, this.Dimensions.X, this.Dimensions.Y, this.Color:getHex(), this.PostGUI, this.SubPixelPositioning)
+      return SlipeMtaDefinitions.MtaClient.DxDrawRectangle(this:getPosition().X, this:getPosition().Y, this.Dimensions:__clone__().X, this.Dimensions:__clone__().Y, this.Color:getHex(), this.PostGUI, this.SubPixelPositioning)
     end
     return {
       __inherits__ = function (out)

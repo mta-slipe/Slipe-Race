@@ -91,13 +91,13 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     end
     Draw = function (this, source, eventArgs)
       if this.usePath then
-        return SlipeMtaDefinitions.MtaClient.DxDrawImage(this:getPosition().X, this:getPosition().Y, this.Dimensions.X, this.Dimensions.Y, getFilePath(this), this.Rotation, this.RotationCenter.X, this.RotationCenter.Y, this.Color:getHex())
+        return SlipeMtaDefinitions.MtaClient.DxDrawImage(this:getPosition().X, this:getPosition().Y, this.Dimensions:__clone__().X, this.Dimensions:__clone__().Y, getFilePath(this), this.Rotation, this.RotationCenter:__clone__().X, this.RotationCenter:__clone__().Y, this.Color:getHex())
       else
         local default = getMaterial(this)
         if default ~= nil then
           default = default:getMaterialElement()
         end
-        return SlipeMtaDefinitions.MtaClient.DxDrawImage(this:getPosition().X, this:getPosition().Y, this.Dimensions.X, this.Dimensions.Y, default, this.Rotation, this.RotationCenter.X, this.RotationCenter.Y, this.Color:getHex())
+        return SlipeMtaDefinitions.MtaClient.DxDrawImage(this:getPosition().X, this:getPosition().Y, this.Dimensions:__clone__().X, this.Dimensions:__clone__().Y, default, this.Rotation, this.RotationCenter:__clone__().X, this.RotationCenter:__clone__().Y, this.Color:getHex())
       end
     end
     return {

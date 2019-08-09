@@ -19,16 +19,16 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
   -- The account class represents a player's server account.
   -- </summary>
   namespace.class("Account", function (namespace)
-    local accounts, getIsGuestAccount, getName, getID, getIP, getSerial, getPlayer, getACLIdentifier, 
-    getData, getAll, GetAccountsBySerial, GetAccountsByIP, GetAccountsByData, CopyFrom, GetData, SetData, 
-    Remove, SetName, SetPassword, HasPermissionTo, IsInACLGroup, Get, Get1, Get2, 
-    CastMultiple, class, static, __ctor1__, __ctor2__
+    local accounts, getIsGuestAccount, getName, getId, getIp, getSerial, getPlayer, getAclIdentifier, 
+    getData, getAll, GetAccountsBySerial, GetAccountsByIP, GetAccountsByData, CopyFrom, GetData, TryGetData, 
+    SetData, ClearData, Remove, SetName, SetPassword, HasPermissionTo, IsInACLGroup, Get, 
+    Get1, Get2, CastMultiple, class, static, __ctor1__, __ctor2__
     static = function (this)
       accounts = DictObjectAccount()
     end
     __ctor1__ = function (this, account)
       this.MTAAccount = account
-      accounts:Add(this.MTAAccount, this)
+      accounts:AddKeyValue(this.MTAAccount, this)
     end
     -- <summary>
     -- This function adds an account to the list of registered accounts of the current server.
@@ -42,10 +42,10 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
     getName = function (this)
       return SlipeMtaDefinitions.MtaServer.GetAccountName(this.MTAAccount)
     end
-    getID = function (this)
+    getId = function (this)
       return SlipeMtaDefinitions.MtaServer.GetAccountID(this.MTAAccount)
     end
-    getIP = function (this)
+    getIp = function (this)
       return SlipeMtaDefinitions.MtaServer.GetAccountIP(this.MTAAccount)
     end
     getSerial = function (this)
@@ -65,7 +65,7 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
         return extern
       end
     end
-    getACLIdentifier = function (this)
+    getAclIdentifier = function (this)
       return "user." .. getName(this)
     end
     getData = function (this)
@@ -109,10 +109,33 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
       return SlipeMtaDefinitions.MtaServer.GetAccountData(this.MTAAccount, key)
     end
     -- <summary>
+    -- This function tries to retrieve the data value and returns true if this was succesful
+    -- </summary>
+    -- <param name="data">The string to which to write the data to</param>
+    -- <returns>True if the data was succesfully retrieved, false otherwise</returns>
+    TryGetData = function (this, key, data)
+      local default, extern = System.try(function ()
+        data = SlipeMtaDefinitions.MtaServer.GetAccountData(this.MTAAccount, key)
+        return true, true
+      end, function (default)
+        data = ""
+        return true, false
+      end)
+      if default then
+        return extern, data
+      end
+    end
+    -- <summary>
     -- This function sets a string to be stored in an account.
     -- </summary>
     SetData = function (this, key, value)
       return SlipeMtaDefinitions.MtaServer.SetAccountData(this.MTAAccount, key, value)
+    end
+    -- <summary>
+    -- This function removes data under a specific key
+    -- </summary>
+    ClearData = function (this, key)
+      return SlipeMtaDefinitions.MtaServer.SetAccountData(this.MTAAccount, key, false)
     end
     -- <summary>
     -- Removes this account from the server
@@ -136,13 +159,13 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
     -- Check if the object has access to a given action
     -- </summary>
     HasPermissionTo = function (this, action, defaultPermission)
-      return SlipeMtaDefinitions.MtaServer.HasObjectPermissionTo(getACLIdentifier(this), action, defaultPermission)
+      return SlipeMtaDefinitions.MtaServer.HasObjectPermissionTo(getAclIdentifier(this), action, defaultPermission)
     end
     -- <summary>
     -- Check if the object is in a certain ACL group
     -- </summary>
     IsInACLGroup = function (this, group)
-      return SlipeMtaDefinitions.MtaServer.IsObjectInACLGroup(getACLIdentifier(this), group:getACL())
+      return SlipeMtaDefinitions.MtaServer.IsObjectInACLGroup(getAclIdentifier(this), group:getACL())
     end
     Get = function (account)
       if account == nil then
@@ -205,11 +228,11 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
       end,
       getIsGuestAccount = getIsGuestAccount,
       getName = getName,
-      getID = getID,
-      getIP = getIP,
+      getId = getId,
+      getIp = getIp,
       getSerial = getSerial,
       getPlayer = getPlayer,
-      getACLIdentifier = getACLIdentifier,
+      getAclIdentifier = getAclIdentifier,
       getData = getData,
       getAll = getAll,
       GetAccountsBySerial = GetAccountsBySerial,
@@ -217,7 +240,9 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
       GetAccountsByData = GetAccountsByData,
       CopyFrom = CopyFrom,
       GetData = GetData,
+      TryGetData = TryGetData,
       SetData = SetData,
+      ClearData = ClearData,
       Remove = Remove,
       SetName = SetName,
       SetPassword = SetPassword,
@@ -238,11 +263,11 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
             { "accounts", 0x9, System.Dictionary(System.Object, out.Slipe.Server.Accounts.Account) }
           },
           properties = {
-            { "ACLIdentifier", 0x206, System.String, getACLIdentifier },
+            { "AclIdentifier", 0x206, System.String, getAclIdentifier },
             { "All", 0x20E, System.Array(out.Slipe.Server.Accounts.Account), getAll },
             { "Data", 0x206, System.Dictionary(System.String, System.String), getData },
-            { "ID", 0x206, System.Int32, getID },
-            { "IP", 0x206, System.String, getIP },
+            { "Id", 0x206, System.Int32, getId },
+            { "Ip", 0x206, System.String, getIp },
             { "IsGuestAccount", 0x206, System.Boolean, getIsGuestAccount },
             { "MTAAccount", 0x4, out.Slipe.MtaDefinitions.MtaAccount },
             { "Name", 0x206, System.String, getName },
@@ -250,13 +275,14 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
             { "Serial", 0x206, System.String, getSerial }
           },
           methods = {
-            { ".ctor", 0x104, __ctor1__, out.Slipe.MtaDefinitions.MtaAccount },
             { ".ctor", 0x306, __ctor2__, System.String, System.String, System.Boolean },
+            { ".ctor", 0x104, __ctor1__, out.Slipe.MtaDefinitions.MtaAccount },
             { "CastMultiple", 0x18C, CastMultiple, System.Array(out.Slipe.MtaDefinitions.MtaAccount), System.Array(out.Slipe.Server.Accounts.Account) },
+            { "ClearData", 0x186, ClearData, System.String, System.Boolean },
             { "CopyFrom", 0x186, CopyFrom, class, System.Boolean },
-            { "Get", 0x38E, Get1, System.String, System.String, System.Boolean, class },
-            { "Get", 0x18C, Get, out.Slipe.MtaDefinitions.MtaAccount, class },
             { "Get", 0x18E, Get2, System.Int32, class },
+            { "Get", 0x18C, Get, out.Slipe.MtaDefinitions.MtaAccount, class },
+            { "Get", 0x38E, Get1, System.String, System.String, System.Boolean, class },
             { "GetAccountsByData", 0x28E, GetAccountsByData, System.String, System.String, System.Array(out.Slipe.Server.Accounts.Account) },
             { "GetAccountsByIP", 0x18E, GetAccountsByIP, System.String, System.Array(out.Slipe.Server.Accounts.Account) },
             { "GetAccountsBySerial", 0x18E, GetAccountsBySerial, System.String, System.Array(out.Slipe.Server.Accounts.Account) },
@@ -266,7 +292,8 @@ System.namespace("Slipe.Server.Accounts", function (namespace)
             { "Remove", 0x86, Remove, System.Boolean },
             { "SetData", 0x286, SetData, System.String, System.String, System.Boolean },
             { "SetName", 0x286, SetName, System.String, System.Boolean, System.Boolean },
-            { "SetPassword", 0x186, SetPassword, System.String, System.Boolean }
+            { "SetPassword", 0x186, SetPassword, System.String, System.Boolean },
+            { "TryGetData", 0x286, TryGetData, System.String, System.String, System.Boolean }
           },
           events = {
             { "OnDataChange", 0xE, System.Delegate(out.Slipe.Server.Elements.RootElement, out.Slipe.Server.Accounts.Events.OnDataChangeEventArgs, System.Void) }

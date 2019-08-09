@@ -64,13 +64,13 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     end
     Draw = function (this, source, eventArgs)
       if this.usePath then
-        return SlipeMtaDefinitions.MtaClient.DxDrawImageSection(this:getPosition().X, this:getPosition().Y, this.Dimensions.X, this.Dimensions.Y, this.SectionTopLeft.X, this.SectionTopLeft.Y, this.SectionDimensions.X, this.SectionDimensions.Y, this:getFilePath(), this.Rotation, this.RotationCenter.X, this.RotationCenter.Y, this.Color:getHex(), this.PostGUI)
+        return SlipeMtaDefinitions.MtaClient.DxDrawImageSection(this:getPosition().X, this:getPosition().Y, this.Dimensions:__clone__().X, this.Dimensions:__clone__().Y, this.SectionTopLeft:__clone__().X, this.SectionTopLeft:__clone__().Y, this.SectionDimensions:__clone__().X, this.SectionDimensions:__clone__().Y, this:getFilePath(), this.Rotation, this.RotationCenter:__clone__().X, this.RotationCenter:__clone__().Y, this.Color:getHex(), this.PostGUI)
       else
         local default = this:getMaterial()
         if default ~= nil then
           default = default:getMaterialElement()
         end
-        return SlipeMtaDefinitions.MtaClient.DxDrawImageSection(this:getPosition().X, this:getPosition().Y, this.Dimensions.X, this.Dimensions.Y, this.SectionTopLeft.X, this.SectionTopLeft.Y, this.SectionDimensions.X, this.SectionDimensions.Y, default, this.Rotation, this.RotationCenter.X, this.RotationCenter.Y, this.Color:getHex(), this.PostGUI)
+        return SlipeMtaDefinitions.MtaClient.DxDrawImageSection(this:getPosition().X, this:getPosition().Y, this.Dimensions:__clone__().X, this.Dimensions:__clone__().Y, this.SectionTopLeft:__clone__().X, this.SectionTopLeft:__clone__().Y, this.SectionDimensions:__clone__().X, this.SectionDimensions:__clone__().Y, default, this.Rotation, this.RotationCenter:__clone__().X, this.RotationCenter:__clone__().Y, this.Color:getHex(), this.PostGUI)
       end
     end
     return {

@@ -92,7 +92,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     -- </summary>
     AddColumn = function (this, title, width)
       local column = SlipeClientGui.GridColumn(title, width, this)
-      this.columns:Add(column.ID, column)
+      this.columns:AddKeyValue(column.ID, column)
       return column
     end
     -- <summary>
@@ -100,7 +100,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     -- </summary>
     RemoveColumn = function (this, column)
       if SlipeMtaDefinitions.MtaClient.GuiGridListRemoveColumn(this.element, column.ID) then
-        this.columns:Remove(column.ID)
+        this.columns:RemoveKey(column.ID)
         return true
       end
       return false
@@ -110,7 +110,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     -- </summary>
     AddRow = function (this)
       local row = SlipeClientGui.GridRow(this)
-      this.rows:Add(row.ID, row)
+      this.rows:AddKeyValue(row.ID, row)
       return row
     end
     -- <summary>
@@ -118,7 +118,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     -- </summary>
     AddRowAfter = function (this, row)
       local newRow = System.new(SlipeClientGui.GridRow, 2, this, row.ID)
-      this.rows:Add(newRow.ID, newRow)
+      this.rows:AddKeyValue(newRow.ID, newRow)
       return newRow
     end
     -- <summary>
@@ -126,7 +126,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     -- </summary>
     AddTopRow = function (this)
       local row = System.new(SlipeClientGui.GridRow, 2, this, - 1)
-      this.rows:Add(row.ID, row)
+      this.rows:AddKeyValue(row.ID, row)
       return row
     end
     -- <summary>
@@ -134,7 +134,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     -- </summary>
     RemoveRow = function (this, row)
       if SlipeMtaDefinitions.MtaClient.GuiGridListRemoveRow(this.element, row.ID) then
-        this.rows:Remove(row.ID)
+        this.rows:RemoveKey(row.ID)
         return true
       end
       return false

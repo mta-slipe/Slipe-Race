@@ -55,7 +55,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     -- </summary>
     AddItem = function (this, content)
       local item = SlipeClientGui.ComboBoxItem(content, this)
-      this.items:Add(item.ID, item)
+      this.items:AddKeyValue(item.ID, item)
       return item
     end
     -- <summary>
@@ -63,7 +63,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     -- </summary>
     RemoveItem = function (this, item)
       if SlipeMtaDefinitions.MtaClient.GuiComboBoxRemoveItem(this.element, item.ID) then
-        this.items:Remove(item.ID)
+        this.items:RemoveKey(item.ID)
         return true
       end
       return false

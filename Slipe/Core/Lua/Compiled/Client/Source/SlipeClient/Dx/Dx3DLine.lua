@@ -70,8 +70,8 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     end
     Update = function (this, source, eventArgs)
       if this:getIsAttached() then
-        this.startPos = SystemNumerics.Vector3.op_Addition(this:getToAttached():getPosition(), this.Offset:getTranslation())
-        this.endPos = SystemNumerics.Vector3.Transform(this.relativeEndPosition, SystemNumerics.Matrix4x4.op_Multiply(this:getToAttached():getMatrix(), this.Offset))
+        this.startPos = SystemNumerics.Vector3.op_Addition(this:getToAttached():getPosition(), this.Offset:__clone__():getTranslation())
+        this.endPos = SystemNumerics.Vector3.Transform(this.relativeEndPosition, SystemNumerics.Matrix4x4.op_Multiply(this:getToAttached():getMatrix(), this.Offset:__clone__()))
       end
     end
     return {

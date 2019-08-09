@@ -110,8 +110,8 @@ System.namespace("Slipe.Client.Lights", function (namespace)
     -- Updates this element to the correct position and rotation
     -- </summary>
     Update = function (this, source, eventArgs)
-      setStartPosition(this, SystemNumerics.Vector3.op_Addition(getToAttached(this):getPosition(), this.Offset:getTranslation()))
-      setEndPosition(this, SystemNumerics.Vector3.Transform(this.relativeEndPosition, SystemNumerics.Matrix4x4.op_Multiply(getToAttached(this):getMatrix(), this.Offset)))
+      setStartPosition(this, SystemNumerics.Vector3.op_Addition(getToAttached(this):getPosition(), this.Offset:__clone__():getTranslation()))
+      setEndPosition(this, SystemNumerics.Vector3.Transform(this.relativeEndPosition, SystemNumerics.Matrix4x4.op_Multiply(getToAttached(this):getMatrix(), this.Offset:__clone__())))
     end
     return {
       __inherits__ = function (out)

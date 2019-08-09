@@ -78,7 +78,7 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
           end
         end)
         local default, extern = System.try(function ()
-          local instance = System.CreateInstance(elementType, element)
+          local instance = System.Activator.CreateInstance(elementType, element)
           return true, System.cast(T, instance)
         end, function (default)
           return true, nil
@@ -122,7 +122,11 @@ System.namespace("Slipe.Shared.Elements", function (namespace)
         return elements
       end
 
-      local mtaElements = SlipeMtaDefinitions.MtaShared.GetListFromTable(SlipeMtaDefinitions.MtaClient.GetElementsByType(this.defaultElementTypeNames:get(System.typeof(T)), startAt:getMTAElement(), streamedIn), "element")
+      local default = startAt
+      if default ~= nil then
+        default = default:getMTAElement()
+      end
+      local mtaElements = SlipeMtaDefinitions.MtaShared.GetListFromTable(SlipeMtaDefinitions.MtaClient.GetElementsByType(this.defaultElementTypeNames:get(System.typeof(T)), default, streamedIn), "element")
       for _, mtaElement in System.each(mtaElements) do
         local element = GetElement(this, mtaElement, T)
         if element ~= nil then

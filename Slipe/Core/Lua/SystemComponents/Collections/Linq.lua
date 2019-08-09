@@ -32,7 +32,7 @@ local NullReferenceException = System.NullReferenceException
 local ArgumentNullException = System.ArgumentNullException
 local ArgumentOutOfRangeException = System.ArgumentOutOfRangeException
 local InvalidOperationException = System.InvalidOperationException
-local EqualityComparer_1 = System.EqualityComparer_1
+local EqualityComparer_1 = System.EqualityComparer
 local Comparer_1 = System.Comparer_1
 local Empty = System.Array.Empty
 

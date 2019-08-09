@@ -21,7 +21,7 @@ System.namespace("Slipe.Client.Resources", function (namespace)
       resources = DictObjectResource()
     end
     __ctor1__ = function (this, resource)
-      resources:Add(resource, this)
+      resources:AddKeyValue(resource, this)
       this.MtaResource = resource
     end
     -- <summary>

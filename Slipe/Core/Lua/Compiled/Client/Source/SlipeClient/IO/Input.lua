@@ -62,7 +62,7 @@ System.namespace("Slipe.Client.IO", function (namespace)
     UnbindKey1 = function (key, state, handler)
       if closures:ContainsKey(handler) then
         local result = SlipeMtaDefinitions.MtaClient.UnbindKey(key, state:ToEnumString(SlipeSharedIO.KeyState):ToLower(), closures:get(handler))
-        closures:Remove(handler)
+        closures:RemoveKey(handler)
         return result
       end
       return false

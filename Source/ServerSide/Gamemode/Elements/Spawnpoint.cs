@@ -25,9 +25,9 @@ namespace ServerSide.Gamemode.Elements
         {
             get
             {
-                float x = float.Parse(GetData("posX"));
-                float y = float.Parse(GetData("posY"));
-                float z = float.Parse(GetData("posZ"));
+                float x = float.Parse(GetData<string>("posX"));
+                float y = float.Parse(GetData<string>("posY"));
+                float z = float.Parse(GetData<string>("posZ"));
 
                 return new Vector3(x, y, z);
             }
@@ -43,7 +43,7 @@ namespace ServerSide.Gamemode.Elements
         {
             get
             {
-                return float.Parse(GetData("rotation"));
+                return float.Parse(GetData<string>("rotation"));
             }
             set
             {
