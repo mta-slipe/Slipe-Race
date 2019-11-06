@@ -12,6 +12,19 @@ System.namespace("Slipe.Client.Rendering", function (namespace)
     }
   end)
 
+  -- <summary>
+  -- Represents different vehicle camera view modes
+  -- </summary>
+  namespace.enum("CameraViewMode", function ()
+    return {
+      Bumper = 0,
+      CloseExternal = 1,
+      MiddleExternal = 2,
+      FarExternal = 3,
+      LowExternal = 4,
+      Cinematic = 5
+    }
+  end)
 
   -- <summary>
   -- Represents different camera modes for the player

@@ -58,7 +58,7 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
       return SlipeMtaDefinitions.MtaShared.IsTrainDerailed(this.element)
     end
     setDerailed = function (this, value)
-      SlipeMtaDefinitions.MtaShared.SetTrainDerailable(this.element, value)
+      SlipeMtaDefinitions.MtaShared.SetTrainDerailed(this.element, true)
     end
     getIsChainEngine = function (this)
       return SlipeMtaDefinitions.MtaClient.IsTrainChainEngine(this.element)

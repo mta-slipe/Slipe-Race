@@ -198,7 +198,9 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
             { "OnExplode", 0x6, System.Delegate(class, out.Slipe.Client.Vehicles.Events.OnExplodeEventArgs, System.Void) },
             { "OnRespawn", 0x6, System.Delegate(class, out.Slipe.Client.Vehicles.Events.OnRespawnEventArgs, System.Void) },
             { "OnNitroStateChange", 0x6, System.Delegate(class, out.Slipe.Client.Vehicles.Events.OnNitroStateChangeEventArgs, System.Void) },
-            { "OnExplosion", 0x6, System.Delegate(class, out.Slipe.Client.Elements.Events.OnExplosionEventArgs, System.Void) }
+            { "OnExplosion", 0x6, System.Delegate(class, out.Slipe.Client.Elements.Events.OnExplosionEventArgs, System.Void) },
+            { "OnWorldSound", 0x6, System.Delegate(class, out.Slipe.Client.Elements.Events.OnWorldSoundEventArgs, System.Void) },
+            { "OnWeaponHit", 0x6, System.Delegate(class, out.Slipe.Client.Vehicles.Events.OnWeaponHitEventArgs, System.Void) }
           },
           class = { 0x6 }
         }

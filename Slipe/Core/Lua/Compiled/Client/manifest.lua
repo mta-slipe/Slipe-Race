@@ -10,9 +10,11 @@ return function (out)
     load("Source.SlipeClient.Assets.Col")
     load("Source.SlipeClient.Assets.CustomAnimation")
     load("Source.SlipeClient.Assets.DFF")
+    load("Source.SlipeClient.Assets.DownloadState")
     load("Source.SlipeClient.Assets.IFP")
     load("Source.SlipeClient.Assets.Mod")
     load("Source.SlipeClient.Assets.TXD")
+    load("Source.SlipeClient.Browsers.BlockReason")
     load("Source.SlipeClient.Browsers.Browser")
     load("Source.SlipeClient.Browsers.Events.OnCreatedEventArgs")
     load("Source.SlipeClient.Browsers.Events.OnCursorChangeEventArgs")
@@ -28,6 +30,7 @@ return function (out)
     load("Source.SlipeClient.Browsers.JavascriptVariable")
     load("Source.SlipeClient.Dx.Align")
     load("Source.SlipeClient.Dx.Circle")
+    load("Source.SlipeClient.Dx.Dx")
     load("Source.SlipeClient.Dx.Dx2DObject")
     load("Source.SlipeClient.Dx.Dx3DLine")
     load("Source.SlipeClient.Dx.Dx3DMaterialLine")
@@ -47,11 +50,13 @@ return function (out)
     load("Source.SlipeClient.Dx.Text")
     load("Source.SlipeClient.Dx.Texture")
     load("Source.SlipeClient.Dx.TexturePixels")
+    load("Source.SlipeClient.Dx.Vertice")
     load("Source.SlipeClient.Effects.Effect")
     load("Source.SlipeClient.Effects.EffectType")
     load("Source.SlipeClient.Effects.Fx")
     load("Source.SlipeClient.Elements.ElementExtensions")
     load("Source.SlipeClient.Elements.Events.OnExplosionEventArgs")
+    load("Source.SlipeClient.Elements.Events.OnWorldSoundEventArgs")
     load("Source.SlipeClient.Elements.ResourceRootElement")
     load("Source.SlipeClient.Elements.RootElement")
     load("Source.SlipeClient.Events.Event")
@@ -73,10 +78,13 @@ return function (out)
     load("Source.SlipeClient.GameWorld.Events.OnDamageEventArgs")
     load("Source.SlipeClient.GameWorld.Fire")
     load("Source.SlipeClient.GameWorld.Garage")
+    load("Source.SlipeClient.GameWorld.RoomFurniture")
+    load("Source.SlipeClient.GameWorld.SurfaceMaterialEnums")
     load("Source.SlipeClient.GameWorld.SwatRope")
     load("Source.SlipeClient.GameWorld.Water")
     load("Source.SlipeClient.GameWorld.World")
     load("Source.SlipeClient.GameWorld.WorldObject")
+    load("Source.SlipeClient.GameWorld.WorldSoundGroup")
     load("Source.SlipeClient.GameWorld.WorldSpecialProperty")
     load("Source.SlipeClient.Gui.Button")
     load("Source.SlipeClient.Gui.CheckBox")
@@ -114,6 +122,7 @@ return function (out)
     load("Source.SlipeClient.Gui.RadioButton")
     load("Source.SlipeClient.Gui.ScrollBar")
     load("Source.SlipeClient.Gui.ScrollPane")
+    load("Source.SlipeClient.Gui.SelectionMode")
     load("Source.SlipeClient.Gui.StandardGuiFont")
     load("Source.SlipeClient.Gui.StaticImage")
     load("Source.SlipeClient.Gui.Tab")
@@ -122,6 +131,7 @@ return function (out)
     load("Source.SlipeClient.Helpers.EagerAttachableObject")
     load("Source.SlipeClient.Helpers.LazyAttachableObject")
     load("Source.SlipeClient.IO.ChatBox")
+    load("Source.SlipeClient.IO.ChatBoxEnums")
     load("Source.SlipeClient.IO.CommandHandler")
     load("Source.SlipeClient.IO.Cursor")
     load("Source.SlipeClient.IO.Events.OnCharacterEventArgs")
@@ -135,6 +145,7 @@ return function (out)
     load("Source.SlipeClient.IO.MTAConsole")
     load("Source.SlipeClient.IO.MTADebug")
     load("Source.SlipeClient.Lights.Light")
+    load("Source.SlipeClient.Lights.LightType")
     load("Source.SlipeClient.Lights.SearchLight")
     load("Source.SlipeClient.Markers.Marker")
     load("Source.SlipeClient.Peds.Events.OnChokeEventArgs")
@@ -211,6 +222,7 @@ return function (out)
     load("Source.SlipeClient.Vehicles.Events.OnRespawnEventArgs")
     load("Source.SlipeClient.Vehicles.Events.OnStartEnterEventArgs")
     load("Source.SlipeClient.Vehicles.Events.OnStartExitEventArgs")
+    load("Source.SlipeClient.Vehicles.Events.OnWeaponHitEventArgs")
     load("Source.SlipeClient.Vehicles.Helicopter")
     load("Source.SlipeClient.Vehicles.Plane")
     load("Source.SlipeClient.Vehicles.Taxi")
@@ -219,10 +231,12 @@ return function (out)
     load("Source.SlipeClient.Vehicles.TurretedVehicle")
     load("Source.SlipeClient.Vehicles.Vehicle")
     load("Source.SlipeClient.Vehicles.VehicleModel")
+    load("Source.SlipeClient.Vehicles.VehicleModelDummy")
     load("Source.SlipeClient.Weapons.CustomWeapon")
     load("Source.SlipeClient.Weapons.Events.OnCreatedEventArgs")
     load("Source.SlipeClient.Weapons.Events.OnFireEventArgs")
     load("Source.SlipeClient.Weapons.Projectile")
+    load("Source.SlipeClient.Weapons.ProjectileType")
     load("Source.SlipeShared.CollisionShapes.CollisionCircle")
     load("Source.SlipeShared.CollisionShapes.CollisionCuboid")
     load("Source.SlipeShared.CollisionShapes.CollisionRectangle")
@@ -255,18 +269,25 @@ return function (out)
     load("Source.SlipeShared.Elements.Events.OnStopSyncEventArgs")
     load("Source.SlipeShared.Elements.PhysicalElement")
     load("Source.SlipeShared.Exceptions.NullElementException")
+    load("Source.SlipeShared.Explosions.ExplosionType")
     load("Source.SlipeShared.Exports.ExportAttribute")
     load("Source.SlipeShared.GameWorld.GameTime")
+    load("Source.SlipeShared.GameWorld.GarageLocation")
     load("Source.SlipeShared.GameWorld.HeatHaze")
     load("Source.SlipeShared.GameWorld.SharedGarage")
     load("Source.SlipeShared.GameWorld.SharedWater")
     load("Source.SlipeShared.GameWorld.SharedWorld")
     load("Source.SlipeShared.GameWorld.SharedWorldObject")
+    load("Source.SlipeShared.GameWorld.TrafficLightState")
     load("Source.SlipeShared.GameWorld.Weather")
+    load("Source.SlipeShared.GameWorld.WeatherType")
     load("Source.SlipeShared.Helpers.EasingFunction")
     load("Source.SlipeShared.Helpers.NumericHelper")
+    load("Source.SlipeShared.Helpers.StatusCode")
     load("Source.SlipeShared.Helpers.Version")
+    load("Source.SlipeShared.IO.DebugMessageLevel")
     load("Source.SlipeShared.IO.KeyEnum")
+    load("Source.SlipeShared.IO.MessageType")
     load("Source.SlipeShared.IO.MouseEnum")
     load("Source.SlipeShared.IO.SharedMTADebug")
     load("Source.SlipeShared.Markers.Events.OnHitEventArgs")
@@ -276,24 +297,35 @@ return function (out)
     load("Source.SlipeShared.Markers.SharedMarker")
     load("Source.SlipeShared.Peds.AnalogControl")
     load("Source.SlipeShared.Peds.Animation")
+    load("Source.SlipeShared.Peds.BodyPart")
+    load("Source.SlipeShared.Peds.Bone")
+    load("Source.SlipeShared.Peds.DamageType")
+    load("Source.SlipeShared.Peds.FightingStyle")
+    load("Source.SlipeShared.Peds.FrontEndSound")
     load("Source.SlipeShared.Peds.HudComponent")
     load("Source.SlipeShared.Peds.PedClothes")
+    load("Source.SlipeShared.Peds.PedModel")
+    load("Source.SlipeShared.Peds.PedStat")
     load("Source.SlipeShared.Peds.QuitType")
     load("Source.SlipeShared.Peds.SharedPed")
+    load("Source.SlipeShared.Peds.WalkingStyle")
     load("Source.SlipeShared.Pickups.Events.OnHitArgs")
     load("Source.SlipeShared.Pickups.Events.OnLeaveArgs")
+    load("Source.SlipeShared.Pickups.PickupModel")
+    load("Source.SlipeShared.Pickups.PickupType")
     load("Source.SlipeShared.Pickups.SharedPickup")
+    load("Source.SlipeShared.Radar.BlipType")
     load("Source.SlipeShared.Radar.SharedBlip")
     load("Source.SlipeShared.Radar.SharedRadarArea")
+    load("Source.SlipeShared.Rendering.CameraFade")
     load("Source.SlipeShared.Resources.SharedResource")
+    load("Source.SlipeShared.RPC.AsyncRpc")
     load("Source.SlipeShared.RPC.BaseRPC")
-    load("Source.SlipeShared.RPC.BasicIncomingRPC")
-    load("Source.SlipeShared.RPC.BasicOutgoingRPC")
-    load("Source.SlipeShared.RPC.EmptyIncomingRPC")
-    load("Source.SlipeShared.RPC.EmptyOutgoingRPC")
+    load("Source.SlipeShared.RPC.ElementRpc")
+    load("Source.SlipeShared.RPC.EmptyRpc")
     load("Source.SlipeShared.RPC.IRPC")
-    load("Source.SlipeShared.RPC.SingleElementIncomingRPC")
-    load("Source.SlipeShared.RPC.SingleElementOutgoingRPC")
+    load("Source.SlipeShared.Rpc.RpcEnums")
+    load("Source.SlipeShared.RPC.SingleCastRpc")
     load("Source.SlipeShared.Utilities.Color")
     load("Source.SlipeShared.Vehicles.Handling")
     load("Source.SlipeShared.Vehicles.HandlingEnums")
@@ -301,6 +333,7 @@ return function (out)
     load("Source.SlipeShared.Vehicles.SharedVehicle")
     load("Source.SlipeShared.Vehicles.SharedVehicleModel")
     load("Source.SlipeShared.Vehicles.Siren")
+    load("Source.SlipeShared.Vehicles.VehicleEnums")
     load("Source.SlipeShared.Weapons.SharedWeaponModel")
     load("Source.SlipeShared.Weapons.WeaponEnums")
   end
@@ -318,6 +351,7 @@ return function (out)
     "Slipe.Client.Peds.Ped",
     "Slipe.Shared.Vehicles.SharedVehicle",
     "Slipe.Shared.Vehicles.SharedVehicleModel",
+    "Slipe.Shared.Rpc.IRpc",
     "Slipe.Client.Assets.Asset",
     "Slipe.Client.Dx.Dx3DMaterialLine",
     "Slipe.Client.Dx.Image",
@@ -338,13 +372,15 @@ return function (out)
     "Slipe.Client.Vehicles.BaseVehicle",
     "Slipe.Client.Vehicles.VehicleModel",
     "Slipe.Shared.CollisionShapes.CollisionShape",
-    "Slipe.Shared.Rpc.IRpc",
+    "Slipe.Shared.Rpc.BaseRpc",
     "Slipe.Client.Assets.Col",
     "Slipe.Client.Assets.CustomAnimation",
     "Slipe.Client.Assets.Dff",
+    "Slipe.Client.Assets.DownloadState",
     "Slipe.Client.Assets.Ifp",
     "Slipe.Client.Assets.Mod",
     "Slipe.Client.Assets.Txd",
+    "Slipe.Client.Browsers.BlockReason",
     "Slipe.Client.Browsers.Browser",
     "Slipe.Client.Browsers.Events.OnCreatedEventArgs",
     "Slipe.Client.Browsers.Events.OnCursorChangeEventArgs",
@@ -360,12 +396,14 @@ return function (out)
     "Slipe.Client.Browsers.JavascriptVariable",
     "Slipe.Client.Camera",
     "Slipe.Client.Dx.Circle",
+    "Slipe.Client.Dx.Dx",
     "Slipe.Client.Dx.Dx3DMaterialLineSection",
     "Slipe.Client.Dx.Font",
     "Slipe.Client.Dx.HorizontalAlign",
     "Slipe.Client.Dx.ImageFormat",
     "Slipe.Client.Dx.ImageSection",
     "Slipe.Client.Dx.Line",
+    "Slipe.Client.Dx.PrimitiveType",
     "Slipe.Client.Dx.Rectangle",
     "Slipe.Client.Dx.ScreenSource",
     "Slipe.Client.Dx.Shader",
@@ -375,15 +413,19 @@ return function (out)
     "Slipe.Client.Dx.TextureEdge",
     "Slipe.Client.Dx.TextureFormat",
     "Slipe.Client.Dx.TexturePixels",
+    "Slipe.Client.Dx.TextureType",
     "Slipe.Client.Dx.VerticalAlign",
+    "Slipe.Client.Dx.Vertice",
     "Slipe.Client.Effects.Effect",
     "Slipe.Client.Effects.EffectType",
     "Slipe.Client.Effects.Fx",
     "Slipe.Client.Elements.ElementExtensions",
     "Slipe.Client.Elements.Events.OnExplosionEventArgs",
+    "Slipe.Client.Elements.Events.OnWorldSoundEventArgs",
     "Slipe.Client.Elements.ResourceRootElement",
     "Slipe.Client.Elements.RootElement",
     "Slipe.Client.Enums.FontQuality",
+    "Slipe.Client.Enums.RoomFurniture",
     "Slipe.Client.Events.Event",
     "Slipe.Client.Explosions.Explosion",
     "Slipe.Client.Game.Engine",
@@ -403,10 +445,13 @@ return function (out)
     "Slipe.Client.GameWorld.Events.OnDamageEventArgs",
     "Slipe.Client.GameWorld.Fire",
     "Slipe.Client.GameWorld.Garage",
+    "Slipe.Client.GameWorld.SurfaceMaterialProperty",
+    "Slipe.Client.GameWorld.SurfaceMaterialType",
     "Slipe.Client.GameWorld.SwatRope",
     "Slipe.Client.GameWorld.Water",
     "Slipe.Client.GameWorld.World",
     "Slipe.Client.GameWorld.WorldObject",
+    "Slipe.Client.GameWorld.WorldSoundGroup",
     "Slipe.Client.GameWorld.WorldSpecialProperty",
     "Slipe.Client.Gui.Button",
     "Slipe.Client.Gui.CheckBox",
@@ -442,6 +487,7 @@ return function (out)
     "Slipe.Client.Gui.RadioButton",
     "Slipe.Client.Gui.ScrollBar",
     "Slipe.Client.Gui.ScrollPane",
+    "Slipe.Client.Gui.SelectionMode",
     "Slipe.Client.Gui.StandardGuiFont",
     "Slipe.Client.Gui.StaticImage",
     "Slipe.Client.Gui.Tab",
@@ -450,6 +496,7 @@ return function (out)
     "Slipe.Client.Gui.Window",
     "Slipe.Client.Helpers.EagerAttachableObject",
     "Slipe.Client.IO.ChatBox",
+    "Slipe.Client.IO.ChatBoxFont",
     "Slipe.Client.IO.CommandHandler",
     "Slipe.Client.IO.Cursor",
     "Slipe.Client.IO.Events.OnCharacterEventArgs",
@@ -463,6 +510,7 @@ return function (out)
     "Slipe.Client.IO.MtaConsole",
     "Slipe.Client.IO.MtaDebug",
     "Slipe.Client.Lights.Light",
+    "Slipe.Client.Lights.LightType",
     "Slipe.Client.Lights.SearchLight",
     "Slipe.Client.Markers.Marker",
     "Slipe.Client.Peds.Events.OnChokeEventArgs",
@@ -494,11 +542,14 @@ return function (out)
     "Slipe.Client.Peds.MoveState",
     "Slipe.Client.Peds.PedTask",
     "Slipe.Client.Peds.PedVoice",
+    "Slipe.Client.Peds.PrimaryTaskSlot",
+    "Slipe.Client.Peds.SecondaryTaskSlot",
     "Slipe.Client.Pickups.Pickup",
     "Slipe.Client.Radar.Blip",
     "Slipe.Client.Radar.RadarArea",
     "Slipe.Client.Rendering.BlendMode",
     "Slipe.Client.Rendering.CameraMode",
+    "Slipe.Client.Rendering.CameraViewMode",
     "Slipe.Client.Rendering.Events.OnHudRenderEventArgs",
     "Slipe.Client.Rendering.Events.OnRenderEventArgs",
     "Slipe.Client.Rendering.GoggleEffects",
@@ -507,6 +558,7 @@ return function (out)
     "Slipe.Client.Rendering.Status",
     "Slipe.Client.Rendering.TestMode",
     "Slipe.Client.Resources.Resource",
+    "Slipe.Client.Rpc.RegisteredRpc",
     "Slipe.Client.Rpc.RpcManager",
     "Slipe.Client.SightLines.SightLine",
     "Slipe.Client.SightLines.SightLineData",
@@ -517,6 +569,7 @@ return function (out)
     "Slipe.Client.Sounds.Events.OnStopEventArgs",
     "Slipe.Client.Sounds.Events.OnStreamEventArgs",
     "Slipe.Client.Sounds.ExtraStations",
+    "Slipe.Client.Sounds.RadioStation",
     "Slipe.Client.Sounds.SoundContainer",
     "Slipe.Client.Sounds.SoundEffects",
     "Slipe.Client.Sounds.SoundMeta",
@@ -539,6 +592,7 @@ return function (out)
     "Slipe.Client.Vehicles.Events.OnRespawnEventArgs",
     "Slipe.Client.Vehicles.Events.OnStartEnterEventArgs",
     "Slipe.Client.Vehicles.Events.OnStartExitEventArgs",
+    "Slipe.Client.Vehicles.Events.OnWeaponHitEventArgs",
     "Slipe.Client.Vehicles.Helicopter",
     "Slipe.Client.Vehicles.HelicopterModel",
     "Slipe.Client.Vehicles.Plane",
@@ -561,10 +615,12 @@ return function (out)
     "Slipe.Client.Vehicles.VehicleModel.Trailers",
     "Slipe.Client.Vehicles.VehicleModel.Trains",
     "Slipe.Client.Vehicles.VehicleModel.TurretedVehicles",
+    "Slipe.Client.Vehicles.VehicleModelDummy",
     "Slipe.Client.Weapons.CustomWeapon",
     "Slipe.Client.Weapons.Events.OnCreatedEventArgs",
     "Slipe.Client.Weapons.Events.OnFireEventArgs",
     "Slipe.Client.Weapons.Projectile",
+    "Slipe.Client.Weapons.ProjectileType",
     "Slipe.Shared.CollisionShapes.CollisionCircle",
     "Slipe.Shared.CollisionShapes.CollisionCuboid",
     "Slipe.Shared.CollisionShapes.CollisionRectangle",
@@ -594,45 +650,86 @@ return function (out)
     "Slipe.Shared.Elements.Events.OnSteamOutEventArgs",
     "Slipe.Shared.Elements.Events.OnStopSyncEventArgs",
     "Slipe.Shared.Exceptions.NullElementException",
+    "Slipe.Shared.Explosions.ExplosionType",
     "Slipe.Shared.Exports.ExportAttribute",
     "Slipe.Shared.GameWorld.GameTime",
+    "Slipe.Shared.GameWorld.GarageLocation",
     "Slipe.Shared.GameWorld.HeatHaze",
+    "Slipe.Shared.GameWorld.TrafficLightState",
     "Slipe.Shared.GameWorld.Weather",
+    "Slipe.Shared.GameWorld.WeatherType",
     "Slipe.Shared.Helpers.EasingFunction",
+    "Slipe.Shared.Helpers.NetworkInteruptionStatus",
     "Slipe.Shared.Helpers.NumericHelper",
+    "Slipe.Shared.Helpers.StatusCode",
     "Slipe.Shared.Helpers.SystemVersion",
+    "Slipe.Shared.IO.DebugMessageLevel",
     "Slipe.Shared.IO.KeyState",
+    "Slipe.Shared.IO.MessageType",
     "Slipe.Shared.IO.MouseButton",
     "Slipe.Shared.IO.MouseButtonState",
+    "Slipe.Shared.IO.MouseWheelState",
     "Slipe.Shared.Markers.Events.OnHitEventArgs",
     "Slipe.Shared.Markers.Events.OnLeaveEventArgs",
     "Slipe.Shared.Markers.MarkerIcon",
     "Slipe.Shared.Markers.MarkerType",
     "Slipe.Shared.Peds.AnalogControl",
     "Slipe.Shared.Peds.Animation",
+    "Slipe.Shared.Peds.BodyPart",
+    "Slipe.Shared.Peds.Bone",
     "Slipe.Shared.Peds.ClothesModel",
+    "Slipe.Shared.Peds.ClothesSlot",
     "Slipe.Shared.Peds.ClothesTexture",
+    "Slipe.Shared.Peds.DamageType",
+    "Slipe.Shared.Peds.FightingStyle",
+    "Slipe.Shared.Peds.FrontEndSound",
     "Slipe.Shared.Peds.HudComponent",
+    "Slipe.Shared.Peds.PedModel",
+    "Slipe.Shared.Peds.PedStat",
     "Slipe.Shared.Peds.QuitType",
+    "Slipe.Shared.Peds.WalkingStyle",
     "Slipe.Shared.Pickups.Events.OnHitArgs",
     "Slipe.Shared.Pickups.Events.OnLeaveArgs",
-    "Slipe.Shared.RPC.BaseRPC",
-    "Slipe.Shared.Rpc.BasicIncomingRpc",
-    "Slipe.Shared.Rpc.BasicOutgoingRpc",
-    "Slipe.Shared.Rpc.EmptyIncomingRpc",
-    "Slipe.Shared.Rpc.EmptyOutgoingRpc",
-    "Slipe.Shared.Rpc.SingleElementIncomingRpc",
-    "Slipe.Shared.Rpc.SingleElementOutgoingRpc",
+    "Slipe.Shared.Pickups.PickupModel",
+    "Slipe.Shared.Pickups.PickupType",
+    "Slipe.Shared.Radar.BlipType",
+    "Slipe.Shared.Rendering.CameraFade",
+    "Slipe.Shared.Rpc.AsyncRpc",
+    "Slipe.Shared.Rpc.ClientRpcFailedAction",
+    "Slipe.Shared.Rpc.ElementRpc",
+    "Slipe.Shared.Rpc.ElementRpc_1",
+    "Slipe.Shared.Rpc.EmptyRpc",
+    "Slipe.Shared.Rpc.SingleCastRpc_1",
     "Slipe.Shared.Utilities.Color",
+    "Slipe.Shared.Vehicles.DamageLevel",
+    "Slipe.Shared.Vehicles.Door",
+    "Slipe.Shared.Vehicles.DoorState",
     "Slipe.Shared.Vehicles.DriveType",
     "Slipe.Shared.Vehicles.EngineType",
     "Slipe.Shared.Vehicles.Handling",
+    "Slipe.Shared.Vehicles.Light",
+    "Slipe.Shared.Vehicles.LightState",
+    "Slipe.Shared.Vehicles.OverrideLightState",
+    "Slipe.Shared.Vehicles.Paintjob",
+    "Slipe.Shared.Vehicles.Panel",
+    "Slipe.Shared.Vehicles.Part",
+    "Slipe.Shared.Vehicles.PlanePanel",
+    "Slipe.Shared.Vehicles.Seat",
     "Slipe.Shared.Vehicles.SharedSirens",
     "Slipe.Shared.Vehicles.Siren",
+    "Slipe.Shared.Vehicles.SirenType",
+    "Slipe.Shared.Vehicles.Tire",
+    "Slipe.Shared.Vehicles.Upgrade",
+    "Slipe.Shared.Vehicles.UpgradeSlot",
     "Slipe.Shared.Vehicles.VehicleLightType",
+    "Slipe.Shared.Vehicles.Weapon",
+    "Slipe.Shared.Vehicles.Wheel",
+    "Slipe.Shared.Vehicles.WheelState",
+    "Slipe.Shared.Vehicles.Window",
     "Slipe.Shared.Weapons.SharedWeaponModel",
     "Slipe.Shared.Weapons.WeaponProperty",
     "Slipe.Shared.Weapons.WeaponSkill",
+    "Slipe.Shared.Weapons.WeaponSlot",
     "Slipe.Shared.Weapons.WeaponState"
   })
 end

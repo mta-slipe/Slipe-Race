@@ -13,7 +13,8 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
     local getInstance1, getInteriorSounds1, setInteriorSounds1, getPedsLodDistance, setPedsLodDistance, getVehiclesLodDistance, setVehiclesLodDistance, getTrainsAndPlanesLodDistance, 
     setTrainsAndPlanesLodDistance, getBirdsEnabled, setBirdsEnabled, getWaterDrawnLast, setWaterDrawnLast, getPedTargetingMarkersEnabled, setPedTargetingMarkersEnabled, GetGarage1, 
     GetGroundPosition, ResetVehiclesLodDistance, ResetPedsLodDistance, SetAmbientSoundEnabled, IsAmbientSoundEnabled, ResetAmbientSounds, IsSoundEnabled, ResetWorldSounds, 
-    SetSoundEnabled, SetSpecialPropertyEnabled, IsSpecialPropertyEnabled, SetRoomFurnitureEnabled, IsRoomFurnitureEnabled, GetWaterLevelAtPosition, class, __ctor__
+    SetSoundEnabled, SetSpecialPropertyEnabled, IsSpecialPropertyEnabled, SetRoomFurnitureEnabled, IsRoomFurnitureEnabled, GetWaterLevelAtPosition, GetSurfaceProperty, SetSurfaceProperty, 
+    ResetSurfaceProperty, class, __ctor__
     -- <summary>
     -- Instantiate a new world
     -- </summary>
@@ -158,6 +159,28 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
     GetWaterLevelAtPosition = function (this, position, checkWaves)
       return SlipeMtaDefinitions.MtaClient.GetWaterLevel(position.X, position.Y, position.Z, checkWaves)
     end
+    -- <summary>
+    -- This method retrieves the value of a surface property.
+    -- </summary>
+    -- <param name="property"></param>
+    -- <returns>A dynamic range of values, for a full list checkout: https://wiki.multitheftauto.com/wiki/EngineGetSurfaceProperties </returns>
+    GetSurfaceProperty = function (this, type, property)
+      return SlipeMtaDefinitions.MtaClient.EngineGetSurfaceProperties(type, property:ToEnumString(SlipeClientGameWorld.SurfaceMaterialProperty):ToLower())
+    end
+    -- <summary>
+    -- This method sets the value of a surface property
+    -- </summary>
+    -- <param name="property"></param>
+    -- <param name="value">A range of possible values. Checkout: https://wiki.multitheftauto.com/wiki/EngineSetSurfaceProperties</param>
+    SetSurfaceProperty = function (this, type, property, value)
+      SlipeMtaDefinitions.MtaClient.EngineSetSurfaceProperties(type, property:ToEnumString(SlipeClientGameWorld.SurfaceMaterialProperty):ToLower(), value)
+    end
+    -- <summary>
+    -- Resets the surface properties of a material to the default values
+    -- </summary>
+    ResetSurfaceProperty = function (this, type)
+      SlipeMtaDefinitions.MtaClient.EngineResetSurfaceProperties(type)
+    end
     class = {
       __inherits__ = function (out)
         return {
@@ -194,6 +217,9 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
       SetRoomFurnitureEnabled = SetRoomFurnitureEnabled,
       IsRoomFurnitureEnabled = IsRoomFurnitureEnabled,
       GetWaterLevelAtPosition = GetWaterLevelAtPosition,
+      GetSurfaceProperty = GetSurfaceProperty,
+      SetSurfaceProperty = SetSurfaceProperty,
+      ResetSurfaceProperty = ResetSurfaceProperty,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -211,6 +237,7 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
             { ".ctor", 0x6, nil },
             { "GetGarage", 0x186, GetGarage1, System.Int32, out.Slipe.Client.GameWorld.Garage },
             { "GetGroundPosition", 0x186, GetGroundPosition, System.Numerics.Vector3, System.Single },
+            { "GetSurfaceProperty", 0x286, GetSurfaceProperty, System.Int32, System.Int32, System.Object },
             { "GetWaterLevelAtPosition", 0x286, GetWaterLevelAtPosition, System.Numerics.Vector3, System.Boolean, System.Single },
             { "IsAmbientSoundEnabled", 0x186, IsAmbientSoundEnabled, System.Int32, System.Boolean },
             { "IsRoomFurnitureEnabled", 0x186, IsRoomFurnitureEnabled, System.Int32, System.Boolean },
@@ -218,12 +245,14 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
             { "IsSpecialPropertyEnabled", 0x186, IsSpecialPropertyEnabled, System.Int32, System.Boolean },
             { "ResetAmbientSounds", 0x86, ResetAmbientSounds, System.Boolean },
             { "ResetPedsLodDistance", 0x86, ResetPedsLodDistance, System.Boolean },
+            { "ResetSurfaceProperty", 0x106, ResetSurfaceProperty, System.Int32 },
             { "ResetVehiclesLodDistance", 0x86, ResetVehiclesLodDistance, System.Boolean },
             { "ResetWorldSounds", 0x86, ResetWorldSounds, System.Boolean },
             { "SetAmbientSoundEnabled", 0x286, SetAmbientSoundEnabled, System.Int32, System.Boolean, System.Boolean },
             { "SetRoomFurnitureEnabled", 0x286, SetRoomFurnitureEnabled, System.Int32, System.Boolean, System.Boolean },
             { "SetSoundEnabled", 0x486, SetSoundEnabled, System.Int32, System.Boolean, System.Int32, System.Boolean, System.Boolean },
-            { "SetSpecialPropertyEnabled", 0x286, SetSpecialPropertyEnabled, System.Int32, System.Boolean, System.Boolean }
+            { "SetSpecialPropertyEnabled", 0x286, SetSpecialPropertyEnabled, System.Int32, System.Boolean, System.Boolean },
+            { "SetSurfaceProperty", 0x306, SetSurfaceProperty, System.Int32, System.Int32, System.Object }
           },
           class = { 0x6 }
         }

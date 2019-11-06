@@ -17,6 +17,26 @@ System.namespace("Slipe.Client.Sounds", function (namespace)
     }
   end)
 
+  -- <summary>
+  -- Represents different radio stations
+  -- </summary>
+  namespace.enum("RadioStation", function ()
+    return {
+      RadioOff = 0,
+      PlaybackFM = 1,
+      KRose = 2,
+      KDST = 3,
+      BounceFM = 4,
+      SFUR = 5,
+      RadioLosSantos = 6,
+      RadioX = 7,
+      CSR1039 = 8,
+      KJahWest = 9,
+      MasterSounds983 = 10,
+      WCTR = 11,
+      UserTrackPlayer = 12
+    }
+  end)
 
   -- <summary>
   -- Represents interal GTA radio stations that are not the common ones

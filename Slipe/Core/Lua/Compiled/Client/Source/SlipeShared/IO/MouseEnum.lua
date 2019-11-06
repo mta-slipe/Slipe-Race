@@ -22,4 +22,13 @@ System.namespace("Slipe.Shared.IO", function (namespace)
     }
   end)
 
+  -- <summary>
+  -- Represents the scroll direction of the mouse wheel
+  -- </summary>
+  namespace.enum("MouseWheelState", function ()
+    return {
+      Down = -1,
+      Up = 1
+    }
+  end)
 end)

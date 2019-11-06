@@ -14,7 +14,7 @@ System.namespace("Slipe.Client.IO", function (namespace)
   -- </summary>
   namespace.class("Input", function (namespace)
     local closures, BindKey, UnbindKey, BindKey1, UnbindKey1, IsKeyPressed, GetAnalogControlState, SetAnalogControlState, 
-    SetControlEnabled, IsControlEnabled, SetAllControlsEnabled, static
+    SetControlEnabled, IsControlEnabled, SetAllControlsEnabled, KeyboardReadingLayout, static
     static = function (this)
       closures = DictDelegateDelegate()
     end
@@ -113,6 +113,12 @@ System.namespace("Slipe.Client.IO", function (namespace)
     SetAllControlsEnabled = function (value, mtaControls, gtaControls)
       return SlipeMtaDefinitions.MtaClient.ToggleAllControls(value, gtaControls, mtaControls)
     end
+    -- <summary>
+    -- This method gets the player's keyboard layout settings, which they are currently (keyboard layout can be changed at any moment) using at the time of invocation.
+    -- </summary>
+    KeyboardReadingLayout = function ()
+      return SlipeMtaDefinitions.MtaClient.GetKeyboardReadingLayout()
+    end
     return {
       BindKey = BindKey,
       UnbindKey = UnbindKey,
@@ -124,6 +130,7 @@ System.namespace("Slipe.Client.IO", function (namespace)
       SetControlEnabled = SetControlEnabled,
       IsControlEnabled = IsControlEnabled,
       SetAllControlsEnabled = SetAllControlsEnabled,
+      KeyboardReadingLayout = KeyboardReadingLayout,
       static = static,
       __metadata__ = function (out)
         return {
@@ -136,6 +143,7 @@ System.namespace("Slipe.Client.IO", function (namespace)
             { "GetAnalogControlState", 0x18E, GetAnalogControlState, System.String, System.Single },
             { "IsControlEnabled", 0x18E, IsControlEnabled, System.String, System.Boolean },
             { "IsKeyPressed", 0x18E, IsKeyPressed, System.String, System.Boolean },
+            { "KeyboardReadingLayout", 0x8E, KeyboardReadingLayout, System.String },
             { "SetAllControlsEnabled", 0x38E, SetAllControlsEnabled, System.Boolean, System.Boolean, System.Boolean, System.Boolean },
             { "SetAnalogControlState", 0x28E, SetAnalogControlState, System.String, System.Single, System.Boolean },
             { "SetControlEnabled", 0x28E, SetControlEnabled, System.String, System.Boolean, System.Boolean },

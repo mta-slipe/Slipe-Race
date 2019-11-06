@@ -30,7 +30,7 @@ System.namespace("Slipe.Client.Assets", function (namespace)
     HandleDownloadComplete = function (this, source, eventArgs)
       if eventArgs.Path == this.filepath then
         this.state = eventArgs.Success and 2 --[[DownloadState.Downloaded]] or 3 --[[DownloadState.Failed]]
-        SlipeClientGame.GameClient.OnFileDownloadComplete = SlipeClientGame.GameClient.OnFileDownloadComplete + System.fn(this, HandleDownloadComplete)
+        SlipeClientGame.GameClient.OnFileDownloadComplete = SlipeClientGame.GameClient.OnFileDownloadComplete - System.fn(this, HandleDownloadComplete)
         local default = this.OnDownloadComplete
         if default ~= nil then
           default()

@@ -13,15 +13,15 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
   -- Represents a component of a vehicle
   -- </summary>
   namespace.class("Component", function (namespace)
-    local getPosition, setPosition, getRotation, setRotation, getVisible, setVisible, ResetPosition, ResetRotation, 
-    __ctor1__, __ctor2__
+    local getPosition, setPosition, getRotation, setRotation, getVisible, setVisible, getScale, setScale, 
+    ResetPosition, ResetRotation, ResetScale, __ctor1__, __ctor2__
     -- <summary>
     -- Create a component instance from a vehicle
     -- </summary>
     __ctor1__ = function (this, vehicle, type, relativeBase)
       this.vehicle = vehicle
       this.component = type:ToEnumString(SlipeClientVehicles.ComponentType):ToLower()
-      this.Base = relativeBase
+      this.relativeBase = relativeBase:ToEnumString(SlipeClientVehicles.ComponentBase):ToLower()
     end
     -- <summary>
     -- Create a component instance from a vehicle using a string as type
@@ -29,27 +29,34 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
     __ctor2__ = function (this, vehicle, type, relativeBase)
       this.vehicle = vehicle
       this.component = type
-      this.Base = relativeBase
+      this.relativeBase = relativeBase:ToEnumString(SlipeClientVehicles.ComponentBase):ToLower()
     end
     getPosition = function (this)
-      local r = SlipeMtaDefinitions.MtaClient.GetVehicleComponentPosition(this.vehicle:getMTAElement(), this.component, this.Base:ToEnumString(SlipeClientVehicles.ComponentBase):ToLower())
+      local r = SlipeMtaDefinitions.MtaClient.GetVehicleComponentPosition(this.vehicle:getMTAElement(), this.component, this.relativeBase)
       return SystemNumerics.Vector3(r[1], r[2], r[3])
     end
     setPosition = function (this, value)
-      SlipeMtaDefinitions.MtaClient.SetVehicleComponentPosition(this.vehicle:getMTAElement(), this.component, value.X, value.Y, value.Z, this.Base:ToEnumString(SlipeClientVehicles.ComponentBase):ToLower())
+      SlipeMtaDefinitions.MtaClient.SetVehicleComponentPosition(this.vehicle:getMTAElement(), this.component, value.X, value.Y, value.Z, this.relativeBase)
     end
     getRotation = function (this)
-      local r = SlipeMtaDefinitions.MtaClient.GetVehicleComponentRotation(this.vehicle:getMTAElement(), this.component, this.Base:ToEnumString(SlipeClientVehicles.ComponentBase):ToLower())
+      local r = SlipeMtaDefinitions.MtaClient.GetVehicleComponentRotation(this.vehicle:getMTAElement(), this.component, this.relativeBase)
       return SystemNumerics.Vector3(r[1], r[2], r[3])
     end
     setRotation = function (this, value)
-      SlipeMtaDefinitions.MtaClient.SetVehicleComponentRotation(this.vehicle:getMTAElement(), this.component, value.X, value.Y, value.Z, this.Base:ToEnumString(SlipeClientVehicles.ComponentBase):ToLower())
+      SlipeMtaDefinitions.MtaClient.SetVehicleComponentRotation(this.vehicle:getMTAElement(), this.component, value.X, value.Y, value.Z, this.relativeBase)
     end
     getVisible = function (this)
       return SlipeMtaDefinitions.MtaClient.GetVehicleComponentVisible(this.vehicle:getMTAElement(), this.component)
     end
     setVisible = function (this, value)
       SlipeMtaDefinitions.MtaClient.SetVehicleComponentVisible(this.vehicle:getMTAElement(), this.component, value)
+    end
+    getScale = function (this)
+      local r = SlipeMtaDefinitions.MtaClient.GetVehicleComponentScale(this.vehicle:getMTAElement(), this.component, this.relativeBase)
+      return SystemNumerics.Vector3(r[1], r[2], r[3])
+    end
+    setScale = function (this, value)
+      SlipeMtaDefinitions.MtaClient.SetVehicleComponentScale(this.vehicle:getMTAElement(), this.component, value.X, value.Y, value.Z, this.relativeBase)
     end
     -- <summary>
     -- This function reset to default component position for vehicle.
@@ -63,6 +70,9 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
     ResetRotation = function (this)
       return SlipeMtaDefinitions.MtaClient.ResetVehicleComponentRotation(this.vehicle:getMTAElement(), this.component)
     end
+    ResetScale = function (this)
+      return SlipeMtaDefinitions.MtaClient.ResetVehicleComponentScale(this.vehicle:getMTAElement(), this.component)
+    end
     return {
       getPosition = getPosition,
       setPosition = setPosition,
@@ -70,9 +80,12 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
       setRotation = setRotation,
       getVisible = getVisible,
       setVisible = setVisible,
+      getScale = getScale,
+      setScale = setScale,
       Base = 0,
       ResetPosition = ResetPosition,
       ResetRotation = ResetRotation,
+      ResetScale = ResetScale,
       __ctor__ = {
         __ctor1__,
         __ctor2__
@@ -81,19 +94,22 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
         return {
           fields = {
             { "component", 0x1, System.String },
+            { "relativeBase", 0x1, System.String },
             { "vehicle", 0x1, out.Slipe.Client.Vehicles.BaseVehicle }
           },
           properties = {
             { "Base", 0x6, System.Int32 },
             { "Position", 0x106, System.Numerics.Vector3, getPosition, setPosition },
             { "Rotation", 0x106, System.Numerics.Vector3, getRotation, setRotation },
+            { "Scale", 0x106, System.Numerics.Vector3, getScale, setScale },
             { "Visible", 0x106, System.Boolean, getVisible, setVisible }
           },
           methods = {
             { ".ctor", 0x306, __ctor1__, out.Slipe.Client.Vehicles.BaseVehicle, System.Int32, System.Int32 },
             { ".ctor", 0x306, __ctor2__, out.Slipe.Client.Vehicles.BaseVehicle, System.String, System.Int32 },
             { "ResetPosition", 0x86, ResetPosition, System.Boolean },
-            { "ResetRotation", 0x86, ResetRotation, System.Boolean }
+            { "ResetRotation", 0x86, ResetRotation, System.Boolean },
+            { "ResetScale", 0x86, ResetScale, System.Boolean }
           },
           class = { 0x6 }
         }

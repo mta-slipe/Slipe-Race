@@ -2,17 +2,20 @@
 local System = System
 local SlipeMtaDefinitions
 local SlipeSharedGameWorld
+local SystemNumerics
 System.import(function (out)
   SlipeMtaDefinitions = Slipe.MtaDefinitions
   SlipeSharedGameWorld = Slipe.Shared.GameWorld
+  SystemNumerics = System.Numerics
 end)
 System.namespace("Slipe.Client.GameWorld", function (namespace)
   -- <summary>
   -- Class representing an object in the GTA world
   -- </summary>
   namespace.class("WorldObject", function (namespace)
-    local getMass, setMass, getBreakable, setBreakable, setRespawns, Break, Respawn, class, 
-    __ctor1__, __ctor2__, __ctor3__
+    local getMass, setMass, getBreakable, setBreakable, setRespawns, getTurnMass, setTurnMass, getAccuracy, 
+    setAccuracy, getAirResistance, setAirResistance, getElasticity, setElasticity, getBuoyancy, setBuoyancy, getCenterOfMass, 
+    setCenterOfMass, Break, Respawn, class, __ctor1__, __ctor2__, __ctor3__
     __ctor1__ = function (this, element)
       SlipeSharedGameWorld.SharedWorldObject.__ctor__[1](this, element)
     end
@@ -43,6 +46,43 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
     setRespawns = function (this, value)
       SlipeMtaDefinitions.MtaClient.ToggleObjectRespawn(this.element, value)
     end
+    getTurnMass = function (this)
+      return SlipeMtaDefinitions.MtaClient.GetObjectProperty(this.element, "turn_mass")
+    end
+    setTurnMass = function (this, value)
+      SlipeMtaDefinitions.MtaClient.SetObjectProperty(this.element, "turn_mass", value)
+    end
+    getAccuracy = function (this)
+      return SlipeMtaDefinitions.MtaClient.GetObjectProperty(this.element, "accuracy")
+    end
+    setAccuracy = function (this, value)
+      SlipeMtaDefinitions.MtaClient.SetObjectProperty(this.element, "accuracy", value)
+    end
+    getAirResistance = function (this)
+      return SlipeMtaDefinitions.MtaClient.GetObjectProperty(this.element, "air_resistance")
+    end
+    setAirResistance = function (this, value)
+      SlipeMtaDefinitions.MtaClient.SetObjectProperty(this.element, "air_resistance", value)
+    end
+    getElasticity = function (this)
+      return SlipeMtaDefinitions.MtaClient.GetObjectProperty(this.element, "elasticity")
+    end
+    setElasticity = function (this, value)
+      SlipeMtaDefinitions.MtaClient.SetObjectProperty(this.element, "elasticity", value)
+    end
+    getBuoyancy = function (this)
+      return SlipeMtaDefinitions.MtaClient.GetObjectProperty(this.element, "buoyancy")
+    end
+    setBuoyancy = function (this, value)
+      SlipeMtaDefinitions.MtaClient.SetObjectProperty(this.element, "buoyancy", value)
+    end
+    getCenterOfMass = function (this)
+      local r = SlipeMtaDefinitions.MtaClient.GetObjectProperty(this.element, "center_of_mass")
+      return SystemNumerics.Vector3(r[1], r[2], r[3])
+    end
+    setCenterOfMass = function (this, value)
+      SlipeMtaDefinitions.MtaClient.SetObjectProperty(this.element, "center_of_mass", System.tuple(value.X, value.Y, value.Z))
+    end
     -- <summary>
     -- Break this object
     -- </summary>
@@ -66,6 +106,18 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
       getBreakable = getBreakable,
       setBreakable = setBreakable,
       setRespawns = setRespawns,
+      getTurnMass = getTurnMass,
+      setTurnMass = setTurnMass,
+      getAccuracy = getAccuracy,
+      setAccuracy = setAccuracy,
+      getAirResistance = getAirResistance,
+      setAirResistance = setAirResistance,
+      getElasticity = getElasticity,
+      setElasticity = setElasticity,
+      getBuoyancy = getBuoyancy,
+      setBuoyancy = setBuoyancy,
+      getCenterOfMass = getCenterOfMass,
+      setCenterOfMass = setCenterOfMass,
       Break = Break,
       Respawn = Respawn,
       __ctor__ = {
@@ -76,9 +128,15 @@ System.namespace("Slipe.Client.GameWorld", function (namespace)
       __metadata__ = function (out)
         return {
           properties = {
+            { "Accuracy", 0x106, System.Single, getAccuracy, setAccuracy },
+            { "AirResistance", 0x106, System.Single, getAirResistance, setAirResistance },
             { "Breakable", 0x106, System.Boolean, getBreakable, setBreakable },
+            { "Buoyancy", 0x106, System.Single, getBuoyancy, setBuoyancy },
+            { "CenterOfMass", 0x106, System.Numerics.Vector3, getCenterOfMass, setCenterOfMass },
+            { "Elasticity", 0x106, System.Single, getElasticity, setElasticity },
             { "Mass", 0x106, System.Single, getMass, setMass },
-            { "Respawns", 0x306, System.Boolean, setRespawns }
+            { "Respawns", 0x306, System.Boolean, setRespawns },
+            { "TurnMass", 0x106, System.Single, getTurnMass, setTurnMass }
           },
           methods = {
             { ".ctor", 0x106, __ctor1__, out.Slipe.MtaDefinitions.MtaElement },

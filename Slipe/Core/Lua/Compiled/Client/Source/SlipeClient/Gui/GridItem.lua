@@ -32,16 +32,15 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     end
     setContent = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiGridListSetItemText(this.glist:getMTAElement(), this.Row.ID, this.Column.ID, value, false, false)
-      this.textSet = true
     end
     getData = function (this)
-      if not this.textSet then
+      if System.String.IsNullOrEmpty(getContent(this)) then
         setContent(this, "")
       end
       return SlipeMtaDefinitions.MtaClient.GuiGridListGetItemData(this.glist:getMTAElement(), this.Row.ID, this.Column.ID)
     end
     setData = function (this, value)
-      if not this.textSet then
+      if System.String.IsNullOrEmpty(getContent(this)) then
         setContent(this, "")
       end
       SlipeMtaDefinitions.MtaClient.GuiGridListSetItemData(this.glist:getMTAElement(), this.Row.ID, this.Column.ID, value)
@@ -53,7 +52,6 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       return SlipeMtaDefinitions.MtaClient.GuiGridListSetItemText(this.glist:getMTAElement(), this.Row.ID, this.Column.ID, content, true, false)
     end
     return {
-      textSet = false,
       getColor = getColor,
       setColor = setColor,
       getContent = getContent,
@@ -65,8 +63,7 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       __metadata__ = function (out)
         return {
           fields = {
-            { "glist", 0x1, out.Slipe.Client.Gui.GridList },
-            { "textSet", 0x1, System.Boolean }
+            { "glist", 0x1, out.Slipe.Client.Gui.GridList }
           },
           properties = {
             { "Color", 0x106, out.Slipe.Shared.Utilities.Color, getColor, setColor },

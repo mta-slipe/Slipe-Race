@@ -4,19 +4,19 @@ local Linq = System.Linq.Enumerable
 local SlipeClientVehicles
 local SlipeMtaDefinitions
 local SlipeSharedVehicles
-local SystemNumerics
 System.import(function (out)
   SlipeClientVehicles = Slipe.Client.Vehicles
   SlipeMtaDefinitions = Slipe.MtaDefinitions
   SlipeSharedVehicles = Slipe.Shared.Vehicles
-  SystemNumerics = System.Numerics
 end)
 System.namespace("Slipe.Client.Vehicles", function (namespace)
   -- <summary>
   -- Represents a vehicle model
   -- </summary>
   namespace.class("VehicleModel", function (namespace)
-    local getExhaustPosition, setExhaustPosition, FromName, FromId, class, __ctor__
+    local getPrimaryFrontLights, getPrimaryRearLights, getSecondaryFrontLights, getSecondaryRearLights, getFrontSeat, getRearSeat, getExhaust, getEngine, 
+    getGasCap, getTrailerHook, getHandRest, getSecondaryExhaust, getAirTrail, getVehicleGun, FromName, FromId, 
+    class, __ctor__
     namespace.class("Bikes", function (namespace)
       local getBf400, getFaggio, getFcr900, getFreeway, getHpv1000, getNrg500, getPcj600, getPizzaboy, 
       getSanchez, getWayfarer, getQuadbike, getBike, getBmx, getMountainbike
@@ -1281,12 +1281,47 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
     __ctor__ = function (this, id)
       SlipeSharedVehicles.SharedVehicleModel.__ctor__(this, id)
     end
-    getExhaustPosition = function (this)
-      local r = SlipeMtaDefinitions.MtaClient.GetVehicleModelExhaustFumesPosition(this.Id)
-      return SystemNumerics.Vector3(r[1], r[2], r[3])
+    getPrimaryFrontLights = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "light_front_main")
     end
-    setExhaustPosition = function (this, value)
-      SlipeMtaDefinitions.MtaClient.SetVehicleModelExhaustFumesPosition(this.Id, value.X, value.Y, value.Z)
+    getPrimaryRearLights = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "light_rear_main")
+    end
+    getSecondaryFrontLights = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "light_front_second")
+    end
+    getSecondaryRearLights = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "light_rear_second")
+    end
+    getFrontSeat = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "seat_front")
+    end
+    getRearSeat = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "seat_rear")
+    end
+    getExhaust = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "exhaust")
+    end
+    getEngine = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "engine")
+    end
+    getGasCap = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "gas_cap")
+    end
+    getTrailerHook = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "trailer_attach")
+    end
+    getHandRest = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "hand_rest")
+    end
+    getSecondaryExhaust = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "exhaust_second")
+    end
+    getAirTrail = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "wing_airtrail")
+    end
+    getVehicleGun = function (this)
+      return SlipeClientVehicles.VehicleModelDummy(this, "veh_gun")
     end
     -- <summary>
     -- Get a vehicle model from the model name as a string, instantiated as the right model class
@@ -1330,15 +1365,40 @@ System.namespace("Slipe.Client.Vehicles", function (namespace)
           out.Slipe.Shared.Vehicles.SharedVehicleModel
         }
       end,
-      getExhaustPosition = getExhaustPosition,
-      setExhaustPosition = setExhaustPosition,
+      getPrimaryFrontLights = getPrimaryFrontLights,
+      getPrimaryRearLights = getPrimaryRearLights,
+      getSecondaryFrontLights = getSecondaryFrontLights,
+      getSecondaryRearLights = getSecondaryRearLights,
+      getFrontSeat = getFrontSeat,
+      getRearSeat = getRearSeat,
+      getExhaust = getExhaust,
+      getEngine = getEngine,
+      getGasCap = getGasCap,
+      getTrailerHook = getTrailerHook,
+      getHandRest = getHandRest,
+      getSecondaryExhaust = getSecondaryExhaust,
+      getAirTrail = getAirTrail,
+      getVehicleGun = getVehicleGun,
       FromName = FromName,
       FromId = FromId,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           properties = {
-            { "ExhaustPosition", 0x106, System.Numerics.Vector3, getExhaustPosition, setExhaustPosition }
+            { "AirTrail", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getAirTrail },
+            { "Engine", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getEngine },
+            { "Exhaust", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getExhaust },
+            { "FrontSeat", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getFrontSeat },
+            { "GasCap", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getGasCap },
+            { "HandRest", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getHandRest },
+            { "PrimaryFrontLights", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getPrimaryFrontLights },
+            { "PrimaryRearLights", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getPrimaryRearLights },
+            { "RearSeat", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getRearSeat },
+            { "SecondaryExhaust", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getSecondaryExhaust },
+            { "SecondaryFrontLights", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getSecondaryFrontLights },
+            { "SecondaryRearLights", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getSecondaryRearLights },
+            { "TrailerHook", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getTrailerHook },
+            { "VehicleGun", 0x206, out.Slipe.Client.Vehicles.VehicleModelDummy, getVehicleGun }
           },
           methods = {
             { ".ctor", 0x103, nil, System.Int32 },

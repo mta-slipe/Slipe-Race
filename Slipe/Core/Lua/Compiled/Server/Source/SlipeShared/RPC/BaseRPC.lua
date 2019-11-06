@@ -8,9 +8,18 @@ System.import(function (out)
   SlipeSharedElements = Slipe.Shared.Elements
   ArrayMtaElement = System.Array(SlipeMtaDefinitions.MtaElement)
 end)
-System.namespace("Slipe.Shared.RPC", function (namespace)
-  namespace.class("BaseRPC", function (namespace)
-    local GetArray, CreateElementArray, GetElementArray, GetElement
+System.namespace("Slipe.Shared.Rpc", function (namespace)
+  namespace.class("BaseRpc", function (namespace)
+    local getOnClientRpcFailed, setOnClientRpcFailed, GetArray, CreateElementArray, GetElementArray, GetElement, __ctor__
+    __ctor__ = function (this)
+      this.rpcFailedAction = 0 --[[ClientRpcFailedAction.Ignore]]
+    end
+    getOnClientRpcFailed = function (this)
+      return this.rpcFailedAction
+    end
+    setOnClientRpcFailed = function (this, value)
+      this.rpcFailedAction = value
+    end
     GetArray = function (this, table, T)
       return SlipeMtaDefinitions.MtaShared.GetArrayFromTable(table, "", T)
     end
@@ -33,20 +42,36 @@ System.namespace("Slipe.Shared.RPC", function (namespace)
       return elements
     end
     GetElement = function (this, mtaElement, T)
-      return SlipeSharedElements.ElementManager.getInstance():GetElement(mtaElement, T)
+      return SlipeSharedElements.ElementManager.getInstance():GetElement(mtaElement.element, T)
     end
     return {
+      __inherits__ = function (out)
+        return {
+          out.Slipe.Shared.Rpc.IRpc
+        }
+      end,
+      rpcFailedAction = 0,
+      getOnClientRpcFailed = getOnClientRpcFailed,
+      setOnClientRpcFailed = setOnClientRpcFailed,
       GetArray = GetArray,
       CreateElementArray = CreateElementArray,
       GetElementArray = GetElementArray,
       GetElement = GetElement,
+      __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
+          fields = {
+            { "rpcFailedAction", 0x1, System.Int32 }
+          },
+          properties = {
+            { "OnClientRpcFailed", 0x106, System.Int32, getOnClientRpcFailed, setOnClientRpcFailed }
+          },
           methods = {
-            { "CreateElementArray", 0x186, CreateElementArray, System.Array(out.Slipe.Shared.Elements.Element), System.Array(out.Slipe.MtaDefinitions.MtaElement) },
-            { "GetArray", 0x10186, GetArray, function (T) return System.Object, System.Array(T) end },
-            { "GetElement", 0x10186, GetElement, function (T) return System.Object, T end },
-            { "GetElementArray", 0x10186, GetElementArray, function (T) return System.Object, System.Array(T) end }
+            { ".ctor", 0x6, nil },
+            { "CreateElementArray", 0x183, CreateElementArray, System.Array(out.Slipe.Shared.Elements.Element), System.Array(out.Slipe.MtaDefinitions.MtaElement) },
+            { "GetArray", 0x10183, GetArray, function (T) return System.Object, System.Array(T) end },
+            { "GetElement", 0x10183, GetElement, function (T) return System.Object, T end },
+            { "GetElementArray", 0x10183, GetElementArray, function (T) return System.Object, System.Array(T) end }
           },
           class = { 0x6 }
         }

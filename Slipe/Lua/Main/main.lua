@@ -23,6 +23,9 @@ end
 end
 
 function prepareManifest(filepath)
+	if not fileExists(filepath) then
+		return
+	end
 	System.init = prepareInit	
 	local file = fileOpen(filepath)
 	local content = fileRead(file, fileGetSize(file))
@@ -32,6 +35,9 @@ function prepareManifest(filepath)
 end
 
 function finalizeManifest(filepath)
+	if not fileExists(filepath) then
+		return
+	end
 	System.init = finalizeInit
 	local file = fileOpen(filepath)
 	local content = fileRead(file, fileGetSize(file))
@@ -65,7 +71,16 @@ function runEntryPoint()
 		result = result[split] 
 	end
 	result()
-end
-runEntryPoint()
 
+	-- Let the server know we are ready to accept incoming rpcs
+	if(triggerServerEvent ~= nil) then
+		Slipe.Client.Rpc.RpcManager.getInstance()
+		triggerServerEvent("slipe-client-ready-rpc", root)
+	else
+		Slipe.Server.Rpc.RpcManager.getInstance()
+		addEvent("slipe-client-ready-rpc", true)	
+	end
+
+end
 initEvents()
+runEntryPoint()

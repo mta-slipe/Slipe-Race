@@ -302,6 +302,7 @@ System.namespace("Slipe.Server.Peds", function (namespace)
           out.Slipe.Server.Peds.Ped
         }
       end,
+      IsReadyForIncomingRequests = false,
       getWantedLevel = getWantedLevel,
       setWantedLevel = setWantedLevel,
       getName = getName,
@@ -367,6 +368,7 @@ System.namespace("Slipe.Server.Peds", function (namespace)
             { "ForceMap", 0x106, System.Boolean, getForceMap, setForceMap },
             { "IdleTime", 0x206, System.Int32, getIdleTime },
             { "IP", 0x206, System.String, getIP },
+            { "IsReadyForIncomingRequests", 0x4, System.Boolean },
             { "Money", 0x106, System.Int32, getMoney, setMoney },
             { "Muted", 0x106, System.Boolean, getMuted, setMuted },
             { "Name", 0x106, System.String, getName, setName },

@@ -218,14 +218,14 @@ System.namespace("Slipe.Shared.Peds", function (namespace)
     -- <summary>
     -- Sets the animation of this ped
     -- </summary>
-    SetAnimation = function (this, animation, loop, time, updatePosition, interruptable, freeLastFrame, blendTime)
-      return SlipeMtaDefinitions.MtaShared.SetPedAnimation(this.element, animation.Group, animation.Anim, time, loop, updatePosition, interruptable, freeLastFrame, blendTime)
+    SetAnimation = function (this, animation, loop, time, updatePosition, interruptable, freeLastFrame, blendTime, retainPedState)
+      return SlipeMtaDefinitions.MtaShared.SetPedAnimation(this.element, animation.Group, animation.Anim, time, loop, updatePosition, interruptable, freeLastFrame, blendTime, retainPedState)
     end
     -- <summary>
     -- Resets the animation back to normal
     -- </summary>
     ResetAnimation = function (this)
-      return SlipeMtaDefinitions.MtaShared.SetPedAnimation(this.element, nil, nil, - 1, true, true, true, true, 250)
+      return SlipeMtaDefinitions.MtaShared.SetPedAnimation(this.element, nil, nil, - 1, true, true, true, true, 250, false)
     end
     -- <summary>
     -- Sets the current animation progress of a player or ped.
@@ -401,7 +401,7 @@ System.namespace("Slipe.Shared.Peds", function (namespace)
             { "RemoveClothes", 0x186, RemoveClothes, System.Int32, System.Boolean },
             { "RemoveFromVehicle", 0x86, RemoveFromVehicle, System.Boolean },
             { "ResetAnimation", 0x86, ResetAnimation, System.Boolean },
-            { "SetAnimation", 0x786, SetAnimation, out.Slipe.Shared.Peds.Animation, System.Boolean, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Boolean },
+            { "SetAnimation", 0x886, SetAnimation, out.Slipe.Shared.Peds.Animation, System.Boolean, System.Int32, System.Boolean, System.Boolean, System.Boolean, System.Int32, System.Boolean, System.Boolean },
             { "SetAnimationProgress", 0x286, SetAnimationProgress, out.Slipe.Shared.Peds.Animation, System.Single, System.Boolean },
             { "SetAnimationSpeed", 0x286, SetAnimationSpeed, out.Slipe.Shared.Peds.Animation, System.Single, System.Boolean },
             { "SetStat", 0x286, SetStat, System.Int32, System.Single, System.Boolean },

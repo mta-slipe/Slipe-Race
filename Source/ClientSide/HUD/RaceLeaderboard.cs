@@ -1,4 +1,4 @@
-﻿using ClientSide.RPCs;
+﻿using Shared.Rpc;
 using Slipe.Client.Dx;
 using Slipe.Client.Elements;
 using Slipe.Client.IO;
@@ -9,6 +9,7 @@ using Slipe.Client.Rpc;
 using Slipe.Shared.Elements;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using System.Text;
 using static Slipe.Client.Rendering.Renderer;
@@ -54,7 +55,7 @@ namespace ClientSide.HUD
 
         private void UpdateLeaderboard(LeaderboardRPC rpc)
         {
-            this.players = rpc.players;
+            this.players = rpc.players.Select(p => (Player)p).ToArray();
             this.times = new Dictionary<Player, long>();
             for (int i = 0; i < players.Length; i++)
             {

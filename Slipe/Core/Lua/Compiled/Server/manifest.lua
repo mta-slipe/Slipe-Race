@@ -150,18 +150,25 @@ return function (out)
     load("Source.SlipeShared.Elements.Events.OnStopSyncEventArgs")
     load("Source.SlipeShared.Elements.PhysicalElement")
     load("Source.SlipeShared.Exceptions.NullElementException")
+    load("Source.SlipeShared.Explosions.ExplosionType")
     load("Source.SlipeShared.Exports.ExportAttribute")
     load("Source.SlipeShared.GameWorld.GameTime")
+    load("Source.SlipeShared.GameWorld.GarageLocation")
     load("Source.SlipeShared.GameWorld.HeatHaze")
     load("Source.SlipeShared.GameWorld.SharedGarage")
     load("Source.SlipeShared.GameWorld.SharedWater")
     load("Source.SlipeShared.GameWorld.SharedWorld")
     load("Source.SlipeShared.GameWorld.SharedWorldObject")
+    load("Source.SlipeShared.GameWorld.TrafficLightState")
     load("Source.SlipeShared.GameWorld.Weather")
+    load("Source.SlipeShared.GameWorld.WeatherType")
     load("Source.SlipeShared.Helpers.EasingFunction")
     load("Source.SlipeShared.Helpers.NumericHelper")
+    load("Source.SlipeShared.Helpers.StatusCode")
     load("Source.SlipeShared.Helpers.Version")
+    load("Source.SlipeShared.IO.DebugMessageLevel")
     load("Source.SlipeShared.IO.KeyEnum")
+    load("Source.SlipeShared.IO.MessageType")
     load("Source.SlipeShared.IO.MouseEnum")
     load("Source.SlipeShared.IO.SharedMTADebug")
     load("Source.SlipeShared.Markers.Events.OnHitEventArgs")
@@ -169,25 +176,37 @@ return function (out)
     load("Source.SlipeShared.Markers.MarkerIcon")
     load("Source.SlipeShared.Markers.MarkerType")
     load("Source.SlipeShared.Markers.SharedMarker")
+    load("Source.SlipeShared.Peds.AnalogControl")
     load("Source.SlipeShared.Peds.Animation")
+    load("Source.SlipeShared.Peds.BodyPart")
+    load("Source.SlipeShared.Peds.Bone")
+    load("Source.SlipeShared.Peds.DamageType")
+    load("Source.SlipeShared.Peds.FightingStyle")
+    load("Source.SlipeShared.Peds.FrontEndSound")
     load("Source.SlipeShared.Peds.HudComponent")
     load("Source.SlipeShared.Peds.PedClothes")
+    load("Source.SlipeShared.Peds.PedModel")
+    load("Source.SlipeShared.Peds.PedStat")
     load("Source.SlipeShared.Peds.QuitType")
     load("Source.SlipeShared.Peds.SharedPed")
+    load("Source.SlipeShared.Peds.WalkingStyle")
     load("Source.SlipeShared.Pickups.Events.OnHitArgs")
     load("Source.SlipeShared.Pickups.Events.OnLeaveArgs")
+    load("Source.SlipeShared.Pickups.PickupModel")
+    load("Source.SlipeShared.Pickups.PickupType")
     load("Source.SlipeShared.Pickups.SharedPickup")
+    load("Source.SlipeShared.Radar.BlipType")
     load("Source.SlipeShared.Radar.SharedBlip")
     load("Source.SlipeShared.Radar.SharedRadarArea")
+    load("Source.SlipeShared.Rendering.CameraFade")
     load("Source.SlipeShared.Resources.SharedResource")
+    load("Source.SlipeShared.RPC.AsyncRpc")
     load("Source.SlipeShared.RPC.BaseRPC")
-    load("Source.SlipeShared.RPC.BasicIncomingRPC")
-    load("Source.SlipeShared.RPC.BasicOutgoingRPC")
-    load("Source.SlipeShared.RPC.EmptyIncomingRPC")
-    load("Source.SlipeShared.RPC.EmptyOutgoingRPC")
+    load("Source.SlipeShared.RPC.ElementRpc")
+    load("Source.SlipeShared.RPC.EmptyRpc")
     load("Source.SlipeShared.RPC.IRPC")
-    load("Source.SlipeShared.RPC.SingleElementIncomingRPC")
-    load("Source.SlipeShared.RPC.SingleElementOutgoingRPC")
+    load("Source.SlipeShared.Rpc.RpcEnums")
+    load("Source.SlipeShared.RPC.SingleCastRpc")
     load("Source.SlipeShared.Utilities.Color")
     load("Source.SlipeShared.Vehicles.Handling")
     load("Source.SlipeShared.Vehicles.HandlingEnums")
@@ -195,6 +214,7 @@ return function (out)
     load("Source.SlipeShared.Vehicles.SharedVehicle")
     load("Source.SlipeShared.Vehicles.SharedVehicleModel")
     load("Source.SlipeShared.Vehicles.Siren")
+    load("Source.SlipeShared.Vehicles.VehicleEnums")
     load("Source.SlipeShared.Weapons.SharedWeaponModel")
     load("Source.SlipeShared.Weapons.WeaponEnums")
   end
@@ -205,6 +225,7 @@ return function (out)
     "Slipe.Shared.Peds.SharedPed",
     "Slipe.Shared.Vehicles.SharedVehicle",
     "Slipe.Shared.Vehicles.SharedVehicleModel",
+    "Slipe.Shared.Rpc.IRpc",
     "Slipe.Server.Acl.IAclObject",
     "Slipe.Shared.GameWorld.SharedGarage",
     "Slipe.Shared.GameWorld.SharedWater",
@@ -223,7 +244,7 @@ return function (out)
     "Slipe.Shared.Vehicles.SharedSirens",
     "Slipe.Shared.Weapons.SharedWeaponModel",
     "Slipe.Shared.CollisionShapes.CollisionShape",
-    "Slipe.Shared.Rpc.IRpc",
+    "Slipe.Shared.Rpc.BaseRpc",
     "Slipe.Server.Accounts.Account",
     "Slipe.Server.Accounts.AccountException",
     "Slipe.Server.Accounts.Ban",
@@ -313,6 +334,8 @@ return function (out)
     "Slipe.Server.Radar.RadarArea",
     "Slipe.Server.Rendering.Camera",
     "Slipe.Server.Resources.Resource",
+    "Slipe.Server.Rpc.QueuedRpc",
+    "Slipe.Server.Rpc.RegisteredRpc",
     "Slipe.Server.Rpc.RpcManager",
     "Slipe.Server.Vehicles.Boat",
     "Slipe.Server.Vehicles.BoatModel",
@@ -379,40 +402,83 @@ return function (out)
     "Slipe.Shared.Elements.Events.OnSteamOutEventArgs",
     "Slipe.Shared.Elements.Events.OnStopSyncEventArgs",
     "Slipe.Shared.Exceptions.NullElementException",
+    "Slipe.Shared.Explosions.ExplosionType",
     "Slipe.Shared.Exports.ExportAttribute",
     "Slipe.Shared.GameWorld.GameTime",
+    "Slipe.Shared.GameWorld.GarageLocation",
     "Slipe.Shared.GameWorld.HeatHaze",
+    "Slipe.Shared.GameWorld.TrafficLightState",
     "Slipe.Shared.GameWorld.Weather",
+    "Slipe.Shared.GameWorld.WeatherType",
     "Slipe.Shared.Helpers.EasingFunction",
+    "Slipe.Shared.Helpers.NetworkInteruptionStatus",
     "Slipe.Shared.Helpers.NumericHelper",
+    "Slipe.Shared.Helpers.StatusCode",
     "Slipe.Shared.Helpers.SystemVersion",
+    "Slipe.Shared.IO.DebugMessageLevel",
     "Slipe.Shared.IO.KeyState",
+    "Slipe.Shared.IO.MessageType",
     "Slipe.Shared.IO.MouseButton",
     "Slipe.Shared.IO.MouseButtonState",
+    "Slipe.Shared.IO.MouseWheelState",
     "Slipe.Shared.Markers.Events.OnHitEventArgs",
     "Slipe.Shared.Markers.Events.OnLeaveEventArgs",
     "Slipe.Shared.Markers.MarkerIcon",
     "Slipe.Shared.Markers.MarkerType",
+    "Slipe.Shared.Peds.AnalogControl",
     "Slipe.Shared.Peds.Animation",
+    "Slipe.Shared.Peds.BodyPart",
+    "Slipe.Shared.Peds.Bone",
     "Slipe.Shared.Peds.ClothesModel",
+    "Slipe.Shared.Peds.ClothesSlot",
     "Slipe.Shared.Peds.ClothesTexture",
+    "Slipe.Shared.Peds.DamageType",
+    "Slipe.Shared.Peds.FightingStyle",
+    "Slipe.Shared.Peds.FrontEndSound",
     "Slipe.Shared.Peds.HudComponent",
+    "Slipe.Shared.Peds.PedModel",
+    "Slipe.Shared.Peds.PedStat",
     "Slipe.Shared.Peds.QuitType",
+    "Slipe.Shared.Peds.WalkingStyle",
     "Slipe.Shared.Pickups.Events.OnHitArgs",
     "Slipe.Shared.Pickups.Events.OnLeaveArgs",
-    "Slipe.Shared.RPC.BaseRPC",
-    "Slipe.Shared.Rpc.BasicIncomingRpc",
-    "Slipe.Shared.Rpc.BasicOutgoingRpc",
-    "Slipe.Shared.Rpc.EmptyIncomingRpc",
-    "Slipe.Shared.Rpc.EmptyOutgoingRpc",
-    "Slipe.Shared.Rpc.SingleElementIncomingRpc",
-    "Slipe.Shared.Rpc.SingleElementOutgoingRpc",
+    "Slipe.Shared.Pickups.PickupModel",
+    "Slipe.Shared.Pickups.PickupType",
+    "Slipe.Shared.Radar.BlipType",
+    "Slipe.Shared.Rendering.CameraFade",
+    "Slipe.Shared.Rpc.AsyncRpc",
+    "Slipe.Shared.Rpc.ClientRpcFailedAction",
+    "Slipe.Shared.Rpc.ElementRpc",
+    "Slipe.Shared.Rpc.ElementRpc_1",
+    "Slipe.Shared.Rpc.EmptyRpc",
+    "Slipe.Shared.Rpc.SingleCastRpc_1",
     "Slipe.Shared.Utilities.Color",
+    "Slipe.Shared.Vehicles.DamageLevel",
+    "Slipe.Shared.Vehicles.Door",
+    "Slipe.Shared.Vehicles.DoorState",
     "Slipe.Shared.Vehicles.DriveType",
     "Slipe.Shared.Vehicles.EngineType",
+    "Slipe.Shared.Vehicles.Light",
+    "Slipe.Shared.Vehicles.LightState",
+    "Slipe.Shared.Vehicles.OverrideLightState",
+    "Slipe.Shared.Vehicles.Paintjob",
+    "Slipe.Shared.Vehicles.Panel",
+    "Slipe.Shared.Vehicles.Part",
+    "Slipe.Shared.Vehicles.PlanePanel",
+    "Slipe.Shared.Vehicles.Seat",
     "Slipe.Shared.Vehicles.Siren",
+    "Slipe.Shared.Vehicles.SirenType",
+    "Slipe.Shared.Vehicles.Tire",
+    "Slipe.Shared.Vehicles.Upgrade",
+    "Slipe.Shared.Vehicles.UpgradeSlot",
     "Slipe.Shared.Vehicles.VehicleLightType",
+    "Slipe.Shared.Vehicles.Weapon",
+    "Slipe.Shared.Vehicles.Wheel",
+    "Slipe.Shared.Vehicles.WheelState",
+    "Slipe.Shared.Vehicles.Window",
     "Slipe.Shared.Weapons.WeaponProperty",
-    "Slipe.Shared.Weapons.WeaponSkill"
+    "Slipe.Shared.Weapons.WeaponSkill",
+    "Slipe.Shared.Weapons.WeaponSlot",
+    "Slipe.Shared.Weapons.WeaponState"
   })
 end

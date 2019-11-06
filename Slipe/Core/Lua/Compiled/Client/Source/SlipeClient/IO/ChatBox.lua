@@ -15,7 +15,8 @@ System.namespace("Slipe.Client.IO", function (namespace)
   namespace.class("ChatBox", function (namespace)
     local getActive, getVisible, setVisible, getInputBoxActive, getFont, getLines, getBackgroundColor, getTextColor, 
     getInputColor, getInputPrefixColor, getInputTextColor, getScale, getOffset, getPositionalAlignment, getAllignment, getWidth, 
-    getTextFades, getBackgroundFades, getLineLife, getLineFadeOut, getUseCegui, getTextScale, WriteLine, Clear
+    getTextFades, getBackgroundFades, getLineLife, getLineFadeOut, getUseCegui, getTextScale, WriteLine, WriteLine1, 
+    Clear
     getActive = function ()
       return SlipeMtaDefinitions.MtaClient.IsChatBoxInputActive()
     end
@@ -101,6 +102,12 @@ System.namespace("Slipe.Client.IO", function (namespace)
       SlipeMtaDefinitions.MtaClient.OutputChatBox(message, color:getR(), color:getG(), color:getB(), colorCoded)
     end
     -- <summary>
+    -- Writes a line to the chatbox
+    -- </summary>
+    WriteLine1 = function (message)
+      WriteLine(message, SlipeSharedUtilities.Color.getWhite(), false)
+    end
+    -- <summary>
     -- Clears the chatbox
     -- </summary>
     Clear = function ()
@@ -130,6 +137,7 @@ System.namespace("Slipe.Client.IO", function (namespace)
       getUseCegui = getUseCegui,
       getTextScale = getTextScale,
       WriteLine = WriteLine,
+      WriteLine1 = WriteLine1,
       Clear = Clear,
       __metadata__ = function (out)
         return {
@@ -158,6 +166,7 @@ System.namespace("Slipe.Client.IO", function (namespace)
           },
           methods = {
             { "Clear", 0xE, Clear },
+            { "WriteLine", 0x10E, WriteLine1, System.String },
             { "WriteLine", 0x30E, WriteLine, System.String, out.Slipe.Shared.Utilities.Color, System.Boolean }
           },
           events = {

@@ -26,6 +26,16 @@ System.namespace("Slipe.Client.Dx", function (namespace)
     }
   end)
 
+  -- <summary>
+  -- Representing the desired texture type, which can be one of:
+  -- </summary>
+  namespace.enum("TextureType", function ()
+    return {
+      TwoDimensional = 0,
+      ThreeDimensional = 1,
+      Cube = 2
+    }
+  end)
 
   -- <summary>
   -- Represents valid shader types
@@ -49,6 +59,20 @@ System.namespace("Slipe.Client.Dx", function (namespace)
       plain = 0,
       png = 1,
       jpeg = 2
+    }
+  end)
+
+  -- <summary>
+  -- Represents different primitive types
+  -- </summary>
+  namespace.enum("PrimitiveType", function ()
+    return {
+      PointList = 0,
+      LineList = 1,
+      LineStrip = 2,
+      TriangleList = 3,
+      TriangleStrip = 4,
+      TriangleFan = 5
     }
   end)
 end)

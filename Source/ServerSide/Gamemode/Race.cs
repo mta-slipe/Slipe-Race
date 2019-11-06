@@ -1,5 +1,5 @@
 ﻿using ServerSide.Gamemode.Elements;
-using ServerSide.RPCs;
+using Shared.Rpc;
 using Slipe.Server.Elements;
 using Slipe.Server.Events;
 using Slipe.Server.Game;

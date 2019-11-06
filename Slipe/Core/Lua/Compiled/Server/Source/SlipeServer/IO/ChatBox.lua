@@ -2,16 +2,18 @@
 local System = System
 local SlipeMtaDefinitions
 local SlipeSharedElements
+local SlipeSharedUtilities
 System.import(function (out)
   SlipeMtaDefinitions = Slipe.MtaDefinitions
   SlipeSharedElements = Slipe.Shared.Elements
+  SlipeSharedUtilities = Slipe.Shared.Utilities
 end)
 System.namespace("Slipe.Server.IO", function (namespace)
   -- <summary>
   -- Represents the ingame chatbox
   -- </summary>
   namespace.class("ChatBox", function (namespace)
-    local WriteLine, WriteLine1, Clear, SetVisible
+    local WriteLine, WriteLine1, WriteLine2, WriteLine3, Clear, SetVisible
     -- <summary>
     -- Writes a line to the chatbox
     -- </summary>
@@ -24,10 +26,25 @@ System.namespace("Slipe.Server.IO", function (namespace)
     -- <summary>
     -- Writes a line to the chatbox
     -- </summary>
+    -- <param name="player"></param>
+    WriteLine1 = function (message, player)
+      WriteLine(message, player, SlipeSharedUtilities.Color.getWhite(), false)
+    end
+    -- <summary>
+    -- Writes a line to the chatbox
+    -- </summary>
     -- <param name="color"></param>
     -- <param name="colorCoded"></param>
-    WriteLine1 = function (message, color, colorCoded)
+    WriteLine2 = function (message, color, colorCoded)
       SlipeMtaDefinitions.MtaServer.OutputChatBox(message, SlipeSharedElements.Element.getRoot():getMTAElement(), color:getR(), color:getG(), color:getB(), colorCoded)
+    end
+    -- <summary>
+    -- Writes a line to the chatbox
+    -- </summary>
+    -- <param name="color"></param>
+    -- <param name="colorCoded"></param>
+    WriteLine3 = function (message)
+      WriteLine2(message, SlipeSharedUtilities.Color.getWhite(), false)
     end
     -- <summary>
     -- Clears the chatbox for the player, if none specified for everyone.
@@ -58,6 +75,8 @@ System.namespace("Slipe.Server.IO", function (namespace)
     return {
       WriteLine = WriteLine,
       WriteLine1 = WriteLine1,
+      WriteLine2 = WriteLine2,
+      WriteLine3 = WriteLine3,
       Clear = Clear,
       SetVisible = SetVisible,
       __metadata__ = function (out)
@@ -66,7 +85,9 @@ System.namespace("Slipe.Server.IO", function (namespace)
             { "Clear", 0x10E, Clear, out.Slipe.Server.Peds.Player },
             { "SetVisible", 0x28E, SetVisible, System.Boolean, out.Slipe.Server.Peds.Player, System.Boolean },
             { "WriteLine", 0x40E, WriteLine, System.String, out.Slipe.Server.Peds.Player, out.Slipe.Shared.Utilities.Color, System.Boolean },
-            { "WriteLine", 0x30E, WriteLine1, System.String, out.Slipe.Shared.Utilities.Color, System.Boolean }
+            { "WriteLine", 0x20E, WriteLine1, System.String, out.Slipe.Server.Peds.Player },
+            { "WriteLine", 0x30E, WriteLine2, System.String, out.Slipe.Shared.Utilities.Color, System.Boolean },
+            { "WriteLine", 0x10E, WriteLine3, System.String }
           },
           events = {
             { "OnMessage", 0xE, System.Delegate(out.Slipe.Shared.Elements.Element, out.Slipe.Server.IO.Events.OnChatMessageEventArgs, System.Void) }

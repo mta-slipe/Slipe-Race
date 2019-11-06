@@ -11,6 +11,10 @@
   </Target>
 
   <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="SlipeClient">
       <HintPath>..\..\Slipe\Core\DLL\SlipeClient.dll</HintPath>
     </Reference>

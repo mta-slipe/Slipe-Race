@@ -17,9 +17,10 @@ System.namespace("Slipe.Client.Gui", function (namespace)
   -- Represents a Cegui gridlist
   -- </summary>
   namespace.class("GridList", function (namespace)
-    local getColumnCount, getRowCount, getSelectedCount, getSelectedItem, setSelectedItem, getSelectedItems, setSelectionMode, getHorizontalScrollPosition, 
-    setHorizontalScrollPosition, getVerticalScrollPosition, setVerticalScrollPosition, setSortingEnabled, GetItem, AddColumn, RemoveColumn, AddRow, 
-    AddRowAfter, AddTopRow, RemoveRow, Clear, UseScrollBars, __ctor1__, __ctor2__
+    local getColumnCount, getRowCount, getSelectedCount, getSelectedItem, setSelectedItem, getSelectedItems, getSelectionMode, setSelectionMode, 
+    getHorizontalScrollPosition, setHorizontalScrollPosition, getVerticalScrollPosition, setVerticalScrollPosition, getSortingEnabled, setSortingEnabled, GetItem, AddColumn, 
+    RemoveColumn, AddRow, AddRowAfter, AddTopRow, RemoveRow, Clear, UseScrollBars, __ctor1__, 
+    __ctor2__
     __ctor1__ = function (this, element)
       SlipeClientGui.GuiElement.__ctor__(this, element)
       this.columns = DictInt32GridColumn()
@@ -46,7 +47,10 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     end
     getSelectedItem = function (this)
       local item = SlipeMtaDefinitions.MtaClient.GuiGridListGetSelectedItem(this.element)
-      return SlipeClientGui.GridItem(this.columns:get(item[1]), this.rows:get(item[2]), this)
+      if item[1] == - 1 or item[2] == - 1 then
+        return nil
+      end
+      return SlipeClientGui.GridItem(this.columns:get(item[2]), this.rows:get(item[1]), this)
     end
     setSelectedItem = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiGridListSetSelectedItem(this.element, value.Row.ID, value.Column.ID, true)
@@ -63,6 +67,9 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       end
       return result
     end
+    getSelectionMode = function (this)
+      return SlipeMtaDefinitions.MtaClient.GuiGridListGetSelectionMode(this.element)
+    end
     setSelectionMode = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiGridListSetSelectionMode(this.element, value)
     end
@@ -77,6 +84,9 @@ System.namespace("Slipe.Client.Gui", function (namespace)
     end
     setVerticalScrollPosition = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiGridListSetVerticalScrollPosition(this.element, value)
+    end
+    getSortingEnabled = function (this)
+      return SlipeMtaDefinitions.MtaClient.GuiGridListIsSortingEnabled(this.element)
     end
     setSortingEnabled = function (this, value)
       SlipeMtaDefinitions.MtaClient.GuiGridListSetSortingEnabled(this.element, value)
@@ -163,11 +173,13 @@ System.namespace("Slipe.Client.Gui", function (namespace)
       getSelectedItem = getSelectedItem,
       setSelectedItem = setSelectedItem,
       getSelectedItems = getSelectedItems,
+      getSelectionMode = getSelectionMode,
       setSelectionMode = setSelectionMode,
       getHorizontalScrollPosition = getHorizontalScrollPosition,
       setHorizontalScrollPosition = setHorizontalScrollPosition,
       getVerticalScrollPosition = getVerticalScrollPosition,
       setVerticalScrollPosition = setVerticalScrollPosition,
+      getSortingEnabled = getSortingEnabled,
       setSortingEnabled = setSortingEnabled,
       GetItem = GetItem,
       AddColumn = AddColumn,
@@ -195,8 +207,8 @@ System.namespace("Slipe.Client.Gui", function (namespace)
             { "SelectedCount", 0x206, System.Int32, getSelectedCount },
             { "SelectedItem", 0x106, out.Slipe.Client.Gui.GridItem, getSelectedItem, setSelectedItem },
             { "SelectedItems", 0x206, System.Array(out.Slipe.Client.Gui.GridItem), getSelectedItems },
-            { "SelectionMode", 0x306, System.Int32, setSelectionMode },
-            { "SortingEnabled", 0x306, System.Boolean, setSortingEnabled },
+            { "SelectionMode", 0x106, System.Int32, getSelectionMode, setSelectionMode },
+            { "SortingEnabled", 0x106, System.Boolean, getSortingEnabled, setSortingEnabled },
             { "VerticalScrollPosition", 0x106, System.Single, getVerticalScrollPosition, setVerticalScrollPosition }
           },
           methods = {

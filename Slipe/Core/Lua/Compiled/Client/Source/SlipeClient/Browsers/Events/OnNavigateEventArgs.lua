@@ -5,7 +5,7 @@ System.namespace("Slipe.Client.Browsers.Events", function (namespace)
     local __ctor__
     __ctor__ = function (this, target, isBlocked)
       this.Url = System.cast(System.String, target)
-      this.IsBlocked = this.IsBlocked
+      this.IsBlocked = System.cast(System.Boolean, isBlocked)
     end
     return {
       IsBlocked = false,

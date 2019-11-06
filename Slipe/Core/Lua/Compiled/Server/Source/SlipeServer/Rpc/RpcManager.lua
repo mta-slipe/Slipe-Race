@@ -3,31 +3,84 @@ local System = System
 local SlipeMtaDefinitions
 local SlipeServerElements
 local SlipeServerPeds
+local SlipeServerRpc
 local SlipeSharedElements
-local DictStringDelegate
+local SlipeSharedRpc
+local ListQueuedRpc
+local ListMtaElement
+local ListRegisteredRpc
+local DictPlayerListQueuedRpc
+local DictStringListRegisteredRpc
 System.import(function (out)
   SlipeMtaDefinitions = Slipe.MtaDefinitions
   SlipeServerElements = Slipe.Server.Elements
   SlipeServerPeds = Slipe.Server.Peds
+  SlipeServerRpc = Slipe.Server.Rpc
   SlipeSharedElements = Slipe.Shared.Elements
-  DictStringDelegate = System.Dictionary(System.String, System.Delegate)
+  SlipeSharedRpc = Slipe.Shared.Rpc
+  ListQueuedRpc = System.List(SlipeServerRpc.QueuedRpc)
+  ListMtaElement = System.List(SlipeMtaDefinitions.MtaElement)
+  ListRegisteredRpc = System.List(SlipeServerRpc.RegisteredRpc)
+  DictPlayerListQueuedRpc = System.Dictionary(SlipeServerPeds.Player, ListQueuedRpc)
+  DictStringListRegisteredRpc = System.Dictionary(System.String, ListRegisteredRpc)
 end)
 System.namespace("Slipe.Server.Rpc", function (namespace)
   -- <summary>
   -- Manager class that handles RPC's between server and clients
   -- </summary>
   namespace.class("RpcManager", function (namespace)
-    local instance, getInstance, RegisterRPC, TriggerRPC, TriggerRPC1, TriggerLatentRPC, TriggerLatentRPC1, class, 
-    __ctor__
+    local instance, getInstance, RegisterRPC, QueueRpc, TriggerRPC, TriggerRPC1, TriggerRPC2, TriggerLatentRPC, 
+    TriggerLatentRPC1, TriggerRPC3, TriggerAsyncRpc, RegisterAsyncRPC, class, __ctor__
     __ctor__ = function (this)
-      this.RegisteredRPCs = DictStringDelegate()
+      this.asyncRpcIndex = 0
+      this.QueuedRpcs = DictPlayerListQueuedRpc()
+      this.registeredRPCs = DictStringListRegisteredRpc()
+      this.registeredAsyncRPCs = DictStringListRegisteredRpc()
 
       SlipeServerElements.RootElement.OnMiscelaniousEvent = SlipeServerElements.RootElement.OnMiscelaniousEvent + function (eventName, source, p1, p2, p3, p4, p5, p6, p7, p8)
-        if this.RegisteredRPCs:ContainsKey(eventName) then
+        if this.registeredRPCs:ContainsKey(eventName) then
           local player = SlipeSharedElements.ElementManager.getInstance():GetElement(source, SlipeServerPeds.Player)
-          this.RegisteredRPCs:get(eventName)(player, p1)
+
+          local registeredRpcs = this.registeredRPCs:get(eventName)
+
+          for _, registeredRpc in System.each(registeredRpcs) do
+            local method = registeredRpc.callback
+
+            local rpc = System.cast(SlipeSharedRpc.IRpc, System.Activator.CreateInstance(registeredRpc.type))
+            rpc:Parse(p1)
+            method(player, rpc)
+          end
+        elseif this.registeredAsyncRPCs:ContainsKey(eventName) then
+          local player = SlipeSharedElements.ElementManager.getInstance():GetElement(source, SlipeServerPeds.Player)
+
+          local registeredRpcs = this.registeredAsyncRPCs:get(eventName)
+
+          for _, registeredRpc in System.each(registeredRpcs) do
+            local method = registeredRpc.callback
+
+            local asyncRpc = System.Activator.CreateInstance(SlipeSharedRpc.AsyncRpc)
+            asyncRpc:Parse(p1)
+
+            method(player, asyncRpc)
+          end
         end
       end
+
+      RegisterRPC(this, "slipe-client-ready-rpc", function (player, rpc)
+        local queuedRpcList
+        local _
+        _, queuedRpcList = this.QueuedRpcs:TryGetValue(player)
+        if queuedRpcList ~= nil then
+          for _, queuedRpc in System.each(queuedRpcList) do
+            if queuedRpc.bandwidth ~= - 1 then
+              TriggerLatentRPC(this, player, queuedRpc.key, queuedRpc.bandwidth, queuedRpc.rpc, queuedRpc.persists)
+            else
+              TriggerRPC(this, player, queuedRpc.key, queuedRpc.rpc)
+            end
+          end
+          this.QueuedRpcs:RemoveKey(player)
+        end
+      end, SlipeSharedRpc.EmptyRpc)
     end
     getInstance = function ()
       if instance == nil then
@@ -39,17 +92,31 @@ System.namespace("Slipe.Server.Rpc", function (namespace)
     -- Register an RPC
     -- </summary>
     RegisterRPC = function (this, key, callback, CallbackType)
-      this.RegisteredRPCs:set(key, function (player, parameters)
-        callback(player, CallbackType(parameters))
-      end)
-      SlipeMtaDefinitions.MtaShared.AddEvent(key, true)
-      SlipeSharedElements.Element.getRoot():ListenForEvent(key, true, "normal")
+      if not this.registeredRPCs:ContainsKey(key) then
+        this.registeredRPCs:set(key, ListRegisteredRpc())
+        SlipeMtaDefinitions.MtaShared.AddEvent(key, true)
+        SlipeSharedElements.Element.getRoot():ListenForEvent(key, true, "normal")
+      end
+      this.registeredRPCs:get(key):Add(System.new(SlipeServerRpc.RegisteredRpc, 2, function (player, parameters)
+        callback(player, System.cast(CallbackType, parameters), CallbackType)
+      end, System.typeof(CallbackType)))
+    end
+    QueueRpc = function (this, target, key, argument, bandwidth, persists)
+      if not this.QueuedRpcs:ContainsKey(target) then
+        this.QueuedRpcs:set(target, ListQueuedRpc())
+      end
+
+      this.QueuedRpcs:get(target):Add(SlipeServerRpc.QueuedRpc(key, argument, bandwidth, persists))
     end
     -- <summary>
     -- Trigger an RPC on a player
     -- </summary>
     TriggerRPC = function (this, target, key, argument)
-      SlipeMtaDefinitions.MtaServer.TriggerClientEvent(target:getMTAElement(), key, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
+      if not target.IsReadyForIncomingRequests and argument:getOnClientRpcFailed() == 1 --[[ClientRpcFailedAction.Queue]] then
+        QueueRpc(this, target, key, argument, -1, false)
+      else
+        SlipeMtaDefinitions.MtaServer.TriggerClientEvent(target:getMTAElement(), key, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
+      end
     end
     -- <summary>
     -- Trigger an RPC
@@ -58,10 +125,30 @@ System.namespace("Slipe.Server.Rpc", function (namespace)
       SlipeMtaDefinitions.MtaServer.TriggerClientEvent(SlipeSharedElements.Element.getRoot():getMTAElement(), key, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
     end
     -- <summary>
+    -- Trigger an RPC for a specified list of players
+    -- </summary>
+    -- <param name="key"></param>
+    -- <param name="argument"></param>
+    TriggerRPC2 = function (this, targets, key, argument)
+      local playerElements = ListMtaElement()
+      for _, player in System.each(targets) do
+        if player.IsReadyForIncomingRequests then
+          playerElements:Add(player:getMTAElement())
+        elseif argument:getOnClientRpcFailed() == 1 --[[ClientRpcFailedAction.Queue]] then
+          QueueRpc(this, player, key, argument, -1, false)
+        end
+      end
+      SlipeMtaDefinitions.MtaServer.TriggerClientEvent(playerElements, key, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
+    end
+    -- <summary>
     -- Trigger an RPC with limited bandwidth
     -- </summary>
     TriggerLatentRPC = function (this, target, key, bandwidth, argument, persists)
-      SlipeMtaDefinitions.MtaServer.TriggerLatentClientEvent(target:getMTAElement(), key, bandwidth, persists, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
+      if not target.IsReadyForIncomingRequests and argument:getOnClientRpcFailed() == 1 --[[ClientRpcFailedAction.Queue]] then
+        QueueRpc(this, target, key, argument, bandwidth, persists)
+      else
+        SlipeMtaDefinitions.MtaServer.TriggerLatentClientEvent(target:getMTAElement(), key, bandwidth, persists, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
+      end
     end
     -- <summary>
     -- Trigger an RPC with limited bandwidth
@@ -69,35 +156,176 @@ System.namespace("Slipe.Server.Rpc", function (namespace)
     TriggerLatentRPC1 = function (this, key, bandwidth, argument, persists)
       SlipeMtaDefinitions.MtaServer.TriggerLatentClientEvent(SlipeSharedElements.Element.getRoot():getMTAElement(), key, bandwidth, persists, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
     end
+    -- <summary>
+    -- Trigger an RPC with limited bandwidth for a specified list of players
+    -- </summary>
+    -- <param name="key"></param>
+    -- <param name="argument"></param>
+    TriggerRPC3 = function (this, targets, key, bandwidth, argument, persists)
+      local playerElements = ListMtaElement()
+      for _, player in System.each(targets) do
+        if player.IsReadyForIncomingRequests then
+          playerElements:Add(player:getMTAElement())
+        elseif argument:getOnClientRpcFailed() == 1 --[[ClientRpcFailedAction.Queue]] then
+          QueueRpc(this, player, key, argument, bandwidth, persists)
+        end
+      end
+      SlipeMtaDefinitions.MtaServer.TriggerLatentClientEvent(playerElements, key, bandwidth, persists, SlipeSharedElements.Element.getRoot():getMTAElement(), argument)
+    end
+    TriggerAsyncRpc = function (this, target, key, argument, TResponseRpc)
+      local tickCount = SlipeMtaDefinitions.MtaShared.GetTickCount()
+      local responseKey = "response-" .. key
+
+      local task = nil
+      local callback = nil
+
+      this.asyncRpcIndex = this.asyncRpcIndex + 1
+      local identifier = this.asyncRpcIndex .. ""
+
+      local asyncCallback
+      callback = function(player, parameters)
+          if (parameters.Identifier == identifier) then
+              local asyncRpc = System.cast(SlipeSharedRpc.AsyncRpc, parameters)
+              local arguments = System.cast(TResponseRpc, System.Activator.CreateInstance(System.typeof(TResponseRpc)))
+              arguments:Parse(asyncRpc.Rpc)
+              asyncCallback(player, arguments)
+          end
+      end
+      task, asyncCallback = System.Task.Callback(function(player, responseRpc)
+          this.registeredRPCs:get(responseKey):Remove(callback)
+          return responseRpc;
+      end)
+
+      RegisterRPC(this, responseKey, callback, SlipeSharedRpc.AsyncRpc)
+
+      if target.IsReadyForIncomingRequests then
+        SlipeMtaDefinitions.MtaServer.TriggerClientEvent(target:getMTAElement(), key, SlipeSharedElements.Element.getRoot():getMTAElement(), System.new(SlipeSharedRpc.AsyncRpc, 2, identifier, argument))
+      else
+        QueueRpc(this, target, key, System.new(SlipeSharedRpc.AsyncRpc, 2, identifier, argument), -1, false)
+      end
+
+      return task
+    end
+    -- <summary>
+    -- Register an async RPC
+    -- </summary>
+    RegisterAsyncRPC = function (this, key, callback, ResponseRpc, RequestRpc)
+      if not this.registeredAsyncRPCs:ContainsKey(key) then
+        this.registeredAsyncRPCs:set(key, ListRegisteredRpc())
+        SlipeMtaDefinitions.MtaShared.AddEvent(key, true)
+        SlipeSharedElements.Element.getRoot():ListenForEvent(key, true, "normal")
+      end
+
+      local responseKey = "response-" .. key
+      this.registeredAsyncRPCs:get(key):Add(System.new(SlipeServerRpc.RegisteredRpc, 2, function (player, parameters)
+        local asyncRpc = System.cast(SlipeSharedRpc.AsyncRpc, parameters)
+        local arguments = System.cast(RequestRpc, System.Activator.CreateInstance(System.typeof(RequestRpc)))
+        arguments:Parse(asyncRpc.Rpc)
+
+        local result = callback(player, arguments, RequestRpc, ResponseRpc)
+        TriggerRPC1(this, responseKey, System.new(SlipeSharedRpc.AsyncRpc, 2, asyncRpc.Identifier, result))
+      end, System.typeof(SlipeSharedRpc.AsyncRpc)))
+    end
     class = {
       getInstance = getInstance,
+      asyncRpcIndex = 0,
       RegisterRPC = RegisterRPC,
       TriggerRPC = TriggerRPC,
       TriggerRPC1 = TriggerRPC1,
+      TriggerRPC2 = TriggerRPC2,
       TriggerLatentRPC = TriggerLatentRPC,
       TriggerLatentRPC1 = TriggerLatentRPC1,
+      TriggerRPC3 = TriggerRPC3,
+      TriggerAsyncRpc = TriggerAsyncRpc,
+      RegisterAsyncRPC = RegisterAsyncRPC,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           fields = {
+            { "asyncRpcIndex", 0x1, System.Int32 },
             { "instance", 0x9, class },
-            { "RegisteredRPCs", 0x1, System.Dictionary(System.String, System.Delegate(out.Slipe.Server.Peds.Player, System.Object, System.Void)) }
+            { "QueuedRpcs", 0x1, System.Dictionary(out.Slipe.Server.Peds.Player, System.List(out.Slipe.Server.Rpc.QueuedRpc)) },
+            { "registeredAsyncRPCs", 0x1, System.Dictionary(System.String, System.List(out.Slipe.Server.Rpc.RegisteredRpc)) },
+            { "registeredRPCs", 0x1, System.Dictionary(System.String, System.List(out.Slipe.Server.Rpc.RegisteredRpc)) }
           },
           properties = {
             { "Instance", 0x20E, class, getInstance }
           },
           methods = {
             { ".ctor", 0x1, nil },
+            { "QueueRpc", 0x501, QueueRpc, out.Slipe.Server.Peds.Player, System.String, out.Slipe.Shared.Rpc.IRpc, System.Int32, System.Boolean },
+            { "RegisterAsyncRPC", 0x20206, RegisterAsyncRPC, function (ResponseRpc, RequestRpc) return System.String, System.Delegate(out.Slipe.Server.Peds.Player, RequestRpc, ResponseRpc) end },
             { "RegisterRPC", 0x10206, RegisterRPC, function (CallbackType) return System.String, System.Delegate(out.Slipe.Server.Peds.Player, CallbackType, System.Void) end },
-            { "TriggerLatentRPC", 0x506, TriggerLatentRPC, out.Slipe.Server.Peds.Player, System.String, System.Int32, System.Object, System.Boolean },
-            { "TriggerLatentRPC", 0x406, TriggerLatentRPC1, System.String, System.Int32, System.Object, System.Boolean },
-            { "TriggerRPC", 0x306, TriggerRPC, out.Slipe.Server.Peds.Player, System.String, System.Object },
-            { "TriggerRPC", 0x206, TriggerRPC1, System.String, System.Object }
+            { "TriggerAsyncRpc", 0x10386, TriggerAsyncRpc, function (TResponseRpc) return out.Slipe.Server.Peds.Player, System.String, out.Slipe.Shared.Rpc.IRpc, System.Task end },
+            { "TriggerLatentRPC", 0x506, TriggerLatentRPC, out.Slipe.Server.Peds.Player, System.String, System.Int32, out.Slipe.Shared.Rpc.IRpc, System.Boolean },
+            { "TriggerLatentRPC", 0x406, TriggerLatentRPC1, System.String, System.Int32, out.Slipe.Shared.Rpc.IRpc, System.Boolean },
+            { "TriggerRPC", 0x306, TriggerRPC, out.Slipe.Server.Peds.Player, System.String, out.Slipe.Shared.Rpc.IRpc },
+            { "TriggerRPC", 0x206, TriggerRPC1, System.String, out.Slipe.Shared.Rpc.IRpc },
+            { "TriggerRPC", 0x306, TriggerRPC2, System.List(out.Slipe.Server.Peds.Player), System.String, out.Slipe.Shared.Rpc.IRpc },
+            { "TriggerRPC", 0x506, TriggerRPC3, System.List(out.Slipe.Server.Peds.Player), System.String, System.Int32, out.Slipe.Shared.Rpc.IRpc, System.Boolean }
           },
           class = { 0x6 }
         }
       end
     }
     return class
+  end)
+
+  namespace.struct("RegisteredRpc", function (namespace)
+    local __ctor1__, __ctor2__
+    __ctor1__ = function (this)
+    end
+    __ctor2__ = function (this, callback, type)
+      this.callback = callback
+      this.type = type
+    end
+    return {
+      __ctor__ = {
+        __ctor1__,
+        __ctor2__
+      },
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "callback", 0x6, System.Delegate(out.Slipe.Server.Peds.Player, out.Slipe.Shared.Rpc.IRpc, System.Void) },
+            { "type", 0x6, System.Type }
+          },
+          methods = {
+            { ".ctor", 0x206, __ctor2__, System.Delegate(out.Slipe.Server.Peds.Player, out.Slipe.Shared.Rpc.IRpc, System.Void), System.Type }
+          }
+        }
+      end
+    }
+  end)
+
+  namespace.struct("QueuedRpc", function (namespace)
+    local __ctor__
+    __ctor__ = function (this, key, rpc, bandwidth, persists)
+      if bandwidth == nil then
+        return
+      end
+      this.key = key
+      this.rpc = rpc
+      this.bandwidth = bandwidth
+      this.persists = persists
+    end
+    return {
+      persists = false,
+      bandwidth = 0,
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "bandwidth", 0x6, System.Int32 },
+            { "key", 0x6, System.String },
+            { "persists", 0x6, System.Boolean },
+            { "rpc", 0x6, out.Slipe.Shared.Rpc.IRpc }
+          },
+          methods = {
+            { ".ctor", 0x406, __ctor__, System.String, out.Slipe.Shared.Rpc.IRpc, System.Int32, System.Boolean }
+          }
+        }
+      end
+    }
   end)
 end)

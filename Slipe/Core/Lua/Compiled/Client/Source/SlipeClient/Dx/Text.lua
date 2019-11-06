@@ -72,6 +72,7 @@ System.namespace("Slipe.Client.Dx", function (namespace)
       this.WordBreak = wordBreak
       this.ColorCoded = colorCoded
       this.useCustomFont = false
+      this.BottomRight = bottomRight:__clone__()
     end
     -- <summary>
     -- Create a standard font text without explicit rotation

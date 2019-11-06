@@ -58,7 +58,7 @@ System.namespace("Slipe.Server.Vehicles", function (namespace)
       return SlipeMtaDefinitions.MtaShared.IsTrainDerailed(this.element)
     end
     setDerailed = function (this, value)
-      SlipeMtaDefinitions.MtaShared.SetTrainDerailable(this.element, value)
+      SlipeMtaDefinitions.MtaShared.SetTrainDerailed(this.element, true)
     end
     op_Explicit1 = function (vehicle)
       if System.is(SlipeServerVehicles.VehicleModel.FromId(vehicle:getModel()), SlipeServerVehicles.TrainModel) then

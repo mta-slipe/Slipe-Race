@@ -86,7 +86,7 @@ System.namespace("Slipe.Client.Peds", function (namespace)
       return System.new(SlipeSharedPeds.Animation, 2, result[1], result[2])
     end
     setAnimation = function (this, value)
-      this:SetAnimation(value:__clone__(), true, -1, true, true, true, 250)
+      this:SetAnimation(value:__clone__(), true, -1, true, true, true, 250, false)
     end
     -- <summary>
     -- Retrieve the analog control state of a certain control
@@ -232,7 +232,8 @@ System.namespace("Slipe.Client.Peds", function (namespace)
             { "OnWasted", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnWastedEventArgs, System.Void) },
             { "OnWeaponFire", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnWeaponFireEventArgs, System.Void) },
             { "OnStep", 0x6, System.Delegate(class, out.Slipe.Client.Peds.Events.OnStepEventArgs, System.Void) },
-            { "OnExplosion", 0x6, System.Delegate(class, out.Slipe.Client.Elements.Events.OnExplosionEventArgs, System.Void) }
+            { "OnExplosion", 0x6, System.Delegate(class, out.Slipe.Client.Elements.Events.OnExplosionEventArgs, System.Void) },
+            { "OnWorldSound", 0x6, System.Delegate(class, out.Slipe.Client.Elements.Events.OnWorldSoundEventArgs, System.Void) }
           },
           class = { 0x6, System.new(out.Slipe.Shared.Elements.DefaultElementClassAttribute, 2, 2 --[[ElementType.Ped]]) }
         }

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>Shared</RootNamespace>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="SlipeShared">
+      <HintPath>..\..\Slipe\Core\DLL\SlipeShared.dll</HintPath>
+    </Reference>
+    <Reference Include="SlipeMTADefinitions">
+      <HintPath>..\..\Slipe\Core\DLL\SlipeMTADefinitions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
